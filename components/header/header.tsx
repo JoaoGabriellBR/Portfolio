@@ -13,6 +13,10 @@ import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "../mode-toggle";
+import { SiAdidas } from "react-icons/si";
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { TbWorldBolt } from "react-icons/tb";
+import { RiLightbulbFlashFill } from "react-icons/ri";
 
 export const Header = () => {
   const navigationItems = [
@@ -28,18 +32,22 @@ export const Header = () => {
         {
           title: "Adidas Shopping",
           href: "/reports",
+          logo: <SiAdidas />,
         },
         {
           title: "UpWrite",
           href: "/statistics",
+          logo: <FaArrowTrendUp />,
         },
         {
           title: "WorldNews",
           href: "/dashboards",
+          logo: <TbWorldBolt />,
         },
         {
           title: "Solar Toy",
           href: "/recordings",
+          logo: <RiLightbulbFlashFill />,
         },
       ],
     },
@@ -107,7 +115,10 @@ export const Header = () => {
                                 key={subItem.title}
                                 className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
                               >
-                                <span>{subItem.title}</span>
+                                <div className="flex flex-row justify-start items-center gap-2">
+                                  {subItem.logo}
+                                  <span>{subItem.title}</span>
+                                </div>
                                 <MoveRight className="w-4 h-4 text-muted-foreground" />
                               </NavigationMenuLink>
                             ))}
@@ -122,7 +133,7 @@ export const Header = () => {
           </NavigationMenu>
         </div>
         <div className="flex lg:justify-center">
-          <p className="font-semibold">TWBlocks</p>
+          <p className="font-semibold text-lg">JGS.</p>
         </div>
         <div className="flex justify-end w-full gap-4">
           <Button variant="ghost" className="hidden md:inline">
@@ -131,7 +142,7 @@ export const Header = () => {
           <div className="border-r hidden md:inline"></div>
           <Button variant="outline">Sign in</Button>
           <Button>Get started</Button>
-          <ModeToggle/>
+          <ModeToggle />
         </div>
         <div className="flex w-12 shrink lg:hidden items-end justify-end">
           <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
