@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const Jumbotron = () => {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => ["Front-end", "Back-end", "Full Stack"],
+    () => ["Front - end", "Back - end", "Full Stack"],
     []
   );
 
@@ -24,7 +24,7 @@ export const Jumbotron = () => {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full">
+    <div className="w-full px-4 h-screen flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start">
       <div className="container mx-auto">
         <div className="flex gap-8 items-center justify-center flex-col">
           <div>
