@@ -17,6 +17,8 @@ import { SiAdidas } from "react-icons/si";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { TbWorldBolt } from "react-icons/tb";
 import { RiLightbulbFlashFill } from "react-icons/ri";
+import { GiDirewolf } from "react-icons/gi";
+import { GiWolfHead } from "react-icons/gi";
 
 export const Header = () => {
   const navigationItems = [
@@ -133,7 +135,7 @@ export const Header = () => {
           </NavigationMenu>
         </div>
         <div className="flex lg:justify-center">
-          <p className="font-semibold text-lg">JGS.</p>
+          <GiWolfHead className="text-7xl"/>
         </div>
         <div className="flex justify-end w-full gap-4">
           <Button variant="ghost" className="hidden md:inline">
