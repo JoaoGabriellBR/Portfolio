@@ -3,12 +3,13 @@ import { Jumbotron } from "@/components/jumbotron";
 import { Footer } from "@/components/footer";
 import { CardProjects } from "@/components/card-projects";
 
-export default function Home() {
+export default function About() {
   return (
-    <main className="flex flex-col space-y-10">
+    <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
       <Header />
-      <Jumbotron title="Desenvolvedor" isHomePage/>
-      <CardProjects />
+      <div className="w-full h-screen grid-cols-1 grid-rows-2">
+        <Jumbotron title="Sobre Mim"/>
+      </div>
       <Footer />
     </main>
   );

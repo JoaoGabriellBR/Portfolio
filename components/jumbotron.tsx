@@ -5,26 +5,27 @@ import { motion } from "framer-motion";
 import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export const Jumbotron = () => {
+export const Jumbotron = ({ title, isHomePage }: any) => {
   const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(
+
+  const mainTitles = useMemo(
     () => ["Front - end", "Back - end", "Full Stack"],
     []
   );
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      if (titleNumber === titles.length - 1) {
+      if (titleNumber === mainTitles.length - 1) {
         setTitleNumber(0);
       } else {
         setTitleNumber(titleNumber + 1);
       }
     }, 2000);
     return () => clearTimeout(timeoutId);
-  }, [titleNumber, titles]);
+  }, [titleNumber, mainTitles]);
 
   return (
-    <div className="w-full px-4 h-[30rem] md:h-[45rem] flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start">
+    <div className="h-screen w-full px-4 flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start">
       <div className="container mx-auto">
         <div className="flex gap-8 items-center justify-center flex-col">
           <div>
@@ -33,11 +34,11 @@ export const Jumbotron = () => {
             </Button>
           </div>
           <div className="flex gap-4 flex-col justify-center items-center">
-            <h1 className="flex flex-col justify-center items-center text-7xl md:text-9xl max-w-2xl tracking-tighter font-regular">
-              <span className="text-spektr-cyan-50">Desenvolvedor</span>
+          <h1 className="animate-out uppercase flex flex-col justify-center items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] max-w-full tracking-tighter font-regular break-words text-center">
+              <span className="text-spektr-cyan-50">{title}</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
-                {titles.map((title, index) => (
+                {isHomePage && mainTitles.map((mainTitle, index) => (
                   <motion.span
                     key={index}
                     className="absolute font-semibold"
@@ -55,7 +56,7 @@ export const Jumbotron = () => {
                           }
                     }
                   >
-                    {title}
+                    {mainTitle}
                   </motion.span>
                 ))}
               </span>
