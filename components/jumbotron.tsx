@@ -24,7 +24,7 @@ export const Jumbotron = () => {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full px-4 h-[45rem] flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start">
+    <div className="w-full px-4 h-[30rem] md:h-[45rem] flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start">
       <div className="container mx-auto">
         <div className="flex gap-8 items-center justify-center flex-col">
           <div>

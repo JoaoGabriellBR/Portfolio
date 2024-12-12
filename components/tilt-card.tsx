@@ -34,17 +34,14 @@ export function TiltCard() {
 
   return (
     <div
-      className={`h-[45rem] grid grid-cols-4 grid-rows-4 gap-6 w-full container mx-auto px-4 md:p-0`}
+      className={`h-[70rem] md:h-[50rem] grid grid-cols-4 grid-rows-4 md:grid-rows-5 gap-8 w-full container mx-auto px-4 md:p-0`}
     >
       {projects.map((project, index: any) => (
         <Tilt
           key={index}
           rotationFactor={8}
           isRevese
-          // style={{
-          //   borderRadius: "12px",
-          // }}
-          className={`col-span-4 md:col-span-2 md:row-span-2 flex flex-col items-center justify-center gap-4 overflow-hidden border border-neutral-950/10 dark:border-zinc-50/10 bg-neutral-200 dark:bg-neutral-900 rounded-[2rem]`}
+          className={`col-span-4 md:col-span-2 md:row-span-2 flex flex-col items-center justify-center gap-4 overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-950 rounded-[2rem]`}
         >
           {project.logo}
           <h1 className="text-2xl md:text-5xl">{project.title}</h1>

@@ -85,8 +85,8 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="w-full row-start-3 py-10 lg:py-20 bg-foreground text-background px-4">
-      <div className="container mx-auto">
+    <footer className="w-full row-start-3 py-10 lg:py-20 bg-foreground text-background">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-6 md:gap-0">
           <div className="flex gap-2 flex-col w-full md:w-1/2">
             <GiWolfHead className="text-9xl" />
