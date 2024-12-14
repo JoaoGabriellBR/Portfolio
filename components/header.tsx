@@ -12,12 +12,11 @@ import {
 import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
-import { ModeToggle } from "../mode-toggle";
+import { ModeToggle } from "./mode-toggle";
 import { SiAdidas } from "react-icons/si";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { TbWorldBolt } from "react-icons/tb";
 import { RiLightbulbFlashFill } from "react-icons/ri";
-import { GiDirewolf } from "react-icons/gi";
 import { GiWolfHead } from "react-icons/gi";
 
 export const Header = () => {
@@ -79,7 +78,7 @@ export const Header = () => {
 
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="w-full z-40 fixed top-0 bg-background px-4">
+    <header className="w-full z-40 top-0 bg-background px-4">
       <div className="container mx-auto min-h-20 flex flex-row lg:grid lg:grid-cols-3 items-center">
         <div className="justify-start items-center lg:flex hidden flex-row">
           <NavigationMenu className="flex justify-start items-start">

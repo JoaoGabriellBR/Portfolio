@@ -34,7 +34,7 @@ export const Jumbotron = ({ title, isHomePage }: any) => {
             </Button>
           </div>
           <div className="flex gap-4 flex-col justify-center items-center">
-          <h1 className="animate-out uppercase flex flex-col justify-center items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] max-w-full tracking-tighter font-regular break-words text-center">
+          <h1 className="animate-out uppercase flex flex-col justify-center items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] max-w-full tracking-tighter font-bold break-words text-center">
               <span className="text-spektr-cyan-50">{title}</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;

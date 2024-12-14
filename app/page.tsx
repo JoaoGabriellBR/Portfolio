@@ -1,4 +1,4 @@
-import Header from "@/components/header/header";
+import Header from "@/components/header";
 import { Jumbotron } from "@/components/jumbotron";
 import { Footer } from "@/components/footer";
 import { CardProjects } from "@/components/card-projects";
