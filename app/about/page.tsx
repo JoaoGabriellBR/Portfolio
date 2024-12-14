@@ -11,12 +11,10 @@ export default function About() {
       <Header />
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
 
-        {/* Section: Jumbotron */}
-        <section className="w-full h-screen grid-cols-1 grid-rows-2">
+        <section className="w-full h-screen">
           <Jumbotron title="Sobre Mim" />
         </section>
 
-        {/* Section: About Text */}
         <section className="w-full container mx-auto px-4 max-w-5xl pb-20 sm:pb-32 lg:pb-40">
           <TextGradientScroll
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center leading-snug"
@@ -24,16 +22,15 @@ export default function About() {
           />
         </section>
 
-        {/* Section: Banner Image */}
-        <section className="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen bg-no-repeat bg-cover bg-center bg-fixed relative">
-          <Image
-            src={AdidasBanner}
-            alt="Adidas Banner"
-            layout="fill"
-            objectFit="cover"
-            priority
-            className="transition-all duration-1000 ease-in-out hover:scale-110"
-          />
+        <section className="w-full container mx-auto px-4">
+          <video className="rounded-[3rem]" autoPlay loop muted >
+            <source src="/videos/aboutme.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeos HTML5.
+          </video>
+        </section>
+
+        <section>
+          <h1>Tecnologias</h1>
         </section>
 
       </main>
