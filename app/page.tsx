@@ -5,11 +5,13 @@ import { CardProjects } from "@/components/card-projects";
 
 export default function Home() {
   return (
-    <main className="flex flex-col space-y-10">
+    <>
       <Header />
-      <Jumbotron title="Desenvolvedor" isHomePage/>
-      <CardProjects />
+      <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
+        <Jumbotron title="Desenvolvedor Full Stack" />
+        <CardProjects />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

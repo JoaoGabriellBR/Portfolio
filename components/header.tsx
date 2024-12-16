@@ -14,21 +14,17 @@ import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { SiAdidas } from "react-icons/si";
-import { FaArrowTrendUp } from "react-icons/fa6";
+import { FaArrowTrendUp, FaGithub } from "react-icons/fa6";
 import { TbWorldBolt } from "react-icons/tb";
 import { RiLightbulbFlashFill } from "react-icons/ri";
 import { GiWolfHead } from "react-icons/gi";
 
 export const Header = () => {
+
   const navigationItems = [
     {
-      title: "Home",
-      href: "/",
-      description: "",
-    },
-    {
       title: "Projetos",
-      description: "Managing a small business today is already tough.",
+      description: "Conheça o meu GitHub",
       items: [
         {
           title: "Adidas Shopping",
@@ -53,33 +49,21 @@ export const Header = () => {
       ],
     },
     {
+      title: "Contato",
+      href: "/contact",
+      description: "",
+    },
+    {
       title: "Sobre",
-      description: "Managing a small business today is already tough.",
-      items: [
-        {
-          title: "Sobre mim",
-          href: "/about",
-        },
-        {
-          title: "Experiências",
-          href: "/fundraising",
-        },
-        {
-          title: "Tecnologias",
-          href: "/investors",
-        },
-        {
-          title: "Contato",
-          href: "/contact",
-        },
-      ],
+      href: "/about",
+      description: "",
     },
   ];
 
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="w-full z-40 top-0 bg-background px-4">
-      <div className="container mx-auto min-h-20 flex flex-row lg:grid lg:grid-cols-3 items-center">
+    <header className="w-full z-40 top-0 bg-background px-4 container mx-auto min-h-20 flex flex-row lg:grid lg:grid-cols-3 items-center">
+
         <div className="justify-start items-center lg:flex hidden flex-row">
           <NavigationMenu className="flex justify-start items-start">
             <NavigationMenuList className="flex justify-start gap-4 flex-row">
@@ -106,7 +90,8 @@ export const Header = () => {
                               </p>
                             </div>
                             <Button size="sm" className="mt-10">
-                              Book a call today
+                              GitHub
+                              <FaGithub/>
                             </Button>
                           </div>
                           <div className="flex flex-col text-sm h-full justify-end">
@@ -133,13 +118,16 @@ export const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex lg:justify-center">
+
+        <Link href="/" className="flex lg:justify-center">
           <GiWolfHead className="text-7xl"/>
+        </Link>
+
+        <div className="flex flex-row justify-end w-full gap-4">
+          <Button variant="ghost">Português</Button>
+          <ModeToggle variant="ghost"/>
         </div>
-        <div className="flex justify-end w-full gap-4">
-          <Button variant="outline">Português</Button>
-          <ModeToggle/>
-        </div>
+
         <div className="flex w-12 lg:hidden items-end justify-end">
           <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -179,7 +167,6 @@ export const Header = () => {
             </div>
           )}
         </div>
-      </div>
     </header>
   );
 };

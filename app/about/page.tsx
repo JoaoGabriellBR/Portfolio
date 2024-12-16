@@ -10,10 +10,7 @@ export default function About() {
     <>
       <Header />
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
-
-        <section className="w-full h-screen">
-          <Jumbotron title="Sobre Mim" />
-        </section>
+        <Jumbotron title="Sobre Mim" />
 
         <section className="w-full container mx-auto px-4 max-w-5xl pb-20 sm:pb-32 lg:pb-40">
           <TextGradientScroll
@@ -23,7 +20,7 @@ export default function About() {
         </section>
 
         <section className="w-full container mx-auto px-4">
-          <video className="rounded-[3rem]" autoPlay loop muted >
+          <video className="rounded-[3rem]" autoPlay loop muted>
             <source src="/videos/aboutme.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos HTML5.
           </video>
@@ -32,7 +29,6 @@ export default function About() {
         <section>
           <h1>Tecnologias</h1>
         </section>
-
       </main>
       <Footer />
     </>

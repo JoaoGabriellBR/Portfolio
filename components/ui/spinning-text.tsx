@@ -88,7 +88,7 @@ export function SpinningText({
             aria-hidden="true"
             key={`${index}-${letter}`}
             variants={itemVariants}
-            className="absolute left-1/2 top-1/2 inline-block"
+            className="absolute left-1/2 top-1/2"
             style={
               {
                 '--index': index,
