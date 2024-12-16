@@ -4,12 +4,13 @@ import { Footer } from "@/components/footer";
 import TextGradientScroll from "@/components/ui/text-gradient";
 import Image from "next/image";
 import AdidasBanner from "@/app/assets/adidas-banner.png";
+import { TimelineDemo } from "@/components/timeline-demo";
 
 export default function About() {
   return (
     <>
       <Header />
-      <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
+      <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-40">
         <Jumbotron title="Sobre Mim" />
 
         <section className="w-full container mx-auto px-4 max-w-5xl pb-20 sm:pb-32 lg:pb-40">
@@ -26,9 +27,10 @@ export default function About() {
           </video>
         </section>
 
-        <section>
-          <h1>Tecnologias</h1>
+        <section className="w-full min-h-screen container mx-auto px-4">
+          <TimelineDemo />
         </section>
+
       </main>
       <Footer />
     </>
