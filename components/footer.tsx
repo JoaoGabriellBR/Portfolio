@@ -1,128 +1,42 @@
 "use client";
 
 import Link from "next/link";
-import { SiAdidas } from "react-icons/si";
-import { FaArrowTrendUp, FaLinkedinIn, FaGithub } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import { TbWorldBolt } from "react-icons/tb";
-import { RiLightbulbFlashFill } from "react-icons/ri";
-import { GiWolfHead } from "react-icons/gi";
+import AnimatedText from "./ui/cursor-follow-text";
+import ButtonArrow from "./ui/button-arrow";
 
 export const Footer = () => {
-  const navigationItems = [
-    {
-      title: "Projetos",
-      description: "Managing a small business today is already tough.",
-      items: [
-        {
-          title: "Adidas Shopping",
-          href: "/reports",
-          logo: <SiAdidas />,
-        },
-        {
-          title: "UpWrite",
-          href: "/statistics",
-          logo: <FaArrowTrendUp />,
-        },
-        {
-          title: "WorldNews",
-          href: "/dashboards",
-          logo: <TbWorldBolt />,
-        },
-        {
-          title: "Solar Toy",
-          href: "/recordings",
-          logo: <RiLightbulbFlashFill />,
-        },
-      ],
-    },
-    {
-      title: "Sobre",
-      items: [
-        {
-          title: "Sobre mim",
-          href: "/about",
-        },
-        {
-          title: "Experiências",
-          href: "/fundraising",
-        },
-        {
-          title: "Tecnologias",
-          href: "/investors",
-        },
-        {
-          title: "Contato",
-          href: "/contact",
-        },
-      ],
-    },
-  ];
-
-  const socialMedias = [
-    {
-      id: "email",
-      tooltip: "Meu Email",
-      icon: MdEmail,
-      href: "mailto:joaoname9@gmail.com",
-    },
-    {
-      id: "linkedin",
-      tooltip: "Meu Linkedin",
-      icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/in/joaogabriel-silva",
-    },
-    {
-      id: "github",
-      tooltip: "Meu GitHub",
-      icon: FaGithub,
-      href: "https://github.com/JoaoGabriellBR",
-    },
+  const contacts = [
+    { text: "Contato", link: "https://github.com/joaoGabriellBR" },
+    { text: "LinkedIn", link: "https://linkedin.com/in/joaogabriel-silva" },
   ];
 
   return (
-    <footer className="w-full row-start-3 py-10 lg:py-20 bg-foreground text-background">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-0">
-          <GiWolfHead className="text-9xl" />
+    <footer
+      className="container px-4 py-10 mx-auto relative rounded-lg overflow-hidden radial-gradient-bg
+             [--gradient-center:#f3f4f6] [--gradient-edge:#f3f4f6]
+             dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
+    >
+      <div className="h-screen flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-8 lg:gap-12">
+        <h1 className="w-full lg:w-1/2 text-center lg:text-start text-4xl md:text-6xl lg:text-8xl font-bold leading-tight">
+          Vamos criar algo juntos?
+        </h1>
 
-          <div className="flex flex-col md:flex-row items-stretch justify-end gap-4 md:gap-12 w-1/3">
-            {navigationItems.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col items-start justify-between gap-2"
-              >
-                {item.href ? (
-                  <Link href={item.href}>
-                    <span className="text-xl">{item.title}</span>
-                  </Link>
-                ) : (
-                  <p className="text-xl">{item.title}</p>
-                )}
-                {item.items &&
-                  item.items.map((subItem) => (
-                    <Link key={subItem.title} href={subItem.href}>
-                      <span className="text-md">{subItem.title}</span>
-                    </Link>
-                  ))}
-              </div>
-            ))}
-          </div>
-
-          <div className="w-1/3 flex items-end justify-start md:justify-end ">
-            <nav className="w-[10rem] flex flex-row justify-between items-center">
-              {socialMedias.map((social) => (
-                <Link
-                  key={social.id}
-                  href={social.href}
-                  data-tooltip-delay-show={400}
-                >
-                  <social.icon className="text-2xl font-bold" />
-                </Link>
-              ))}
-            </nav>
-          </div>
+        {/* Botões de ação */}
+        <div className="w-full lg:w-1/2 flex flex-row justify-center lg:justify-start gap-4">
+          {contacts.map((contact) => (
+            <Link href={contact.link} target="blank">
+              <ButtonArrow>{contact.text}</ButtonArrow>
+            </Link>
+          ))}
         </div>
+      </div>
+
+      {/* Seção separada para o AnimatedText */}
+      <div className="absolute bottom-0 left-0 w-full hidden lg:flex justify-center pointer-events-none z-0">
+        <AnimatedText
+          text="JOÃO GABRIEL SILVA"
+          className="text-[8vw] text-zinc-200 dark:text-neutral-700"
+        />
       </div>
     </footer>
   );
