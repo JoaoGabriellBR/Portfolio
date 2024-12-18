@@ -2,38 +2,36 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import { SiAdidas } from "react-icons/si";
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { TbWorldBolt } from "react-icons/tb";
+import { RiLightbulbFlashFill } from "react-icons/ri";
 
 export const HoverImageLinks = () => {
   return (
     <section className="p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
         <Link
-          heading="Adidas Shopping"
-          subheading="Learn what we do here"
+          heading="Adidas"
+          subheading="Plataforma completa de e-commerce."
           imgSrc="/images/adidas.png"
           href="#"
         />
         <Link
           heading="UpWrite"
-          subheading="We work with great people"
-          imgSrc="/images/adidas.png"
+          subheading=" Criador de notas com recursos avançados de edição de texto."
+          imgSrc="/images/upwrite.png"
           href="#"
         />
         <Link
           heading="World News"
-          subheading="Our work speaks for itself"
+          subheading="Site de noticias baseado no jornal estadunidense The New York Times."
           imgSrc="/images/adidas.png"
           href="#"
         />
         <Link
           heading="Solar Toy"
-          subheading="We want cool people"
-          imgSrc="/images/adidas.png"
-          href="#"
-        />
-        <Link
-          heading="Fun"
-          subheading="Incase you're bored"
+          subheading="Landing page de um Mini Carro Solar"
           imgSrc="/images/adidas.png"
           href="#"
         />
@@ -90,7 +88,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="relative z-10 block font-bold transition-colors duration-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+          className="relative z-10 block font-bold transition-colors duration-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tighter break-words"
         >
           {heading.split("").map((head, index) => (
             <motion.span
@@ -106,6 +104,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             </motion.span>
           ))}
         </motion.span>
+        <h3 className="text-md text-muted-foreground tracking-tighter break-words">{subheading}</h3>
       </div>
 
       <motion.img
@@ -139,7 +138,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
         transition={{ type: "spring" }}
         className="relative z-10 p-4"
       >
-        <FiArrowRight className="text-5xl text-neutral-50" />
+        <FiArrowRight className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-neutral-950 dark:text-zinc-200" />
       </motion.div>
     </motion.a>
   );

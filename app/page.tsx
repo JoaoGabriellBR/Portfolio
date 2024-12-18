@@ -8,9 +8,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
+      <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 px-4">
         <Jumbotron title="Desenvolvedor Full Stack" />
-        <HoverImageLinks />
+        <div className="h-screen container mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter break-words">
+            Meus Projetos
+          </h1>
+          <HoverImageLinks />
+        </div>
       </main>
       <Footer />
     </>
