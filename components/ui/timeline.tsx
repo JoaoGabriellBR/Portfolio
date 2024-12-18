@@ -38,7 +38,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <h2 className="text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter break-words">
-        Experiência
+        Minha experiência profissional
       </h2>
 
       <div ref={ref} className="relative pb-20">

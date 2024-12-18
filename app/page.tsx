@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import { Jumbotron } from "@/components/jumbotron";
 import { Footer } from "@/components/footer";
 import { CardProjects } from "@/components/card-projects";
+import { HoverImageLinks } from "@/components/hover-image-links";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <Header />
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
         <Jumbotron title="Desenvolvedor Full Stack" />
-        <CardProjects />
+        <HoverImageLinks />
       </main>
       <Footer />
     </>
