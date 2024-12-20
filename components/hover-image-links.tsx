@@ -1,42 +1,40 @@
-"use client"
+"use client";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import { SiAdidas } from "react-icons/si";
-import { FaArrowTrendUp } from "react-icons/fa6";
-import { TbWorldBolt } from "react-icons/tb";
-import { RiLightbulbFlashFill } from "react-icons/ri";
 
 export const HoverImageLinks = () => {
   return (
-    <section className="p-4 md:p-8">
-      <div className="mx-auto max-w-5xl">
-        <Link
-          heading="Adidas"
-          subheading="Plataforma completa de e-commerce."
-          imgSrc="/images/adidas.png"
-          href="#"
-        />
-        <Link
-          heading="UpWrite"
-          subheading=" Criador de notas com recursos avançados de edição de texto."
-          imgSrc="/images/upwrite.png"
-          href="#"
-        />
-        <Link
-          heading="World News"
-          subheading="Site de noticias baseado no jornal estadunidense The New York Times."
-          imgSrc="/images/adidas.png"
-          href="#"
-        />
-        <Link
-          heading="Solar Toy"
-          subheading="Landing page de um Mini Carro Solar"
-          imgSrc="/images/adidas.png"
-          href="#"
-        />
-      </div>
-    </section>
+    <motion.section
+      initial={{ y: 48, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 0.75 }}
+    >
+      <Link
+        heading="Adidas"
+        subheading="2023"
+        imgSrc="/images/adidas.png"
+        href="#"
+      />
+      <Link
+        heading="UpWrite"
+        subheading="2023"
+        imgSrc="/images/upwrite.png"
+        href="#"
+      />
+      <Link
+        heading="World News"
+        subheading="2023"
+        imgSrc="/images/adidas.png"
+        href="#"
+      />
+      <Link
+        heading="Solar Toy"
+        subheading="2023"
+        imgSrc="/images/adidas.png"
+        href="#"
+      />
+    </motion.section>
   );
 };
 
@@ -70,12 +68,12 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
 
   return (
     <motion.a
-      href={href}
-      ref={ref}
-      onMouseMove={handleMouseMove}
       initial="initial"
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 0.75 }}
+      onMouseMove={handleMouseMove}
       whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-4 transition-colors duration-500 hover:border-zinc-200 md:py-8"
+      className="group relative flex items-center justify-between border-b-2 border-neutral-800 py-4 transition-colors duration-500 text-foreground md:py-8"
     >
       <div>
         <motion.span
@@ -88,7 +86,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="relative z-10 block font-bold transition-colors duration-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tighter break-words"
+          className="relative z-10 block transition-colors duration-500 uppercase text-2xl"
         >
           {heading.split("").map((head, index) => (
             <motion.span
@@ -104,7 +102,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             </motion.span>
           ))}
         </motion.span>
-        <h3 className="text-md text-muted-foreground tracking-tighter break-words">{subheading}</h3>
+        <h3 className="uppercase gap-1.5 text-neutral-500">{subheading}</h3>
       </div>
 
       <motion.img
