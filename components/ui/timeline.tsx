@@ -1,11 +1,11 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import HeroTitle from "./hero-title";
 
 interface TimelineEntry {
   title: string;
@@ -37,9 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans"
       ref={containerRef}
     >
-      <h2 className="text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter break-words">
-        Minha experiência profissional
-      </h2>
+      <HeroTitle title="Experiência" subtitle="profissional" size="md" spacing="ml-2" />
 
       <div ref={ref} className="relative pb-20">
 

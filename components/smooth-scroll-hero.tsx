@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { HoverImageLinks } from './hover-image-links';
+import HeroTitle from './ui/hero-title';
 
 export const SmoothScrollHero = () => {
   return (
@@ -159,14 +160,15 @@ const Schedule = () => {
       id="launch-schedule"
       className="mx-auto max-w-5xl px-4 py-48"
     >
-      <motion.h1
+      {/* <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-bold uppercase text-foreground"
       >
         Meus Projetos
-      </motion.h1>
+      </motion.h1> */}
+      <HeroTitle title="Meus" subtitle="projetos" size="sm" className="mb-24" />
       <HoverImageLinks/>
     </section>
   );

@@ -4,14 +4,18 @@ import { motion } from "framer-motion";
 
 interface HeroTitleProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   size?: "sm" | "md" | "lg" | "xl";
+  spacing?: string;
+  className?: string;
 }
 
 const HeroTitle: React.FC<HeroTitleProps> = ({
   title,
   subtitle,
   size = "md",
+  spacing = "ml-2",
+  className,
 }) => {
   const sizeClasses = {
     sm: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl",
@@ -25,7 +29,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
       initial={{ y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
-      className={`min-h-full flex flex-col justify-center items-center tracking-tighter break-words text-center ${sizeClasses[size]}`}
+      className={`tracking-tighter break-words text-center ${sizeClasses[size]} ${className}`}
     >
       <span
         className="
@@ -36,10 +40,11 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         {title}
       </span>
       <span
-        className="
+        className={`
+          ${spacing}
           bg-clip-text text-transparent
           bg-gradient-to-r from-neutral-800 to-neutral-950
-          dark:bg-gradient-to-r dark:from-neutral-400 dark:to-neutral-600"
+          dark:bg-gradient-to-r dark:from-neutral-400 dark:to-neutral-600`}
       >
         {subtitle}
       </span>

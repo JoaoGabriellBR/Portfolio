@@ -3,6 +3,7 @@
 import Link from "next/link";
 import AnimatedText from "./ui/cursor-follow-text";
 import ButtonArrow from "./ui/button-arrow";
+import HeroTitle from "./ui/hero-title";
 
 export const Footer = () => {
   const contacts = [
@@ -17,9 +18,8 @@ export const Footer = () => {
              dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
     >
       <div className="h-screen flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-8 lg:gap-12">
-        <h1 className="w-full lg:w-1/2 text-center lg:text-start text-4xl md:text-6xl lg:text-8xl font-bold leading-tight">
-          Vamos criar algo juntos?
-        </h1>
+        
+        <HeroTitle title="Vamos criar" subtitle="algo juntos?" size="md" spacing="ml-2 lg:block" />
 
         {/* Botões de ação */}
         <div className="w-full lg:w-1/2 flex flex-row justify-center lg:justify-start gap-4">
