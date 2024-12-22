@@ -2,6 +2,7 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import HeroTitle from "./ui/hero-title";
 
 export const HoverImageLinks = () => {
   return (
@@ -86,7 +87,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="relative z-10 block transition-colors duration-500 uppercase text-2xl"
+          className="relative z-10 block transition-colors duration-500 text-neutral-950 dark:text-neutral-200 tracking-normal break-words text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl"
         >
           {heading.split("").map((head, index) => (
             <motion.span
@@ -101,6 +102,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
               {head}
             </motion.span>
           ))}
+          {/* <HeroTitle text={heading} size="sm"/> */}
         </motion.span>
         <h3 className="uppercase gap-1.5 text-neutral-500">{subheading}</h3>
       </div>
