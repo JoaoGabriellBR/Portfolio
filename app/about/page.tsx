@@ -7,6 +7,7 @@ import Image from "next/image";
 import AdidasBanner from "@/app/assets/adidas-banner.png";
 import { TimelineDemo } from "@/components/timeline-demo";
 import HeroTitle from "@/components/ui/hero-title";
+import Typography from "@/components/ui/typography";
 
 export default function About() {
   return (
@@ -15,9 +16,10 @@ export default function About() {
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-40">
         <Hero title="Sobre Mim" size="md" />
 
-        <section className="w-full container mx-auto px-4 max-w-5xl pb-20 sm:pb-32 lg:pb-40">
+        <section className="w-full container mx-auto px-4">
           <TextGradientScroll
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center leading-snug"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center bg-clip-text  "
+            
             text="Sou um Desenvolvedor Full Stack com mais de 2 anos de experiência em aplicações web, competente em React, React Native, Next.js, Node.js, TypeScript, MySQL, Docker e AWS. Habilidade na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações utilizando New Relic."
           />
         </section>

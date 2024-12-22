@@ -24,9 +24,9 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
 
   const colorsClasses = {
     white:
-      "bg-gradient-to-r from-neutral-800 to-neutral-950 dark:bg-gradient-to-r dark:from-neutral-100 dark:to-neutral-200",
+      "bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200",
     silver:
-      "bg-gradient-to-r from-neutral-800 to-neutral-950 dark:bg-gradient-to-r dark:from-neutral-400 dark:to-neutral-600",
+      "bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700",
   };
 
   return (

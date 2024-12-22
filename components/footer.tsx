@@ -18,7 +18,6 @@ export const Footer = () => {
              dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
     >
       <div className="h-screen flex flex-col justify-center items-center space-y-6">
-        
         <div className="min-h-14 lg:min-h-32 flex flex-row justify-center gap-2">
           <HeroTitle text="Vamos criar" size="md" color="white" />
           <HeroTitle text="algo juntos?" size="md" color="silver" />

@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import { Hero } from "@/components/ui/hero";
 import { Footer } from "@/components/footer";
 import { SmoothScrollHero } from "@/components/smooth-scroll-hero";
+import Typography from "@/components/ui/typography";
 
 export default function Home() {
   return (
