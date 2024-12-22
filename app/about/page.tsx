@@ -1,17 +1,19 @@
+"use client";
 import Header from "@/components/header";
-import { Jumbotron } from "@/components/jumbotron";
+import { Hero } from "@/components/ui/hero";
 import { Footer } from "@/components/footer";
 import TextGradientScroll from "@/components/ui/text-gradient";
 import Image from "next/image";
 import AdidasBanner from "@/app/assets/adidas-banner.png";
 import { TimelineDemo } from "@/components/timeline-demo";
+import HeroTitle from "@/components/ui/hero-title";
 
 export default function About() {
   return (
     <>
       <Header />
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-40">
-        <Jumbotron title="Sobre Mim" />
+        <Hero title="Sobre Mim" size="md" />
 
         <section className="w-full container mx-auto px-4 max-w-5xl pb-20 sm:pb-32 lg:pb-40">
           <TextGradientScroll
@@ -30,7 +32,6 @@ export default function About() {
         <section className="w-full min-h-screen container mx-auto px-4">
           <TimelineDemo />
         </section>
-
       </main>
       <Footer />
     </>
