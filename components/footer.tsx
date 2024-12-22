@@ -13,16 +13,19 @@ export const Footer = () => {
 
   return (
     <footer
-      className="container px-4 py-10 mx-auto relative rounded-lg overflow-hidden radial-gradient-bg
+      className="container px-4 mx-auto relative rounded-lg overflow-hidden radial-gradient-bg
              [--gradient-center:#f3f4f6] [--gradient-edge:#f3f4f6]
              dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
     >
-      <div className="h-screen flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-8 lg:gap-12">
+      <div className="h-screen flex flex-col justify-center items-center space-y-6">
         
-        <HeroTitle title="Vamos criar" subtitle="algo juntos?" size="md" spacing="ml-2 lg:block" />
+        <div className="min-h-14 lg:min-h-32 flex flex-row justify-center gap-2">
+          <HeroTitle text="Vamos criar" size="md" color="white" />
+          <HeroTitle text="algo juntos?" size="md" color="silver" />
+        </div>
 
         {/* Botões de ação */}
-        <div className="w-full lg:w-1/2 flex flex-row justify-center lg:justify-start gap-4">
+        <div className="flex flex-row justify-center lg:justify-start gap-4">
           {contacts.map((contact) => (
             <Link href={contact.link} target="blank">
               <ButtonArrow>{contact.text}</ButtonArrow>

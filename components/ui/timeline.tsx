@@ -37,17 +37,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans"
       ref={containerRef}
     >
-      <HeroTitle title="Experiência" subtitle="profissional" size="md" spacing="ml-2" />
+      <div className="flex flex-row gap-2">
+        <HeroTitle text="Experiência" size="sm" />
+        <HeroTitle text="profissional" size="sm" color="silver" />
+      </div>
 
       <div ref={ref} className="relative pb-20">
-
         {data.map((item, index) => (
           <div
             key={index}
             className="min-h-screen flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row pl-10 z-40 items-center top-20 self-start max-w-xs lg:max-w-sm md:w-full">
-
               <h3 className="hidden md:block text-xl md:text-5xl font-bold">
                 {item.title}
               </h3>
