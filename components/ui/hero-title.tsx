@@ -19,7 +19,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
     sm: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl",
     md: "text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl",
     lg: "text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-9xl",
-    xl: "text-7xl sm:text-8xl md:text-9xl lg:text-10xl xl:text-10xl",
+    xl: "text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[10rem]",
   };
 
   const colorsClasses = {

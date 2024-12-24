@@ -74,7 +74,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
       transition={{ ease: "easeInOut", duration: 0.75 }}
       onMouseMove={handleMouseMove}
       whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b-2 border-neutral-800 py-4 transition-colors duration-500 text-foreground md:py-8"
+      className="group relative flex items-center justify-between border-b-2 border-neutral-800 py-4 transition-colors duration-500 text-foreground md:py-8 cursor-pointer"
     >
       <div>
         <motion.span
