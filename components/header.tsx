@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { GiWolfHead } from "react-icons/gi";
 import { TfiClose } from "react-icons/tfi";
 import { CgMenuMotion } from "react-icons/cg";
-
+import MagneticButton from "./ui/button-magnetic";
 
 // Definição de tipos para os itens do menu
 type NavItem = {
@@ -40,10 +40,9 @@ const Header: React.FC = () => {
 
   return (
     <header className="container mx-auto px-4 pt-4 flex justify-between items-center relative">
-
       {/* Logo - agora com z-index para ficar sobre o fundo preto */}
       <motion.div className="text-2xl font-bold uppercase relative z-50">
-         <GiWolfHead className="text-7xl"/>
+        <GiWolfHead className="text-7xl" />
       </motion.div>
 
       {/* Botão do menu para dispositivos móveis */}
@@ -51,11 +50,16 @@ const Header: React.FC = () => {
         className="relative z-50"
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
-        <motion.button
-          whileHover={{ scale: 1.1 }}
+        <MagneticButton
+          distance={2}
+          className="border border-neutral-500 rounded-full p-6 cursor-pointer"
         >
-          {mobileNavOpen ? <TfiClose className="text-2xl" /> : <CgMenuMotion className="text-4xl" />}
-        </motion.button>
+          {mobileNavOpen ? (
+            <TfiClose className="text-3xl" />
+          ) : (
+            <CgMenuMotion className="text-3xl" />
+          )}
+        </MagneticButton>
       </motion.div>
 
       {/* Menu Mobile - Alterado o z-index para garantir que o fundo cubra tudo */}
