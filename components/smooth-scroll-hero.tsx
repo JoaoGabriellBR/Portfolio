@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { ReactLenis } from '@studio-freight/react-lenis'
+import { ReactLenis } from "@studio-freight/react-lenis";
 import {
   motion,
   useMotionTemplate,
@@ -8,8 +8,8 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
-import { HoverImageLinks } from './hover-image-links';
-import HeroTitle from './ui/hero-title';
+import { HoverImageLinks } from "./hover-image-links";
+import HeroTitle from "./ui/hero-title";
 
 export const SmoothScrollHero = () => {
   return (
@@ -72,8 +72,7 @@ const CenterImage = () => {
         clipPath,
         backgroundSize,
         opacity,
-        backgroundImage:
-          "url('/images/banner1.png')",
+        backgroundImage: "url('/images/banner1.png')",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -156,20 +155,12 @@ const ParallaxImg = ({
 
 const Schedule = () => {
   return (
-    <section
-      id="launch-schedule"
-      className="mx-auto max-w-5xl px-4 py-48"
-    >
-      {/* <motion.h1
-        initial={{ y: 48, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-bold uppercase text-foreground"
-      >
-        Meus Projetos
-      </motion.h1> */}
-      {/* <HeroTitle title="Meus" subtitle="projetos" size="sm" className="mb-24" /> */}
-      <HoverImageLinks/>
+    <section id="launch-schedule" className="mx-auto max-w-5xl px-4 py-48">
+      <div className="flex flex-row space-x-2">
+        <HeroTitle text="Meus" size="md" />
+        <HeroTitle text="projetos" color="silver" size="md" className="mb-12 lg:mb-24" />
+      </div>
+      <HoverImageLinks />
     </section>
   );
 };

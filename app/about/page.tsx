@@ -14,7 +14,12 @@ export default function About() {
     <>
       <Header />
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-40">
-        <Hero title="Sobre Mim" size="md" />
+        {/* <Hero title="Sobre Mim" size="md" /> */}
+
+        <div className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-4rem]">
+            <HeroTitle text="Sobre" color="white" size="lg" />
+            <HeroTitle text="Mim" color="silver" size="lg" />
+        </div>
 
         <section className="w-full container mx-auto px-4">
           <TextGradientScroll

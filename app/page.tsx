@@ -9,13 +9,13 @@ import HeroTitle from "@/components/ui/hero-title";
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 px-4">
         <div className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-4rem]">
          
          <div className="flex flex-col items-center justify-center text-center">
-            <HeroTitle text="Desenvolvedor focado" color="white" />
-            <HeroTitle text="em aplicações web e mobile" color="silver" />
+            <HeroTitle text="Desenvolvedor" color="white" size="lg" />
+            <HeroTitle text="Full Stack" color="silver" size="lg" />
           </div>
             <ButtonHover>Contato</ButtonHover>
 
