@@ -26,13 +26,13 @@ export const HoverImageLinks = () => {
       <Link
         heading="World News"
         subheading="2023"
-        imgSrc="/images/adidas.png"
+        imgSrc="/images/worldnews.png"
         href="#"
       />
       <Link
         heading="Solar Toy"
         subheading="2023"
-        imgSrc="/images/adidas.png"
+        imgSrc="/images/solartoy.png"
         href="#"
       />
     </motion.section>
@@ -119,7 +119,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
         }}
         transition={{ type: "spring" }}
         src={imgSrc}
-        className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
+        className="absolute z-0 h-36 w-64 rounded-lg object-cover md:h-52 md:w-96"
         alt={`Image representing a link for ${heading}`}
       />
 

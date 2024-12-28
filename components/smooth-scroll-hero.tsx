@@ -155,7 +155,7 @@ const ParallaxImg = ({
 
 const Schedule = () => {
   return (
-    <section id="launch-schedule" className="mx-auto max-w-5xl px-4 py-48">
+    <section id="launch-schedule" className="mx-auto max-w-5xl px-4">
       <div className="flex flex-row space-x-2">
         <HeroTitle text="Meus" size="md" />
         <HeroTitle text="projetos" color="silver" size="md" className="mb-12 lg:mb-24" />
