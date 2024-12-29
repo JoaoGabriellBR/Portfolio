@@ -38,9 +38,7 @@ const Hero = () => {
       className="relative w-full"
     >
       <CenterImage />
-
       <ParallaxImages />
-
       <div className="absolute bottom-0 left-0 right-0 h-96" />
     </div>
   );
@@ -81,36 +79,49 @@ const CenterImage = () => {
 };
 
 const ParallaxImages = () => {
+  const images = [
+    {
+      src: "/images/banner1.png",
+      alt: "And example of a space launch",
+      start: -200,
+      end: 200,
+      className: "w-1/3",
+    },
+    {
+      src: "/images/banner1.png",
+      alt: "And example of a space launch",
+      start: 200,
+      end: -250,
+      className: "mx-auto w-2/3",
+    },
+    {
+      src: "/images/banner1.png",
+      alt: "And example of a space launch",
+      start: -200,
+      end: -200,
+      className: "ml-auto w-1/3",
+    },
+    {
+      src: "/images/banner1.png",
+      alt: "And example of a space launch",
+      start: 0,
+      end: -500,
+      className: "ml-24 w-5/12",
+    },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
-      <ParallaxImg
-        src="/images/banner1.png"
-        alt="And example of a space launch"
-        start={-200}
-        end={200}
-        className="w-1/3"
-      />
-      <ParallaxImg
-        src="/images/banner1.png"
-        alt="An example of a space launch"
-        start={200}
-        end={-250}
-        className="mx-auto w-2/3"
-      />
-      <ParallaxImg
-        src="/images/banner1.png"
-        alt="Orbiting satellite"
-        start={-200}
-        end={200}
-        className="ml-auto w-1/3"
-      />
-      <ParallaxImg
-        src="/images/banner1.png"
-        alt="Orbiting satellite"
-        start={0}
-        end={-500}
-        className="ml-24 w-5/12"
-      />
+      {images.map((img, index) => (
+        <ParallaxImg
+          key={index}
+          src={img.src}
+          alt={img.alt}
+          start={img.start}
+          end={img.end}
+          className={img.className}
+        />
+      ))}
     </div>
   );
 };
@@ -158,7 +169,12 @@ const Schedule = () => {
     <section id="launch-schedule" className="mx-auto max-w-5xl px-4">
       <div className="flex flex-row space-x-2">
         <HeroTitle text="Meus" size="md" />
-        <HeroTitle text="projetos" color="silver" size="md" className="mb-12 lg:mb-24" />
+        <HeroTitle
+          text="projetos"
+          color="silver"
+          size="md"
+          className="mb-12 lg:mb-24"
+        />
       </div>
       <HoverImageLinks />
     </section>
