@@ -33,7 +33,7 @@ const Typography: React.FC<TypographyProps> = ({
       initial={{ y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
-      className={`tracking-normal break-words ${sizeClasses[size]} ${colorsClasses[color]} ${className}`}
+      className={` tracking-wide break-words ${sizeClasses[size]} ${colorsClasses[color]} ${className}`}
     >
       {text}
     </motion.p>

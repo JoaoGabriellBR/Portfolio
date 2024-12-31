@@ -1,21 +1,51 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import HeroTitle from "./hero-title";
+import Typography from "./typography";
+import { SlArrowRight } from "react-icons/sl";
+import { FaReact } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 
-interface TimelineEntry {
-  title: string;
-  content: React.ReactNode;
+interface ListItemsProps {
+  item: string;
 }
 
-export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+interface JobsProps {
+  company_name: string;
+  subtitle: string;
+  list_items?: ListItemsProps[];
+  company_time: string;
+}
+
+export const Timeline = ({ jobs }: { jobs: JobsProps[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+
+  const links = [
+    {
+      title: "React.js",
+      icon: (
+        <FaReact/>
+      ),
+      href: "#",
+    },
+    {
+      title: "Next.js",
+      icon: (
+        <SiNextdotjs />
+      ),
+      href: "#",
+    },
+    {
+      title: "Next.js",
+      icon: (
+        <SiNextdotjs />
+      ),
+      href: "#",
+    },
+  ];
 
   useEffect(() => {
     if (ref.current) {
@@ -43,22 +73,32 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       </div>
 
       <div ref={ref} className="relative pb-20">
-        {data.map((item, index) => (
+        {jobs.map((job, index) => (
           <div
             key={index}
             className="min-h-screen flex justify-start pt-10 md:pt-40 md:gap-10"
           >
-            <div className="sticky flex flex-col md:flex-row pl-10 z-20 items-center top-20 self-start max-w-xs lg:max-w-sm md:w-full">
-              <h3 className="hidden md:block text-xl md:text-5xl font-bold">
-                {item.title}
-              </h3>
+            <div className="min-w-40 sticky flex flex-col items-start px-4 z-20 top-20 self-start max-w-xs lg:max-w-sm md:w-full">
+              <HeroTitle text={job.company_name} size="sm" />
+              <Typography text={job.company_time} size="sm" color="silver" />
             </div>
 
-            <div className="relative w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold">
-                {item.title}
-              </h3>
-              {item.content}{" "}
+            <div className="self-start space-y-5">
+              <HeroTitle
+                text={job.subtitle}
+                size="paragraphy"
+                className="pt-3"
+                color="silver"
+              />
+              {job.list_items?.map((li: ListItemsProps, index: number) => (
+                <div
+                  key={index}
+                  className="flex flex-row justify-start items-center"
+                >
+                  <SlArrowRight className="text-3xl pb-3 pr-2" />
+                  <HeroTitle text={li.item} color="white" size="paragraphy" />
+                </div>
+              ))}
             </div>
           </div>
         ))}
