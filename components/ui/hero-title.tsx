@@ -34,7 +34,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
       initial={{ y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
-      className={`bg-clip-text text-transparent tracking-tighter break-words ${sizeClasses[size]} ${colorsClasses[color]} ${className}`}
+      className={`py-2 pr-2 bg-clip-text text-transparent tracking-tighter break-words ${sizeClasses[size]} ${colorsClasses[color]} ${className}`}
     >
       {text}
     </motion.h1>

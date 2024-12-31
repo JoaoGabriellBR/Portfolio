@@ -11,13 +11,12 @@ export default function Home() {
     <>
       <Header />
       <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 px-4">
-        <div className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-4rem]">
+        <div className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
          
          <div className="flex flex-col items-center justify-center text-center">
             <HeroTitle text="Desenvolvedor" color="white" size="xl" />
             <HeroTitle text="Full Stack" color="silver" size="xl" />
           </div>
-            {/* <ButtonHover>Contato</ButtonHover> */}
 
         </div>
 

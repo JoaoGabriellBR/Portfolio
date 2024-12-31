@@ -4,6 +4,7 @@ import Link from "next/link";
 import AnimatedText from "./ui/cursor-follow-text";
 import ButtonArrow from "./ui/button-arrow";
 import HeroTitle from "./ui/hero-title";
+import { motion } from "framer-motion";
 
 export const Footer = () => {
   const contacts = [
@@ -18,15 +19,15 @@ export const Footer = () => {
              dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
     >
       <div className="h-screen flex flex-col justify-center items-center space-y-6">
-        <div className="min-h-14 lg:min-h-32 flex flex-row justify-center gap-2">
-          <HeroTitle text="Vamos criar" size="md" color="white" />
-          <HeroTitle text="algo juntos?" size="md" color="silver" />
+        <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center">
+          <HeroTitle text="Algum projeto" size="md" color="white" />
+          <HeroTitle text="em mente?" size="md" color="silver" />
         </div>
 
         {/* Botões de ação */}
         <div className="flex flex-row justify-center lg:justify-start gap-4">
-          {contacts.map((contact) => (
-            <Link href={contact.link} target="blank">
+          {contacts.map((contact, index) => (
+            <Link key={index} href={contact.link} target="blank">
               <ButtonArrow>{contact.text}</ButtonArrow>
             </Link>
           ))}

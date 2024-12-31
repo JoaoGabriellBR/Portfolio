@@ -85,12 +85,12 @@ const Word = ({ children, progress, range }: WordType) => {
   const opacity = useTransform(progress, range, [0, 1]);
 
   return (
-    <span className="relative me-2 mt-2">
+    <h1 className="relative me-2 mt-2">
       <span style={{ position: "absolute", opacity: 0.1 }}>{children}</span>
       <motion.span style={{ transition: "all .5s", opacity: opacity }}>
         {children}
       </motion.span>
-    </span>
+    </h1>
   );
 };
 

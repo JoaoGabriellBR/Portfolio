@@ -24,9 +24,9 @@ export default function About() {
             <HeroTitle text="Mim" color="silver" size="lg" />
           </div>
 
-          <section className="w-full container mx-auto px-4">
+          <section className="w-full min-h-screen container mx-auto px-4 flex flex-col justify-center items-center">
             <TextGradientScroll
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center bg-clip-text  "
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center bg-clip-text"
               text="Sou um Desenvolvedor Full Stack com mais de 2 anos de experiência em aplicações web, competente em React, React Native, Next.js, Node.js, TypeScript, MySQL, Docker e AWS. Habilidade na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações utilizando New Relic."
             />
           </section>

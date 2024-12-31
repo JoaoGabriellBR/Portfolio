@@ -37,7 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans"
       ref={containerRef}
     >
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row">
         <HeroTitle text="Experiência" size="sm" />
         <HeroTitle text="profissional" size="sm" color="silver" />
       </div>

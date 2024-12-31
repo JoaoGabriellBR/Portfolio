@@ -99,6 +99,7 @@ const Link = ({ heading, imgSrc, subheading, href, arialLabel }: LinkProps) => {
       href={href}
       aria-label={arialLabel}
       initial="initial"
+      target="blank"
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
       onMouseMove={handleMouseMove}

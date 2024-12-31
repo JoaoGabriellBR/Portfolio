@@ -36,7 +36,6 @@ export function CardProjects() {
       {projects.map((project, index: any) => (
         <BorderCardProjects
           key={index}
-        
         >
           {project.logo}
           <h1 className="text-2xl md:text-5xl">{project.title}</h1>
