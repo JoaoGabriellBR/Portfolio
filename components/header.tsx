@@ -40,13 +40,17 @@ const Header = () => {
         aria-label="Toggle navigation menu"
       >
         <MagneticButton
-          distance={2}
-          className="text-foreground border border-neutral-800 rounded-full p-5 cursor-pointer hover:bg-neutral-600 hover:bg-opacity-10"
+          distance={1.5}
+          className="text-foreground border border-neutral-800 rounded-full p-5 cursor-pointer hover:bg-neutral-500 hoer:dark:bg-neutral-200 hover:bg-opacity-10"
         >
           {mobileNavOpen ? (
-            <CgClose className="text-4xl" aria-label="Close menu" />
+            <MagneticButton className="shadow-2xl" distance={1.5}>
+              <CgClose className="text-4xl shadow-2xl" aria-label="Close menu" />
+            </MagneticButton>
           ) : (
-            <CgMenuMotion className="text-4xl" aria-label="Open menu" />
+            <MagneticButton className="shadow-2xl" distance={1.5}>
+              <CgMenuMotion className="text-4xl shadow-2xl" aria-label="Open menu" />
+            </MagneticButton>
           )}
         </MagneticButton>
       </motion.div>
