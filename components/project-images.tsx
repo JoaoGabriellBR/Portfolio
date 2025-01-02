@@ -3,18 +3,18 @@ import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
-export const HoverImageLinks = () => {
+export const ProjectImages = () => {
   const links = [
     {
       heading: "Adidas",
-      subheading: "2023",
+      subheading: "2024",
       imgSrc: "/images/adidas.png",
       href: "https://adidasshopping.vercel.app",
       arial_label: "Adidas Project Image",
     },
     {
       heading: "UpWrite",
-      subheading: "2023",
+      subheading: "2024",
       imgSrc: "/images/upwrite.png",
       href: "https://up-write.vercel.app",
       arial_label: "UpWrite Project Image",
@@ -42,7 +42,7 @@ export const HoverImageLinks = () => {
       transition={{ ease: "easeInOut", duration: 0.75 }}
     >
       {links.map((link, index) => (
-        <Link
+        <ProjectLink
           key={index}
           heading={link.heading}
           subheading={link.subheading}
@@ -55,7 +55,7 @@ export const HoverImageLinks = () => {
   );
 };
 
-interface LinkProps {
+interface ProjectLinkProps {
   heading: string;
   imgSrc: string;
   subheading: string;
@@ -63,7 +63,7 @@ interface LinkProps {
   arialLabel: string;
 }
 
-const Link = ({ heading, imgSrc, subheading, href, arialLabel }: LinkProps) => {
+const ProjectLink = ({ heading, imgSrc, subheading, href, arialLabel }: ProjectLinkProps) => {
   const ref = useRef<HTMLAnchorElement>(null);
 
   const x = useMotionValue(0);
@@ -117,7 +117,7 @@ const Link = ({ heading, imgSrc, subheading, href, arialLabel }: LinkProps) => {
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="relative z-10 block transition-colors duration-500 text-neutral-950 dark:text-neutral-200 tracking-normal break-words text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl"
+          className="relative z-10 block transition-colors duration-500 text-neutral-950 dark:text-neutral-200 tracking-normal break-words text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
         >
           {heading.split("").map((char, index) => (
             <motion.span

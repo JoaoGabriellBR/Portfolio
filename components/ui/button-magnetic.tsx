@@ -7,7 +7,7 @@ const SPRING_CONFIG = { damping: 100, stiffness: 400 };
 
 type MagneticButtonType = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   distance?: number;
 };
 

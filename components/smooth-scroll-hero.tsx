@@ -8,8 +8,12 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
-import { HoverImageLinks } from "./hover-image-links";
+import { ProjectImages } from "./project-images";
+import MagneticButton from "./ui/button-magnetic";
+import ButtonArrow from "./ui/button-arrow";
 import HeroTitle from "./ui/hero-title";
+import { FaArrowUp } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
 
 export const SmoothScrollHero = () => {
   return (
@@ -29,7 +33,8 @@ export const SmoothScrollHero = () => {
   );
 };
 
-const SECTION_HEIGHT = 1500;
+// const SECTION_HEIGHT = 1500;
+const SECTION_HEIGHT = 1100;
 
 const Hero = () => {
   return (
@@ -167,15 +172,25 @@ const ParallaxImg = ({
 const Schedule = () => {
   return (
     <section id="launch-schedule" className="mx-auto max-w-5xl px-4">
-      <div className="flex flex-row pb-10">
-        <HeroTitle text="Meus" size="md" />
-        <HeroTitle
-          text="projetos"
-          color="silver"
-          size="md"
-        />
+      <ProjectImages />
+      <div className="flex flex-row items-center justify-center pt-20">
+        <MagneticButton
+          distance={1}
+          className="w-64 h-20 text-2xl border border-neutral-600 rounded-full p-5 cursor-pointer hover:bg-neutral-500 hover:bg-opacity-10 "
+        >
+          <MagneticButton
+            className="shadow-2xl flex justify-center items-center gap-4"
+            distance={0.5}
+          >
+            <HeroTitle
+              className="pb-0 pr-0"
+              size="very_small"
+              text="Mais projetos"
+            />
+            <FaArrowRight className="text-neutral-200" />
+          </MagneticButton>
+        </MagneticButton>
       </div>
-      <HoverImageLinks />
     </section>
   );
 };

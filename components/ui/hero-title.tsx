@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 interface HeroTitleProps {
   text: string;
-  size?: "sm" | "md" | "lg" | "xl" | "paragraphy" ;
+  size?: "sm" | "md" | "lg" | "xl" | "paragraphy" | "very_small";
   color?: "white" | "silver";
   className?: string;
 }
@@ -16,6 +16,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
   className,
 }) => {
   const sizeClasses = {
+    very_small: "text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl",
     paragraphy: "text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl",
     sm: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl",
     md: "text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl",

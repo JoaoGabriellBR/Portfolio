@@ -41,7 +41,7 @@ const Header = () => {
       >
         <MagneticButton
           distance={1.5}
-          className="text-foreground border border-neutral-800 rounded-full p-5 cursor-pointer hover:bg-neutral-500 hoer:dark:bg-neutral-200 hover:bg-opacity-10"
+          className="text-foreground border border-neutral-800 rounded-full p-5 cursor-pointer hover:bg-neutral-500 hover:bg-opacity-10"
         >
           {mobileNavOpen ? (
             <MagneticButton className="shadow-2xl" distance={1.5}>
