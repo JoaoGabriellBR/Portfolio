@@ -35,7 +35,7 @@ export const SmoothScrollHero = () => {
 };
 
 // const SECTION_HEIGHT = 1500;
-const SECTION_HEIGHT = 1100;
+const SECTION_HEIGHT = 1500;
 
 const Hero = () => {
   return (
@@ -175,18 +175,22 @@ const Schedule = () => {
     <section id="launch-schedule" className="mx-auto max-w-5xl px-4">
       <ProjectImages />
       <div className="flex flex-row items-center justify-center pt-20">
+
         <MagneticButton distance={1} className="w-64 h-20 text-2xl p-5">
+          
           <MagneticButton
-            className="shadow-2xl flex justify-center items-center gap-2"
+            className="flex flex-row justify-center items-center gap-2"
             distance={0.5}
             border={false}
           >
             <HeroTitle
               className="pb-0 pr-0"
               text="Mais projetos"
+              letterPadding={false}
             />
             <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
           </MagneticButton>
+
         </MagneticButton>
       </div>
     </section>
