@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const SPRING_CONFIG = { damping: 100, stiffness: 400 };
 
@@ -9,9 +9,15 @@ type MagneticButtonType = {
   children: React.ReactNode;
   className?: string;
   distance?: number;
+  border?: boolean;
 };
 
-function MagneticButton({ children, className = '', distance = 0.7 }: MagneticButtonType) {
+function MagneticButton({
+  children,
+  className = "",
+  distance = 0.7,
+  border = true,
+}: MagneticButtonType) {
   const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -40,23 +46,27 @@ function MagneticButton({ children, className = '', distance = 0.7 }: MagneticBu
       }
     };
 
-    document.addEventListener('mousemove', calculateDistance);
+    document.addEventListener("mousemove", calculateDistance);
 
     return () => {
-      document.removeEventListener('mousemove', calculateDistance);
+      document.removeEventListener("mousemove", calculateDistance);
     };
   }, [ref, isHovered]);
 
   return (
     <motion.div
-      className={`${className}`}
+      className={`${className} cursor-pointer rounded-full flex flex-row items-center justify-center ${
+        border &&
+        "border border-neutral-700 hover:bg-neutral-500 hover:bg-opacity-10"
+      }`}
       ref={ref}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
         x: springX,
-        y: springY
-      }}>
+        y: springY,
+      }}
+    >
       {children}
     </motion.div>
   );

@@ -41,15 +41,29 @@ const Header = () => {
       >
         <MagneticButton
           distance={1.5}
-          className="text-foreground border border-neutral-800 rounded-full p-5 cursor-pointer hover:bg-neutral-500 hover:bg-opacity-10"
+          className="text-foreground p-5"
         >
           {mobileNavOpen ? (
-            <MagneticButton className="shadow-2xl" distance={1.5}>
-              <CgClose className="text-4xl shadow-2xl" aria-label="Close menu" />
+            <MagneticButton
+              className="shadow-2xl"
+              distance={1.5}
+              border={false}
+            >
+              <CgClose
+                className="text-4xl shadow-2xl"
+                aria-label="Close menu"
+              />
             </MagneticButton>
           ) : (
-            <MagneticButton className="shadow-2xl" distance={1.5}>
-              <CgMenuMotion className="text-4xl shadow-2xl" aria-label="Open menu" />
+            <MagneticButton
+              className="shadow-2xl"
+              distance={1.5}
+              border={false}
+            >
+              <CgMenuMotion
+                className="text-4xl shadow-2xl"
+                aria-label="Open menu"
+              />
             </MagneticButton>
           )}
         </MagneticButton>
