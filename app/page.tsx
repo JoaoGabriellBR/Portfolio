@@ -4,6 +4,7 @@ import { SmoothScrollHero } from "@/components/smooth-scroll-hero";
 import HeroTitle from "@/components/ui/hero-title";
 import MagneticButton from "@/components/ui/button-magnetic";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
           </MagneticButton>
         </section>
 
-        <SmoothScrollHero />
+        <Projects />
       </main>
       <Footer />
     </>
