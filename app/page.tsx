@@ -7,6 +7,7 @@ import MagneticButton from "@/components/ui/button-magnetic";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Projects from "@/components/projects";
 import { ReactLenis } from "@studio-freight/react-lenis";
+import ScrollBaseAnimation from "@/components/text-marquee";
 
 export default function Home() {
   return (
@@ -54,6 +55,34 @@ export default function Home() {
               </MagneticButton>
             </MagneticButton>
           </section>
+
+          <SmoothScrollHero/>
+
+
+          <div className="h-[500px] grid place-content-center">
+            <ScrollBaseAnimation
+              delay={500}
+              baseVelocity={-3}
+              // clasname="tracking-tighter break-words bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200"
+            >
+              <HeroTitle
+                text=" • Alguns projetos recentes"
+                color="white"
+                size="md"
+              />
+            </ScrollBaseAnimation>
+            
+            <ScrollBaseAnimation
+              delay={500}
+              baseVelocity={3}
+            >
+              <HeroTitle
+                text="• Alguns projetos recentes"
+                color="silver"
+                size="md"
+              />
+            </ScrollBaseAnimation>
+          </div>
 
           <Projects />
         </main>

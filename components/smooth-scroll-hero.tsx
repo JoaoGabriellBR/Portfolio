@@ -28,7 +28,7 @@ export const SmoothScrollHero = () => {
         }}
       >
         <Hero />
-        <Schedule />
+        {/* <Schedule /> */}
       </ReactLenis>
     </div>
   );
@@ -40,7 +40,7 @@ const SECTION_HEIGHT = 1500;
 const Hero = () => {
   return (
     <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
+      style={{ height: `calc(${SECTION_HEIGHT}px + 50vh)` }}
       className="relative w-full"
     >
       <CenterImage />
