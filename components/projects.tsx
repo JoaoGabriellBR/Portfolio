@@ -17,19 +17,19 @@ const projects = [
     title: "UpWrite",
     src: "/images/upwrite.png",
     href: "https://up-write.vercel.app",
-    color: "#8C8C8C",
+    color: "#6D28D9",
   },
   {
     title: "World News",
     src: "/images/worldnews.png",
     href: "https://siteworldnews.vercel.app",
-    color: "#EFE8D3",
+    color: "#383B73",
   },
   {
     title: "Solar Toy",
     src: "/images/solartoy.png",
     href: "https://solartoy.netlify.app",
-    color: "#706D63",
+    color: "#06F3AF",
   },
 ];
 
@@ -44,12 +44,14 @@ export default function Projects() {
             <Project
               index={index}
               title={project.title}
+              href={project.href}
               setModal={setModal}
               key={index}
             />
           );
         })}
       </div>
+
       <Modal modal={modal} projects={projects} />
 
       <MagneticButton distance={1} className="w-64 h-20 text-2xl p-5">

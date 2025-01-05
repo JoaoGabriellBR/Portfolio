@@ -4,7 +4,6 @@ import Link from "next/link";
 import AnimatedText from "./ui/cursor-follow-text";
 import ButtonArrow from "./ui/button-arrow";
 import HeroTitle from "./ui/hero-title";
-import { motion } from "framer-motion";
 
 export const Footer = () => {
   const contacts = [

@@ -6,6 +6,7 @@ import Typography from "./typography";
 import { SlArrowRight } from "react-icons/sl";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 interface ListItemsProps {
   item: string;
@@ -26,23 +27,17 @@ export const Timeline = ({ jobs }: { jobs: JobsProps[] }) => {
   const links = [
     {
       title: "React.js",
-      icon: (
-        <FaReact/>
-      ),
+      icon: <FaReact />,
       href: "#",
     },
     {
       title: "Next.js",
-      icon: (
-        <SiNextdotjs />
-      ),
+      icon: <SiNextdotjs />,
       href: "#",
     },
     {
       title: "Next.js",
-      icon: (
-        <SiNextdotjs />
-      ),
+      icon: <SiNextdotjs />,
       href: "#",
     },
   ];
@@ -95,8 +90,8 @@ export const Timeline = ({ jobs }: { jobs: JobsProps[] }) => {
                   key={index}
                   className="flex flex-row justify-start items-center"
                 >
-                  <SlArrowRight className="text-3xl pb-3 pr-2" />
-                  <HeroTitle text={li.item} color="white" size="paragraphy" />
+                  <IoIosArrowRoundForward className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+                  <HeroTitle letterPadding={false} text={li.item} color="white" size="paragraphy" />
                 </div>
               ))}
             </div>

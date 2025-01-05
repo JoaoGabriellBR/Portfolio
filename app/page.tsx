@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
-import { SmoothScrollHero } from "@/components/smooth-scroll-hero";
+import { ParallaxImages } from "@/components/smooth-scroll-hero";
 import HeroTitle from "@/components/ui/hero-title";
 import MagneticButton from "@/components/ui/button-magnetic";
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -22,6 +22,7 @@ export default function Home() {
         }}
       >
         <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 px-4">
+          
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div className="flex flex-col items-center justify-center text-center">
               <HeroTitle text="Desenvolvedor" color="white" size="xl" />
@@ -56,10 +57,11 @@ export default function Home() {
             </MagneticButton>
           </section>
 
-          <SmoothScrollHero/>
+          <section className="">
+            <ParallaxImages />
+          </section>
 
-
-          <div className="h-[500px] grid place-content-center">
+          <section className="min-h-20 lg:min-h-80 grid place-content-center">
             <ScrollBaseAnimation
               delay={500}
               baseVelocity={-3}
@@ -71,18 +73,15 @@ export default function Home() {
                 size="md"
               />
             </ScrollBaseAnimation>
-            
-            <ScrollBaseAnimation
-              delay={500}
-              baseVelocity={3}
-            >
+
+            <ScrollBaseAnimation delay={500} baseVelocity={3}>
               <HeroTitle
                 text="• Alguns projetos recentes"
                 color="silver"
                 size="md"
               />
             </ScrollBaseAnimation>
-          </div>
+          </section>
 
           <Projects />
         </main>
