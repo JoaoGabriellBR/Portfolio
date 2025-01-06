@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 
+
 const NAV_ITEMS = [
   { id: 0, title: "Home", href: "/" },
   { id: 1, title: "Sobre", href: "/about" },

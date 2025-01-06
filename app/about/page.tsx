@@ -8,6 +8,12 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import { GiWolfHead } from "react-icons/gi";
 import MagneticButton from "@/components/ui/button-magnetic";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { IoArrowRedoOutline } from "react-icons/io5";
+import { GiDragonOrb } from "react-icons/gi";
+import { GiSeaDragon } from "react-icons/gi";
+import { GiDragonBreath } from "react-icons/gi";
+import { SiSnapdragon } from "react-icons/si";
+
 
 export default function About() {
   return (
@@ -23,14 +29,28 @@ export default function About() {
       >
         <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-40">
           <GiWolfHead className="text-[40rem] lg:text-[70rem] text-neutral-800 opacity-15 absolute bottom-0 right-0 scale-x-[-1]" />
-          
-          <div className="container mx-auto min-h-screen px-4 flex flex-row items-center justify-between space-y-4 mt-[-4rem]">
-            <HeroTitle
-              text="We’re driven by creating the most beautiful websites with the best rankings and conversion rates"
-              color="white"
-              size="sm"
-              className="max-w-3xl"
-            />
+
+          <section className="container mx-auto min-h-screen px-4 flex flex-row items-center justify-between space-y-4 mt-[-4rem]">
+            <div className="flex flex-col justify-start items-start gap-4">
+              <div className="flex flex-row justify-start items-center gap-2">
+
+                <SiSnapdragon className="text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-600" />
+
+                <HeroTitle
+                  text="Sobre mim"
+                  color="silver"
+                  size="very_small"
+                  className=""
+                  letterPadding={false}
+                />
+              </div>
+              <HeroTitle
+                text="We’re driven by creating the most beautiful websites with the best rankings and conversion rates"
+                color="white"
+                size="sm"
+                className="max-w-3xl"
+              />
+            </div>
 
             <div className="h-full pb-40 flex items-end">
               <MagneticButton
@@ -51,8 +71,7 @@ export default function About() {
                 </MagneticButton>
               </MagneticButton>
             </div>
-
-          </div>
+          </section>
 
           <section className="w-full min-h-screen container mx-auto px-4 flex flex-col justify-center items-center">
             <TextGradientScroll
