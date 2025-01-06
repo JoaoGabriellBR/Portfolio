@@ -8,6 +8,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import Projects from "@/components/projects";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import ScrollBaseAnimation from "@/components/text-marquee";
+import { TfiArrowTopRight } from "react-icons/tfi";
 
 export default function Home() {
   return (
@@ -22,7 +23,6 @@ export default function Home() {
         }}
       >
         <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 px-4">
-          
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div className="flex flex-col items-center justify-center text-center">
               <HeroTitle text="Desenvolvedor" color="white" size="xl" />
@@ -37,7 +37,6 @@ export default function Home() {
               size="sm"
               className="w-full lg:w-[60%] text-center lg:text-start"
             />
-
             <MagneticButton
               distance={1}
               className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
@@ -47,9 +46,9 @@ export default function Home() {
                 distance={0.5}
                 border={false}
               >
-                <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
                 <HeroTitle
-                  size="paragraphy"
+                  size="very_small"
                   text="Sobre Mim"
                   letterPadding={false}
                 />

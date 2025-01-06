@@ -13,7 +13,7 @@ import { GiDragonOrb } from "react-icons/gi";
 import { GiSeaDragon } from "react-icons/gi";
 import { GiDragonBreath } from "react-icons/gi";
 import { SiSnapdragon } from "react-icons/si";
-
+import { TfiArrowTopRight } from "react-icons/tfi";
 
 export default function About() {
   return (
@@ -33,7 +33,6 @@ export default function About() {
           <section className="container mx-auto min-h-screen px-4 flex flex-row items-center justify-between space-y-4 mt-[-4rem]">
             <div className="flex flex-col justify-start items-start gap-4">
               <div className="flex flex-row justify-start items-center gap-2">
-
                 <SiSnapdragon className="text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-600" />
 
                 <HeroTitle
@@ -49,6 +48,7 @@ export default function About() {
                 color="white"
                 size="sm"
                 className="max-w-3xl"
+                style={{ lineHeight: 1.3 }}
               />
             </div>
 
@@ -62,9 +62,9 @@ export default function About() {
                   distance={0.5}
                   border={false}
                 >
-                  <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                  <TfiArrowTopRight className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-5xl" />
                   <HeroTitle
-                    size="paragraphy"
+                    size="very_small"
                     text="Contato"
                     letterPadding={false}
                   />

@@ -8,6 +8,7 @@ interface HeroTitleProps {
   color?: "white" | "silver";
   className?: string;
   letterPadding?: boolean;
+  style?: any;
 }
 
 const HeroTitle: React.FC<HeroTitleProps> = ({
@@ -16,6 +17,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
   color = "white",
   className,
   letterPadding = true,
+  style,
 }) => {
   const sizeClasses: any = {
     very_small: "text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl",
@@ -38,9 +40,10 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
       initial={{ y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
+      style={style}
       className={`${
         letterPadding && "pb-3 pr-2"
-      } bg-clip-text text-transparent tracking-normal break-words ${
+      } bg-clip-text text-transparent tracking-normal break-words${
         sizeClasses[size]
       } ${colorsClasses[color]} ${className}`}
     >
