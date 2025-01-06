@@ -5,6 +5,9 @@ import TextGradientScroll from "@/components/ui/text-gradient";
 import { TimelineDemo } from "@/components/timeline-demo";
 import HeroTitle from "@/components/ui/hero-title";
 import { ReactLenis } from "@studio-freight/react-lenis";
+import { GiWolfHead } from "react-icons/gi";
+import MagneticButton from "@/components/ui/button-magnetic";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 export default function About() {
   return (
@@ -19,9 +22,36 @@ export default function About() {
         }}
       >
         <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-40">
-          <div className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-4rem]">
-            <HeroTitle text="Sobre" color="white" size="lg" />
-            <HeroTitle text="Mim" color="silver" size="lg" />
+          <GiWolfHead className="text-[40rem] lg:text-[70rem] text-neutral-800 opacity-15 absolute bottom-0 right-0 scale-x-[-1]" />
+          
+          <div className="container mx-auto min-h-screen px-4 flex flex-row items-center justify-between space-y-4 mt-[-4rem]">
+            <HeroTitle
+              text="We’re driven by creating the most beautiful websites with the best rankings and conversion rates"
+              color="white"
+              size="sm"
+              className="max-w-3xl"
+            />
+
+            <div className="h-full pb-40 flex items-end">
+              <MagneticButton
+                distance={1}
+                className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5 relative"
+              >
+                <MagneticButton
+                  className="flex flex-col justify-center items-center gap-2"
+                  distance={0.5}
+                  border={false}
+                >
+                  <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                  <HeroTitle
+                    size="paragraphy"
+                    text="Contato"
+                    letterPadding={false}
+                  />
+                </MagneticButton>
+              </MagneticButton>
+            </div>
+
           </div>
 
           <section className="w-full min-h-screen container mx-auto px-4 flex flex-col justify-center items-center">
