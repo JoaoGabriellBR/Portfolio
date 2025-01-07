@@ -101,7 +101,7 @@ export default function About() {
 
             </div>
 
-            <div className={`max-w-7xl grid grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}>
+            <div className={`max-w-7xl grid grid-cols-2 lg:grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}>
               <CardProjects />
             </div>
             
