@@ -14,6 +14,7 @@ import { GiSeaDragon } from "react-icons/gi";
 import { GiDragonBreath } from "react-icons/gi";
 import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
+import { CardProjects } from "@/components/card-projects";
 
 export default function About() {
   return (
@@ -27,9 +28,10 @@ export default function About() {
           //   syncTouch: true,
         }}
       >
-        <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-40">
+        <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-20">
           <GiWolfHead className="text-[40rem] lg:text-[70rem] text-neutral-800 opacity-15 absolute bottom-0 right-0 scale-x-[-1]" />
 
+          {/* About Me */}
           <section className="container mx-auto min-h-screen px-4 flex flex-row items-center justify-between space-y-4 mt-[-4rem]">
             <div className="flex flex-col justify-start items-start gap-4">
               <div className="flex flex-row justify-start items-center gap-2">
@@ -39,7 +41,6 @@ export default function About() {
                   text="Sobre mim"
                   color="silver"
                   size="very_small"
-                  className=""
                   letterPadding={false}
                 />
               </div>
@@ -73,11 +74,37 @@ export default function About() {
             </div>
           </section>
 
-          <section className="w-full min-h-screen container mx-auto px-4 flex flex-col justify-center items-center">
-            <TextGradientScroll
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center bg-clip-text"
-              text="Sou um Desenvolvedor Full Stack com mais de 2 anos de experiência em aplicações web, competente em React, React Native, Next.js, Node.js, TypeScript, MySQL, Docker e AWS. Habilidade na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações utilizando New Relic."
-            />
+
+          {/* Skills */}
+          <section className="container mx-auto px-4 min-h-screen flex flex-col items-center justify-start gap-4">
+            
+            <div className="flex flex-col justify-center items-center gap-4">
+              
+              <div className="flex flex-row justify-center items-center gap-2">
+                <SiSnapdragon className="text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-600" />
+
+                <HeroTitle
+                  text="Habilidades"
+                  color="silver"
+                  size="very_small"
+                  letterPadding={false}
+                />
+              </div>
+
+              <HeroTitle
+                text="Algumas tecnologias que utilizo"
+                color="white"
+                size="sm"
+                className="max-w-3xl text-center"
+                style={{ lineHeight: 1.3 }}
+              />
+
+            </div>
+
+            <div className={`max-w-7xl grid grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}>
+              <CardProjects />
+            </div>
+            
           </section>
 
           <section className="w-full container mx-auto px-4">

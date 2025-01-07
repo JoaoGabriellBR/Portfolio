@@ -6,7 +6,7 @@ export function BorderCardProjects({ children }: any) {
     <Tilt
       rotationFactor={8}
       isRevese
-      className={`col-span-4 md:col-span-2 md:row-span-2 flex flex-col items-center justify-center gap-4 overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-950 rounded-[2rem]`}
+      className={`col-span-1 row-span-1 p-12 flex flex-col items-center justify-center gap-4 overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-background rounded-[2rem]`}
     >
       <BorderTrail
         style={{
