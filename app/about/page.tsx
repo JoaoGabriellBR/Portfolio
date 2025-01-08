@@ -1,17 +1,11 @@
 "use client";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
-import TextGradientScroll from "@/components/ui/text-gradient";
-import { TimelineDemo } from "@/components/timeline-demo";
+import { JobTimeline } from "@/components/job-timeline";
 import HeroTitle from "@/components/ui/hero-title";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { GiWolfHead } from "react-icons/gi";
 import MagneticButton from "@/components/ui/button-magnetic";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { IoArrowRedoOutline } from "react-icons/io5";
-import { GiDragonOrb } from "react-icons/gi";
-import { GiSeaDragon } from "react-icons/gi";
-import { GiDragonBreath } from "react-icons/gi";
 import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { CardProjects } from "@/components/card-projects";
@@ -28,7 +22,7 @@ export default function About() {
           //   syncTouch: true,
         }}
       >
-        <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 gap-20">
+        <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
           <GiWolfHead className="text-[40rem] lg:text-[70rem] text-neutral-800 opacity-15 absolute bottom-0 right-0 scale-x-[-1]" />
 
           {/* About Me */}
@@ -76,7 +70,7 @@ export default function About() {
 
 
           {/* Skills */}
-          <section className="container mx-auto px-4 min-h-screen flex flex-col items-center justify-start gap-4">
+          <section className="container mx-auto px-4 h-screen flex flex-col items-center justify-start gap-4">
             
             <div className="flex flex-col justify-center items-center gap-4">
               
@@ -95,28 +89,28 @@ export default function About() {
                 text="Algumas tecnologias que utilizo"
                 color="white"
                 size="sm"
-                className="max-w-3xl text-center"
+                className="max-w-3xl text-center mb-10"
                 style={{ lineHeight: 1.3 }}
               />
 
             </div>
 
-            <div className={`max-w-7xl grid grid-cols-2 lg:grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}>
+            <div className={`max-w-7xl min-h-screen grid grid-cols-2 lg:grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}>
               <CardProjects />
             </div>
             
           </section>
 
-          <section className="w-full container mx-auto px-4">
+          <section className="container mx-auto px-4 min-h-screen">
+            <JobTimeline />
+          </section>
+
+          {/* <section className="w-full container mx-auto px-4">
             <video className="rounded-[3rem]" autoPlay loop muted>
               <source src="/videos/aboutme.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos HTML5.
             </video>
-          </section>
-
-          <section className="w-full min-h-screen container mx-auto px-4">
-            <TimelineDemo />
-          </section>
+          </section> */}
         </main>
       </ReactLenis>
       <Footer />

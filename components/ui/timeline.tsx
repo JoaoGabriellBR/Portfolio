@@ -2,45 +2,25 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import HeroTitle from "./hero-title";
-import Typography from "./typography";
-import { SlArrowRight } from "react-icons/sl";
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { Tilt } from "./tilt";
+import { BorderTrail } from "./border-trail";
 
 interface ListItemsProps {
-  item: string;
-}
-
-interface JobsProps {
   company_name: string;
-  subtitle: string;
-  list_items?: ListItemsProps[];
   company_time: string;
+  position: string;
+  activities: string;
 }
 
-export const Timeline = ({ jobs }: { jobs: JobsProps[] }) => {
+interface StepsProps {
+  type: string;
+  jobs: ListItemsProps[];
+}
+
+export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
-
-  const links = [
-    {
-      title: "React.js",
-      icon: <FaReact />,
-      href: "#",
-    },
-    {
-      title: "Next.js",
-      icon: <SiNextdotjs />,
-      href: "#",
-    },
-    {
-      title: "Next.js",
-      icon: <SiNextdotjs />,
-      href: "#",
-    },
-  ];
 
   useEffect(() => {
     if (ref.current) {
@@ -58,41 +38,58 @@ export const Timeline = ({ jobs }: { jobs: JobsProps[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-white dark:bg-neutral-950 font-sans"
-      ref={containerRef}
-    >
-      <div className="flex flex-row">
-        <HeroTitle text="Experiência" size="sm" />
-        <HeroTitle text="profissional" size="sm" color="silver" />
-      </div>
-
+    <div ref={containerRef}>
       <div ref={ref} className="relative pb-20">
-        {jobs.map((job, index) => (
+        {steps.map((step, index) => (
           <div
             key={index}
-            className="min-h-screen flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="min-h-screen flex flex-col lg:flex-row justify-start pt-10"
           >
-            <div className="min-w-40 sticky flex flex-col items-start px-4 z-20 top-20 self-start max-w-xs lg:max-w-sm md:w-full">
-              <HeroTitle text={job.company_name} size="sm" />
-              <Typography text={job.company_time} size="sm" color="silver" />
+            {/* EXPERIÊNCIA  */}
+            <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 self-start max-w-xs lg:max-w-sm md:w-full">
+              <HeroTitle text={step.type} size="sm" />
             </div>
 
-            <div className="self-start space-y-5">
-              <HeroTitle
-                text={job.subtitle}
-                size="paragraphy"
-                className="pt-3"
-                color="silver"
-              />
-              {job.list_items?.map((li: ListItemsProps, index: number) => (
-                <div
-                  key={index}
-                  className="flex flex-row justify-start items-center"
+            {/* DADOS DO TRABALHO */}
+            <div className="flex flex-col justify-start gap-20 pl-4 lg:pl-60">
+              {step.jobs.map((job) => (
+                <Tilt
+                  rotationFactor={8}
+                  isRevese
+                  className={`p-20 border border-neutral-200 dark:border-neutral-700 bg-background rounded-[2rem]`}
                 >
-                  <IoIosArrowRoundForward className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
-                  <HeroTitle letterPadding={false} text={li.item} color="white" size="paragraphy" />
-                </div>
+                  <BorderTrail
+                    style={{
+                      boxShadow:
+                        "0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)",
+                    }}
+                    size={100}
+                  />
+                  <div
+                    className="flex h-full flex-col items-start justify-start gap-4"
+                    role="status"
+                    aria-label="Loading..."
+                  >
+                    <HeroTitle
+                      text={job.company_name}
+                      size="paragraphy"
+                      color="white"
+                      letterPadding={false}
+                    />
+                    <HeroTitle
+                      text={job.position}
+                      size="very_small"
+                      color="silver"
+                      letterPadding={false}
+                    />
+                    <HeroTitle
+                      text={job.activities}
+                      size="very_small"
+                      color="white"
+                      letterPadding={false}
+                    />
+                  </div>
+                </Tilt>
               ))}
             </div>
           </div>
