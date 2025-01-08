@@ -41,7 +41,7 @@ export default function About() {
               <HeroTitle
                 text="We’re driven by creating the most beautiful websites with the best rankings and conversion rates"
                 color="white"
-                size="sm"
+                size="md"
                 className="max-w-3xl"
                 style={{ lineHeight: 1.3 }}
               />
@@ -68,12 +68,9 @@ export default function About() {
             </div>
           </section>
 
-
           {/* Skills */}
-          <section className="container mx-auto px-4 h-screen flex flex-col items-center justify-start gap-4">
-            
+          <section className="container mx-auto min-h-screen px-4 flex flex-col items-center justify-start gap-4">
             <div className="flex flex-col justify-center items-center gap-4">
-              
               <div className="flex flex-row justify-center items-center gap-2">
                 <SiSnapdragon className="text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-600" />
 
@@ -88,32 +85,36 @@ export default function About() {
               <HeroTitle
                 text="Algumas tecnologias que utilizo"
                 color="white"
-                size="sm"
+                size="md"
                 className="max-w-3xl text-center mb-10"
                 style={{ lineHeight: 1.3 }}
               />
-
             </div>
 
-            <div className={`max-w-7xl min-h-screen grid grid-cols-2 lg:grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}>
+            <div
+              className={`max-w-7xl min-h-screen grid grid-cols-2 lg:grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}
+            >
               <CardProjects />
             </div>
-            
           </section>
 
-          <section className="container mx-auto px-4 min-h-screen">
+          <section className="container mx-auto min-h-screen px-4">
             <JobTimeline />
           </section>
 
-          {/* <section className="w-full container mx-auto px-4">
-            <video className="rounded-[3rem]" autoPlay loop muted>
-              <source src="/videos/aboutme.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeos HTML5.
-            </video>
-          </section> */}
+
         </main>
       </ReactLenis>
       <Footer />
     </>
   );
+}
+
+{
+  /* <section className="w-full container mx-auto px-4">
+  <video className="rounded-[3rem]" autoPlay loop muted>
+    <source src="/videos/aboutme.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeos HTML5.
+  </video>
+</section> */
 }

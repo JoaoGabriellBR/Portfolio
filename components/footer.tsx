@@ -19,8 +19,8 @@ export const Footer = () => {
     >
       <div className="h-screen flex flex-col justify-center items-center space-y-6">
         <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center">
-          <HeroTitle text="Algum projeto" size="md" color="white" />
-          <HeroTitle text="em mente?" size="md" color="silver" />
+          <HeroTitle text="Algum projeto" size="xl" color="white" />
+          <HeroTitle text="em mente?" size="xl" color="silver" />
         </div>
 
         {/* Botões de ação */}

@@ -46,8 +46,8 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
             className="min-h-screen flex flex-col lg:flex-row justify-start pt-10"
           >
             {/* EXPERIÊNCIA  */}
-            <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 self-start max-w-xs lg:max-w-sm md:w-full">
-              <HeroTitle text={step.type} size="sm" />
+            <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 my-10 lg:mb-0 self-start max-w-xs lg:max-w-sm md:w-full">
+              <HeroTitle text={step.type} size="md" />
             </div>
 
             {/* DADOS DO TRABALHO */}

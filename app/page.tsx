@@ -4,7 +4,6 @@ import { Footer } from "@/components/footer";
 import { ParallaxImages } from "@/components/smooth-scroll-hero";
 import HeroTitle from "@/components/ui/hero-title";
 import MagneticButton from "@/components/ui/button-magnetic";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import Projects from "@/components/projects";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import ScrollBaseAnimation from "@/components/text-marquee";
@@ -23,10 +22,12 @@ export default function Home() {
         }}
       >
         <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 px-4">
+
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
+
             <div className="flex flex-col items-center justify-center text-center">
-              <HeroTitle text="Desenvolvedor" color="white" size="xl" />
-              <HeroTitle text="Full Stack" color="silver" size="xl" />
+              <HeroTitle text="Desenvolvedor" color="white" size="xxl" />
+              <HeroTitle text="Full Stack" color="silver" size="xxl" />
             </div>
           </section>
 
@@ -34,7 +35,7 @@ export default function Home() {
             <HeroTitle
               text="Projeto, desenvolvo e crio aplicações otimizadas por meio de boas práticas de desenvolvimento."
               color="white"
-              size="sm"
+              size="md"
               className="w-full lg:w-[60%] text-center lg:text-start"
             />
             <MagneticButton
@@ -64,12 +65,11 @@ export default function Home() {
             <ScrollBaseAnimation
               delay={500}
               baseVelocity={-3}
-              // clasname="tracking-tighter break-words bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200"
             >
               <HeroTitle
                 text=" • Alguns projetos recentes"
                 color="white"
-                size="md"
+                size="lg"
               />
             </ScrollBaseAnimation>
 
@@ -77,7 +77,7 @@ export default function Home() {
               <HeroTitle
                 text="• Alguns projetos recentes"
                 color="silver"
-                size="md"
+                size="lg"
               />
             </ScrollBaseAnimation>
           </section>
