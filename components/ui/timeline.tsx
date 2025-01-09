@@ -88,6 +88,12 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
                       color="white"
                       letterPadding={false}
                     />
+                     <HeroTitle
+                      text={job.company_time}
+                      color="silver"
+                      className="self-end text-sm"
+                      letterPadding={false}
+                    />
                   </div>
                 </Tilt>
               ))}
