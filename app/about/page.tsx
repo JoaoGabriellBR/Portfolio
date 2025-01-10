@@ -18,46 +18,44 @@ export default function About() {
         root
         options={{
           lerp: 0.05,
-          //   infinite: true,
-          //   syncTouch: true,
         }}
       >
-        <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1">
-          <GiWolfHead className="text-[40rem] lg:text-[70rem] text-neutral-800 opacity-15 absolute bottom-0 right-0 scale-x-[-1]" />
+        <main className="relative flex flex-col gap-y-20">
+          {/* Background Decorative Icon */}
+          <GiWolfHead
+            aria-hidden="true"
+            className="text-[20rem] md:text-[40rem] lg:text-[60rem] text-neutral-600 opacity-10 absolute bottom-0 right-0 -scale-x-100 pointer-events-none"
+          />
 
           {/* About Me */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-row items-center justify-between space-y-4 mt-[-4rem]">
-            <div className="flex flex-col justify-start items-start gap-4">
-              <div className="flex flex-row justify-start items-center gap-2">
-                <SiSnapdragon className="text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-600" />
-
-                <HeroTitle
-                  text="Sobre mim"
-                  color="silver"
-                  size="very_small"
-                  letterPadding={false}
+          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-between gap-10 py-20">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-3">
+                <SiSnapdragon
+                  aria-label="Icone Snapdragon"
+                  className="text-lg md:text-xl lg:text-2xl text-neutral-600"
                 />
+                <HeroTitle text="Sobre mim" color="silver" size="very_small" letterPadding={false} />
               </div>
               <HeroTitle
                 text="We’re driven by creating the most beautiful websites with the best rankings and conversion rates"
                 color="white"
                 size="md"
                 className="max-w-3xl"
-                style={{ lineHeight: 1.3 }}
+                style={{ lineHeight: "1.5" }}
               />
             </div>
-
-            <div className="h-full pb-40 flex items-end">
+            <div className="flex justify-center items-end">
               <MagneticButton
                 distance={1}
-                className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5 relative"
+                className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
               >
                 <MagneticButton
                   className="flex flex-col justify-center items-center gap-2"
                   distance={0.5}
                   border={false}
                 >
-                  <TfiArrowTopRight className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-5xl" />
+                  <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
                   <HeroTitle
                     size="very_small"
                     text="Contato"
@@ -69,11 +67,13 @@ export default function About() {
           </section>
 
           {/* Skills */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col items-center justify-start gap-4">
-            <div className="flex flex-col justify-center items-center gap-4">
-              <div className="flex flex-row justify-center items-center gap-2">
-                <SiSnapdragon className="text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-600" />
-
+          <section className="container mx-auto min-h-screen px-4 flex flex-col items-center gap-8 py-20">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-3">
+                <SiSnapdragon
+                  aria-label="Icone Snapdragon"
+                  className="text-lg md:text-xl lg:text-2xl text-neutral-600"
+                />
                 <HeroTitle
                   text="Habilidades"
                   color="silver"
@@ -81,40 +81,43 @@ export default function About() {
                   letterPadding={false}
                 />
               </div>
-
               <HeroTitle
                 text="Algumas tecnologias que utilizo"
                 color="white"
                 size="md"
-                className="max-w-3xl text-center mb-10"
-                style={{ lineHeight: 1.3 }}
+                className="max-w-3xl mx-auto mt-4"
+                style={{ lineHeight: "1.5" }}
               />
             </div>
-
-            <div
-              className={`max-w-7xl min-h-screen grid grid-cols-2 lg:grid-cols-4 grid-rows-4 gap-8 container mx-auto px-4 md:p-0`}
-            >
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl">
               <CardProjects />
             </div>
           </section>
 
-          <section className="container mx-auto min-h-screen px-4">
+          {/* Experience */}
+          <section className="container mx-auto min-h-screen px-4 py-20">
+            <HeroTitle
+              text="Experiência"
+              color="white"
+              size="md"
+              className="text-center lg:hidden"
+            />
             <JobTimeline />
           </section>
 
-
+          {/* Services */}
+          <section className="container mx-auto min-h-screen px-4 py-20 grid gap-10">
+            <HeroTitle
+              text="Eu poderia te ajudar com..."
+              color="white"
+              size="md"
+              className="text-center"
+              style={{ lineHeight: "1.5" }}
+            />
+          </section>
         </main>
       </ReactLenis>
       <Footer />
     </>
   );
-}
-
-{
-  /* <section className="w-full container mx-auto px-4">
-  <video className="rounded-[3rem]" autoPlay loop muted>
-    <source src="/videos/aboutme.mp4" type="video/mp4" />
-    Seu navegador não suporta vídeos HTML5.
-  </video>
-</section> */
 }

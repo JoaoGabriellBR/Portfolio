@@ -16,7 +16,7 @@ export function BorderCardProjects({ children }: any) {
         size={100}
       />
       <div
-        className="flex h-full animate-pulse flex-col items-center justify-center space-y-2"
+        className="flex animate-pulse flex-col items-center justify-center space-y-2"
         role="status"
         aria-label="Loading..."
       >

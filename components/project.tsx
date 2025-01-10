@@ -28,8 +28,8 @@ export default function Project({
       target="blank"
       className="flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center px-10 py-12 border-t border-neutral-800 cursor-pointer transition-opacity duration-200 last:border-b hover:opacity-70"
     >
-      <HeroTitle text={title} color="white" size="md" />
-      <HeroTitle text="Desenvolvimento Web" color="white" size="very_small" />
+      <HeroTitle text={title} color="white" size="lg" />
+      <HeroTitle text="Desenvolvimento Web" color="white" className="text-sm" />
     </Link>
   );
 }

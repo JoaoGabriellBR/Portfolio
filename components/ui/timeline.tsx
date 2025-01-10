@@ -39,7 +39,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
 
   return (
     <div ref={containerRef}>
-      <div ref={ref} className="relative pb-20">
+      <div ref={ref} className="relative">
         {steps.map((step, index) => (
           <div
             key={index}
@@ -47,7 +47,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
           >
             {/* EXPERIÊNCIA  */}
             <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 my-10 lg:mb-0 self-start max-w-xs lg:max-w-sm md:w-full">
-              <HeroTitle text={step.type} size="md" />
+              <HeroTitle text={step.type} size="md" className="hidden lg:flex" />
             </div>
 
             {/* DADOS DO TRABALHO */}
