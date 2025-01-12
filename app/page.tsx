@@ -22,9 +22,7 @@ export default function Home() {
         }}
       >
         <main className="grid grid-rows-[auto_1fr_auto] grid-cols-1 px-4">
-
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
-
             <div className="flex flex-col items-center justify-center text-center uppercase">
               <HeroTitle text="Desenvolvedor" color="white" size="xxl" />
               <HeroTitle text="Full Stack" color="silver" size="xxl" />
@@ -57,26 +55,22 @@ export default function Home() {
             </MagneticButton>
           </section>
 
+          <section className="">
+            <ParallaxImages />
+          </section>
+
           <section className="min-h-20 lg:min-h-80 grid place-content-center">
-            <ScrollBaseAnimation
-              delay={1000}
-              baseVelocity={-1.5}
-            >
+            <ScrollBaseAnimation delay={1000} baseVelocity={-1.5}>
               <HeroTitle
                 text=" • Alguns projetos recentes"
                 color="silver"
                 size="xxl"
-                className="pb-10"
+                className="lg:pb-20"
               />
             </ScrollBaseAnimation>
-
           </section>
 
           <Projects />
-
-          {/* <section className="">
-            <ParallaxImages />
-          </section> */}
         </main>
       </ReactLenis>
       <Footer />

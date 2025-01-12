@@ -1,4 +1,5 @@
 import HeroTitle from "@/components/ui/hero-title";
+import { FaAndroid } from "react-icons/fa";
 
 export const Services = () => {
   const services = [
@@ -33,6 +34,7 @@ export const Services = () => {
             className="text-sm"
           />
           <div className="bg-neutral-700 w-96 h-[0.1rem] my-8"></div>
+          {/* <FaAndroid className="text-8xl"/> */}
           <HeroTitle
             text={service.name}
             color="white"
@@ -41,7 +43,7 @@ export const Services = () => {
           />
           <HeroTitle
             text={service.test}
-            color="white"
+            color="silver"
             size="very_small"
             style={{ lineHeight: "1.5" }}
           />

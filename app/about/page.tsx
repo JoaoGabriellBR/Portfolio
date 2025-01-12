@@ -25,11 +25,11 @@ export default function About() {
           {/* Background Decorative Icon */}
           <GiWolfHead
             aria-hidden="true"
-            className="text-[20rem] md:text-[40rem] lg:text-[80rem] text-neutral-600 opacity-10 fixed top-0 right-0 -scale-x-100 pointer-events-none"
+            className="text-[100vw] lg:text-[80rem] text-neutral-600 opacity-10 fixed top-50 lg:top-0 right-0 -scale-x-100 pointer-events-none"
           />
 
           {/* About Me */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-between gap-10 py-20">
+          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 py-20">
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-3">
                 <SiSnapdragon

@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-const SECTION_HEIGHT = 1500;
+const SECTION_HEIGHT = 1600;
 
 export const ParallaxImages = () => {
   return (
