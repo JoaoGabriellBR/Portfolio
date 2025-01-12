@@ -9,6 +9,7 @@ import MagneticButton from "@/components/ui/button-magnetic";
 import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { CardProjects } from "@/components/card-projects";
+import { Services } from "@/components/services";
 
 export default function About() {
   return (
@@ -24,7 +25,7 @@ export default function About() {
           {/* Background Decorative Icon */}
           <GiWolfHead
             aria-hidden="true"
-            className="text-[20rem] md:text-[40rem] lg:text-[60rem] text-neutral-600 opacity-10 absolute bottom-0 right-0 -scale-x-100 pointer-events-none"
+            className="text-[20rem] md:text-[40rem] lg:text-[80rem] text-neutral-600 opacity-10 fixed top-0 right-0 -scale-x-100 pointer-events-none"
           />
 
           {/* About Me */}
@@ -35,7 +36,12 @@ export default function About() {
                   aria-label="Icone Snapdragon"
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
                 />
-                <HeroTitle text="Sobre mim" color="silver" size="very_small" letterPadding={false} />
+                <HeroTitle
+                  text="Sobre mim"
+                  color="silver"
+                  size="very_small"
+                  letterPadding={false}
+                />
               </div>
               <HeroTitle
                 text="We’re driven by creating the most beautiful websites with the best rankings and conversion rates"
@@ -69,7 +75,7 @@ export default function About() {
           {/* Skills */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col items-center gap-8 py-20">
             <div className="text-center">
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-4">
                 <SiSnapdragon
                   aria-label="Icone Snapdragon"
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
@@ -106,7 +112,7 @@ export default function About() {
           </section>
 
           {/* Services */}
-          <section className="container mx-auto min-h-screen px-4 py-20 grid gap-10">
+          <section className="container mx-auto min-h-screen px-4 flex flex-col justify-center items-center gap-8 py-20">
             <HeroTitle
               text="Eu poderia te ajudar com..."
               color="white"
@@ -114,6 +120,7 @@ export default function About() {
               className="text-center"
               style={{ lineHeight: "1.5" }}
             />
+            <Services />
           </section>
         </main>
       </ReactLenis>

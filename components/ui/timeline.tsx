@@ -56,7 +56,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
                 <Tilt
                   rotationFactor={8}
                   isRevese
-                  className={`p-20 border border-neutral-200 dark:border-neutral-700 bg-background rounded-[2rem]`}
+                  className={`p-24 border border-neutral-200 dark:border-neutral-700 bg-background rounded-[2rem]`}
                 >
                   <BorderTrail
                     style={{
