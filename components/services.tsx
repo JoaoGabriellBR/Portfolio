@@ -6,17 +6,17 @@ export const Services = () => {
     {
       number: "01",
       name: "Front end",
-      test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem ducimus culpa mollitia provident odio dolor, doloribus odit ipsum corrupti",
+      test: "Crio interfaces intuitivas com foco em detalhes, interações fluidas e microanimações que elevam a experiência do usuário.",
     },
     {
       number: "02",
       name: "Back end",
-      test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem ducimus culpa mollitia provident odio dolor, doloribus odit ipsum corrupti",
+      test: "Desenvolvo back-ends robustos, priorizando gestão eficiente de dados e escalabilidade para sustentar o crescimento da plataforma.",
     },
     {
       number: "03",
       name: "Full Stack",
-      test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem ducimus culpa mollitia provident odio dolor, doloribus odit ipsum corrupti",
+      test: "Integro soluções completas que combinam front e back-end, garantindo alto desempenho, escalabilidade e uma experiência aprimorada.",
     },
   ];
 

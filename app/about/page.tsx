@@ -10,6 +10,7 @@ import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { CardProjects } from "@/components/card-projects";
 import { Services } from "@/components/services";
+import TextGradientScroll from "@/components/ui/text-gradient";
 
 export default function About() {
   return (
@@ -25,12 +26,12 @@ export default function About() {
           {/* Background Decorative Icon */}
           <GiWolfHead
             aria-hidden="true"
-            className="text-[100vw] lg:text-[80rem] text-neutral-600 opacity-10 fixed top-50 lg:top-0 right-0 -scale-x-100 pointer-events-none"
+            className="text-[100vw] lg:text-[56vw] text-neutral-600 opacity-10 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
           />
 
           {/* About Me */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 py-20">
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 mt-[-7rem]">
               <div className="flex items-center gap-3">
                 <SiSnapdragon
                   aria-label="Icone Snapdragon"
@@ -44,7 +45,7 @@ export default function About() {
                 />
               </div>
               <HeroTitle
-                text="We’re driven by creating the most beautiful websites with the best rankings and conversion rates"
+                text="Desenvolvedor de Software focado em aplicações web e mobile."
                 color="white"
                 size="md"
                 className="max-w-3xl"
@@ -70,6 +71,14 @@ export default function About() {
                 </MagneticButton>
               </MagneticButton>
             </div>
+          </section>
+
+          {/* Competence */}
+          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
+            <TextGradientScroll
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal break-words text-neutral-200"
+              text="Experiência na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações e na sustentação de sistemas."
+            />
           </section>
 
           {/* Skills */}
@@ -112,7 +121,7 @@ export default function About() {
           </section>
 
           {/* Services */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col justify-center items-center gap-8 py-20">
+          <section className="container mx-auto min-h-screen px-4 flex flex-col justify-center items-center gap-8 pt-20">
             <HeroTitle
               text="Eu poderia te ajudar com..."
               color="white"
