@@ -7,7 +7,6 @@ import MagneticButton from "./ui/button-magnetic";
 import { FlipLink } from "./ui/reveal-links";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
-import { Button } from "./ui/button";
 
 const NAV_ITEMS = [
   { id: 0, title: "Home", href: "/" },
@@ -78,9 +77,7 @@ const Header = () => {
               {item.title}
             </FlipLink>
           ))}
-          {/* <div className="bg-red-500 self-end"> */}
           <ModeToggle />
-          {/* </div> */}
         </motion.div>
       </motion.div>
     </header>

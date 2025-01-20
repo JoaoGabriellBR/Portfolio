@@ -6,6 +6,15 @@ import { useTheme } from "next-themes";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // Evita renderização até que o cliente esteja pronto
+  }
 
   return (
     <div className="cursor-pointer self-end px-4">

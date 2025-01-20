@@ -23,7 +23,7 @@ export default function About() {
           lerp: 0.05,
         }}
       >
-        <main className="relative flex flex-col gap-y-20">
+        <main className="relative flex flex-col gap-y-2 lg:gap-y-10">
           {/* Background Decorative Icon */}
           <GiWolfHead
             aria-hidden="true"
@@ -31,7 +31,7 @@ export default function About() {
           />
 
           {/* About Me */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 py-20">
+          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
             <div className="flex flex-col gap-6 mt-[-7rem]">
               <div className="flex items-center gap-3">
                 <SiSnapdragon
@@ -118,7 +118,7 @@ export default function About() {
               text="Experiência"
               color="white"
               size="md"
-              className="text-center lg:hidden"
+              className="text-center lg:hidden mb-[-4rem]"
             />
             <JobTimeline />
           </section>
