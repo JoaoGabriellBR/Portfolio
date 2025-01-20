@@ -38,7 +38,7 @@ export default function About() {
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
                 />
                 <HeroTitle
-                  text="Sobre mim"
+                  text="João Gabriel Silva"
                   color="silver"
                   size="very_small"
                   letterPadding={false}
@@ -76,7 +76,7 @@ export default function About() {
           {/* Competence */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
             <TextGradientScroll
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal break-words text-neutral-200"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal break-words text-foreground font-normal"
               text="Experiência na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações e na sustentação de sistemas."
             />
           </section>

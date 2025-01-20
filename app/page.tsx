@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
-import { ParallaxImages } from "@/components/smooth-scroll-hero";
+import { ParallaxImages } from "@/components/parallax-images";
 import HeroTitle from "@/components/ui/hero-title";
 import MagneticButton from "@/components/ui/button-magnetic";
 import Projects from "@/components/projects";

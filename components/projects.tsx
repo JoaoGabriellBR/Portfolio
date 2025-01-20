@@ -17,19 +17,19 @@ const projects = [
     title: "UpWrite",
     src: "/images/upwrite.png",
     href: "https://up-write.vercel.app",
-    color: "#6D28D9",
+    color: "#000000",
   },
   {
     title: "World News",
     src: "/images/worldnews.png",
     href: "https://siteworldnews.vercel.app",
-    color: "#383B73",
+    color: "#000000",
   },
   {
     title: "Solar Toy",
     src: "/images/solartoy.png",
     href: "https://solartoy.netlify.app",
-    color: "#06F3AF",
+    color: "#000000",
   },
 ];
 
