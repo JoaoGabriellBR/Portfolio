@@ -11,6 +11,7 @@ import { TfiArrowTopRight } from "react-icons/tfi";
 import { CardProjects } from "@/components/card-projects";
 import { Services } from "@/components/services";
 import TextGradientScroll from "@/components/ui/text-gradient";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -53,23 +54,25 @@ export default function About() {
               />
             </div>
             <div className="flex justify-center items-end">
-              <MagneticButton
-                distance={1}
-                className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
-              >
+              <Link href="/contact">
                 <MagneticButton
-                  className="flex flex-col justify-center items-center gap-2"
-                  distance={0.5}
-                  border={false}
+                  distance={1}
+                  className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
                 >
-                  <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
-                  <HeroTitle
-                    size="very_small"
-                    text="Contato"
-                    letterPadding={false}
-                  />
+                  <MagneticButton
+                    className="flex flex-col justify-center items-center gap-2"
+                    distance={0.5}
+                    border={false}
+                  >
+                    <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                    <HeroTitle
+                      size="very_small"
+                      text="Contato"
+                      letterPadding={false}
+                    />
+                  </MagneticButton>
                 </MagneticButton>
-              </MagneticButton>
+              </Link>
             </div>
           </section>
 

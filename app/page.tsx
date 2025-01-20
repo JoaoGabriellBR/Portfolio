@@ -8,6 +8,7 @@ import Projects from "@/components/projects";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { TfiArrowTopRight } from "react-icons/tfi";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -36,23 +37,25 @@ export default function Home() {
               size="md"
               className="w-full lg:w-[60%] text-center lg:text-start"
             />
-            <MagneticButton
-              distance={1}
-              className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
-            >
+            <Link href="/about">
               <MagneticButton
-                className="flex flex-col justify-center items-center gap-2"
-                distance={0.5}
-                border={false}
+                distance={1}
+                className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
               >
-                <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
-                <HeroTitle
-                  size="very_small"
-                  text="Sobre Mim"
-                  letterPadding={false}
-                />
+                <MagneticButton
+                  className="flex flex-col justify-center items-center gap-2"
+                  distance={0.5}
+                  border={false}
+                >
+                  <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                  <HeroTitle
+                    size="very_small"
+                    text="Sobre Mim"
+                    letterPadding={false}
+                  />
+                </MagneticButton>
               </MagneticButton>
-            </MagneticButton>
+            </Link>
           </section>
 
           <section className="">
