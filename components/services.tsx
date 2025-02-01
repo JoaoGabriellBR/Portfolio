@@ -11,7 +11,7 @@ export const Services = () => {
     {
       number: "02",
       name: "Back end",
-      test: "Desenvolvo back-ends robustos, priorizando gestão eficiente de dados e escalabilidade para sustentar o crescimento da plataforma.",
+      test: "Desenvolvo back-ends, priorizando gestão eficiente de dados e escalabilidade para sustentar o crescimento da plataforma.",
     },
     {
       number: "03",
