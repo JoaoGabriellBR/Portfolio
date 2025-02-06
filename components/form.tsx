@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import HeroTitle from "./ui/hero-title";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const formSchema = z.object({
   username: z
@@ -49,7 +50,7 @@ export function ProfileForm() {
   }
 
   return (
-    <div className="w-1/3">
+    <div className="w-2/3 lg:w-1/3">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -96,23 +97,23 @@ export function ProfileForm() {
               </FormItem>
             )}
           />
-          <Link href="https://github.com/JoaoGabriellBR" target="blank">
-            <MagneticButton distance={1} className="w-64 h-20 text-2xl">
-              <MagneticButton
-                className="flex flex-row justify-center items-center gap-2"
-                distance={0.5}
-                border={false}
-              >
-                <HeroTitle
-                  className="pb-0 pr-0"
-                  text="Enviar mensagem"
-                  letterPadding={false}
-                  size="very_small"
-                />
-                {/* <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" /> */}
-              </MagneticButton>
+          {/* <Link href="https://github.com/JoaoGabriellBR" target="blank"> */}
+          <MagneticButton distance={1} className="w-72 h-20 text-2xl p-5">
+            <MagneticButton
+              className="flex flex-row justify-center items-center gap-2"
+              distance={0.5}
+              border={false}
+            >
+              <HeroTitle
+                className="pb-0 pr-0"
+                text="Enviar mensagem"
+                letterPadding={false}
+                size="very_small"
+              />
+              <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
             </MagneticButton>
-          </Link>
+          </MagneticButton>
+          {/* </Link> */}
         </form>
       </Form>
     </div>
