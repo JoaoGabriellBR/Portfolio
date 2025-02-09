@@ -10,6 +10,7 @@ type MagneticButtonType = {
   className?: string;
   distance?: number;
   border?: boolean;
+  onClick?: () => void;
 };
 
 function MagneticButton({
@@ -17,6 +18,7 @@ function MagneticButton({
   className = "",
   distance = 0.7,
   border = true,
+  onClick,
 }: MagneticButtonType) {
   const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -55,6 +57,7 @@ function MagneticButton({
 
   return (
     <motion.div
+      onClick={onClick}
       className={`${className} cursor-pointer rounded-full flex flex-row items-center justify-center ${
         border &&
         "border border-neutral-700 hover:bg-neutral-500 hover:bg-opacity-10"
