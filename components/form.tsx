@@ -3,6 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 import MagneticButton from "./ui/button-magnetic";
 import {
@@ -16,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import HeroTitle from "./ui/hero-title";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const formSchema = z.object({
   username: z
@@ -36,6 +39,9 @@ const formSchema = z.object({
 });
 
 export function ProfileForm() {
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,6 +53,14 @@ export function ProfileForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    // setIsLoading(true);
+    toast({
+      className: "",
+      duration: 4000,
+      title: "Mensagem enviada com sucesso",
+      description: "Em Breve, entrarei em contato!",
+    });
+    // setIsLoading(false);
   }
 
   return (
@@ -110,7 +124,11 @@ export function ProfileForm() {
                 letterPadding={false}
                 size="very_small"
               />
-              <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+              {isLoading ? (
+                <AiOutlineLoading3Quarters className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+              ) : (
+                <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+              )}
             </MagneticButton>
           </MagneticButton>
         </form>
