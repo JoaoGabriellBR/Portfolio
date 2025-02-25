@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import HeroTitle from "./ui/hero-title";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { ImSpinner9 } from "react-icons/im";
 
 const formSchema = z.object({
   username: z
@@ -151,7 +151,7 @@ export function ProfileForm() {
                 size="very_small"
               />
               {isLoading ? (
-                <AiOutlineLoading3Quarters className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-3xl animate-spin" />
+                <ImSpinner9 className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-xl animate-spin" />
               ) : (
                 <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-3xl" />
               )}
