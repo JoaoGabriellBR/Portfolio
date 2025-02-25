@@ -1,13 +1,18 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 import emailjs from "@emailjs/browser";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { ImSpinner9 } from "react-icons/im";
 import MagneticButton from "./ui/button-magnetic";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import HeroTitle from "./ui/hero-title";
 import {
   Form,
   FormControl,
@@ -15,11 +20,6 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import HeroTitle from "./ui/hero-title";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { ImSpinner9 } from "react-icons/im";
 
 const formSchema = z.object({
   username: z
@@ -39,6 +39,21 @@ const formSchema = z.object({
   }),
 });
 
+const inputs = [
+  {
+    name: "username",
+    placeholder: "Nome",
+  },
+  {
+    name: "email",
+    placeholder: "E-mail",
+  },
+  {
+    name: "message",
+    placeholder: "Digite sua mensagem",
+  },
+];
+
 export function ProfileForm() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
@@ -55,11 +70,6 @@ export function ProfileForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setIsLoading(true);
-      toast({
-        duration: 4000,
-        title: "Mensagem enviada com sucesso",
-        description: "Em Breve, entrarei em contato!",
-      });
 
       const templateParams = {
         name: values.username,
@@ -76,13 +86,21 @@ export function ProfileForm() {
         }
       );
 
+      toast({
+        variant: "success",
+        duration: 4000,
+        title: "Mensagem enviada com sucesso!",
+        description: "Em breve, entrarei em contato.",
+      });
+
       form.reset();
     } catch (error: any) {
       console.error(error.message);
       toast({
+        variant: "error",
         duration: 4000,
-        title: "Erro ao enviar o formulário",
-        description: error.message,
+        title: "Erro ao enviar o formulário!",
+        description: "Tente novamente mais tarde.",
       });
     } finally {
       setIsLoading(false);
@@ -93,47 +111,28 @@ export function ProfileForm() {
     <div className="w-2/3 lg:w-1/3">
       <Form {...form}>
         <form className="space-y-8 text-start">
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="Nome" className="h-14" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="Email"
-                    className="h-14"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Textarea placeholder="Digite sua mensagem" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          {inputs.map((input: any) => (
+            <FormField
+              control={form.control}
+              name={input.name}
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    {input.name !== "message" ? (
+                      <Input
+                        placeholder={input.placeholder}
+                        className="h-14"
+                        {...field}
+                      />
+                    ) : (
+                      <Textarea placeholder="Digite sua mensagem" {...field} />
+                    )}
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          ))}
           <MagneticButton
             onClick={form.handleSubmit(onSubmit)}
             distance={1}
