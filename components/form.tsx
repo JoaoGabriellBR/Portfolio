@@ -120,12 +120,13 @@ export function ProfileForm() {
                   <FormControl>
                     {input.name !== "message" ? (
                       <Input
-                        placeholder={input.placeholder}
+                        label={input.placeholder}
+                        // placeholder={input.placeholder}
                         className="h-14"
                         {...field}
                       />
                     ) : (
-                      <Textarea placeholder="Digite sua mensagem" {...field} />
+                      <Textarea label={input.placeholder} {...field} />
                     )}
                   </FormControl>
                   <FormMessage />

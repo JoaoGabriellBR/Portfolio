@@ -3,26 +3,40 @@ import { cn } from "@/lib/utils";
 import { motion, HTMLMotionProps } from "framer-motion";
 
 type InputProps = HTMLMotionProps<"input"> &
-  React.ComponentPropsWithoutRef<"input">;
+  React.ComponentPropsWithoutRef<"input"> & {
+    label: string;
+  };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type, label, ...props }, ref) => {
     return (
-      <motion.input
-        initial={{ y: 48, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.75 }}
-        type={type}
-        className={cn(
-          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl tracking-normal break-words font-normal",
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
+      <div className="relative w-full">
+        <motion.input
+          initial={{ y: 48, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.75 }}
+          type={type}
+          className={cn(
+            "peer flex h-10 w-full rounded-md border-b-2 bg-background px-3 pt-4 pb-2 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder-transparent focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl tracking-normal break-words font-normal",
+            className
+          )}
+          ref={ref}
+          placeholder=" "
+          {...props}
+        />
+        <label
+          htmlFor={props.id}
+          className={cn(
+            "absolute text-muted-foreground duration-300 transform -translate-y-6 scale-75 top-4 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 pointer-events-none text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl tracking-normal break-words font-normal"
+          )}
+        >
+          {label}
+        </label>
+      </div>
     );
   }
 );
+
 Input.displayName = "Input";
 
 export { Input };
