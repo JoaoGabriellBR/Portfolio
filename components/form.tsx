@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import emailjs from "@emailjs/browser";
 import MagneticButton from "./ui/button-magnetic";
@@ -52,38 +52,34 @@ export function ProfileForm() {
     },
   });
 
-  useEffect(() => {
-    const publicKey = process.env.NEXT_PUBLIC_KEY_PUBLIC;
-    emailjs.init(String(publicKey));
-  }, []);
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setIsLoading(true);
       toast({
-        className: "",
         duration: 4000,
         title: "Mensagem enviada com sucesso",
         description: "Em Breve, entrarei em contato!",
       });
 
       const templateParams = {
-        from_name: values.username,
-        from_email: values.email,
+        name: values.username,
+        email: values.email,
         message: values.message,
       };
 
       await emailjs.send(
         String(process.env.NEXT_PUBLIC_SERVICE_ID),
         String(process.env.NEXT_PUBLIC_TEMPLATE_ID),
-        templateParams
+        templateParams,
+        {
+          publicKey: String(process.env.NEXT_PUBLIC_KEY_PUBLIC),
+        }
       );
 
       form.reset();
     } catch (error: any) {
       console.error(error.message);
       toast({
-        className: "",
         duration: 4000,
         title: "Erro ao enviar o formulário",
         description: error.message,
@@ -155,9 +151,9 @@ export function ProfileForm() {
                 size="very_small"
               />
               {isLoading ? (
-                <AiOutlineLoading3Quarters className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+                <AiOutlineLoading3Quarters className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-3xl animate-spin" />
               ) : (
-                <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+                <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-3xl" />
               )}
             </MagneticButton>
           </MagneticButton>
