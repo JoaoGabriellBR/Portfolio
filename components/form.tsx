@@ -42,15 +42,15 @@ const formSchema = z.object({
 const inputs = [
   {
     name: "username",
-    placeholder: "Nome",
+    label: "Nome",
   },
   {
     name: "email",
-    placeholder: "E-mail",
+    label: "E-mail",
   },
   {
     name: "message",
-    placeholder: "Digite sua mensagem",
+    label: "Digite sua mensagem",
   },
 ];
 
@@ -119,14 +119,9 @@ export function ProfileForm() {
                 <FormItem>
                   <FormControl>
                     {input.name !== "message" ? (
-                      <Input
-                        label={input.placeholder}
-                        // placeholder={input.placeholder}
-                        className="h-14"
-                        {...field}
-                      />
+                      <Input label={input.label} className="h-14" {...field} />
                     ) : (
-                      <Textarea label={input.placeholder} {...field} />
+                      <Textarea label={input.label} {...field} />
                     )}
                   </FormControl>
                   <FormMessage />

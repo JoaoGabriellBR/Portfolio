@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// sizes: sm, md, lg, xl, xl1, xl2, xl3, xl4...
+
 interface HeroTitleProps {
   text: string;
   size?: "paragraphy" | "very_small" | "sm" | "md" | "lg" | "xl" | "xxl";

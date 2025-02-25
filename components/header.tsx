@@ -83,7 +83,7 @@ const Header = () => {
             </FlipLink>
           ))}
           <div className="flex flex-row justify-between items-center">
-            <h1>testwe</h1>
+            <h1>IDIOMA</h1>
             <ModeToggle />
           </div>
         </motion.div>

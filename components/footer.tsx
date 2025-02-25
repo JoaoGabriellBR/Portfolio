@@ -4,10 +4,19 @@ import Link from "next/link";
 import AnimatedText from "./ui/cursor-follow-text";
 import ButtonArrow from "./ui/button-arrow";
 import HeroTitle from "./ui/hero-title";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+  const pathname = usePathname();
+
   const contacts = [
-    { text: "Contato", link: "https://github.com/joaoGabriellBR" },
+    {
+      text: pathname === "/contact" ? "GitHub" : "Contato",
+      link:
+        pathname === "/contact"
+          ? "https://github.com/joaoGabriellBR"
+          : "/contact",
+    },
     { text: "LinkedIn", link: "https://linkedin.com/in/joaogabriel-silva" },
   ];
 
@@ -26,7 +35,11 @@ export const Footer = () => {
         {/* Botões de ação */}
         <div className="flex flex-row justify-center lg:justify-start gap-4">
           {contacts.map((contact, index) => (
-            <Link key={index} href={contact.link} target="blank">
+            <Link
+              key={index}
+              href={contact.link}
+              target={pathname === "/contact" ? "blank" : ""}
+            >
               <ButtonArrow>{contact.text}</ButtonArrow>
             </Link>
           ))}
