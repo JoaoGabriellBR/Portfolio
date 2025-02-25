@@ -4,8 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
+import emailjs from "@emailjs/browser";
 import MagneticButton from "./ui/button-magnetic";
 import {
   Form,
@@ -51,16 +52,45 @@ export function ProfileForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // setIsLoading(true);
-    toast({
-      className: "",
-      duration: 4000,
-      title: "Mensagem enviada com sucesso",
-      description: "Em Breve, entrarei em contato!",
-    });
-    // setIsLoading(false);
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_KEY_PUBLIC;
+    emailjs.init(String(publicKey));
+  }, []);
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      setIsLoading(true);
+      toast({
+        className: "",
+        duration: 4000,
+        title: "Mensagem enviada com sucesso",
+        description: "Em Breve, entrarei em contato!",
+      });
+
+      const templateParams = {
+        from_name: values.username,
+        from_email: values.email,
+        message: values.message,
+      };
+
+      await emailjs.send(
+        String(process.env.NEXT_PUBLIC_SERVICE_ID),
+        String(process.env.NEXT_PUBLIC_TEMPLATE_ID),
+        templateParams
+      );
+
+      form.reset();
+    } catch (error: any) {
+      console.error(error.message);
+      toast({
+        className: "",
+        duration: 4000,
+        title: "Erro ao enviar o formulário",
+        description: error.message,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
