@@ -71,13 +71,21 @@ const Header = () => {
         animate={mobileNavOpen ? "opened" : "closed"}
         className="fixed top-0 left-0 z-40 w-full h-screen bg-background flex flex-col items-center justify-center"
       >
-        <motion.div className="container mx-auto flex flex-col px-4 gap-10">
+        <motion.div
+          initial={{ y: 48, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.75 }}
+          className="container mx-auto flex flex-col px-4 gap-10"
+        >
           {NAV_ITEMS.map((item) => (
             <FlipLink key={item.id} href={item.href} aria-label={item.title}>
               {item.title}
             </FlipLink>
           ))}
-          <ModeToggle />
+          <div className="flex flex-row justify-between items-center">
+            <h1>testwe</h1>
+            <ModeToggle />
+          </div>
         </motion.div>
       </motion.div>
     </header>
