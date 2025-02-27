@@ -5,8 +5,9 @@ import { GiWolfHead } from "react-icons/gi";
 import { CgMenuMotion, CgClose } from "react-icons/cg";
 import MagneticButton from "./ui/button-magnetic";
 import { FlipLink } from "./ui/reveal-links";
-import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
+import { Link } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 
 const NAV_ITEMS = [
   { id: 0, title: "Home", href: "/" },
@@ -22,6 +23,8 @@ const Header = () => {
   };
 
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
+
+  const pathname = usePathname();
 
   return (
     <header className="container mx-auto px-4 py-4 flex justify-between items-center relative">
@@ -83,7 +86,12 @@ const Header = () => {
             </FlipLink>
           ))}
           <div className="flex flex-row justify-between items-center">
-            <h1>IDIOMA</h1>
+            <Link href={pathname} locale="pt">
+              Muda para português
+            </Link>
+            <Link href={pathname} locale="en">
+              Muda para inglês
+            </Link>
             <ModeToggle />
           </div>
         </motion.div>

@@ -8,7 +8,7 @@ import Projects from "@/components/projects";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { TfiArrowTopRight } from "react-icons/tfi";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 import { useTranslations } from "next-intl";
 

@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import AnimatedText from "./ui/cursor-follow-text";
 import ButtonArrow from "./ui/button-arrow";
 import HeroTitle from "./ui/hero-title";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 
 export const Footer = () => {
   const pathname = usePathname();

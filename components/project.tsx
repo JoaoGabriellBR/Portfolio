@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import HeroTitle from "./ui/hero-title";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 interface ProjectProps {
   index: number;

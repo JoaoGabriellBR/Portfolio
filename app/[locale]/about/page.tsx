@@ -11,7 +11,7 @@ import { TfiArrowTopRight } from "react-icons/tfi";
 import { CardProjects } from "@/components/card-projects";
 import { Services } from "@/components/services";
 import TextGradientScroll from "@/components/ui/text-gradient";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function About() {
   return (

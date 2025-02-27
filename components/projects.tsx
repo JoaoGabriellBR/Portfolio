@@ -5,7 +5,7 @@ import Modal from "./modal";
 import MagneticButton from "./ui/button-magnetic";
 import HeroTitle from "./ui/hero-title";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 const projects = [
   {
