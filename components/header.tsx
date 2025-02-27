@@ -8,6 +8,7 @@ import { FlipLink } from "./ui/reveal-links";
 import { ModeToggle } from "./mode-toggle";
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "@/i18n/navigation";
+import SwitchLanguage from "./switch-language";
 
 const NAV_ITEMS = [
   { id: 0, title: "Home", href: "/" },
@@ -85,13 +86,8 @@ const Header = () => {
               {item.title}
             </FlipLink>
           ))}
-          <div className="flex flex-row justify-between items-center">
-            <Link href={pathname} locale="pt">
-              Muda para português
-            </Link>
-            <Link href={pathname} locale="en">
-              Muda para inglês
-            </Link>
+          <div className="flex flex-row justify-end items-center">
+            <SwitchLanguage/>
             <ModeToggle />
           </div>
         </motion.div>
