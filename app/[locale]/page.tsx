@@ -10,7 +10,11 @@ import ScrollBaseAnimation from "@/components/text-marquee";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import Link from "next/link";
 
+import { useTranslations } from "next-intl";
+
 export default function Home() {
+  const t = useTranslations("Home");
+
   return (
     <>
       <Header />
@@ -25,8 +29,12 @@ export default function Home() {
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div className="flex flex-col items-center justify-center text-center uppercase">
-              <HeroTitle text="Desenvolvedor" color="white" size="xxl" />
-              <HeroTitle text="Full Stack" color="silver" size="xxl" />
+              <HeroTitle text={t("title_jumbotron")} color="white" size="xxl" />
+              <HeroTitle
+                text={t("subtitle_jumbotron")}
+                color="silver"
+                size="xxl"
+              />
             </div>
           </section>
 
