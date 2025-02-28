@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 
 interface ModalProps {
   modal: { active: boolean; index: number };
@@ -27,6 +28,7 @@ const scaleAnimation = {
 
 export default function Modal({ modal, projects }: ModalProps) {
   const { active, index } = modal;
+  const t = useTranslations("Home");
 
   const modalContainer = useRef(null);
   const cursor = useRef(null);
@@ -100,24 +102,15 @@ export default function Modal({ modal, projects }: ModalProps) {
         </div>
       </motion.div>
 
-      {/* Cursor */}
-      <motion.div
-        ref={cursor}
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? "enter" : "closed"}
-        className="absolute z-20 h-20 w-20 rounded-full bg-background text-foreground flex items-center justify-center font-light text-sm pointer-events-none"
-      ></motion.div>
-
       {/* Cursor Label */}
       <motion.div
         ref={cursorLabel}
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="absolute z-20 h-20 w-20 rounded-full bg-transparent flex items-center justify-center font-light text-sm pointer-events-none"
+        className="absolute z-20 h-20 w-20 bg-background p-10  rounded-full flex items-center justify-center font-light text-sm pointer-events-none text-center"
       >
-        Ver projeto
+        {t("Projects.cursorLabel")}
       </motion.div>
     </>
   );

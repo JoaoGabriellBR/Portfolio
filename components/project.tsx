@@ -2,6 +2,7 @@
 import React from "react";
 import HeroTitle from "./ui/hero-title";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 interface ProjectProps {
   index: number;
@@ -16,6 +17,9 @@ export default function Project({
   href,
   setModal,
 }: ProjectProps) {
+
+  const t = useTranslations("Home");
+
   return (
     <Link
       href={href}
@@ -29,7 +33,7 @@ export default function Project({
       className="flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center px-10 py-12 border-t border-neutral-800 cursor-pointer transition-opacity duration-200 last:border-b hover:opacity-70"
     >
       <HeroTitle text={title} color="white" size="lg" />
-      <HeroTitle text="Desenvolvimento Web" color="white" className="text-sm" />
+      <HeroTitle text={t("Projects.type")} color="white" className="text-sm" />
     </Link>
   );
 }

@@ -2,8 +2,24 @@
     "Home": {
       "title_jumbotron": "Full Stack",
       "subtitle_jumbotron": "Developer",
-      "about": "Go to the about page"
+      "Section2": {
+        "title": "I design, develop, and create optimized applications through best development practices.",
+        "button": "About me"
+      },
+      "Section3": {
+        "title": "• Recent Projects"
+      },
+      "Projects": {
+        "type": "Web development",
+        "button": "More projects",
+        "cursorLabel": "View project"
+      }
     },
     "About": {},
-    "Contact": {}
+    "Contact": {},
+    "Footer": {
+      "title": "Any project",
+      "subtitle": " in mind?",
+      "button": "Contact"
+    }
 }

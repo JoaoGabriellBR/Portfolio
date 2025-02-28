@@ -5,13 +5,15 @@ import AnimatedText from "./ui/cursor-follow-text";
 import ButtonArrow from "./ui/button-arrow";
 import HeroTitle from "./ui/hero-title";
 import { usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
   const pathname = usePathname();
+  const t = useTranslations("Footer");
 
   const contacts = [
     {
-      text: pathname === "/contact" ? "GitHub" : "Contato",
+      text: pathname === "/contact" ? "GitHub" : t("button"),
       link:
         pathname === "/contact"
           ? "https://github.com/joaoGabriellBR"
@@ -27,9 +29,9 @@ export const Footer = () => {
              dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
     >
       <div className="h-screen flex flex-col justify-center items-center space-y-6">
-        <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center">
-          <HeroTitle text="Algum projeto" size="xl" color="white" />
-          <HeroTitle text="em mente?" size="xl" color="silver" />
+        <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center gap-x-2 lg:gap-x-4">
+          <HeroTitle text={t("title")} size="xl" color="white" />
+          <HeroTitle text={t("subtitle")} size="xl" color="silver" />
         </div>
 
         {/* Botões de ação */}

@@ -6,6 +6,7 @@ import MagneticButton from "./ui/button-magnetic";
 import HeroTitle from "./ui/hero-title";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 const projects = [
   {
@@ -36,6 +37,7 @@ const projects = [
 
 export default function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });
+  const t = useTranslations("Home");
 
   return (
     <section className="flex flex-col items-center justify-center gap-20 min-h-screen container mx-auto px-4">
@@ -64,11 +66,11 @@ export default function Projects() {
           >
             <HeroTitle
               className="pb-0 pr-0"
-              text="Mais projetos"
+              text={t("Projects.button")}
               letterPadding={false}
               size="very_small"
             />
-            <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+            <IoIosArrowRoundForward className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
           </MagneticButton>
         </MagneticButton>
       </Link>
