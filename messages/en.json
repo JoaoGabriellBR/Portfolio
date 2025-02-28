@@ -1,25 +1,62 @@
 {
-    "Home": {
-      "title_jumbotron": "Full Stack",
-      "subtitle_jumbotron": "Developer",
-      "Section2": {
-        "title": "I design, develop, and create optimized applications through best development practices.",
-        "button": "About me"
+  "Home": {
+    "title_jumbotron": "Full Stack",
+    "subtitle_jumbotron": "Developer",
+    "Section2": {
+      "title": "I design, develop, and create optimized applications through good development practices.",
+      "button": "About me"
+    },
+    "Section3": {
+      "title": "• Recent Projects"
+    },
+    "Projects": {
+      "type": "Web development",
+      "button": "More projects",
+      "cursorLabel": "View project"
+    }
+  },
+  "About": {
+    "Jumbotron": {
+      "title": "Software Developer focused on web and mobile applications.",
+      "button": "Contact"
+    },
+    "competence": "Experience in creating and maintaining APIs, landing pages, back-office portals, and online stores. Beyond code, I monitor application performance and support system maintenance.",
+    "Skills": {
+      "section": "Skills",
+      "title": "Some technologies I use"
+    },
+    "Experience": {
+      "section": "Experience",
+      "Job1": {
+        "name": "Neway",
+        "position": "Full Stack Developer",
+        "activities": "I fix bugs, implement new features, and provide support for the company's systems.",
+        "date": "Sep/2022 - present"
       },
-      "Section3": {
-        "title": "• Recent Projects"
+      "Job2": {
+        "name": "Split Risk",
+        "position": "Development Intern",
+        "activities": "I assisted other developers in creating landing pages and supported web project prototyping using Figma.",
+        "date": "Sep/2022 - Jan/2024"
       },
-      "Projects": {
-        "type": "Web development",
-        "button": "More projects",
-        "cursorLabel": "View project"
+      "Job3": {
+        "name": "Online Shopping",
+        "position": "Maintenance Assistant",
+        "activities": "I provided technical assistance to the company's clients and employees.",
+        "date": "Sep/2021 - Aug/2022"
       }
     },
-    "About": {},
-    "Contact": {},
-    "Footer": {
-      "title": "Any project",
-      "subtitle": " in mind?",
-      "button": "Contact"
+    "Services": {
+      "section": "I could help you with...",
+      "frontend": "I create intuitive interfaces with a focus on details, smooth interactions, and micro-animations that enhance the user experience.",
+      "backend": "I develop back-ends, prioritizing efficient data management and scalability to support platform growth.",
+      "fullstack": "I integrate complete solutions combining front-end and back-end, ensuring high performance, scalability, and an enhanced experience."
     }
+  },
+  "Contact": {},
+  "Footer": {
+    "title": "Any project",
+    "subtitle": "in mind?",
+    "button": "Contact"
+  }
 }

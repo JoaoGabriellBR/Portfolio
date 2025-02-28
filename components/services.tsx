@@ -1,22 +1,25 @@
 import HeroTitle from "@/components/ui/hero-title";
+import { useTranslations } from "next-intl";
 import { FaAndroid } from "react-icons/fa";
 
 export const Services = () => {
+  const t = useTranslations("About.Services");
+
   const services = [
     {
       number: "01",
       name: "Front end",
-      test: "Crio interfaces intuitivas com foco em detalhes, interações fluidas e microanimações que elevam a experiência do usuário.",
+      test: t("frontend"),
     },
     {
       number: "02",
       name: "Back end",
-      test: "Desenvolvo back-ends, priorizando gestão eficiente de dados e escalabilidade para sustentar o crescimento da plataforma.",
+      test: t("backend"),
     },
     {
       number: "03",
       name: "Full Stack",
-      test: "Integro soluções completas que combinam front e back-end, garantindo alto desempenho, escalabilidade e uma experiência aprimorada.",
+      test: t("fullstack"),
     },
   ];
 

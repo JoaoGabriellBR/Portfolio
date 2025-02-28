@@ -12,8 +12,11 @@ import { CardProjects } from "@/components/card-projects";
 import { Services } from "@/components/services";
 import TextGradientScroll from "@/components/ui/text-gradient";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function About() {
+  const t = useTranslations("About");
+
   return (
     <>
       <Header />
@@ -46,7 +49,7 @@ export default function About() {
                 />
               </div>
               <HeroTitle
-                text="Desenvolvedor de Software focado em aplicações web e mobile."
+                text={t("Jumbotron.title")}
                 color="white"
                 size="md"
                 className="max-w-3xl"
@@ -67,7 +70,7 @@ export default function About() {
                     <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
                     <HeroTitle
                       size="very_small"
-                      text="Contato"
+                      text={t("Jumbotron.button")}
                       letterPadding={false}
                     />
                   </MagneticButton>
@@ -80,7 +83,7 @@ export default function About() {
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
             <TextGradientScroll
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal break-words text-foreground font-normal"
-              text="Experiência na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações e na sustentação de sistemas."
+              text={t("competence")}
             />
           </section>
 
@@ -93,14 +96,14 @@ export default function About() {
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
                 />
                 <HeroTitle
-                  text="Habilidades"
+                  text={t("Skills.section")}
                   color="silver"
                   size="very_small"
                   letterPadding={false}
                 />
               </div>
               <HeroTitle
-                text="Algumas tecnologias que utilizo"
+                text={t("Skills.title")}
                 color="white"
                 size="md"
                 className="max-w-3xl mx-auto mt-4"
@@ -115,7 +118,7 @@ export default function About() {
           {/* Experience */}
           <section className="container mx-auto min-h-screen px-4 py-20">
             <HeroTitle
-              text="Experiência"
+              text={t("Experience.section")}
               color="white"
               size="md"
               className="text-center lg:hidden mb-[-4rem]"
@@ -126,7 +129,7 @@ export default function About() {
           {/* Services */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col justify-center items-center gap-8 pt-20">
             <HeroTitle
-              text="Eu poderia te ajudar com..."
+              text={t("Services.section")}
               color="white"
               size="md"
               className="text-center"
