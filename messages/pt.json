@@ -1,4 +1,9 @@
 {
+    "Header": {
+      "nav1": "Home",
+      "nav2": "Sobre",
+      "nav3": "Contato"
+    },
     "Home": {
       "title_jumbotron": "Desenvolvedor",
       "subtitle_jumbotron": "Full Stack",
@@ -53,7 +58,39 @@
         "fullstack": "Integro soluções completas que combinam front e back-end, garantindo alto desempenho, escalabilidade e uma experiência aprimorada."
       }
     },
-    "Contact": {},
+    "Contact": {
+      "Jumbotron": {
+        "title": "Me conte",
+        "subtitle": "Suas ideias"
+      },
+      "Form": {
+        "inputName": {
+          "label": "Nome",
+          "error1": "O nome deve ter pelo menos 2 caracteres.",
+          "error2": "Nome de usuário excedeu os 50 caracteres."
+        },
+        "inputEmail": {
+          "label": "E-mail",
+          "error1": "O e-mail é obrigatório.",
+          "error2": "Endereço de e-mail inválido."
+        },
+        "inputMessage": {
+          "label": "Digite sua mensagem",
+          "error1": "A mensagem deve ter pelo menos 5 caracteres."
+        },
+        "toast": {
+          "success": {
+            "title": "Mensagem enviada com sucesso!",
+            "description": "Em breve, entrarei em contato."
+          },
+          "error": {
+            "title": "Erro ao enviar o formulário!",
+            "description": "Tente novamente mais tarde."
+          }
+        },
+        "button": "Enviar mensagem"
+      }
+    },
     "Footer": {
       "title": "Algum projeto",
       "subtitle": "em mente?",

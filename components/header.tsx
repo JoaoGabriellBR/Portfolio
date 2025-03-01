@@ -7,14 +7,8 @@ import MagneticButton from "./ui/button-magnetic";
 import { FlipLink } from "./ui/reveal-links";
 import { ModeToggle } from "./mode-toggle";
 import { Link } from "@/i18n/navigation";
-import { usePathname } from "@/i18n/navigation";
 import SwitchLanguage from "./switch-language";
-
-const NAV_ITEMS = [
-  { id: 0, title: "Home", href: "/" },
-  { id: 1, title: "Sobre", href: "/about" },
-  { id: 2, title: "Contato", href: "/contact" },
-];
+import { useTranslations } from "next-intl";
 
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -22,10 +16,15 @@ const Header = () => {
     opened: { y: "0%", transition: { duration: 0.5, ease: "easeInOut" } },
     closed: { y: "-100%", transition: { duration: 0, ease: "easeInOut" } },
   };
+  const t = useTranslations("Header");
+
+  const NAV_ITEMS = [
+    { id: 0, title: t("nav1"), href: "/" },
+    { id: 1, title: t("nav2"), href: "/about" },
+    { id: 2, title: t("nav3"), href: "/contact" },
+  ];
 
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
-
-  const pathname = usePathname();
 
   return (
     <header className="container mx-auto px-4 py-4 flex justify-between items-center relative">
@@ -87,7 +86,7 @@ const Header = () => {
             </FlipLink>
           ))}
           <div className="flex flex-row justify-end items-center">
-            <SwitchLanguage/>
+            <SwitchLanguage />
             <ModeToggle />
           </div>
         </motion.div>

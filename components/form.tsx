@@ -20,43 +20,41 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-
-const formSchema = z.object({
-  username: z
-    .string()
-    .min(2, {
-      message: "O nome deve ter pelo menos 2 caracteres.",
-    })
-    .max(50, {
-      message: "Nome de usuário excedeu os 50 caracteres",
-    }),
-  email: z
-    .string()
-    .min(1, { message: "O e-mail é obrigatório." })
-    .email({ message: "Endereço de e-mail inválido." }),
-  message: z.string().min(5, {
-    message: "A mensagem deve ter pelo menos 5 caracteres.",
-  }),
-});
-
-const inputs = [
-  {
-    name: "username",
-    label: "Nome",
-  },
-  {
-    name: "email",
-    label: "E-mail",
-  },
-  {
-    name: "message",
-    label: "Digite sua mensagem",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function ProfileForm() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations("Contact.Form");
+
+  const formSchema = z.object({
+    username: z
+      .string()
+      .min(2, { message: t("inputName.error1") })
+      .max(50, { message: t("inputName.error2") }),
+    email: z
+      .string()
+      .min(1, { message: t("inputEmail.error1") })
+      .email({ message: t("inputEmail.error2") }),
+    message: z.string().min(5, {
+      message: t("inputName.error1"),
+    }),
+  });
+
+  const inputs = [
+    {
+      name: "username",
+      label: t("inputName.label"),
+    },
+    {
+      name: "email",
+      label: t("inputEmail.label"),
+    },
+    {
+      name: "message",
+      label: t("inputMessage.label"),
+    },
+  ];
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -89,8 +87,8 @@ export function ProfileForm() {
       toast({
         variant: "success",
         duration: 4000,
-        title: "Mensagem enviada com sucesso!",
-        description: "Em breve, entrarei em contato.",
+        title: t("toast.success.title"),
+        description: t("toast.success.description"),
       });
 
       form.reset();
@@ -99,8 +97,8 @@ export function ProfileForm() {
       toast({
         variant: "error",
         duration: 4000,
-        title: "Erro ao enviar o formulário!",
-        description: "Tente novamente mais tarde.",
+        title: t("toast.error.title"),
+        description: t("toast.error.description"),
       });
     } finally {
       setIsLoading(false);
@@ -141,7 +139,7 @@ export function ProfileForm() {
             >
               <HeroTitle
                 className="pb-0 pr-0"
-                text="Enviar mensagem"
+                text={t("button")}
                 letterPadding={false}
                 size="very_small"
               />
