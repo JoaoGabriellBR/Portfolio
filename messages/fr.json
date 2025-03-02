@@ -1,0 +1,99 @@
+{
+    "Header": {
+      "nav1": "Accueil",
+      "nav2": "À propos",
+      "nav3": "Contact"
+    },
+    "Home": {
+      "title_jumbotron": "Développeur",
+      "subtitle_jumbotron": "Full Stack",
+      "Section2": {
+        "title": "Je conçois, développe et crée des applications optimisées grâce aux bonnes pratiques de développement.",
+        "button": "À propos de moi"
+      },
+      "Section3": {
+        "title": "• Projets récents"
+      },
+      "Projects": {
+        "type": "Développement web",
+        "button": "Plus de projets",
+        "cursorLabel": "Voir le projet"
+      }
+    },
+    "About": {
+      "Jumbotron": {
+        "title": "Développeur de logiciels axé sur les applications web et mobiles.",
+        "button": "Contact"
+      },
+      "competence": "Expérience dans la création et la maintenance d'APIs, de pages de destination, de portails back office et de boutiques en ligne. En plus du code, je surveille les performances des applications et assure la maintenance des systèmes.",
+      "Skills": {
+        "section": "Compétences",
+        "title": "Quelques technologies que j'utilise"
+      },
+      "Experience": {
+        "section": "Expérience",
+        "Job1": {
+          "name": "Neway",
+          "position": "Développeur Full Stack",
+          "activities": "Je corrige des bugs, implémente de nouvelles fonctionnalités et apporte un support aux systèmes de l'entreprise.",
+          "date": "sept/2022 - actuel"
+        },
+        "Job2": {
+          "name": "Split Risk",
+          "position": "Stage en développement",
+          "activities": "J'aidais les autres développeurs à créer des pages de destination et soutenais la création de prototypes de projets web en utilisant Figma.",
+          "date": "sept/2022 - janv/2024"
+        },
+        "Job3": {
+          "name": "Online Shopping",
+          "position": "Assistant de maintenance",
+          "activities": "Je fournissais une assistance technique aux clients et aux collaborateurs de l'entreprise.",
+          "date": "sept/2021 - août/2022"
+        }
+      },
+      "Services": {
+        "section": "Je pourrais vous aider avec...",
+        "frontend": "Je crée des interfaces intuitives en mettant l'accent sur les détails, des interactions fluides et des micro-animations qui améliorent l'expérience utilisateur.",
+        "backend": "Je développe des back-ends en privilégiant une gestion efficace des données et une évolutivité pour soutenir la croissance de la plateforme.",
+        "fullstack": "J'intègre des solutions complètes combinant le front-end et le back-end, garantissant des performances élevées, une évolutivité et une expérience améliorée."
+      }
+    },
+    "Contact": {
+      "Jumbotron": {
+        "title": "Parlez-moi",
+        "subtitle": "De vos idées"
+      },
+      "Form": {
+        "inputName": {
+          "label": "Nom",
+          "error1": "Le nom doit contenir au moins 2 caractères.",
+          "error2": "Le nom d'utilisateur a dépassé les 50 caractères."
+        },
+        "inputEmail": {
+          "label": "E-mail",
+          "error1": "L'e-mail est obligatoire.",
+          "error2": "Adresse e-mail invalide."
+        },
+        "inputMessage": {
+          "label": "Tapez votre message",
+          "error1": "Le message doit contenir au moins 5 caractères."
+        },
+        "toast": {
+          "success": {
+            "title": "Message envoyé avec succès !",
+            "description": "Je vous contacterai bientôt."
+          },
+          "error": {
+            "title": "Erreur lors de l'envoi du formulaire !",
+            "description": "Veuillez réessayer plus tard."
+          }
+        },
+        "button": "Envoyer le message"
+      }
+    },
+    "Footer": {
+      "title": "Un projet",
+      "subtitle": "en tête ?",
+      "button": "Contact"
+    }
+}

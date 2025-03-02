@@ -16,6 +16,7 @@ const languages = [
   { locale: "en", label: "English" },
   { locale: "pt", label: "Português" },
   { locale: "es", label: "Español" },
+  { locale: "fr", label: "Français" },
 ];
 
 export default function SwitchLanguage() {
@@ -58,7 +59,7 @@ export default function SwitchLanguage() {
                   letterPadding={false}
                   text={language.label}
                   color="white"
-                  size="sm"
+                  size="paragraphy"
                   className="p-4"
                 />
               </Link>
