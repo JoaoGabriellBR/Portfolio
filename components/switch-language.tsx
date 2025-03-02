@@ -13,10 +13,11 @@ import { useLocale } from "next-intl";
 import { HiMiniLanguage } from "react-icons/hi2";
 
 const languages = [
+  { locale: "de", label: "Deutsch" },
   { locale: "en", label: "English" },
-  { locale: "pt", label: "Português" },
   { locale: "es", label: "Español" },
   { locale: "fr", label: "Français" },
+  { locale: "pt", label: "Português" },
 ];
 
 export default function SwitchLanguage() {
