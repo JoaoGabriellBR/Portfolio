@@ -13,6 +13,7 @@ import { Services } from "@/components/services";
 import TextGradientScroll from "@/components/ui/text-gradient";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import TextRevealByWord from "@/components/ui/text-reveal";
 
 export default function About() {
   const t = useTranslations("About");
@@ -81,10 +82,11 @@ export default function About() {
 
           {/* Competence */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
-            <TextGradientScroll
+            {/* <TextGradientScroll
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal break-words text-foreground font-normal"
               text={t("competence")}
-            />
+            /> */}
+            <TextRevealByWord paragraph={t("competence")} />
           </section>
 
           {/* Skills */}
