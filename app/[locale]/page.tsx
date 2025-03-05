@@ -9,6 +9,7 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { Link } from "@/i18n/navigation";
+import { Meteors } from "@/components/ui/meteors";
 
 import { useTranslations } from "next-intl";
 
@@ -29,6 +30,7 @@ export default function Home() {
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           {/* jumbotron  */}
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
+            <Meteors number={100} />
             <div className="flex flex-col items-center justify-center text-center uppercase">
               <HeroTitle text={t("title_jumbotron")} color="white" size="xxl" />
               <HeroTitle

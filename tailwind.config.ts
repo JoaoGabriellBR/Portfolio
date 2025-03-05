@@ -59,6 +59,22 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        meteor: "meteor 5s linear infinite",
+      },
+      keyframes: {
+        meteor: {
+          "0%": {
+            transform: "rotate(var(--angle)) translateX(calc(100vw + 100px))",
+            opacity: "1",
+          },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(var(--angle)) translateX(-100vw)",
+            opacity: "0",
+          },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
