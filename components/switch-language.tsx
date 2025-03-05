@@ -36,7 +36,7 @@ export default function SwitchLanguage() {
           <HiMiniLanguage className="text-foreground h-[5vw] w-[5vw]" />
         </motion.div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-fit">
+      <DropdownMenuContent className="rounded-[2rem]">
         {languages.map((language) => (
           <motion.div
             key={language.locale}

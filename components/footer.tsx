@@ -24,11 +24,11 @@ export const Footer = () => {
 
   return (
     <footer
-      className="container px-4 mx-auto relative rounded-lg overflow-hidden radial-gradient-bg
+      className="relative rounded-lg overflow-hidden radial-gradient-bg
              [--gradient-center:#f3f4f6] [--gradient-edge:#f3f4f6]
              dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
     >
-      <div className="h-screen flex flex-col justify-center items-center space-y-6">
+      <div className="container px-4 mx-auto h-screen flex flex-col justify-center items-center space-y-6">
         <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center gap-x-2 lg:gap-x-4">
           <HeroTitle text={t("title")} size="xl" color="white" />
           <HeroTitle text={t("subtitle")} size="xl" color="silver" />
@@ -52,7 +52,7 @@ export const Footer = () => {
       <div className="absolute bottom-0 left-0 w-full hidden lg:flex justify-center pointer-events-none z-0">
         <AnimatedText
           text="JOÃO GABRIEL SILVA"
-          className="text-[8vw] text-zinc-200 dark:text-neutral-700"
+          className="text-[10vw] text-zinc-200 dark:text-neutral-700"
         />
       </div>
     </footer>

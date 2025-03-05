@@ -28,7 +28,7 @@ export const Services = () => {
       {services.map((service, index) => (
         <div
           key={index}
-          className="flex flex-col items-start p-6 rounded-lg shadow-lg"
+          className="flex flex-col items-start p-6 rounded-lg"
         >
           <HeroTitle
             text={service.number}

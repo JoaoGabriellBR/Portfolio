@@ -7,12 +7,12 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-const SECTION_HEIGHT = 1600;
+const SECTION_HEIGHT = 2000;
 
 export const ParallaxImages = () => {
   return (
     <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 50vh)` }}
+      style={{ height: `calc(${SECTION_HEIGHT}px + 10vh)` }}
       className="relative w-full"
     >
       <ParallaxBigImage />

@@ -29,8 +29,8 @@ export default function Home() {
       >
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           {/* jumbotron  */}
+          <Meteors number={200} />
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
-            <Meteors number={100} />
             <div className="flex flex-col items-center justify-center text-center uppercase">
               <HeroTitle text={t("title_jumbotron")} color="white" size="xxl" />
               <HeroTitle
