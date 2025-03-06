@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { GiWolfHead } from "react-icons/gi";
 import { CgMenuMotion, CgClose } from "react-icons/cg";
@@ -29,6 +29,7 @@ import { FaCheck } from "react-icons/fa";
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [showMobileMenuButton, setShowMobileMenuButton] = useState(false); // Mostra o botão do menu
   const mobileMenuVariant = {
     opened: { y: "0%", transition: { duration: 0.5, ease: "easeInOut" } },
     closed: { y: "-100%", transition: { duration: 0, ease: "easeInOut" } },
@@ -53,6 +54,29 @@ const Header = () => {
 
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
 
+  // Detecta se a tela é mobile
+  const isMobile = () => window.innerWidth <= 768;
+
+  useEffect(() => {
+    const handleResizeOrScroll = () => {
+      if (window.scrollY > 80 || isMobile()) {
+        setShowMobileMenuButton(true);
+      } else {
+        setShowMobileMenuButton(false);
+        setMobileNavOpen(false); // Fecha o menu mobile se Web Menu aparecer
+      }
+    };
+
+    window.addEventListener("scroll", handleResizeOrScroll);
+    window.addEventListener("resize", handleResizeOrScroll);
+    handleResizeOrScroll(); // Verifica já no carregamento
+
+    return () => {
+      window.removeEventListener("scroll", handleResizeOrScroll);
+      window.removeEventListener("resize", handleResizeOrScroll);
+    };
+  }, []);
+
   return (
     <header className="container mx-auto px-4 py-4 flex justify-between items-center relative">
       {/* Logo */}
@@ -62,21 +86,23 @@ const Header = () => {
         </Link>
       </motion.div>
 
-      {/* MENU WEB */}
-      <BorderNavbar>
-        {NAV_ITEMS.map((item, index) => (
-          <>
-            {index !== 0 && (
-              <p className="bg-foreground rounded-full h-1 w-1"></p>
-            )}
-            <FlipLink key={item.id} href={item.href} aria-label={item.title}>
-              {`${item.title}`}
-            </FlipLink>
-          </>
-        ))}
-      </BorderNavbar>
+      {/* MENU WEB (some em mobile) */}
+      <div className="hidden md:flex">
+        <BorderNavbar>
+          {NAV_ITEMS.map((item, index) => (
+            <>
+              {index !== 0 && (
+                <p className="bg-foreground rounded-full h-1 w-1"></p>
+              )}
+              <FlipLink key={item.id} href={item.href} aria-label={item.title}>
+                {`${item.title}`}
+              </FlipLink>
+            </>
+          ))}
+        </BorderNavbar>
+      </div>
 
-      <div className="flex flex-row items-center justify-center gap-4">
+      <div className="hidden md:flex flex-row items-center justify-center gap-4">
         <Menu setActive={setActive}>
           <MenuItem setActive={setActive} active={active} item={"Language"}>
             <div className="flex flex-col items-center space-y-4">
@@ -101,41 +127,57 @@ const Header = () => {
         <ModeToggle />
       </div>
 
-      {/* MENU MOBILE e MENU DE ROLAGEM DA PÁGINA */}
-      {/* <motion.div
-        className="relative z-50"
-        onClick={toggleMobileNav}
-        aria-label="Toggle navigation menu"
-      >
-        <MagneticButton distance={1.5} className="text-foreground p-5">
-          {mobileNavOpen ? (
-            <MagneticButton
-              className="shadow-2xl"
-              distance={1.5}
-              border={false}
-            >
-              <CgClose
-                className="text-4xl shadow-2xl"
-                aria-label="Close menu"
-              />
-            </MagneticButton>
-          ) : (
-            <MagneticButton
-              className="shadow-2xl"
-              distance={1.5}
-              border={false}
-            >
-              <CgMenuMotion
-                className="text-4xl shadow-2xl"
-                aria-label="Open menu"
-              />
-            </MagneticButton>
-          )}
-        </MagneticButton>
-      </motion.div> */}
+      {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
+      {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
+      {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
+      {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
+      {showMobileMenuButton && (
+        <motion.div
+          className="fixed z-50 top-4 right-10"
+          onClick={toggleMobileNav}
+          aria-label="Toggle navigation menu"
+          initial={{ opacity: 0, y: -50, scale: 0.8 }} // Começa mais acima e menor
+          animate={{ opacity: 1, y: 0, scale: 1 }} // Faz o movimento de quicar na posição original
+          exit={{ opacity: 0, y: -50, scale: 0.8 }} // Sobe e encolhe ao sumir
+          transition={{
+            type: "spring", // Tipo de animação elástica
+            stiffness: 300, // Quanto mais alto, mais rápido o bounce
+            damping: 10, // Controla o quanto ele balança depois do bounce
+            duration: 0.6,
+          }}
+          whileHover={{ scale: 1.1 }} // Efeito de crescimento ao passar o mouse
+          whileTap={{ scale: 0.95 }} // Dá aquele efeito de "apertar" ao clicar
+        >
+          <MagneticButton distance={1} className="text-foreground p-5">
+            {mobileNavOpen ? (
+              <MagneticButton
+                className="shadow-2xl"
+                distance={1.5}
+                border={false}
+              >
+                <CgClose
+                  className="text-4xl shadow-2xl"
+                  aria-label="Close menu"
+                />
+              </MagneticButton>
+            ) : (
+              <MagneticButton
+                className="shadow-2xl"
+                distance={1}
+                border={false}
+              >
+                <CgMenuMotion
+                  className="text-4xl shadow-2xl"
+                  aria-label="Open menu"
+                />
+              </MagneticButton>
+            )}
+          </MagneticButton>
+        </motion.div>
+      )}
 
-      {/* Mobile Navigation Menu */}
-      {/* <motion.div
+      {/* MENU MOBILE */}
+      <motion.div
         variants={mobileMenuVariant}
         animate={mobileNavOpen ? "opened" : "closed"}
         className="fixed top-0 left-0 z-40 w-full h-screen bg-background flex flex-col items-center justify-center"
@@ -156,7 +198,7 @@ const Header = () => {
             <ModeToggle />
           </div>
         </motion.div>
-      </motion.div> */}
+      </motion.div>
     </header>
   );
 };
