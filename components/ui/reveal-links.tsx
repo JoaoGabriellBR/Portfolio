@@ -17,7 +17,7 @@ export const FlipLink = ({
       <motion.div
         initial="initial"
         whileHover="hovered"
-        className="text-foreground relative block overflow-hidden whitespace-nowrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+        className="text-foreground relative block overflow-hidden whitespace-nowrap text-[1rem] font-extralight text-neutral-400"
         style={{
           lineHeight: 0.75,
         }}
