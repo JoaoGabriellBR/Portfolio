@@ -83,10 +83,10 @@ const Header = () => {
               {languages.map((language) => (
                 <div className="flex flex-row justify-start items-center gap-2">
                   {currentLocale === language.locale && (
-                    <FaCheck className="text-[0.7rem] font-extralight text-foreground" />
+                    <p className="bg-foreground rounded-full h-1 w-1"></p>
                   )}
                   <Link
-                    className="whitespace-nowrap text-[1rem] font-extralight text-foreground"
+                    className={` whitespace-nowrap text-[1rem] font-extralight text-foreground`}
                     href={pathname}
                     locale={language.locale}
                   >

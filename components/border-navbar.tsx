@@ -12,7 +12,7 @@ export function BorderNavbar({ children }: any) {
 
   return (
     <div
-      className="w-[300px] h-[60px] relative border-2 border-neutral-900 rounded-full bg-background flex flex-row items-center justify-around p-4 shadow-lg"
+      className="w-[300px] h-[60px] relative border-2 border-neutral-300 dark:border-neutral-900 rounded-full bg-background flex flex-row items-center justify-around p-4 shadow-lg"
       style={{
         // width: "fit", // Largura personalizada
         // height: "60px", // Altura personalizada

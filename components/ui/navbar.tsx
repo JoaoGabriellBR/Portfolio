@@ -45,11 +45,11 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="backdrop-blur-sm rounded-2xl overflow-hidden border border-neutral-300 dark:border-neutral-900 shadow-xl"
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
+                  className="w-max h-full px-6 py-4"
                 >
                   {children}
                 </motion.div>
@@ -79,37 +79,9 @@ export const Menu = ({
   );
 };
 
-export const ProductItem = ({
-  title,
-  description,
-  href,
-  src,
-}: {
-  title: string;
-  description: string;
-  href: string;
-  src: string;
-}) => {
-  return (
-    <Link href={href} className="flex space-x-2">
-      <Image
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl font-bold mb-1">{title}</h4>
-        <p className="text-sm max-w-[10rem]">{description}</p>
-      </div>
-    </Link>
-  );
-};
-
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <Link {...rest} className="">
+    <Link {...rest}>
       <p>{children}</p>
     </Link>
   );
