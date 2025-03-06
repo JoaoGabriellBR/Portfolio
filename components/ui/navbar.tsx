@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import HeroTitle from "./hero-title";
 import { Link } from "@/i18n/navigation";
-import { FlipLink } from "./reveal-links";
+import { TbWorld } from "react-icons/tb";
+import { HiLanguage } from "react-icons/hi2";
 
 const transition = {
   type: "spring",
@@ -27,8 +27,13 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative leading-loose">
-      {item}
+    <div
+      onMouseEnter={() => setActive(item)}
+      className="relative leading-loose"
+    >
+      <span>
+        <HiLanguage className="text-2xl text-foreground cursor-pointer" />
+      </span>
       {active !== null && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}

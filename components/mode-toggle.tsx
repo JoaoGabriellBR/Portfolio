@@ -22,16 +22,16 @@ export function ModeToggle() {
       initial={{ y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="cursor-pointer self-end px-4"
+      className="cursor-pointer"
     >
       {theme === "dark" ? (
         <Moon
-          className="text-foreground h-[5vw] w-[5vw] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+          className="text-foreground text-[0.1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
           onClick={() => setTheme("light")}
         />
       ) : (
         <Sun
-          className="text-foreground h-[5vw] w-[5vw] rotate-0 scale-100 transition-all dark:-rotate-90"
+          className="text-foreground text-[0.1rem] rotate-0 scale-100 transition-all dark:-rotate-90"
           onClick={() => setTheme("dark")}
         />
       )}

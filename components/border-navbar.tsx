@@ -12,7 +12,7 @@ export function BorderNavbar({ children }: any) {
 
   return (
     <div
-      className="w-[350px] h-[60px] relative border-2 border-neutral-900 rounded-full bg-background flex flex-row items-center justify-around p-4 shadow-lg"
+      className="w-[300px] h-[60px] relative border-2 border-neutral-900 rounded-full bg-background flex flex-row items-center justify-around p-4 shadow-lg"
       style={{
         // width: "fit", // Largura personalizada
         // height: "60px", // Altura personalizada
@@ -20,7 +20,7 @@ export function BorderNavbar({ children }: any) {
     >
       <div className="animate-pulse pointer-events-none absolute inset-0 rounded-[inherit] border border-transparent [mask-clip:padding-box,border-box] [mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]">
         <motion.div
-          className={cn("absolute bg-neutral-600")}
+          className={cn("absolute bg-neutral-500")}
           style={{
             width: 80,
             height: 80,

@@ -23,6 +23,8 @@ import { Link, usePathname } from "@/i18n/navigation";
 // import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar";
 import { HiLanguage } from "react-icons/hi2";
+import { useLocale } from "next-intl";
+import { FaCheck } from "react-icons/fa";
 
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -33,6 +35,7 @@ const Header = () => {
   };
   const t = useTranslations("Header");
   const pathname = usePathname();
+  const currentLocale = useLocale();
 
   const NAV_ITEMS = [
     { id: 0, title: t("nav1"), href: "/" },
@@ -59,10 +62,13 @@ const Header = () => {
         </Link>
       </motion.div>
 
+      {/* MENU WEB */}
       <BorderNavbar>
-        {NAV_ITEMS.map((item) => (
+        {NAV_ITEMS.map((item, index) => (
           <>
-            <p className="bg-neutral-400 rounded-full w-[0.2rem] h-[0.2rem]"></p>
+            {index !== 0 && (
+              <p className="bg-foreground rounded-full h-1 w-1"></p>
+            )}
             <FlipLink key={item.id} href={item.href} aria-label={item.title}>
               {`${item.title}`}
             </FlipLink>
@@ -70,24 +76,32 @@ const Header = () => {
         ))}
       </BorderNavbar>
 
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item={"Language"}>
-          <div className="flex flex-col space-y-4">
-            {languages.map((language) => (
-              <Link
-                className="whitespace-nowrap text-[1rem] font-extralight text-neutral-400"
-                href={pathname}
-                locale={language.locale}
-              >
-                {language.label}
-              </Link>
-            ))}
-          </div>
-        </MenuItem>
-      </Menu>
-      {/* <p>2025</p> */}
+      <div className="flex flex-row items-center justify-center gap-4">
+        <Menu setActive={setActive}>
+          <MenuItem setActive={setActive} active={active} item={"Language"}>
+            <div className="flex flex-col items-center space-y-4">
+              {languages.map((language) => (
+                <div className="flex flex-row justify-start items-center gap-2">
+                  {currentLocale === language.locale && (
+                    <FaCheck className="text-[0.7rem] font-extralight text-foreground" />
+                  )}
+                  <Link
+                    className="whitespace-nowrap text-[1rem] font-extralight text-foreground"
+                    href={pathname}
+                    locale={language.locale}
+                  >
+                    {language.label}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </MenuItem>
+        </Menu>
 
-      {/* Menu Toggle Button */}
+        <ModeToggle />
+      </div>
+
+      {/* MENU MOBILE e MENU DE ROLAGEM DA PÁGINA */}
       {/* <motion.div
         className="relative z-50"
         onClick={toggleMobileNav}
@@ -121,7 +135,7 @@ const Header = () => {
       </motion.div> */}
 
       {/* Mobile Navigation Menu */}
-      <motion.div
+      {/* <motion.div
         variants={mobileMenuVariant}
         animate={mobileNavOpen ? "opened" : "closed"}
         className="fixed top-0 left-0 z-40 w-full h-screen bg-background flex flex-col items-center justify-center"
@@ -142,29 +156,9 @@ const Header = () => {
             <ModeToggle />
           </div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </header>
   );
 };
 
 export default Header;
-
-// function Navbar({ className }: { className?: string }) {
-//   const [active, setActive] = useState<string | null>(null);
-//   return (
-//     <div
-//       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-//     >
-//       <Menu setActive={setActive}>
-//         <MenuItem setActive={setActive} active={active} item="Pricing">
-//           <div className="flex flex-col space-y-4 text-sm">
-//             <HoveredLink href="/hobby">Hobby</HoveredLink>
-//             <HoveredLink href="/individual">Individual</HoveredLink>
-//             <HoveredLink href="/team">Team</HoveredLink>
-//             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-//           </div>
-//         </MenuItem>
-//       </Menu>
-//     </div>
-//   );
-// }
