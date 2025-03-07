@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { FaGlobe } from "react-icons/fa";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import MagneticButton from "./ui/button-magnetic";
+import HeroTitle from "./ui/hero-title";
 
 const languages = [
   { locale: "de", label: "Deutsch" },
@@ -30,16 +32,18 @@ const LanguageSelector = () => {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <button
+      <MagneticButton
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-2xl shadow-md hover:bg-blue-600 transition"
+        distance={0.5}
+        className="w-fit h-20 text-2xl flex gap-4 p-5"
       >
-        <FaGlobe />
-        {languages.map(
-          (language) =>
-            currentLocale === language.locale && <p>{language.label}</p>
-        )}
-      </button>
+        <FaGlobe className="text-background dark:text-foreground text-[1.5rem]" />
+        <p className="text-background font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+          {languages.map(
+            (language) => currentLocale === language.locale && language.label
+          )}
+        </p>
+      </MagneticButton>
 
       {isOpen && (
         <motion.ul
@@ -48,7 +52,7 @@ const LanguageSelector = () => {
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           className={`absolute ${
             openUpwards ? "bottom-full mb-2" : "mt-2"
-          } w-48 bg-neutral-900 border-2 border-neutral-800 rounded-2xl shadow-lg overflow-hidden`}
+          } w-48 h-auto bg-neutral-900 border-2 border-neutral-800 rounded-2xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div
@@ -59,11 +63,13 @@ const LanguageSelector = () => {
                 <p className="bg-background dark:bg-foreground rounded-full h-1 w-1"></p>
               )}
               <Link
-                className="whitespace-nowrap text-[1rem] font-extralight text-background dark:text-foreground"
+                className="text-background dark:text-foreground"
                 href={pathname}
                 locale={language.locale}
               >
-                {language.label}
+                <p className="text-background font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+                  {language.label}
+                </p>
               </Link>
             </div>
           ))}

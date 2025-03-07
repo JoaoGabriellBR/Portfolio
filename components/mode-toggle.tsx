@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { IoSunnyOutline } from "react-icons/io5";
 import { FiMoon } from "react-icons/fi";
 
-export function ModeToggle() {
+export function ModeToggle({ type }: { type?: string }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
@@ -28,12 +28,20 @@ export function ModeToggle() {
     >
       {theme === "dark" ? (
         <FiMoon
-          className="text-foreground text-2xl rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+          className={`${
+            type === "web"
+              ? "text-[1rem] text-foreground"
+              : "text-[5rem] text-background dark:text-foreground"
+          } text-background dark:text-foreground text-[1.5rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
           onClick={() => setTheme("light")}
         />
       ) : (
         <IoSunnyOutline
-          className="text-foreground text-2xl rotate-0 scale-100 transition-all dark:-rotate-90"
+          className={`${
+            type === "web"
+              ? "text-[1rem] text-foreground"
+              : "text-[5rem] text-background dark:text-foreground"
+          } text-background dark:text-foreground text-[1.5rem] rotate-0 scale-100 transition-all dark:-rotate-90`}
           onClick={() => setTheme("dark")}
         />
       )}

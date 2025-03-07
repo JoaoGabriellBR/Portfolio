@@ -119,7 +119,7 @@ const Header = () => {
           </MenuItem>
         </Menu>
 
-        <ModeToggle />
+        <ModeToggle type="web" />
       </div>
 
       {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
@@ -185,8 +185,13 @@ const Header = () => {
           <div className="flex flex-row justify-around items-center">
             <LanguageSelector />
             <ModeToggle />
-            <FaGithub className="text-[1.5rem]" />
-            <FaLinkedin className="text-[1.5rem]" />
+            <MagneticButton distance={1} className={`p-4`}>
+              <FaGithub className="text-background dark:text-foreground text-[1.5rem]" />
+            </MagneticButton>
+
+            <MagneticButton distance={1} className={`p-4`}>
+              <FaLinkedin className="text-background dark:text-foreground text-[1.5rem]" />
+            </MagneticButton>
           </div>
         </motion.div>
       </motion.div>
