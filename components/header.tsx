@@ -9,22 +9,10 @@ import { ModeToggle } from "./mode-toggle";
 import SwitchLanguage from "./switch-language";
 import { useTranslations } from "next-intl";
 import { BorderNavbar } from "./border-navbar";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import HeroTitle from "./ui/hero-title";
+
 import { Link, usePathname } from "@/i18n/navigation";
-// import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar";
-import { HiLanguage } from "react-icons/hi2";
 import { useLocale } from "next-intl";
-import { FaCheck } from "react-icons/fa";
 
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -94,7 +82,12 @@ const Header = () => {
               {index !== 0 && (
                 <p className="bg-foreground rounded-full h-1 w-1"></p>
               )}
-              <FlipLink key={item.id} href={item.href} aria-label={item.title}>
+              <FlipLink
+                type="web"
+                key={item.id}
+                href={item.href}
+                aria-label={item.title}
+              >
                 {`${item.title}`}
               </FlipLink>
             </>
@@ -128,9 +121,6 @@ const Header = () => {
       </div>
 
       {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
-      {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
-      {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
-      {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
       {showMobileMenuButton && (
         <motion.div
           className="fixed z-50 top-4 right-10"
@@ -148,29 +138,22 @@ const Header = () => {
           whileHover={{ scale: 1.1 }} // Efeito de crescimento ao passar o mouse
           whileTap={{ scale: 0.95 }} // Dá aquele efeito de "apertar" ao clicar
         >
-          <MagneticButton distance={1} className="text-foreground p-5">
+          <MagneticButton
+            distance={1}
+            className={`${
+              mobileNavOpen ? "text-neutral-200" : "text-foreground "
+            } p-5`}
+          >
             {mobileNavOpen ? (
-              <MagneticButton
-                className="shadow-2xl"
-                distance={1.5}
-                border={false}
-              >
-                <CgClose
-                  className="text-4xl shadow-2xl"
-                  aria-label="Close menu"
-                />
-              </MagneticButton>
+              <CgClose
+                className="text-4xl shadow-2xl"
+                aria-label="Close menu"
+              />
             ) : (
-              <MagneticButton
-                className="shadow-2xl"
-                distance={1}
-                border={false}
-              >
-                <CgMenuMotion
-                  className="text-4xl shadow-2xl"
-                  aria-label="Open menu"
-                />
-              </MagneticButton>
+              <CgMenuMotion
+                className="text-4xl shadow-2xl"
+                aria-label="Open menu"
+              />
             )}
           </MagneticButton>
         </motion.div>
@@ -180,21 +163,24 @@ const Header = () => {
       <motion.div
         variants={mobileMenuVariant}
         animate={mobileNavOpen ? "opened" : "closed"}
-        className="fixed top-0 left-0 z-40 w-full h-screen bg-background flex flex-col items-center justify-center"
+        className="fixed top-0 right-0 z-40 w-[34rem] h-screen shadow-lg bg-neutral-900 flex flex-col items-start justify-start px-24 pt-40 pb-24"
       >
+        <p className="w-full h-[0.04rem] bg-neutral-600 mb-10"></p>
         <motion.div
           initial={{ y: 48, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.75 }}
-          className="container mx-auto flex flex-col px-4 gap-10"
+          className="h-full container mx-auto flex flex-col justify-between gap-10"
         >
-          {NAV_ITEMS.map((item) => (
-            <FlipLink key={item.id} href={item.href} aria-label={item.title}>
-              {item.title}
-            </FlipLink>
-          ))}
-          <div className="flex flex-row justify-end items-center">
-            <SwitchLanguage />
+          <div className="flex flex-col gap-10">
+            {NAV_ITEMS.map((item) => (
+              <FlipLink key={item.id} href={item.href} aria-label={item.title}>
+                {item.title}
+              </FlipLink>
+            ))}
+          </div>
+
+          <div className="flex flex-row justify-start items-center">
             <ModeToggle />
           </div>
         </motion.div>

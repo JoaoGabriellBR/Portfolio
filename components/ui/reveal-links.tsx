@@ -8,16 +8,22 @@ const STAGGER = 0.025;
 export const FlipLink = ({
   children,
   href,
+  type,
 }: {
   children: string;
   href: string;
+  type?: string;
 }) => {
   return (
     <Link href={href}>
       <motion.div
         initial="initial"
         whileHover="hovered"
-        className="text-foreground relative block overflow-hidden whitespace-nowrap text-[1rem] font-extralight"
+        className={`${
+          type === "web"
+            ? "text-[1rem] text-foreground"
+            : "text-[5rem] text-background dark:text-foreground"
+        } relative block overflow-hidden whitespace-nowrap font-extralight`}
         style={{
           lineHeight: 0.75,
         }}
