@@ -13,6 +13,8 @@ import { BorderNavbar } from "./border-navbar";
 import { Link, usePathname } from "@/i18n/navigation";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar";
 import { useLocale } from "next-intl";
+import LanguageSelector from "./language-selector";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -180,8 +182,11 @@ const Header = () => {
             ))}
           </div>
 
-          <div className="flex flex-row justify-start items-center">
+          <div className="flex flex-row justify-around items-center">
+            <LanguageSelector />
             <ModeToggle />
+            <FaGithub className="text-[1.5rem]" />
+            <FaLinkedin className="text-[1.5rem]" />
           </div>
         </motion.div>
       </motion.div>
