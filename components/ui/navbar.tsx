@@ -78,11 +78,3 @@ export const Menu = ({
     </nav>
   );
 };
-
-export const HoveredLink = ({ children, ...rest }: any) => {
-  return (
-    <Link {...rest}>
-      <p>{children}</p>
-    </Link>
-  );
-};

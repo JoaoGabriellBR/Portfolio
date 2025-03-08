@@ -27,21 +27,21 @@ export function ModeToggle({ type }: { type?: string }) {
       className="cursor-pointer"
     >
       {theme === "dark" ? (
-        <FiMoon
+        <Moon
           className={`${
             type === "web"
-              ? "text-[1rem] text-foreground"
-              : "text-[5rem] text-background dark:text-foreground"
-          } text-background dark:text-foreground text-[1.5rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
+              ? "text-foreground"
+              : "text-background dark:text-foreground"
+          } text-[1.5rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
           onClick={() => setTheme("light")}
         />
       ) : (
-        <IoSunnyOutline
+        <Sun
           className={`${
             type === "web"
-              ? "text-[1rem] text-foreground"
-              : "text-[5rem] text-background dark:text-foreground"
-          } text-background dark:text-foreground text-[1.5rem] rotate-0 scale-100 transition-all dark:-rotate-90`}
+              ? "text-foreground"
+              : "text-background dark:text-foreground"
+          } text-[1.5rem] rotate-0 scale-100 transition-all dark:-rotate-90`}
           onClick={() => setTheme("dark")}
         />
       )}

@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 import { BorderNavbar } from "./border-navbar";
 
 import { Link, usePathname } from "@/i18n/navigation";
-import { HoveredLink, Menu, MenuItem } from "./ui/navbar";
+import { Menu, MenuItem } from "./ui/navbar";
 import { useLocale } from "next-intl";
 import LanguageSelector from "./language-selector";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -165,7 +165,7 @@ const Header = () => {
       <motion.div
         variants={mobileMenuVariant}
         animate={mobileNavOpen ? "opened" : "closed"}
-        className="fixed top-0 right-0 z-40 w-[34rem] h-screen shadow-lg bg-neutral-900 flex flex-col items-start justify-start px-24 pt-40 pb-24"
+        className="fixed top-0 right-0 z-40 w-[34rem] h-screen shadow-lg bg-[#0c0c0c] flex flex-col items-start justify-start px-24 pt-40 pb-24"
       >
         <p className="w-full h-[0.04rem] bg-neutral-600 mb-10"></p>
         <motion.div

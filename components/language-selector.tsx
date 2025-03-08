@@ -68,7 +68,7 @@ const LanguageSelector = () => {
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           className={`absolute ${
             openUpwards ? "bottom-full mb-2" : "mt-2"
-          } w-48 h-auto bg-neutral-900 border-2 border-neutral-800 rounded-2xl shadow-lg overflow-hidden`}
+          } w-48 h-auto bg-foreground dark:bg-background border-2 border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div
