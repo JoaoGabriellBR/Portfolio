@@ -125,7 +125,7 @@ const Header = () => {
       {/* BOTÃO MENU MOBILE (só aparece em mobile ou com scroll) */}
       {showMobileMenuButton && (
         <motion.div
-          className="fixed z-50 top-4 right-10"
+          className="fixed z-50 top-4 right-4"
           onClick={toggleMobileNav}
           aria-label="Toggle navigation menu"
           initial={{ opacity: 0, y: -50, scale: 0.8 }} // Começa mais acima e menor
@@ -182,16 +182,25 @@ const Header = () => {
             ))}
           </div>
 
-          <div className="flex flex-row justify-around items-center">
+          <div className="flex flex-row justify-around items-center gap-3">
             <LanguageSelector />
-            <ModeToggle />
             <MagneticButton distance={1} className={`p-4`}>
-              <FaGithub className="text-background dark:text-foreground text-[1.5rem]" />
+              <ModeToggle />
             </MagneticButton>
+            <Link href="https://github.com/JoaoGabriellBR" target="blank">
+              <MagneticButton distance={1} className={`p-4`}>
+                <FaGithub className="text-background dark:text-foreground text-[1.5rem]" />
+              </MagneticButton>
+            </Link>
 
-            <MagneticButton distance={1} className={`p-4`}>
-              <FaLinkedin className="text-background dark:text-foreground text-[1.5rem]" />
-            </MagneticButton>
+            <Link
+              href="https://www.linkedin.com/in/joaogabriel-silva"
+              target="blank"
+            >
+              <MagneticButton distance={1} className={`p-4`}>
+                <FaLinkedin className="text-background dark:text-foreground text-[1.5rem]" />
+              </MagneticButton>
+            </Link>
           </div>
         </motion.div>
       </motion.div>

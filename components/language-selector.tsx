@@ -4,7 +4,6 @@ import { FaGlobe } from "react-icons/fa";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import MagneticButton from "./ui/button-magnetic";
-import HeroTitle from "./ui/hero-title";
 
 const languages = [
   { locale: "de", label: "Deutsch" },
@@ -28,6 +27,23 @@ const LanguageSelector = () => {
       const spaceAbove = rect.top;
       setOpenUpwards(spaceBelow < 150 && spaceAbove > spaceBelow);
     }
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
   return (

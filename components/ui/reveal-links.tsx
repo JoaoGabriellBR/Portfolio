@@ -22,7 +22,7 @@ export const FlipLink = ({
         className={`${
           type === "web"
             ? "text-[1rem] text-foreground"
-            : "text-[5rem] text-background dark:text-foreground"
+            : "text-[4rem] text-background dark:text-foreground"
         } relative block overflow-hidden whitespace-nowrap font-extralight`}
         style={{
           lineHeight: 0.75,
