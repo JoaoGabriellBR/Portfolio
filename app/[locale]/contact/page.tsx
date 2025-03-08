@@ -5,6 +5,7 @@ import { ProfileForm } from "@/components/form";
 import HeroTitle from "@/components/ui/hero-title";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { useTranslations } from "next-intl";
+import { GiWolfHead } from "react-icons/gi";
 
 export default function Contact() {
   const t = useTranslations("Contact.Jumbotron");

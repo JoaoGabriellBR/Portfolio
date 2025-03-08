@@ -27,12 +27,15 @@ export default function About() {
           lerp: 0.05,
         }}
       >
-        <main className="relative flex flex-col gap-y-2 lg:gap-y-10">
+        <main className=" flex flex-col gap-y-2 lg:gap-y-10">
           {/* Background Decorative Icon */}
-          <GiWolfHead
-            aria-hidden="true"
-            className="text-[100vw] lg:text-[56vw] text-neutral-600 opacity-10 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
-          />
+
+          <div className="relative">
+            <GiWolfHead
+              aria-hidden="true"
+              className="text-[100vw] lg:text-[56vw] text-neutral-600 opacity-10 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
+            />
+          </div>
 
           {/* About Me */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">

@@ -14,16 +14,18 @@ export const FlipLink = ({
   href: string;
   type?: string;
 }) => {
+  const colorWeb =
+    "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200";
+
+  const colorMobile =
+    "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-100 to-neutral-200";
+
   return (
     <Link href={href}>
       <motion.div
         initial="initial"
         whileHover="hovered"
-        className={`${
-          type === "web"
-            ? "text-[1rem] text-foreground"
-            : "text-[4rem] text-background dark:text-foreground"
-        } relative block overflow-hidden whitespace-nowrap font-extralight`}
+        className={`relative block overflow-hidden`}
         style={{
           lineHeight: 0.75,
         }}
@@ -44,13 +46,18 @@ export const FlipLink = ({
                 ease: "easeInOut",
                 delay: STAGGER * i,
               }}
-              className="inline-block"
+              className={`${
+                type === "web"
+                  ? `${colorWeb} text-[1rem]`
+                  : `${colorMobile}  text-[4rem]`
+              } inline-block`}
               key={i}
             >
               {l}
             </motion.span>
           ))}
         </div>
+
         <div className="absolute inset-0">
           {children.split("").map((l, i) => (
             <motion.span
@@ -67,7 +74,11 @@ export const FlipLink = ({
                 ease: "easeInOut",
                 delay: STAGGER * i,
               }}
-              className="inline-block"
+              className={`${
+                type === "web"
+                  ? `${colorWeb} text-[1rem]`
+                  : `${colorMobile}  text-[4rem]`
+              } inline-block`}
               key={i}
             >
               {l}
