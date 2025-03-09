@@ -1,7 +1,7 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import HeroTitle from "./ui/hero-title";
+import Typography from "./ui/typography";
 import { Tilt } from "./ui/tilt";
 import { BorderTrail } from "./ui/border-trail";
 
@@ -47,7 +47,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
           >
             {/* EXPERIÊNCIA  */}
             <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 my-10 lg:mb-0 self-start max-w-xs lg:max-w-sm md:w-full">
-              <HeroTitle
+              <Typography
                 text={step.type}
                 size="md"
                 className="hidden lg:flex"
@@ -74,25 +74,25 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
                     role="status"
                     aria-label="Loading..."
                   >
-                    <HeroTitle
+                    <Typography
                       text={job.company_name}
                       size="paragraphy"
                       color="white"
                       letterPadding={false}
                     />
-                    <HeroTitle
+                    <Typography
                       text={job.position}
                       size="very_small"
                       color="silver"
                       letterPadding={false}
                     />
-                    <HeroTitle
+                    <Typography
                       text={job.activities}
                       size="very_small"
                       color="white"
                       letterPadding={false}
                     />
-                    <HeroTitle
+                    <Typography
                       text={job.company_time}
                       color="silver"
                       className="self-end text-sm"

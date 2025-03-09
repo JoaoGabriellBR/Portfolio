@@ -3,7 +3,7 @@ import { useState } from "react";
 import Project from "./project";
 import Modal from "./modal";
 import MagneticButton from "./ui/button-magnetic";
-import HeroTitle from "./ui/hero-title";
+import Typography from "./ui/typography";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -13,25 +13,21 @@ const projects = [
     title: "Adidas",
     src: "/images/adidas.png",
     href: "https://adidasshopping.vercel.app",
-    color: "#000000",
   },
   {
     title: "UpWrite",
     src: "/images/upwrite.png",
     href: "https://up-write.vercel.app",
-    color: "#000000",
   },
   {
     title: "World News",
     src: "/images/worldnews.png",
     href: "https://siteworldnews.vercel.app",
-    color: "#000000",
   },
   {
     title: "Solar Toy",
     src: "/images/solartoy.png",
     href: "https://solartoy.netlify.app",
-    color: "#000000",
   },
 ];
 
@@ -64,7 +60,7 @@ export default function Projects() {
             distance={0.5}
             border={false}
           >
-            <HeroTitle
+            <Typography
               className="pb-0 pr-0"
               text={t("Projects.button")}
               letterPadding={false}

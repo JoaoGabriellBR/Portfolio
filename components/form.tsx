@@ -12,7 +12,7 @@ import { ImSpinner9 } from "react-icons/im";
 import MagneticButton from "./ui/button-magnetic";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import HeroTitle from "./ui/hero-title";
+import Typography from "./ui/typography";
 import {
   Form,
   FormControl,
@@ -137,7 +137,7 @@ export function ProfileForm() {
               distance={0.5}
               border={false}
             >
-              <HeroTitle
+              <Typography
                 className="pb-0 pr-0"
                 text={t("button")}
                 letterPadding={false}

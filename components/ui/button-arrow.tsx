@@ -1,12 +1,12 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
-import HeroTitle from "./hero-title";
+import Typography from "./typography";
 
 const ButtonArrow = ({ children }: any) => {
   return (
     <>
       <button className="group relative inline-flex w-20 h-20 hover:w-40 items-center justify-center overflow-hidden rounded-full bg-transparent font-medium border-2 border-neutral-950 dark:border-zinc-200 transition-all duration-300">
         <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-200 group-hover:-translate-x-3 group-hover:opacity-100">
-          <HeroTitle
+          <Typography
             text={children}
             letterPadding={false}
             size="very_small"

@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 interface ModalProps {
   modal: { active: boolean; index: number };
-  projects: { src: string; color: string }[];
+  projects: { src: string; }[];
 }
 
 const scaleAnimation = {
@@ -93,8 +93,8 @@ export default function Modal({ modal, projects }: ModalProps) {
           {projects.map((project, idx) => (
             <div
               key={`modal_${idx}`}
-              className="flex h-full w-full items-center justify-center"
-              style={{ backgroundColor: project.color }}
+              className="flex h-full w-full items-center justify-center bg-[#0c0c0c]"
+              // style={{ backgroundColor: "project.color" }}
             >
               <Image src={project.src} width={300} height={0} alt="image" />
             </div>

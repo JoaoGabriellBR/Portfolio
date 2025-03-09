@@ -2,7 +2,7 @@
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
 import { JobTimeline } from "@/components/job-timeline";
-import HeroTitle from "@/components/ui/hero-title";
+import Typography from "@/components/ui/typography";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { GiWolfHead } from "react-icons/gi";
 import MagneticButton from "@/components/ui/button-magnetic";
@@ -45,14 +45,14 @@ export default function About() {
                   aria-label="Icone Snapdragon"
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
                 />
-                <HeroTitle
+                <Typography
                   text="João Gabriel Silva"
                   color="silver"
                   size="very_small"
                   letterPadding={false}
                 />
               </div>
-              <HeroTitle
+              <Typography
                 text={t("Jumbotron.title")}
                 color="white"
                 size="md"
@@ -72,7 +72,7 @@ export default function About() {
                     border={false}
                   >
                     <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
-                    <HeroTitle
+                    <Typography
                       size="very_small"
                       text={t("Jumbotron.button")}
                       letterPadding={false}
@@ -100,14 +100,14 @@ export default function About() {
                   aria-label="Icone Snapdragon"
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
                 />
-                <HeroTitle
+                <Typography
                   text={t("Skills.section")}
                   color="silver"
                   size="very_small"
                   letterPadding={false}
                 />
               </div>
-              <HeroTitle
+              <Typography
                 text={t("Skills.title")}
                 color="white"
                 size="md"
@@ -122,7 +122,7 @@ export default function About() {
 
           {/* Experience */}
           <section className="container mx-auto min-h-screen px-4 py-20">
-            <HeroTitle
+            <Typography
               text={t("Experience.section")}
               color="white"
               size="md"
@@ -133,7 +133,7 @@ export default function About() {
 
           {/* Services */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col justify-center items-center gap-8 pt-20">
-            <HeroTitle
+            <Typography
               text={t("Services.section")}
               color="white"
               size="md"

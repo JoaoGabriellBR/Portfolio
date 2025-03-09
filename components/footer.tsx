@@ -3,7 +3,7 @@
 import { Link } from "@/i18n/navigation";
 import AnimatedText from "./ui/cursor-follow-text";
 import ButtonArrow from "./ui/button-arrow";
-import HeroTitle from "./ui/hero-title";
+import Typography from "./ui/typography";
 import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
@@ -30,8 +30,8 @@ export const Footer = () => {
     >
       <div className="container px-4 mx-auto h-screen flex flex-col justify-center items-center space-y-6">
         <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center gap-x-2 lg:gap-x-4">
-          <HeroTitle text={t("title")} size="xl" color="white" />
-          <HeroTitle text={t("subtitle")} size="xl" color="silver" />
+          <Typography text={t("title")} size="xl" color="white" />
+          <Typography text={t("subtitle")} size="xl" color="silver" />
         </div>
 
         {/* Botões de ação */}

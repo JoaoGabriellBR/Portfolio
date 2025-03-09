@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Link, usePathname } from "@/i18n/navigation";
-import HeroTitle from "./ui/hero-title";
+import Typography from "./ui/typography";
 import { IoLanguageOutline } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 import { useLocale } from "next-intl";
@@ -56,7 +56,7 @@ export default function SwitchLanguage() {
                   <FaCheck className="text-3xl" />
                 )}
 
-                <HeroTitle
+                <Typography
                   letterPadding={false}
                   text={language.label}
                   color="white"

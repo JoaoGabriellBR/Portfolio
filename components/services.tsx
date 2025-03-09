@@ -1,4 +1,4 @@
-import HeroTitle from "@/components/ui/hero-title";
+import Typography from "@/components/ui/typography";
 import { useTranslations } from "next-intl";
 import { FaAndroid } from "react-icons/fa";
 
@@ -26,11 +26,8 @@ export const Services = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {services.map((service, index) => (
-        <div
-          key={index}
-          className="flex flex-col items-start p-6 rounded-lg"
-        >
-          <HeroTitle
+        <div key={index} className="flex flex-col items-start p-6 rounded-lg">
+          <Typography
             text={service.number}
             color="silver"
             style={{ lineHeight: "1.5" }}
@@ -38,13 +35,13 @@ export const Services = () => {
           />
           <div className="bg-neutral-700 w-96 h-[0.1rem] my-8"></div>
           {/* <FaAndroid className="text-8xl"/> */}
-          <HeroTitle
+          <Typography
             text={service.name}
             color="white"
             size="sm"
             style={{ lineHeight: "1.5" }}
           />
-          <HeroTitle
+          <Typography
             text={service.test}
             color="silver"
             size="very_small"

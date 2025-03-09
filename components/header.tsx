@@ -13,7 +13,6 @@ import { Link } from "@/i18n/navigation";
 import LanguageSelector from "./language-selector";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import LanguageSelectorWeb from "./language-selector-web";
-import HeroTitle from "./ui/hero-title";
 
 export default function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
