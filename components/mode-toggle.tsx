@@ -6,10 +6,13 @@ import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { IoSunnyOutline } from "react-icons/io5";
 import { FiMoon } from "react-icons/fi";
+import { AiOutlineMoon, AiOutlineSun } from "react-icons/ai";
 
 export function ModeToggle({ type }: { type?: string }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
+  const textSize =
+  "text-sm sm:text-sm md:text-md lg:text-[1.2rem] xl:text-[1.2rem]";
 
   React.useEffect(() => {
     setMounted(true);
@@ -27,21 +30,21 @@ export function ModeToggle({ type }: { type?: string }) {
       className="cursor-pointer"
     >
       {theme === "dark" ? (
-        <Moon
+        <AiOutlineMoon
           className={`${
             type === "web"
               ? "text-foreground"
               : "text-background dark:text-foreground"
-          } text-[1.5rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
+          } ${textSize} rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
           onClick={() => setTheme("light")}
         />
       ) : (
-        <Sun
+        <AiOutlineSun
           className={`${
             type === "web"
               ? "text-foreground"
               : "text-background dark:text-foreground"
-          } text-[1.5rem] rotate-0 scale-100 transition-all dark:-rotate-90`}
+          } ${textSize} rotate-0 scale-100 transition-all dark:-rotate-90`}
           onClick={() => setTheme("dark")}
         />
       )}

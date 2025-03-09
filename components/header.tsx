@@ -15,6 +15,7 @@ import { Menu, MenuItem } from "./ui/navbar";
 import { useLocale } from "next-intl";
 import LanguageSelector from "./language-selector";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import LanguageSelectorWeb from "./language-selector-web";
 
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -77,7 +78,7 @@ const Header = () => {
       </motion.div>
 
       {/* MENU WEB (some em mobile) */}
-      <div className="hidden md:flex">
+      <div className="hidden md:flex mr-0 lg:mr-[-7rem]">
         <BorderNavbar>
           {NAV_ITEMS.map((item, index) => (
             <>
@@ -97,12 +98,14 @@ const Header = () => {
         </BorderNavbar>
       </div>
 
-      <div className="hidden md:flex flex-row items-center justify-center gap-4">
-        <Menu setActive={setActive}>
+
+      {/* MENU DE IDIOMAS  */}
+      <div className="hidden md:flex flex-row items-center justify-center gap-x-4 m-0 p-0">
+        {/* <Menu setActive={setActive}>
           <MenuItem setActive={setActive} active={active} item={"Language"}>
             <div className="flex flex-col items-center space-y-4">
-              {languages.map((language) => (
-                <div className="flex flex-row justify-start items-center gap-2">
+              {languages.map((language, index) => (
+                <div key={index} className="flex flex-row justify-start items-center gap-2 hover:bg-neutral-800">
                   {currentLocale === language.locale && (
                     <p className="bg-foreground rounded-full h-1 w-1"></p>
                   )}
@@ -117,7 +120,8 @@ const Header = () => {
               ))}
             </div>
           </MenuItem>
-        </Menu>
+        </Menu> */}
+        <LanguageSelectorWeb/>
 
         <ModeToggle type="web" />
       </div>

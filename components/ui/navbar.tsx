@@ -29,7 +29,9 @@ export const MenuItem = ({
   return (
     <div
       onMouseEnter={() => setActive(item)}
-      className="relative leading-loose"
+      className={`relative leading-loose ${
+        active === item ? "bg-neutral-400" : ""
+      } hover:bg-neutral-400`}
     >
       <span>
         <HiLanguage className="text-2xl text-foreground cursor-pointer" />
@@ -45,7 +47,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="backdrop-blur-sm rounded-2xl overflow-hidden border border-neutral-300 dark:border-neutral-900 shadow-xl"
+                className="backdrop-blur-sm rounded-3xl overflow-hidden border border-neutral-300 dark:border-neutral-900 shadow-xl"
               >
                 <motion.div
                   layout // layout ensures smooth animation

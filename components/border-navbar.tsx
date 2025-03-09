@@ -22,9 +22,11 @@ export function BorderNavbar({ children }: any) {
         <motion.div
           className={cn("absolute bg-neutral-500")}
           style={{
-            width: 80,
-            height: 80,
-            offsetPath: `rect(0 auto auto 0 round ${10}px)`,
+            width: 100,
+            height: 100,
+            offsetPath: `rect(0 auto auto 0 round ${100}px)`,
+            boxShadow:
+              "0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)",
           }}
           animate={{
             offsetDistance: ["0%", "100%"],
