@@ -1,24 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { GiWolfHead } from "react-icons/gi";
 import { CgMenuMotion, CgClose } from "react-icons/cg";
 import MagneticButton from "./ui/button-magnetic";
 import { FlipLink } from "./ui/reveal-links";
 import { ModeToggle } from "./mode-toggle";
-import SwitchLanguage from "./switch-language";
-import { useTranslations } from "next-intl";
 import { BorderNavbar } from "./border-navbar";
 
-import { Link, usePathname } from "@/i18n/navigation";
-import { Menu, MenuItem } from "./ui/navbar";
-import { useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import LanguageSelector from "./language-selector";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import LanguageSelectorWeb from "./language-selector-web";
+import HeroTitle from "./ui/hero-title";
 
-const Header = () => {
-  const [active, setActive] = useState<string | null>(null);
+export default function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [showMobileMenuButton, setShowMobileMenuButton] = useState(false); // Mostra o botão do menu
   const mobileMenuVariant = {
@@ -26,21 +23,11 @@ const Header = () => {
     closed: { y: "-100%", transition: { duration: 0, ease: "easeInOut" } },
   };
   const t = useTranslations("Header");
-  const pathname = usePathname();
-  const currentLocale = useLocale();
 
   const NAV_ITEMS = [
     { id: 0, title: t("nav1"), href: "/" },
     { id: 1, title: t("nav2"), href: "/about" },
     { id: 2, title: t("nav3"), href: "/contact" },
-  ];
-
-  const languages = [
-    { locale: "de", label: "Deutsch" },
-    { locale: "en", label: "English" },
-    { locale: "es", label: "Español" },
-    { locale: "fr", label: "Français" },
-    { locale: "pt", label: "Português" },
   ];
 
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
@@ -98,31 +85,9 @@ const Header = () => {
         </BorderNavbar>
       </div>
 
-
       {/* MENU DE IDIOMAS  */}
       <div className="hidden md:flex flex-row items-center justify-center gap-x-4 m-0 p-0">
-        {/* <Menu setActive={setActive}>
-          <MenuItem setActive={setActive} active={active} item={"Language"}>
-            <div className="flex flex-col items-center space-y-4">
-              {languages.map((language, index) => (
-                <div key={index} className="flex flex-row justify-start items-center gap-2 hover:bg-neutral-800">
-                  {currentLocale === language.locale && (
-                    <p className="bg-foreground rounded-full h-1 w-1"></p>
-                  )}
-                  <Link
-                    className={` whitespace-nowrap text-[1rem] font-extralight text-foreground`}
-                    href={pathname}
-                    locale={language.locale}
-                  >
-                    {language.label}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </MenuItem>
-        </Menu> */}
-        <LanguageSelectorWeb/>
-
+        <LanguageSelectorWeb />
         <ModeToggle type="web" />
       </div>
 
@@ -171,6 +136,12 @@ const Header = () => {
         animate={mobileNavOpen ? "opened" : "closed"}
         className="fixed top-0 right-0 z-40 w-[34rem] h-screen shadow-lg bg-[#0c0c0c] flex flex-col items-start justify-start px-24 pt-40 pb-24"
       >
+        <Link href="mailto:joaoname9@gmail.com">
+          <p className="bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-100 to-neutral-200 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700">
+            joaoname9@gmail.com
+          </p>
+        </Link>
+
         <p className="w-full h-[0.04rem] bg-neutral-600 mb-10"></p>
         <motion.div
           initial={{ y: 48, opacity: 0 }}
@@ -193,7 +164,7 @@ const Header = () => {
             </MagneticButton>
             <Link href="https://github.com/JoaoGabriellBR" target="blank">
               <MagneticButton distance={1} className={`p-4`}>
-                <FaGithub className="text-background dark:text-foreground text-[1.5rem]" />
+                <FaGithub className="text-background dark:text-foreground text-[1.2rem]" />
               </MagneticButton>
             </Link>
 
@@ -202,7 +173,7 @@ const Header = () => {
               target="blank"
             >
               <MagneticButton distance={1} className={`p-4`}>
-                <FaLinkedin className="text-background dark:text-foreground text-[1.5rem]" />
+                <FaLinkedin className="text-background dark:text-foreground text-[1.2rem]" />
               </MagneticButton>
             </Link>
           </div>
@@ -210,6 +181,4 @@ const Header = () => {
       </motion.div>
     </header>
   );
-};
-
-export default Header;
+}

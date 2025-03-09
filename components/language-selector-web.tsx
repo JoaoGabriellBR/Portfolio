@@ -54,8 +54,6 @@ const LanguageSelectorWeb = () => {
 
   return (
     <div className="relative" ref={dropdownRef}>
-
-
       <MagneticButton
         onClick={() => setIsOpen(!isOpen)}
         distance={0.5}
@@ -63,43 +61,35 @@ const LanguageSelectorWeb = () => {
       >
         <FaGlobe className={`${textSize}`} />
 
-        <p
-          className={`${textColor} ${textSize}`}
-        >
+        <p className={`${textColor} ${textSize}`}>
           {languages.map(
             (language) => currentLocale === language.locale && language.locale
           )}
         </p>
       </MagneticButton>
 
-
-
       {isOpen && (
         <motion.ul
           initial={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
-          className={`absolute min-w-20 w-fit h-auto bg-background border-2 border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
+          className={`absolute min-w-20 w-fit h-auto bg-background border-2 border-neutral-300 dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div
               key={language.locale}
-              className="flex flex-row justify-start items-center gap-2 px-4 py-2 hover:bg-neutral-800 cursor-pointer transition"
+              className="flex flex-row justify-start items-center gap-2 px-4 py-2 hover:bg-neutral-200 hover:dark:bg-neutral-800 cursor-pointer transition"
             >
-              {currentLocale === language.locale && (
-                <p className="bg-background dark:bg-foreground rounded-full h-1 w-1"></p>
-              )}
               <Link
                 className="text-background dark:text-foreground"
                 href={pathname}
                 locale={language.locale}
               >
-                <p
-                  className={`${textColor} ${textSize}`}
-                >
-                  {language.label}
-                </p>
+                <p className={`${textColor} ${textSize}`}>{language.label}</p>
               </Link>
+              {currentLocale === language.locale && (
+                <p className="bg-foreground rounded-full h-1 w-1"></p>
+              )}
             </div>
           ))}
         </motion.ul>
