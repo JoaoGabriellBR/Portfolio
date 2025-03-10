@@ -56,20 +56,15 @@ export default function Home() {
             <Link href="/about">
               <MagneticButton
                 distance={1}
-                className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
+                type="3d"
+                className="w-40 h-40 lg:w-64 lg:h-64 flex flex-col justify-center items-center gap-2 text-2xl p-5"
               >
-                <MagneticButton
-                  className="flex flex-col justify-center items-center gap-2"
-                  distance={0.5}
-                  border={false}
-                >
-                  <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
-                  <Typography
-                    size="very_small"
-                    text={t("Section2.button")}
-                    letterPadding={false}
-                  />
-                </MagneticButton>
+                <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                <Typography
+                  size="very_small"
+                  text={t("Section2.button")}
+                  letterPadding={false}
+                />
               </MagneticButton>
             </Link>
           </section>

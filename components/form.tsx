@@ -130,25 +130,19 @@ export function ProfileForm() {
           <MagneticButton
             onClick={form.handleSubmit(onSubmit)}
             distance={1}
-            className="w-72 h-20 text-2xl p-5"
+            className="w-72 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
           >
-            <MagneticButton
-              className="flex flex-row justify-center items-center gap-2"
-              distance={0.5}
-              border={false}
-            >
-              <Typography
-                className="pb-0 pr-0"
-                text={t("button")}
-                letterPadding={false}
-                size="very_small"
-              />
-              {isLoading ? (
-                <ImSpinner9 className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-xl animate-spin" />
-              ) : (
-                <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-3xl" />
-              )}
-            </MagneticButton>
+            <Typography
+              className="pb-0 pr-0"
+              text={t("button")}
+              letterPadding={false}
+              size="very_small"
+            />
+            {isLoading ? (
+              <ImSpinner9 className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-xl animate-spin" />
+            ) : (
+              <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-3xl" />
+            )}
           </MagneticButton>
         </form>
       </Form>

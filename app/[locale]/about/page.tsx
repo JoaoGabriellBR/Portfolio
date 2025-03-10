@@ -10,7 +10,6 @@ import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { CardProjects } from "@/components/card-projects";
 import { Services } from "@/components/services";
-import TextGradientScroll from "@/components/ui/text-gradient";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import TextRevealByWord from "@/components/ui/text-reveal";
@@ -64,20 +63,15 @@ export default function About() {
               <Link href="/contact">
                 <MagneticButton
                   distance={1}
-                  className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5"
+                  type="3d"
+                  className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5 flex flex-col justify-center items-center gap-2"
                 >
-                  <MagneticButton
-                    className="flex flex-col justify-center items-center gap-2"
-                    distance={0.5}
-                    border={false}
-                  >
-                    <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
-                    <Typography
-                      size="very_small"
-                      text={t("Jumbotron.button")}
-                      letterPadding={false}
-                    />
-                  </MagneticButton>
+                  <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                  <Typography
+                    size="very_small"
+                    text={t("Jumbotron.button")}
+                    letterPadding={false}
+                  />
                 </MagneticButton>
               </Link>
             </div>

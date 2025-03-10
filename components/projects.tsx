@@ -54,20 +54,18 @@ export default function Projects() {
       <Modal modal={modal} projects={projects} />
 
       <Link href="https://github.com/JoaoGabriellBR" target="blank">
-        <MagneticButton distance={1} className="w-64 h-20 text-2xl p-5">
-          <MagneticButton
-            className="flex flex-row justify-center items-center gap-2"
-            distance={0.5}
-            border={false}
-          >
-            <Typography
-              className="pb-0 pr-0"
-              text={t("Projects.button")}
-              letterPadding={false}
-              size="very_small"
-            />
-            <IoIosArrowRoundForward className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
-          </MagneticButton>
+        <MagneticButton
+          distance={1}
+          type="3d"
+          className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
+        >
+          <Typography
+            className="pb-0 pr-0"
+            text={t("Projects.button")}
+            letterPadding={false}
+            size="very_small"
+          />
+          <IoIosArrowRoundForward className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
         </MagneticButton>
       </Link>
     </section>

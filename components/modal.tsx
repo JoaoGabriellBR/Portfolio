@@ -94,7 +94,6 @@ export default function Modal({ modal, projects }: ModalProps) {
             <div
               key={`modal_${idx}`}
               className="flex h-full w-full items-center justify-center bg-[#0c0c0c]"
-              // style={{ backgroundColor: "project.color" }}
             >
               <Image src={project.src} width={300} height={0} alt="image" />
             </div>

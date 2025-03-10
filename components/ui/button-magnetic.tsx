@@ -10,6 +10,7 @@ type MagneticButtonType = {
   className?: string;
   distance?: number;
   border?: boolean;
+  type?: "normal" | "3d";
   onClick?: () => void;
 };
 
@@ -18,6 +19,7 @@ function MagneticButton({
   className = "",
   distance = 0.7,
   border = true,
+  type = "normal",
   onClick,
 }: MagneticButtonType) {
   const [isHovered, setIsHovered] = useState(false);
@@ -69,6 +71,21 @@ function MagneticButton({
         x: springX,
         y: springY,
       }}
+      aria-label="Magnetic Button"
+      {...(type === "3d" && {
+        "aria-label": "Magnetic Button",
+        initial: { opacity: 0, y: -50, scale: 0.8 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: -50, scale: 0.8 },
+        transition: {
+          type: "spring",
+          stiffness: 300,
+          damping: 10,
+          duration: 0.6,
+        },
+        whileHover: { scale: 1.1 },
+        whileTap: { scale: 0.95 },
+      })}
     >
       {children}
     </motion.div>
