@@ -10,14 +10,7 @@ import Typography from "./ui/typography";
 import { FaCheck } from "react-icons/fa";
 import { useLocale } from "next-intl";
 import { HiMiniLanguage } from "react-icons/hi2";
-
-const languages = [
-  { locale: "de", label: "Deutsch" },
-  { locale: "en", label: "English" },
-  { locale: "es", label: "Español" },
-  { locale: "fr", label: "Français" },
-  { locale: "pt", label: "Português" },
-];
+import { languages } from "@/utils/languages";
 
 export default function SwitchLanguage() {
   const pathname = usePathname();

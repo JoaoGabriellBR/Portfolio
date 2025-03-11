@@ -7,29 +7,7 @@ import Typography from "./ui/typography";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-
-const projects = [
-  {
-    title: "Adidas",
-    src: "/images/adidas.png",
-    href: "https://adidasshopping.vercel.app",
-  },
-  {
-    title: "UpWrite",
-    src: "/images/upwrite.png",
-    href: "https://up-write.vercel.app",
-  },
-  {
-    title: "World News",
-    src: "/images/worldnews.png",
-    href: "https://siteworldnews.vercel.app",
-  },
-  {
-    title: "Solar Toy",
-    src: "/images/solartoy.png",
-    href: "https://solartoy.netlify.app",
-  },
-];
+import { projects } from "@/utils/projects";
 
 export default function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });

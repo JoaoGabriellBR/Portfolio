@@ -4,14 +4,7 @@ import { FaGlobe } from "react-icons/fa";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import MagneticButton from "./ui/button-magnetic";
-
-const languages = [
-  { locale: "de", label: "Deutsch" },
-  { locale: "en", label: "English" },
-  { locale: "es", label: "Español" },
-  { locale: "fr", label: "Français" },
-  { locale: "pt", label: "Português" },
-];
+import { languages } from "@/utils/languages";
 
 export default function LanguageSelectorWeb() {
   const [isOpen, setIsOpen] = useState(false);

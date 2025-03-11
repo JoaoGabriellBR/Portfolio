@@ -8,7 +8,7 @@ import { GiWolfHead } from "react-icons/gi";
 import MagneticButton from "@/components/ui/button-magnetic";
 import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
-import CardProjects from "@/components/card-projects";
+import Skills from "@/components/skills";
 import { Services } from "@/components/services";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -106,7 +106,7 @@ export default function About() {
               />
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl">
-              <CardProjects />
+              <Skills />
             </div>
           </section>
 

@@ -1,7 +1,7 @@
 import { BorderTrail } from "./ui/border-trail";
 import { Tilt } from "./ui/tilt";
 
-export function BorderCardProjects({ children }: any) {
+export default function BorderSkills({ children }: any) {
   return (
     <Tilt
       rotationFactor={8}
