@@ -1,6 +1,5 @@
 import Typography from "@/components/ui/typography";
 import { useTranslations } from "next-intl";
-import { FaAndroid } from "react-icons/fa";
 
 export const Services = () => {
   const t = useTranslations("About.Services");
@@ -34,7 +33,6 @@ export const Services = () => {
             className="text-sm"
           />
           <div className="bg-neutral-700 w-96 h-[0.1rem] my-8"></div>
-          {/* <FaAndroid className="text-8xl"/> */}
           <Typography
             text={service.name}
             color="white"

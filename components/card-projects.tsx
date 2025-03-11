@@ -3,7 +3,7 @@ import { SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
 import { FaReact, FaNode, FaDocker, FaAws } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 
-export function CardProjects() {
+export default function CardProjects() {
   const projects = [
     {
       title: "React.js",

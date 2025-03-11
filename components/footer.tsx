@@ -7,7 +7,7 @@ import Typography from "./ui/typography";
 import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
-export const Footer = () => {
+export default function Footer() {
   const pathname = usePathname();
   const t = useTranslations("Footer");
 
@@ -57,4 +57,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}

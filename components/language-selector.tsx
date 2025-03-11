@@ -13,7 +13,7 @@ const languages = [
   { locale: "pt", label: "Português" },
 ];
 
-const LanguageSelector = () => {
+export default function LanguageSelector(){
   const [isOpen, setIsOpen] = useState(false);
   const [openUpwards, setOpenUpwards] = useState(false);
   const pathname = usePathname();
@@ -94,5 +94,3 @@ const LanguageSelector = () => {
     </div>
   );
 };
-
-export default LanguageSelector;

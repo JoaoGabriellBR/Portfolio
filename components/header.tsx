@@ -133,7 +133,7 @@ export default function Header() {
       <motion.div
         variants={mobileMenuVariant}
         animate={mobileNavOpen ? "opened" : "closed"}
-        className="fixed top-0 right-0 z-40 w-[34rem] h-screen shadow-lg bg-[#0c0c0c] flex flex-col items-start justify-start px-24 pt-40 pb-24"
+        className="fixed top-0 right-0 z-40 w-full h-screen shadow-lg bg-[#0c0c0c] flex flex-col items-start justify-start px-24 pt-40 pb-24"
       >
         <Link href="mailto:joaoname9@gmail.com">
           <p className="bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-100 to-neutral-200 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700">

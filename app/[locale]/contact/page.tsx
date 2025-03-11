@@ -1,11 +1,10 @@
 "use client";
 import Header from "@/components/header";
-import { Footer } from "@/components/footer";
+import Footer from "@/components/footer";
 import { ProfileForm } from "@/components/form";
 import Typography from "@/components/ui/typography";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { useTranslations } from "next-intl";
-import { GiWolfHead } from "react-icons/gi";
 
 export default function Contact() {
   const t = useTranslations("Contact.Jumbotron");

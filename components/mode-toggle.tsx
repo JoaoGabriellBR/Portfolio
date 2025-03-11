@@ -1,18 +1,15 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { IoSunnyOutline } from "react-icons/io5";
-import { FiMoon } from "react-icons/fi";
 import { AiOutlineMoon, AiOutlineSun } from "react-icons/ai";
 
 export function ModeToggle({ type }: { type?: string }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
   const textSize =
-  "text-sm sm:text-sm md:text-md lg:text-[1.2rem] xl:text-[1.2rem]";
+    "text-sm sm:text-sm md:text-md lg:text-[1.2rem] xl:text-[1.2rem]";
 
   React.useEffect(() => {
     setMounted(true);

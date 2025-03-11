@@ -13,7 +13,7 @@ const languages = [
   { locale: "pt", label: "Português" },
 ];
 
-const LanguageSelectorWeb = () => {
+export default function LanguageSelectorWeb() {
   const [isOpen, setIsOpen] = useState(false);
   const [openUpwards, setOpenUpwards] = useState(false);
   const pathname = usePathname();
@@ -96,6 +96,4 @@ const LanguageSelectorWeb = () => {
       )}
     </div>
   );
-};
-
-export default LanguageSelectorWeb;
+}

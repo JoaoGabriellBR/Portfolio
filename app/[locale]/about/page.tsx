@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/header";
-import { Footer } from "@/components/footer";
+import Footer from "@/components/footer";
 import { JobTimeline } from "@/components/job-timeline";
 import Typography from "@/components/ui/typography";
 import { ReactLenis } from "@studio-freight/react-lenis";
@@ -8,7 +8,7 @@ import { GiWolfHead } from "react-icons/gi";
 import MagneticButton from "@/components/ui/button-magnetic";
 import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
-import { CardProjects } from "@/components/card-projects";
+import CardProjects from "@/components/card-projects";
 import { Services } from "@/components/services";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -79,10 +79,6 @@ export default function About() {
 
           {/* Competence */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
-            {/* <TextGradientScroll
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal break-words text-foreground font-normal"
-              text={t("competence")}
-            /> */}
             <TextRevealByWord paragraph={t("competence")} />
           </section>
 

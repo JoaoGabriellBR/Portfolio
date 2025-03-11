@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/header";
-import { Footer } from "@/components/footer";
+import Footer from "@/components/footer";
 import { ParallaxImages } from "@/components/parallax-images";
 import Typography from "@/components/ui/typography";
 import MagneticButton from "@/components/ui/button-magnetic";
@@ -23,8 +23,6 @@ export default function Home() {
         root
         options={{
           lerp: 0.05,
-          //   infinite: true,
-          //   syncTouch: true,
         }}
       >
         <main className="flex flex-col gap-y-2 lg:gap-y-10">

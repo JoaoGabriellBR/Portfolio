@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 interface ModalProps {
   modal: { active: boolean; index: number };
-  projects: { src: string; }[];
+  projects: { src: string }[];
 }
 
 const scaleAnimation = {

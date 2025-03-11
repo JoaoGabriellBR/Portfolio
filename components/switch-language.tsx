@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Link, usePathname } from "@/i18n/navigation";
 import Typography from "./ui/typography";
-import { IoLanguageOutline } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 import { useLocale } from "next-intl";
 import { HiMiniLanguage } from "react-icons/hi2";

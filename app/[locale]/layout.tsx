@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Poppins } from "next/font/google";
@@ -33,7 +32,6 @@ export default async function RootLayout({
   }
 
   // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
