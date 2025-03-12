@@ -44,10 +44,10 @@ export default function LanguageSelector(){
       <MagneticButton
         onClick={() => setIsOpen(!isOpen)}
         distance={0.5}
-        className="w-fit h-20 text-2xl flex gap-4 p-5"
+        className="w-fit h-20 text-[2xl] flex gap-4 p-5"
       >
-        <FaGlobe className="text-background dark:text-foreground text-[1.5rem]" />
-        <p className="text-background font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+        <FaGlobe className="text-foreground text-[1.2rem] lg:text-[2rem]" />
+        <p className="text-foreground font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
           {languages.map(
             (language) => currentLocale === language.locale && language.label
           )}
@@ -61,24 +61,24 @@ export default function LanguageSelector(){
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           className={`absolute ${
             openUpwards ? "bottom-full mb-2" : "mt-2"
-          } w-48 h-auto bg-foreground dark:bg-background border-2 border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
+          } w-48 h-auto bg-background border-2 border-neutral-300 dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div
               key={language.locale}
-              className="flex flex-row justify-start items-center gap-2 px-4 py-2 hover:bg-neutral-800 cursor-pointer transition"
+              className="flex flex-row justify-start items-center gap-2 px-4 py-2 hover:bg-neutral-200 hover:dark:bg-neutral-800 cursor-pointer transition"
             >
               <Link
-                className="text-background dark:text-foreground"
+                className="text-foreground"
                 href={pathname}
                 locale={language.locale}
               >
-                <p className="text-background font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+                <p className="text-foreground font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
                   {language.label}
                 </p>
               </Link>
               {currentLocale === language.locale && (
-                <p className="bg-background dark:bg-foreground rounded-full h-1 w-1"></p>
+                <p className="bg-foreground rounded-full h-1 w-1"></p>
               )}
             </div>
           ))}

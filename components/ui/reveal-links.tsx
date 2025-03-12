@@ -14,11 +14,9 @@ export const FlipLink = ({
   href: string;
   type?: string;
 }) => {
-  const colorWeb =
-    "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200";
 
-  const colorMobile =
-    "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-100 to-neutral-200";
+  const textColor =
+    "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200";
 
   return (
     <Link href={href}>
@@ -48,9 +46,9 @@ export const FlipLink = ({
               }}
               className={`${
                 type === "web"
-                  ? `${colorWeb} text-[1rem]`
-                  : `${colorMobile}  text-[4rem]`
-              } inline-block`}
+                  ? `text-[1rem]`
+                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem]`
+              } inline-block ${textColor}`}
               key={i}
             >
               {l}
@@ -76,9 +74,9 @@ export const FlipLink = ({
               }}
               className={`${
                 type === "web"
-                  ? `${colorWeb} text-[1rem]`
-                  : `${colorMobile}  text-[4rem]`
-              } inline-block`}
+                  ? `text-[1rem]`
+                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem]`
+              } inline-block ${textColor}`}
               key={i}
             >
               {l}

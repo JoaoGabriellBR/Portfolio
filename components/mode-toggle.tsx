@@ -8,8 +8,9 @@ import { AiOutlineMoon, AiOutlineSun } from "react-icons/ai";
 export function ModeToggle({ type }: { type?: string }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
-  const textSize =
-    "text-sm sm:text-sm md:text-md lg:text-[1.2rem] xl:text-[1.2rem]";
+  const textSize = `${
+    type === "mobile" ? "text-[1.2rem] lg:text-[2rem]" : "text-[1.2rem]"
+  }`;
 
   React.useEffect(() => {
     setMounted(true);
@@ -28,20 +29,12 @@ export function ModeToggle({ type }: { type?: string }) {
     >
       {theme === "dark" ? (
         <AiOutlineMoon
-          className={`${
-            type === "web"
-              ? "text-foreground"
-              : "text-background dark:text-foreground"
-          } ${textSize} rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
+          className={`${textSize} text-foreground rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
           onClick={() => setTheme("light")}
         />
       ) : (
         <AiOutlineSun
-          className={`${
-            type === "web"
-              ? "text-foreground"
-              : "text-background dark:text-foreground"
-          } ${textSize} rotate-0 scale-100 transition-all dark:-rotate-90`}
+          className={`${textSize} text-foreground rotate-0 scale-100 transition-all dark:-rotate-90`}
           onClick={() => setTheme("dark")}
         />
       )}

@@ -22,7 +22,7 @@ export default function Header() {
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
 
   // Detecta se a tela é mobile
-  const isMobile = () => window.innerWidth <= 768;
+  const isMobile = () => window.innerWidth <= 1000;
 
   useEffect(() => {
     const handleResizeOrScroll = () => {

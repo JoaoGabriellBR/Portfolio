@@ -30,7 +30,7 @@ export const MobileMenuButton = ({ toggleMobileNav, mobileNavOpen }: any) => {
       <MagneticButton
         distance={1}
         className={`${
-          mobileNavOpen ? "text-neutral-200" : "text-foreground "
+          mobileNavOpen ? "text-foreground" : "text-foreground "
         } p-5`}
       >
         {mobileNavOpen ? (
@@ -55,7 +55,7 @@ export const MobileMenu = ({
     <motion.div
       variants={mobileMenuVariant}
       animate={mobileNavOpen ? "opened" : "closed"}
-      className="fixed top-0 right-0 z-40 w-[36rem] h-screen shadow-lg bg-[#0c0c0c] flex flex-col items-start justify-start px-24 pt-40 pb-24"
+      className="fixed top-0 right-0 z-40 w-screen h-screen shadow-lg bg-background flex flex-col items-start justify-start px-24 pt-40 pb-24"
     >
       <Link href="mailto:joaoname9@gmail.com">
         <p className="bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-100 to-neutral-200 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700">
@@ -70,7 +70,7 @@ export const MobileMenu = ({
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="h-full container mx-auto flex flex-col justify-between gap-10"
       >
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 w-fit">
           {NAV_ITEMS.map((item: any) => (
             <FlipLink key={item.id} href={item.href} aria-label={item.title}>
               {item.title}
@@ -78,14 +78,14 @@ export const MobileMenu = ({
           ))}
         </div>
 
-        <div className="flex flex-row justify-around items-center gap-3">
+        <div className="flex flex-row flex-wrap justify-end items-center gap-3">
           <LanguageSelector />
-          <MagneticButton distance={1} className={`p-4`}>
-            <ModeToggle />
+          <MagneticButton distance={1} className={`p-5`}>
+            <ModeToggle type="mobile"/>
           </MagneticButton>
           <Link href="https://github.com/JoaoGabriellBR" target="blank">
-            <MagneticButton distance={1} className={`p-4`}>
-              <FaGithub className="text-background dark:text-foreground text-[1.2rem]" />
+            <MagneticButton distance={1} className={`p-5`}>
+              <FaGithub className="text-foreground text-[1.2rem] lg:text-[2rem]" />
             </MagneticButton>
           </Link>
 
@@ -93,8 +93,8 @@ export const MobileMenu = ({
             href="https://www.linkedin.com/in/joaogabriel-silva"
             target="blank"
           >
-            <MagneticButton distance={1} className={`p-4`}>
-              <FaLinkedin className="text-background dark:text-foreground text-[1.2rem]" />
+            <MagneticButton distance={1} className={`p-5`}>
+              <FaLinkedin className="text-foreground text-[1.2rem] lg:text-[2rem]" />
             </MagneticButton>
           </Link>
         </div>
