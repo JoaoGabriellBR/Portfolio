@@ -38,14 +38,13 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="overflow-x-hidden lg:overflow-visible">
       <div ref={ref} className="relative">
         {steps.map((step, index) => (
           <div
             key={index}
             className="min-h-screen flex flex-col lg:flex-row justify-start pt-10"
           >
-            {/* EXPERIÊNCIA  */}
             <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 my-10 lg:mb-0 self-start max-w-xs lg:max-w-sm md:w-full">
               <Typography
                 text={step.type}
@@ -54,10 +53,10 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
               />
             </div>
 
-            {/* DADOS DO TRABALHO */}
             <div className="flex flex-col justify-start gap-20 pl-4 lg:pl-60">
-              {step.jobs.map((job) => (
+              {step.jobs.map((job, index) => (
                 <Tilt
+                  key={index}
                   rotationFactor={8}
                   isRevese
                   className={`p-24 border border-neutral-200 dark:border-neutral-700 bg-background rounded-[2rem]`}
