@@ -37,7 +37,7 @@ export function ProfileForm() {
       .min(1, { message: t("inputEmail.error1") })
       .email({ message: t("inputEmail.error2") }),
     message: z.string().min(5, {
-      message: t("inputName.error1"),
+      message: t("inputMessage.error1"),
     }),
   });
 
