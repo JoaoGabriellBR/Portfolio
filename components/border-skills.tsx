@@ -16,7 +16,7 @@ export default function BorderSkills({ children }: any) {
         size={100}
       />
       <div
-        className="flex animate-pulse flex-col items-center justify-center space-y-2"
+        className="flex flex-col items-center justify-center space-y-2"
         role="status"
         aria-label="Loading..."
       >

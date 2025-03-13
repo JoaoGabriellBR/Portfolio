@@ -4,7 +4,7 @@ import { FaReact, FaNode, FaDocker, FaAws } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 
 export default function Skills() {
-  const skillsStyles = "text-7xl lg:text-9xl";
+  const skillsStyles = "text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl";
   const skills = [
     {
       title: "React.js",
