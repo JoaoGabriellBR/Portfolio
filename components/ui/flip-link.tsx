@@ -14,7 +14,6 @@ export const FlipLink = ({
   href: string;
   type?: string;
 }) => {
-
   const textColor =
     "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200";
 
@@ -48,7 +47,7 @@ export const FlipLink = ({
                 type === "web"
                   ? `text-[1rem]`
                   : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem]`
-              } inline-block ${textColor}`}
+              } inline-block leading-normal ${textColor}`}
               key={i}
             >
               {l}
@@ -76,7 +75,7 @@ export const FlipLink = ({
                 type === "web"
                   ? `text-[1rem]`
                   : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem]`
-              } inline-block ${textColor}`}
+              } inline-block leading-normal ${textColor}`}
               key={i}
             >
               {l}
