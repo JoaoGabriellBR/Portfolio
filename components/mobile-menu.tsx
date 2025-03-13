@@ -10,6 +10,12 @@ import LanguageSelector from "./language-selector";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const MobileMenuButton = ({ toggleMobileNav, mobileNavOpen }: any) => {
+  // Adiciona ou remove a classe overflow-hidden no body
+
+  if (typeof document !== "undefined") {
+    document.body.classList.toggle("overflow-hidden", mobileNavOpen);
+  }
+
   return (
     <motion.div
       className="fixed z-50 top-4 right-4 lg:top-8 lg:right-8 transform translate-x-0 max-w-screen"
@@ -51,9 +57,19 @@ export const MobileMenu = ({
 }: any) => {
   return (
     <motion.div
-      variants={mobileMenuVariant}
-      animate={mobileNavOpen ? "opened" : "closed"}
-      className="fixed top-0 right-0 z-40 w-full h-screen shadow-lg bg-background flex flex-col items-start justify-start px-4 pt-40 pb-24 space-y-4 lg:space-y-10"
+      initial={{ x: "100%", opacity: 0, scale: 0.9 }}
+      animate={{
+        x: mobileNavOpen ? "0%" : "100%",
+        opacity: mobileNavOpen ? 1 : 0,
+        scale: mobileNavOpen ? 1 : 0.9,
+      }}
+      transition={{
+        ease: "easeInOut",
+        duration: 0.5,
+        scale: { duration: 0.5 },
+        opacity: { duration: 0.3 },
+      }}
+      className="fixed top-0 right-0 z-40 w-full h-screen shadow-lg bg-background flex flex-col items-start justify-start px-4 pt-40 pb-24 space-y-4 lg:space-y-10 overflow-hidden"
     >
       <div className="w-full container mx-auto">
         <Link href="mailto:joaoname9@gmail.com">
