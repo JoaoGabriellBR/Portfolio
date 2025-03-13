@@ -31,7 +31,11 @@ function MagneticButton({
   const springX = useSpring(x, SPRING_CONFIG);
   const springY = useSpring(y, SPRING_CONFIG);
 
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
   useEffect(() => {
+    if (isMobile) return;
+
     const calculateDistance = (e: MouseEvent) => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
@@ -55,7 +59,7 @@ function MagneticButton({
     return () => {
       document.removeEventListener("mousemove", calculateDistance);
     };
-  }, [ref, isHovered]);
+  }, [ref, isHovered, isMobile]);
 
   return (
     <motion.div
@@ -65,11 +69,11 @@ function MagneticButton({
         "border border-neutral-700 hover:bg-neutral-500 hover:bg-opacity-10"
       }`}
       ref={ref}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && setIsHovered(false)}
       style={{
-        x: springX,
-        y: springY,
+        x: isMobile ? 0 : springX,
+        y: isMobile ? 0 : springY,
       }}
       aria-label="Magnetic Button"
       {...(type === "3d" && {
