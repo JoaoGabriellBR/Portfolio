@@ -45,7 +45,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="container mx-auto px-4 py-4 ">
+    <header className="container mx-auto px-4 py-4">
       <WebMenu NAV_ITEMS={NAV_ITEMS} />
       {showMobileMenuButton && (
         <MobileMenuButton

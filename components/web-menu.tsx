@@ -11,9 +11,9 @@ import LanguageSelectorWeb from "./language-selector-web";
 export const WebMenu = ({ NAV_ITEMS }: any) => {
   return (
     <div className="w-full flex flex-row items-center justify-between px-4">
-      <motion.div className="flex items-center text-2xl relative z-50 cursor-pointer">
+      <motion.div className="flex items-center relative z-50 cursor-pointer">
         <Link href="/">
-          <GiWolfHead className="text-7xl text-foreground" aria-label="Logo" />
+          <GiWolfHead className="text-[3.5rem] lg:text-[5rem] text-foreground" aria-label="Logo" />
         </Link>
       </motion.div>
 

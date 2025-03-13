@@ -27,7 +27,7 @@ export const MobileMenuButton = ({ toggleMobileNav, mobileNavOpen }: any) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <MagneticButton distance={0} className="text-foreground p-5">
+      <MagneticButton distance={1} className="text-foreground p-5">
         {mobileNavOpen ? (
           <CgClose
             className="text-[1.2rem] lg:text-[2rem] shadow-2xl"
