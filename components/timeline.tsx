@@ -38,7 +38,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div ref={containerRef} className="overflow-x-hidden lg:overflow-visible">
+    <div ref={containerRef} className="overflow-x-hidden lg:overflow-auto">
       <div ref={ref} className="relative">
         {steps.map((step, index) => (
           <div

@@ -29,17 +29,17 @@ export default function About() {
         <main className=" flex flex-col gap-y-2 lg:gap-y-10">
           {/* Background Decorative Icon */}
 
-          <div className="relative">
+          {/* <div className="relative">
             <GiWolfHead
               aria-hidden="true"
               className="text-[100vw] lg:text-[56vw] text-neutral-600 opacity-10 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
             />
-          </div>
+          </div> */}
 
           {/* About Me */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
             <div className="flex flex-col gap-6 mt-[-7rem]">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center lg:justify-start gap-3">
                 <SiSnapdragon
                   aria-label="Icone Snapdragon"
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
@@ -51,14 +51,16 @@ export default function About() {
                   letterPadding={false}
                 />
               </div>
+
               <Typography
                 text={t("Jumbotron.title")}
                 color="white"
                 size="md"
-                className="max-w-3xl"
+                className="max-w-3xl text-center lg:text-start"
                 style={{ lineHeight: "1.5" }}
               />
             </div>
+
             <div className="flex justify-center items-end">
               <Link href="/contact">
                 <MagneticButton

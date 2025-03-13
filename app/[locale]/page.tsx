@@ -27,7 +27,7 @@ export default function Home() {
       >
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           {/* jumbotron  */}
-          <Meteors number={100} />
+          {/* <Meteors number={100} /> */}
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div className="flex flex-col items-center justify-center text-center uppercase">
               <Typography

@@ -20,7 +20,7 @@ const TextRevealByWord: FC<Props> = ({ paragraph, className }) => {
   return (
     <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
       <div className="sticky top-0 mx-auto flex h-[50%] items-center bg-transparent py-[5rem]">
-        <p
+        <h1
           style={{ lineHeight: 1.3 }}
           ref={targetRef}
           className="flex flex-wrap bg-clip-text tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black/20 dark:text-white/20"
@@ -34,7 +34,7 @@ const TextRevealByWord: FC<Props> = ({ paragraph, className }) => {
               </Word>
             );
           })}
-        </p>
+        </h1>
       </div>
     </div>
   );

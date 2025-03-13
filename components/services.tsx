@@ -32,7 +32,7 @@ export const Services = () => {
             style={{ lineHeight: "1.5" }}
             className="text-sm"
           />
-          <div className="bg-neutral-700 w-96 h-[0.1rem] my-8"></div>
+          <div className="bg-neutral-700 w-full h-[0.1rem] my-8"></div>
           <Typography
             text={service.name}
             color="white"
