@@ -30,8 +30,8 @@ export default function Footer() {
     >
       <div className="container px-4 mx-auto h-screen flex flex-col justify-center items-center space-y-6">
         <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center gap-x-2 lg:gap-x-4">
-          <Typography text={t("title")} size="xl" color="white" />
-          <Typography text={t("subtitle")} size="xl" color="silver" />
+          <Typography text={t("title")} size="xl4" color="white" />
+          <Typography text={t("subtitle")} size="xl4" color="silver" />
         </div>
 
         {/* Botões de ação */}

@@ -21,8 +21,8 @@ export default function Contact() {
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           <section className="container mx-auto px-4 min-h-screen flex flex-col items-start justify-center space-y-4 text-center mt-[-4rem]">
             <div className="w-full flex flex-col items-start justify-center text-center uppercase">
-              <Typography text={t("title")} color="white" size="xl" />
-              <Typography text={t("subtitle")} color="silver" size="xl" />
+              <Typography text={t("title")} color="white" size="xl4" />
+              <Typography text={t("subtitle")} color="silver" size="xl4" />
             </div>
             <ProfileForm />
           </section>

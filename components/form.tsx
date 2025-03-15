@@ -136,7 +136,7 @@ export function ProfileForm() {
               className="pb-0 pr-0"
               text={t("button")}
               letterPadding={false}
-              size="very_small"
+              size="md"
             />
             {isLoading ? (
               <ImSpinner9 className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-xl animate-spin" />

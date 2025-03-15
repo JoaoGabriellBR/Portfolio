@@ -41,7 +41,7 @@ export default function Projects() {
             className="pb-0 pr-0"
             text={t("Projects.button")}
             letterPadding={false}
-            size="very_small"
+            size="md"
           />
           <IoIosArrowRoundForward className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
         </MagneticButton>

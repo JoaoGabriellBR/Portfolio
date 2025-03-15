@@ -36,13 +36,13 @@ export const Services = () => {
           <Typography
             text={service.name}
             color="white"
-            size="sm"
+            size="xl"
             style={{ lineHeight: "1.5" }}
           />
           <Typography
             text={service.test}
             color="silver"
-            size="very_small"
+            size="md"
             style={{ lineHeight: "1.5" }}
           />
         </div>

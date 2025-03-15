@@ -33,12 +33,12 @@ export default function Home() {
               <Typography
                 text={t("title_jumbotron")}
                 color="white"
-                size="xxl"
+                size="xl5"
               />
               <Typography
                 text={t("subtitle_jumbotron")}
                 color="silver"
-                size="xxl"
+                size="xl5"
               />
             </div>
           </section>
@@ -48,7 +48,7 @@ export default function Home() {
             <Typography
               text={t("Section2.title")}
               color="white"
-              size="md"
+              size="xl2"
               className="w-full lg:w-[60%] text-center lg:text-start"
             />
             <Link href="/about">
@@ -59,7 +59,7 @@ export default function Home() {
               >
                 <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
                 <Typography
-                  size="very_small"
+                  size="md"
                   text={t("Section2.button")}
                   letterPadding={false}
                 />
@@ -75,7 +75,7 @@ export default function Home() {
               <Typography
                 text={t("Section3.title")}
                 color="silver"
-                size="xxl"
+                size="xl5"
                 className="lg:pb-20"
               />
             </ScrollBaseAnimation>

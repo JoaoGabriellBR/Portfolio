@@ -9,7 +9,7 @@ const ButtonArrow = ({ children }: any) => {
           <Typography
             text={children}
             letterPadding={false}
-            size="very_small"
+            size="md"
             color="white"
           />
         </div>

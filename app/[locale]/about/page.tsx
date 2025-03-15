@@ -47,7 +47,7 @@ export default function About() {
                 <Typography
                   text="João Gabriel Silva"
                   color="silver"
-                  size="very_small"
+                  size="md"
                   letterPadding={false}
                 />
               </div>
@@ -55,7 +55,7 @@ export default function About() {
               <Typography
                 text={t("Jumbotron.title")}
                 color="white"
-                size="md"
+                size="xl2"
                 className="max-w-3xl text-center lg:text-start"
                 style={{ lineHeight: "1.5" }}
               />
@@ -70,7 +70,7 @@ export default function About() {
                 >
                   <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
                   <Typography
-                    size="very_small"
+                    size="md"
                     text={t("Jumbotron.button")}
                     letterPadding={false}
                   />
@@ -95,14 +95,14 @@ export default function About() {
                 <Typography
                   text={t("Skills.section")}
                   color="silver"
-                  size="very_small"
+                  size="md"
                   letterPadding={false}
                 />
               </div>
               <Typography
                 text={t("Skills.title")}
                 color="white"
-                size="md"
+                size="xl2"
                 className="max-w-3xl mx-auto mt-4"
                 style={{ lineHeight: "1.5" }}
               />
@@ -117,7 +117,7 @@ export default function About() {
             <Typography
               text={t("Experience.section")}
               color="white"
-              size="md"
+              size="xl2"
               className="text-center lg:hidden mb-[-4rem]"
             />
             <JobTimeline />
@@ -128,7 +128,7 @@ export default function About() {
             <Typography
               text={t("Services.section")}
               color="white"
-              size="md"
+              size="xl2"
               className="text-center"
               style={{ lineHeight: "1.5" }}
             />

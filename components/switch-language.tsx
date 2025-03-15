@@ -52,7 +52,7 @@ export default function SwitchLanguage() {
                   letterPadding={false}
                   text={language.label}
                   color="white"
-                  size="paragraphy"
+                  size="lg"
                   className="p-4"
                 />
               </Link>
