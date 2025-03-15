@@ -10,12 +10,6 @@ import LanguageSelector from "./language-selector";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const MobileMenuButton = ({ toggleMobileNav, mobileNavOpen }: any) => {
-  // Adiciona ou remove a classe overflow-hidden no body
-
-  if (typeof document !== "undefined") {
-    document.body.classList.toggle("overflow-hidden", mobileNavOpen);
-  }
-
   return (
     <motion.div
       className="fixed z-50 top-4 right-4 lg:top-8 lg:right-8 transform translate-x-0 max-w-screen"

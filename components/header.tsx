@@ -25,12 +25,18 @@ export default function Header() {
   const isMobile = () => window.innerWidth <= 1000;
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleResizeOrScroll = () => {
+      lastScrollY = window.scrollY;
+
       if (window.scrollY > 80 || isMobile()) {
         setShowMobileMenuButton(true);
       } else {
         setShowMobileMenuButton(false);
-        setMobileNavOpen(false); // Fecha o menu mobile se Web Menu aparecer
+        if (!mobileNavOpen) {
+          setMobileNavOpen(false); // Fecha o menu mobile se Web Menu aparecer, exceto se já estiver aberto
+        }
       }
     };
 
@@ -42,17 +48,18 @@ export default function Header() {
       window.removeEventListener("scroll", handleResizeOrScroll);
       window.removeEventListener("resize", handleResizeOrScroll);
     };
-  }, []);
+  }, [mobileNavOpen]);
 
   return (
     <header className="container mx-auto px-4 py-4">
       <WebMenu NAV_ITEMS={NAV_ITEMS} />
-      {showMobileMenuButton && (
+
+      {showMobileMenuButton || mobileNavOpen ? (
         <MobileMenuButton
           toggleMobileNav={toggleMobileNav}
           mobileNavOpen={mobileNavOpen}
         />
-      )}
+      ) : null}
 
       <MobileMenu
         mobileMenuVariant={mobileMenuVariant}
