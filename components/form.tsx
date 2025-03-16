@@ -21,6 +21,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useTranslations } from "next-intl";
+import Error from "next/error";
+
+type FormInputs = {
+  username: string;
+  email: string;
+  message: string;
+};
 
 export function ProfileForm() {
   const { toast } = useToast();
@@ -41,7 +48,7 @@ export function ProfileForm() {
     }),
   });
 
-  const inputs = [
+  const inputs: { name: keyof FormInputs; label: string }[] = [
     {
       name: "username",
       label: t("inputName.label"),
@@ -92,8 +99,7 @@ export function ProfileForm() {
       });
 
       form.reset();
-    } catch (error: any) {
-      console.error(error.message);
+    } catch (error) {
       toast({
         variant: "error",
         duration: 4000,
@@ -109,7 +115,7 @@ export function ProfileForm() {
     <div className="w-2/3 lg:w-1/3">
       <Form {...form}>
         <form className="space-y-8 text-start">
-          {inputs.map((input: any) => (
+          {inputs.map((input) => (
             <FormField
               control={form.control}
               name={input.name}

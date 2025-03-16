@@ -7,16 +7,12 @@ import { WebMenu } from "./web-menu";
 export default function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [showMobileMenuButton, setShowMobileMenuButton] = useState(false); // Mostra o botão do menu
-  const mobileMenuVariant = {
-    opened: { y: "0%", transition: { duration: 0.5, ease: "easeInOut" } },
-    closed: { y: "-100%", transition: { duration: 0, ease: "easeInOut" } },
-  };
   const t = useTranslations("Header");
 
   const NAV_ITEMS = [
-    { id: 0, title: t("nav1"), href: "/" },
-    { id: 1, title: t("nav2"), href: "/about" },
-    { id: 2, title: t("nav3"), href: "/contact" },
+    { title: t("nav1"), href: "/" },
+    { title: t("nav2"), href: "/about" },
+    { title: t("nav3"), href: "/contact" },
   ];
 
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
@@ -61,11 +57,7 @@ export default function Header() {
         />
       ) : null}
 
-      <MobileMenu
-        mobileMenuVariant={mobileMenuVariant}
-        mobileNavOpen={mobileNavOpen}
-        NAV_ITEMS={NAV_ITEMS}
-      />
+      <MobileMenu mobileNavOpen={mobileNavOpen} NAV_ITEMS={NAV_ITEMS} />
     </header>
   );
 }

@@ -9,7 +9,26 @@ import { Link } from "@/i18n/navigation";
 import LanguageSelector from "./language-selector";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-export const MobileMenuButton = ({ toggleMobileNav, mobileNavOpen }: any) => {
+type MobileMenuButtonProps = {
+  toggleMobileNav: () => void;
+  mobileNavOpen: boolean;
+};
+
+type NavItemsProps = {
+  title: string;
+  href: string;
+}[];
+
+type MobileMenuProps = {
+  mobileNavOpen: boolean;
+  NAV_ITEMS: NavItemsProps;
+};
+
+
+export const MobileMenuButton = ({
+  toggleMobileNav,
+  mobileNavOpen,
+}: MobileMenuButtonProps) => {
   return (
     <motion.div
       className="fixed z-50 top-4 right-4 lg:top-8 lg:right-8 transform translate-x-0 max-w-screen"
@@ -44,11 +63,7 @@ export const MobileMenuButton = ({ toggleMobileNav, mobileNavOpen }: any) => {
   );
 };
 
-export const MobileMenu = ({
-  mobileMenuVariant,
-  mobileNavOpen,
-  NAV_ITEMS,
-}: any) => {
+export const MobileMenu = ({ mobileNavOpen, NAV_ITEMS }: MobileMenuProps) => {
   return (
     <motion.div
       initial={{ x: "100%", opacity: 0, scale: 0.9 }}
@@ -81,8 +96,8 @@ export const MobileMenu = ({
         className="h-full container mx-auto flex flex-col justify-between"
       >
         <div className="flex flex-col w-fit gap-y-4 lg::gap-y-10">
-          {NAV_ITEMS.map((item: any) => (
-            <FlipLink key={item.id} href={item.href} aria-label={item.title}>
+          {NAV_ITEMS.map((item, index) => (
+            <FlipLink key={index} href={item.href} aria-label={item.title}>
               {item.title}
             </FlipLink>
           ))}

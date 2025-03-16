@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
-export function BorderNavbar({ children }: any) {
+export function BorderNavbar({ children }: { children: ReactNode }) {
   const BASE_TRANSITION = {
     repeat: Infinity,
     duration: 5,

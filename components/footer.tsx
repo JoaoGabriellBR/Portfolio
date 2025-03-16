@@ -34,7 +34,7 @@ export default function Footer() {
           <Typography text={t("subtitle")} size="xl4" color="silver" />
         </div>
 
-        {/* Botões de ação */}
+        {/* Action Buttons */}
         <div className="flex flex-row justify-center lg:justify-start gap-4">
           {contacts.map((contact, index) => (
             <Link
@@ -42,13 +42,13 @@ export default function Footer() {
               href={contact.link}
               target={pathname === "/contact" ? "blank" : ""}
             >
-              <ButtonArrow>{contact.text}</ButtonArrow>
+              <ButtonArrow text={contact.text} />
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Seção separada para o AnimatedText */}
+      {/* Animated Text */}
       <div className="absolute bottom-0 left-0 w-full hidden lg:flex justify-center pointer-events-none z-0">
         <AnimatedText
           text="JOÃO GABRIEL SILVA"

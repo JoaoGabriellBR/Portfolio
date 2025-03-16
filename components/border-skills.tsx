@@ -1,7 +1,8 @@
+import { ReactElement } from "react";
 import { BorderTrail } from "./ui/border-trail";
 import { Tilt } from "./ui/tilt";
 
-export default function BorderSkills({ children }: any) {
+export default function BorderSkills({ children }: { children: ReactElement }) {
   return (
     <Tilt
       rotationFactor={8}
