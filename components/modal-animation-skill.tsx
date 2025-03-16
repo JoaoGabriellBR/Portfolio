@@ -1,13 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, ReactElement } from "react";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
 
-interface ModalProps {
+interface ModalSkillProps {
   modal: { active: boolean; index: number };
-  projects: { src: string }[];
+  skills: { title: string; logo: ReactElement; type: string }[];
 }
 
 const scaleAnimation = {
@@ -26,7 +25,10 @@ const scaleAnimation = {
   },
 };
 
-export default function Modal({ modal, projects }: ModalProps) {
+export default function ModalSkillAnimation({
+  modal,
+  skills,
+}: ModalSkillProps) {
   const { active, index } = modal;
   const t = useTranslations("Home");
 
@@ -84,38 +86,21 @@ export default function Modal({ modal, projects }: ModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="absolute h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[22rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[25rem]bg-white flex items-center justify-center pointer-events-none overflow-hidden"
+        className="absolute h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem] bg-neutral-50 dark:bg-[#0c0c0c] flex items-center justify-center pointer-events-none overflow-hidden"
       >
         <div
           style={{ top: `${index * -100}%` }}
           className="absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
         >
-          {projects.map((project, idx) => (
+          {skills.map((skill: any, idx: any) => (
             <div
               key={`modal_${idx}`}
-              className="flex h-full w-full items-center justify-center bg-[#0c0c0c]"
+              className="flex h-full w-full items-center justify-center bg-neutral-50 dark:bg-[#0c0c0c]"
             >
-              <Image
-                src={project.src}
-                width={300}
-                className="object-contain lg:object-cover"
-                height={300}
-                alt="image"
-              />
+              {skill.logo}
             </div>
           ))}
         </div>
-      </motion.div>
-
-      {/* Cursor Label */}
-      <motion.div
-        ref={cursorLabel}
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? "enter" : "closed"}
-        className="absolute z-20 h-20 w-20 bg-background p-10  rounded-full flex items-center justify-center font-light text-sm pointer-events-none text-center"
-      >
-        {t("Projects.cursorLabel")}
       </motion.div>
     </>
   );

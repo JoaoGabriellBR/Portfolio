@@ -13,6 +13,7 @@ import { Services } from "@/components/services";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/ui/text-reveal";
+import ModalSkills from "@/components/modal-skills";
 
 export default function About() {
   const t = useTranslations("About");
@@ -84,6 +85,17 @@ export default function About() {
             <TextReveal paragraph={t("competence")} />
           </section>
 
+          {/* Experience */}
+          <section className="container mx-auto min-h-screen px-4 py-20">
+            <Typography
+              text={t("Experience.section")}
+              color="white"
+              size="xl2"
+              className="text-center lg:hidden mb-[-4rem]"
+            />
+            <JobTimeline />
+          </section>
+          
           {/* Skills */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col items-center gap-8 py-20">
             <div className="text-center">
@@ -107,20 +119,10 @@ export default function About() {
                 style={{ lineHeight: "1.5" }}
               />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 w-full">
+            {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 w-full">
               <Skills />
-            </div>
-          </section>
-
-          {/* Experience */}
-          <section className="container mx-auto min-h-screen px-4 py-20">
-            <Typography
-              text={t("Experience.section")}
-              color="white"
-              size="xl2"
-              className="text-center lg:hidden mb-[-4rem]"
-            />
-            <JobTimeline />
+            </div> */}
+            <ModalSkills/>
           </section>
 
           {/* Services */}
