@@ -1,18 +1,11 @@
 "use client";
 import { useState } from "react";
-import Project from "./project";
-import Modal from "./modal";
-import { MagneticButton } from "./ui/button-magnetic";
 import Typography from "./ui/typography";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { projects } from "@/utils/projects";
-import { BorderSkills } from "./border-skills";
 import { SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
 import { FaReact, FaNode, FaDocker, FaAws } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import ModalSkillAnimation from "./modal-animation-skill";
+import { ModalAnimation } from "@/utils/modal-animation";
 
 export default function ModalSkills() {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -85,7 +78,16 @@ export default function ModalSkills() {
         })}
       </div>
 
-      <ModalSkillAnimation modal={modal} skills={skills} />
+      <ModalAnimation modal={modal}>
+        {skills.map((skill: any, index: any) => (
+          <div
+            key={`modal_${index}`}
+            className="flex h-full w-full items-center justify-center bg-neutral-50 dark:bg-[#0c0c0c]"
+          >
+            {skill.logo}
+          </div>
+        ))}
+      </ModalAnimation>
     </section>
   );
 }

@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 import { ParallaxImages } from "@/components/parallax-images";
 import Typography from "@/components/ui/typography";
 import { MagneticButton } from "@/components/ui/button-magnetic";
-import Projects from "@/components/projects";
+import ModalProjects from "@/components/modal-projects";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { TfiArrowTopRight } from "react-icons/tfi";
@@ -81,7 +81,7 @@ export default function Home() {
             </ScrollBaseAnimation>
           </section>
 
-          <Projects />
+          <ModalProjects />
         </main>
       </ReactLenis>
       <Footer />
