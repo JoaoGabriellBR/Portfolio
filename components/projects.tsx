@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Project from "./project";
 import Modal from "./modal";
-import MagneticButton from "./ui/button-magnetic";
+import { MagneticButton } from "./ui/button-magnetic";
 import Typography from "./ui/typography";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";

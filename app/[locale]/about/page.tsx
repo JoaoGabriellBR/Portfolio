@@ -5,14 +5,14 @@ import { JobTimeline } from "@/components/job-timeline";
 import Typography from "@/components/ui/typography";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { GiWolfHead } from "react-icons/gi";
-import MagneticButton from "@/components/ui/button-magnetic";
+import { MagneticButton } from "@/components/ui/button-magnetic";
 import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import Skills from "@/components/skills";
 import { Services } from "@/components/services";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import TextRevealByWord from "@/components/ui/text-reveal";
+import { TextReveal } from "@/components/ui/text-reveal";
 
 export default function About() {
   const t = useTranslations("About");
@@ -81,7 +81,7 @@ export default function About() {
 
           {/* Competence */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
-            <TextRevealByWord paragraph={t("competence")} />
+            <TextReveal paragraph={t("competence")} />
           </section>
 
           {/* Skills */}

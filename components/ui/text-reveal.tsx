@@ -9,7 +9,7 @@ interface Props {
   className?: string;
 }
 
-const TextRevealByWord: FC<Props> = ({ paragraph, className }) => {
+export const TextReveal: FC<Props> = ({ paragraph, className }) => {
   const targetRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -60,5 +60,3 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
     </span>
   );
 };
-
-export default TextRevealByWord;

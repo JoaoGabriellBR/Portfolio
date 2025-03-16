@@ -14,14 +14,14 @@ type MagneticButtonType = {
   onClick?: () => void;
 };
 
-function MagneticButton({
+export const MagneticButton = ({
   children,
   className = "",
   distance = 0.7,
   border = true,
   type = "normal",
   onClick,
-}: MagneticButtonType) {
+}: MagneticButtonType) => {
   const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -95,5 +95,3 @@ function MagneticButton({
     </motion.div>
   );
 }
-
-export default MagneticButton;

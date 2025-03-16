@@ -1,7 +1,7 @@
-'use client';
-import { cn } from '@/lib/utils';
-import { motion, Transition, Variants } from 'motion/react';
-import React, { CSSProperties, ReactNode } from 'react';
+"use client";
+import { cn } from "@/lib/utils";
+import { motion, Transition, Variants } from "motion/react";
+import React, { CSSProperties, ReactNode } from "react";
 
 type SpinningTextProps = {
   children: string;
@@ -21,7 +21,7 @@ type SpinningTextProps = {
 
 const BASE_TRANSITION = {
   repeat: Infinity,
-  ease: 'linear',
+  ease: "linear",
 };
 
 const BASE_ITEM_VARIANTS = {
@@ -45,7 +45,7 @@ export function SpinningText({
   variants,
   centerContent, // Novo: conteúdo centralizado
 }: SpinningTextProps) {
-  const letters = children.split('');
+  const letters = children.split("");
   const totalLetters = letters.length;
 
   const finalTransition = {
@@ -65,12 +65,10 @@ export function SpinningText({
   };
 
   return (
-    <div className={cn('relative', className)} style={{ ...style }}>
+    <div className={cn("relative", className)} style={{ ...style }}>
       {/* Conteúdo centralizado */}
       {centerContent && (
-        <div
-          className="text-2xl absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-        >
+        <div className="text-2xl absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
           {centerContent}
         </div>
       )}
@@ -91,17 +89,17 @@ export function SpinningText({
             className="absolute left-1/2 top-1/2"
             style={
               {
-                '--index': index,
-                '--total': totalLetters,
-                '--font-size': fontSize,
-                '--radius': radius,
+                "--index": index,
+                "--total": totalLetters,
+                "--font-size": fontSize,
+                "--radius": radius,
                 fontSize: `calc(var(--font-size, 2) * 1rem)`,
                 transform: `
                   translate(-50%, -50%)
                   rotate(calc(360deg / var(--total) * var(--index)))
                   translateY(calc(var(--radius, 5) * -1ch))
                 `,
-                transformOrigin: 'center',
+                transformOrigin: "center",
               } as React.CSSProperties
             }
           >

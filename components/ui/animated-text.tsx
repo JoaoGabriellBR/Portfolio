@@ -1,13 +1,16 @@
-'use client';
-import { cn } from '@/lib/utils';
-import React, { useState, useEffect, useRef } from 'react';
+"use client";
+import { cn } from "@/lib/utils";
+import React, { useState, useEffect, useRef } from "react";
 
 interface AnimatedTextProps {
   text: string;
   className?: string;
 }
 
-const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
+export const AnimatedText: React.FC<AnimatedTextProps> = ({
+  text,
+  className,
+}) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const textRef = useRef<HTMLDivElement>(null);
 
@@ -22,10 +25,10 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -40,8 +43,8 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
       )}
       style={
         {
-          '--text-mouse-x': `${mousePosition.x}px`,
-          '--text-mouse-y': `${mousePosition.y}px`,
+          "--text-mouse-x": `${mousePosition.x}px`,
+          "--text-mouse-y": `${mousePosition.y}px`,
         } as React.CSSProperties
       }
     >
@@ -49,5 +52,3 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
     </div>
   );
 };
-
-export default AnimatedText;

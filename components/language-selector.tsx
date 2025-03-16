@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { FaGlobe } from "react-icons/fa";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
-import MagneticButton from "./ui/button-magnetic";
+import { MagneticButton } from "./ui/button-magnetic";
 import { languages } from "@/utils/languages";
 
-export default function LanguageSelector(){
+export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const [openUpwards, setOpenUpwards] = useState(false);
   const pathname = usePathname();
@@ -86,4 +86,4 @@ export default function LanguageSelector(){
       )}
     </div>
   );
-};
+}

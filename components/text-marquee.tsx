@@ -12,13 +12,13 @@ import {
 import { wrap } from "@motionone/utils";
 import { cn } from "@/lib/utils";
 
-type ParallaxProps = {
-  children: string;
-  baseVelocity: number;
+interface ParallaxProps {
+  children: React.ReactNode; // Agora aceita JSX ou texto
+  baseVelocity?: number;
   clasname?: string;
   scrollDependent?: boolean;
   delay?: number;
-};
+}
 
 export default function ScrollBaseAnimation({
   children,
@@ -75,10 +75,11 @@ export default function ScrollBaseAnimation({
         className="flex whitespace-nowrap gap-10 flex-nowrap"
         style={{ x }}
       >
-        <span className={cn(`block text-[8vw]`, clasname)}>{children}</span>
-        <span className={cn(`block text-[8vw]`, clasname)}>{children}</span>
-        <span className={cn(`block text-[8vw]`, clasname)}>{children}</span>
-        <span className={cn(`block text-[8vw]`, clasname)}>{children}</span>
+        {[...Array(4)].map((_, index) => (
+          <div key={index} className={cn(`block text-[8vw]`, clasname)}>
+            {children}
+          </div>
+        ))}
       </motion.div>
     </div>
   );

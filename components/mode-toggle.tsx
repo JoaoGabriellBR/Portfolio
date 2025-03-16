@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { AiOutlineMoon, AiOutlineSun } from "react-icons/ai";
 
-export function ModeToggle({ type }: { type?: string }) {
+export const ModeToggle = ({ type }: { type?: string }) => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
   const textSize = `${
@@ -40,4 +40,4 @@ export function ModeToggle({ type }: { type?: string }) {
       )}
     </motion.div>
   );
-}
+};

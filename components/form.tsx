@@ -9,7 +9,7 @@ import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { ImSpinner9 } from "react-icons/im";
-import MagneticButton from "./ui/button-magnetic";
+import { MagneticButton } from "./ui/button-magnetic";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Typography from "./ui/typography";
@@ -21,7 +21,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useTranslations } from "next-intl";
-import Error from "next/error";
 
 type FormInputs = {
   username: string;

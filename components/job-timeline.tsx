@@ -2,7 +2,7 @@ import React from "react";
 import { Timeline } from "@/components/timeline";
 import { useTranslations } from "next-intl";
 
-export function JobTimeline() {
+export const JobTimeline = () => {
   const t = useTranslations("About.Experience");
 
   const steps = [
@@ -32,4 +32,4 @@ export function JobTimeline() {
   ];
 
   return <Timeline steps={steps} />;
-}
+};

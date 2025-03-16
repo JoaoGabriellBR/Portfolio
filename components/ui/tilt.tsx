@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -9,7 +9,7 @@ import {
   useTransform,
   MotionStyle,
   SpringOptions,
-} from 'motion/react';
+} from "motion/react";
 
 type TiltProps = {
   children: React.ReactNode;
@@ -20,14 +20,14 @@ type TiltProps = {
   springOptions?: SpringOptions;
 };
 
-export function Tilt({
+export const Tilt = ({
   children,
   className,
   style,
   rotationFactor = 15,
   isRevese = false,
   springOptions,
-}: TiltProps) {
+}: TiltProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
@@ -79,7 +79,7 @@ export function Tilt({
       ref={ref}
       className={className}
       style={{
-        transformStyle: 'preserve-3d',
+        transformStyle: "preserve-3d",
         ...style,
         transform,
       }}
@@ -89,4 +89,4 @@ export function Tilt({
       {children}
     </motion.div>
   );
-}
+};

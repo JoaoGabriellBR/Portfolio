@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CgMenuMotion, CgClose } from "react-icons/cg";
-import MagneticButton from "./ui/button-magnetic";
+import { MagneticButton } from "./ui/button-magnetic";
 import { FlipLink } from "./ui/flip-link";
 import { ModeToggle } from "./mode-toggle";
 

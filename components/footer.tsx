@@ -1,8 +1,8 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
-import AnimatedText from "./ui/cursor-follow-text";
-import ButtonArrow from "./ui/button-arrow";
+import { AnimatedText } from "./ui/animated-text";
+import { ButtonArrow } from "./ui/button-arrow";
 import Typography from "./ui/typography";
 import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";

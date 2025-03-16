@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ParallaxImages } from "@/components/parallax-images";
 import Typography from "@/components/ui/typography";
-import MagneticButton from "@/components/ui/button-magnetic";
+import { MagneticButton } from "@/components/ui/button-magnetic";
 import Projects from "@/components/projects";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import ScrollBaseAnimation from "@/components/text-marquee";
