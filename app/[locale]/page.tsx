@@ -10,11 +10,13 @@ import ScrollBaseAnimation from "@/components/text-marquee";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { Link } from "@/i18n/navigation";
 import { Meteors } from "@/components/ui/meteors";
+import { SiDungeonsanddragons } from "react-icons/si";
 
 import { useTranslations } from "next-intl";
 
 export default function Home() {
   const t = useTranslations("Home");
+  const isMobile = () => window.innerWidth < 768;
 
   return (
     <>

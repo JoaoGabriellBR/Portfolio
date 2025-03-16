@@ -4,16 +4,15 @@ import Footer from "@/components/footer";
 import { JobTimeline } from "@/components/job-timeline";
 import Typography from "@/components/ui/typography";
 import { ReactLenis } from "@studio-freight/react-lenis";
-import { GiWolfHead } from "react-icons/gi";
 import { MagneticButton } from "@/components/ui/button-magnetic";
 import { SiSnapdragon } from "react-icons/si";
 import { TfiArrowTopRight } from "react-icons/tfi";
-import Skills from "@/components/skills";
 import { Services } from "@/components/services";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/ui/text-reveal";
 import ModalSkills from "@/components/modal-skills";
+import { SiDungeonsanddragons } from "react-icons/si";
 
 export default function About() {
   const t = useTranslations("About");
@@ -28,14 +27,12 @@ export default function About() {
         }}
       >
         <main className=" flex flex-col gap-y-2 lg:gap-y-10">
-          {/* Background Decorative Icon */}
-
-          {/* <div className="relative">
-            <GiWolfHead
+          <div className="relative">
+            <SiDungeonsanddragons
               aria-hidden="true"
-              className="text-[100vw] lg:text-[56vw] text-neutral-600 opacity-10 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
+              className="text-[100vw] lg:text-[58vw] text-neutral-600 opacity-20 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
             />
-          </div> */}
+          </div>
 
           {/* About Me */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
@@ -81,7 +78,7 @@ export default function About() {
           </section>
 
           {/* Competence */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
+          <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
             <TextReveal paragraph={t("competence")} />
           </section>
 
@@ -95,7 +92,7 @@ export default function About() {
             />
             <JobTimeline />
           </section>
-          
+
           {/* Skills */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col items-center gap-8 py-20">
             <div className="text-center">
@@ -119,11 +116,11 @@ export default function About() {
                 style={{ lineHeight: "1.5" }}
               />
             </div>
-            <ModalSkills/>
+            <ModalSkills />
           </section>
 
           {/* Services */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col justify-center items-center gap-8 pt-20">
+          <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col justify-center items-center gap-8 pt-20">
             <Typography
               text={t("Services.section")}
               color="white"

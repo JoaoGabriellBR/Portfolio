@@ -111,9 +111,9 @@ export function ProfileForm() {
   }
 
   return (
-    <div className="w-2/3 lg:w-1/3">
+    <div className="w-full lg:w-1/3 flex flex-col items-center">
       <Form {...form}>
-        <form className="space-y-8 text-start">
+        <form className="space-y-8 text-start w-full">
           {inputs.map((input) => (
             <FormField
               control={form.control}
@@ -135,7 +135,7 @@ export function ProfileForm() {
           <MagneticButton
             onClick={form.handleSubmit(onSubmit)}
             distance={1}
-            className="w-72 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
+            className="w-full lg:w-72 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
           >
             <Typography
               className="pb-0 pr-0"
