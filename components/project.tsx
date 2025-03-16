@@ -29,10 +29,10 @@ export default function Project({
         setModal({ active: false, index });
       }}
       target="blank"
-      className="flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center px-10 py-12 border-t border-neutral-800 cursor-pointer transition-opacity duration-200 last:border-b hover:opacity-70"
+      className="flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center px-10 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
     >
-      <Typography text={title} color="white" className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl" />
-      <Typography text={t("Projects.type")} color="white" className="text-sm" />
+      <Typography text={title} size="xl3" color="white" />
+      <Typography text={t("Projects.type")} color="white" size="sm" />
     </Link>
   );
 }
