@@ -95,5 +95,10 @@
       "title": "Algum projeto",
       "subtitle": "em mente?",
       "button": "Contato"
+    },
+    "ModalSkills": {
+      "typescript": "Linguagem de programação",
+      "mysql": "Banco de dados",
+      "aws": "Cloud"
     }
 }

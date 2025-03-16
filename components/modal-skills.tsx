@@ -9,7 +9,7 @@ import { ModalAnimation } from "@/utils/modal-animation";
 
 export default function ModalSkills() {
   const [modal, setModal] = useState({ active: false, index: 0 });
-  const t = useTranslations("Home");
+  const t = useTranslations("ModalSkills");
 
   const skillsStyles =
     "text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-foreground";
@@ -38,7 +38,7 @@ export default function ModalSkills() {
     {
       title: "AWS",
       logo: <FaAws className={skillsStyles} />,
-      type: "Cloud",
+      type: t("aws"),
     },
     {
       title: "Tailwind CSS",
@@ -48,12 +48,12 @@ export default function ModalSkills() {
     {
       title: "TypeScript",
       logo: <SiTypescript className={skillsStyles} />,
-      type: "Linguagem de programação",
+      type: t("typescript"),
     },
     {
       title: "MySQL",
       logo: <SiMysql className={skillsStyles} />,
-      type: "Banco de dados",
+      type: t("mysql"),
     },
   ];
 
