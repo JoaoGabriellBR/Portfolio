@@ -28,6 +28,11 @@ export const ModalAnimation = ({ children, modal, type }: any) => {
   const cursor = useRef(null);
   const cursorLabel = useRef(null);
 
+  const stylesProjects =
+    "hidden md:flex md:h-[12rem] lg:h-[22rem] md:w-[15rem] lg:w-[25rem]";
+  const stylesSkills =
+    "h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem]";
+
   useEffect(() => {
     //Move Container
     let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
@@ -78,7 +83,9 @@ export const ModalAnimation = ({ children, modal, type }: any) => {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="absolute h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem] bg-neutral-50 dark:bg-[#0c0c0c] flex items-center justify-center pointer-events-none overflow-hidden"
+        className={`${
+          type === "projects" ? stylesProjects : stylesSkills
+        } absolute bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center pointer-events-none overflow-hidden`}
       >
         <div
           style={{ top: `${index * -100}%` }}

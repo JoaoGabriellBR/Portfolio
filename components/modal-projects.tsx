@@ -39,7 +39,6 @@ export default function ModalProjects() {
             <Image
               src={project.src}
               width={300}
-              className="object-contain lg:object-cover"
               height={300}
               alt="image"
             />
