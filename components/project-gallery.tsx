@@ -1,37 +1,23 @@
 "use client";
-import { useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { useRef, useEffect } from "react";
+import { scaleAnimation } from "@/utils/scale-animation";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import Image from "next/image";
 
-const scaleAnimation = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
-  enter: {
-    scale: 1,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-  },
-  closed: {
-    scale: 0,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
-  },
-};
+interface ProjectProps {
+  modal: { active: boolean; index: number };
+  projects: { src: string }[];
+}
 
-export const ModalAnimation = ({ children, modal, type }: any) => {
+export default function ProjectGallery({ modal, projects }: ProjectProps) {
   const { active, index } = modal;
   const t = useTranslations("Home");
 
   const modalContainer = useRef(null);
   const cursor = useRef(null);
   const cursorLabel = useRef(null);
-
-  const stylesProjects =
-    "hidden md:flex md:h-[12rem] lg:h-[22rem] md:w-[15rem] lg:w-[25rem]";
-  const stylesSkills =
-    "h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem]";
 
   useEffect(() => {
     //Move Container
@@ -77,36 +63,45 @@ export const ModalAnimation = ({ children, modal, type }: any) => {
 
   return (
     <>
-      {/* MODAL ANIMATION */}
+      {/* Modal Container */}
       <motion.div
         ref={modalContainer}
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className={`${
-          type === "projects" ? stylesProjects : stylesSkills
-        } absolute bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center pointer-events-none overflow-hidden`}
+        className="absolute h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[22rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[25rem]bg-white flex items-center justify-center pointer-events-none overflow-hidden"
       >
         <div
           style={{ top: `${index * -100}%` }}
           className="absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
         >
-          {children}
+          {projects.map((project, idx) => (
+            <div
+              key={`modal_${idx}`}
+              className="flex h-full w-full items-center justify-center bg-[#0c0c0c]"
+            >
+              <Image
+                src={project.src}
+                width={300}
+                className="object-contain lg:object-cover"
+                height={300}
+                alt="image"
+              />
+            </div>
+          ))}
         </div>
       </motion.div>
 
-      {/* CURSOR LABEL */}
-      {type === "projects" && (
-        <motion.div
-          ref={cursorLabel}
-          variants={scaleAnimation}
-          initial="initial"
-          animate={active ? "enter" : "closed"}
-          className="absolute z-20 h-20 w-20 bg-background p-10  rounded-full flex items-center justify-center font-light text-sm pointer-events-none text-center"
-        >
-          {t("Projects.cursorLabel")}
-        </motion.div>
-      )}
+      {/* Cursor Label */}
+      <motion.div
+        ref={cursorLabel}
+        variants={scaleAnimation}
+        initial="initial"
+        animate={active ? "enter" : "closed"}
+        className="absolute z-20 h-20 w-20 bg-background p-10  rounded-full flex items-center justify-center font-light text-sm pointer-events-none text-center"
+      >
+        {t("Projects.cursorLabel")}
+      </motion.div>
     </>
   );
-};
+}

@@ -7,10 +7,9 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { projects } from "@/utils/projects";
-import { ModalAnimation } from "@/utils/modal-animation";
-import Image from "next/image";
+import ProjectGallery from "./project-gallery";
 
-export default function ModalProjects() {
+export default function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });
   const t = useTranslations("Home");
 
@@ -30,21 +29,7 @@ export default function ModalProjects() {
         })}
       </div>
 
-      <ModalAnimation modal={modal} type="projects">
-        {projects.map((project, index) => (
-          <div
-            key={`modal_${index}`}
-            className="flex h-full w-full items-center justify-center bg-[#0c0c0c]"
-          >
-            <Image
-              src={project.src}
-              width={300}
-              height={300}
-              alt="image"
-            />
-          </div>
-        ))}
-      </ModalAnimation>
+      <ProjectGallery modal={modal} projects={projects} />
 
       <Link href="https://github.com/JoaoGabriellBR" target="blank">
         <MagneticButton

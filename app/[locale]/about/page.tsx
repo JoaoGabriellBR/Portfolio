@@ -11,7 +11,7 @@ import { Services } from "@/components/services";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/ui/text-reveal";
-import ModalSkills from "@/components/modal-skills";
+import Skills from "@/components/skills";
 import { SiDungeonsanddragons } from "react-icons/si";
 
 export default function About() {
@@ -116,7 +116,7 @@ export default function About() {
                 style={{ lineHeight: "1.5" }}
               />
             </div>
-            <ModalSkills />
+            <Skills />
           </section>
 
           {/* Services */}
