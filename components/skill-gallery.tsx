@@ -75,7 +75,7 @@ export default function SkillGallery({ modal, skills }: SkillProps) {
           {skills.map((skill: any, index: any) => (
             <div
               key={`modal_${index}`}
-              className="flex h-full w-full items-center justify-center bg-neutral-50 dark:bg-[#0c0c0c]"
+              className="flex h-full w-full items-center justify-center shadow-lg bg-neutral-300 dark:bg-[#0c0c0c]"
             >
               {skill.logo}
             </div>
