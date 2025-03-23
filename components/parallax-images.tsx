@@ -97,32 +97,32 @@ const ParallaxSmallImages = ({
 const ImagesComponent = () => {
   const images = [
     {
-      src: "/images/banner1.png",
-      alt: "And example of a space launch",
+      src: "/images/banner5.png",
+      alt: "Lamborghini",
       start: -200,
       end: 200,
-      className: "w-1/3",
+      className: "w-1/3 !grayscale",
     },
     {
-      src: "/images/banner1.png",
-      alt: "And example of a space launch",
+      src: "/images/banner2.png",
+      alt: "Lamborghini logo",
       start: 200,
       end: -250,
-      className: "mx-auto w-2/3",
+      className: "mx-auto w-2/3 !grayscale",
     },
     {
-      src: "/images/banner1.png",
-      alt: "And example of a space launch",
+      src: "/images/banner3.png",
+      alt: "Lamborghini",
       start: -200,
       end: -200,
-      className: "ml-auto w-1/3",
+      className: "ml-auto w-1/3 !grayscale",
     },
     {
-      src: "/images/banner1.png",
-      alt: "And example of a space launch",
+      src: "/images/banner4.png",
+      alt: "Lamborghini Dashboard",
       start: 0,
       end: -500,
-      className: "ml-24 w-5/12",
+      className: "ml-24 w-5/12 !grayscale",
     },
   ];
 

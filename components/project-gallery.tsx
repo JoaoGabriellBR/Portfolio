@@ -8,7 +8,11 @@ import Image from "next/image";
 
 interface ProjectProps {
   modal: { active: boolean; index: number };
-  projects: { src: string }[];
+  projects: {
+    title: string;
+    href: string;
+    src: string;
+  }[];
 }
 
 export default function ProjectGallery({ modal, projects }: ProjectProps) {
@@ -69,7 +73,7 @@ export default function ProjectGallery({ modal, projects }: ProjectProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="absolute h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[22rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[25rem]bg-white flex items-center justify-center pointer-events-none overflow-hidden"
+        className="absolute h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[22rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem] flex items-center justify-center pointer-events-none overflow-hidden"
       >
         <div
           style={{ top: `${index * -100}%` }}
@@ -78,13 +82,14 @@ export default function ProjectGallery({ modal, projects }: ProjectProps) {
           {projects.map((project, idx) => (
             <div
               key={`modal_${idx}`}
-              className="flex h-full w-full items-center justify-center bg-[#0c0c0c]"
+              // className={`flex h-full w-full items-center justify-center`}
+              className="flex h-full w-full items-center justify-center bg-neutral-900 p-4"
             >
               <Image
                 src={project.src}
-                width={300}
-                className="object-contain lg:object-cover"
-                height={300}
+                width={600}
+                className="object-contain"
+                height={600}
                 alt="image"
               />
             </div>

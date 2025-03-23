@@ -72,7 +72,7 @@ export default function Home() {
           <ParallaxImages />
 
           {/* Section3  */}
-          <section className="min-h-20 lg:min-h-80 grid place-content-center">
+          {/* <section className="min-h-20 lg:min-h-80 grid place-content-center">
             <ScrollBaseAnimation delay={1000} baseVelocity={-1.5}>
               <Typography
                 text={t("Section3.title")}
@@ -81,7 +81,7 @@ export default function Home() {
                 className="lg:pb-20"
               />
             </ScrollBaseAnimation>
-          </section>
+          </section> */}
 
           <Projects />
         </main>

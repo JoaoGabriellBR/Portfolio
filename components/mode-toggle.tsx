@@ -21,12 +21,7 @@ export const ModeToggle = ({ type }: { type?: string }) => {
   }
 
   return (
-    <motion.div
-      initial={{ y: 48, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="cursor-pointer"
-    >
+    <div className="cursor-pointer">
       {theme === "dark" ? (
         <AiOutlineMoon
           className={`${textSize} text-foreground rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
@@ -38,6 +33,6 @@ export const ModeToggle = ({ type }: { type?: string }) => {
           onClick={() => setTheme("dark")}
         />
       )}
-    </motion.div>
+    </div>
   );
 };
