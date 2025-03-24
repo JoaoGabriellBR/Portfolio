@@ -11,6 +11,7 @@ import { SiAdidas } from "react-icons/si";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import MonitorMockup from "@/components/ui/monitor-mockup";
+import SmartphoneMockup from "@/components/ui/smartphone-mockup";
 
 export default function ProjectDetails({ params }: any) {
   //   const { name } = await params;
@@ -54,7 +55,7 @@ export default function ProjectDetails({ params }: any) {
             </Link>
           </section>
 
-          <section className="w-full mx-auto px-4 h-screen bg-[0, 0, 90%] flex items-start justify-center">
+          <section className="w-full mx-auto px-4 h-screen flex items-start justify-center">
             <MonitorMockup>
               <Image
                 src="/images/adidas-mockup2.png"
@@ -64,8 +65,36 @@ export default function ProjectDetails({ params }: any) {
               />
             </MonitorMockup>
           </section>
+          <section className="w-full min-h-screen flex items-center rounded-[2rem]">
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-8 flex-wrap">
+              <SmartphoneMockup>
+                <Image
+                  src="/images/mockup-adidas-mobile-1.png"
+                  alt="Mockup image"
+                  fill
+                  className="rounded-[3rem] h-[90%]"
+                />
+              </SmartphoneMockup>
+              <SmartphoneMockup>
+                <Image
+                  src="/images/mockup-adidas-mobile-2.png"
+                  alt="Mockup image"
+                  fill
+                  className="rounded-[3rem] h-[90%]"
+                />
+              </SmartphoneMockup>
+              <SmartphoneMockup>
+                <Image
+                  src="/images/mockup-adidas-mobile-3.png"
+                  alt="Mockup image"
+                  fill
+                  className="rounded-[3rem] h-[90%]"
+                />
+              </SmartphoneMockup>
+            </div>
+          </section>
 
-          {/* <section className="container mx-auto px-4 h-screen flex items-center justify-center">
+          <section className="container mx-auto px-4 h-screen flex items-center justify-center">
             <Image
               src="/images/adidas-mockup1.png"
               alt="Mockup image"
@@ -73,7 +102,7 @@ export default function ProjectDetails({ params }: any) {
               height={1800}
               className="rounded-[3rem] h-fit"
             />
-          </section> */}
+          </section>
 
           <section className="container mx-auto px-4">
             <h1>teste</h1>
