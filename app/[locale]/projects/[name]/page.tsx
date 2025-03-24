@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/header";
-// import { ReactLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import { notFound } from "next/navigation";
 import Typography from "@/components/ui/typography";
 import { MagneticButton } from "@/components/ui/button-magnetic";
@@ -8,6 +8,9 @@ import { TfiArrowTopRight } from "react-icons/tfi";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { SiAdidas } from "react-icons/si";
+import Image from "next/image";
+import Footer from "@/components/footer";
+import MonitorMockup from "@/components/ui/monitor-mockup";
 
 export default function ProjectDetails({ params }: any) {
   //   const { name } = await params;
@@ -18,12 +21,12 @@ export default function ProjectDetails({ params }: any) {
   return (
     <>
       <Header />
-      {/* <ReactLenis
+      <ReactLenis
         root
         options={{
           lerp: 0.05,
         }}
-      > */}
+      >
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           <section className="container mx-auto min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div className="flex flex-row items-center justify-between gap-4 text-center">
@@ -50,8 +53,34 @@ export default function ProjectDetails({ params }: any) {
               </MagneticButton>
             </Link>
           </section>
+
+          <section className="w-full mx-auto px-4 h-screen bg-[0, 0, 90%] flex items-start justify-center">
+            <MonitorMockup>
+              <Image
+                src="/images/adidas-mockup2.png"
+                alt="Mockup image"
+                fill
+                className="rounded-[3rem] h-[90%]"
+              />
+            </MonitorMockup>
+          </section>
+
+          {/* <section className="container mx-auto px-4 h-screen flex items-center justify-center">
+            <Image
+              src="/images/adidas-mockup1.png"
+              alt="Mockup image"
+              width={1800}
+              height={1800}
+              className="rounded-[3rem] h-fit"
+            />
+          </section> */}
+
+          <section className="container mx-auto px-4">
+            <h1>teste</h1>
+          </section>
         </main>
-      {/* </ReactLenis> */}
+      </ReactLenis>
+      <Footer />
     </>
   );
 }
