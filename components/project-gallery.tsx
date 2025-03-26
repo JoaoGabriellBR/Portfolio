@@ -73,7 +73,7 @@ export default function ProjectGallery({ modal, projects }: ProjectProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="absolute h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[22rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem] flex items-center justify-center pointer-events-none overflow-hidden"
+        className="absolute h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[17rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem] hidden lg:flex items-center justify-center pointer-events-none overflow-hidden"
       >
         <div
           style={{ top: `${index * -100}%` }}
@@ -82,7 +82,6 @@ export default function ProjectGallery({ modal, projects }: ProjectProps) {
           {projects.map((project, idx) => (
             <div
               key={`modal_${idx}`}
-              // className={`flex h-full w-full items-center justify-center`}
               className="flex h-full w-full items-center justify-center bg-neutral-900 p-4"
             >
               <Image

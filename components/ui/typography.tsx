@@ -32,9 +32,9 @@ const Typography: React.FC<TypographyProps> = ({
 
   const colorsClasses = {
     white:
-      "bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200",
+      "text-foreground",
     silver:
-      "bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700",
+      "bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700",
   } as const;
 
   return (
@@ -45,7 +45,7 @@ const Typography: React.FC<TypographyProps> = ({
       style={style}
       className={`${
         letterPadding ? "pb-3 pr-2" : ""
-      } bg-clip-text text-transparent tracking-normal break-words ${
+      } tracking-wide break-words ${
         sizeClasses[size]
       } ${colorsClasses[color]} ${className}`}
     >

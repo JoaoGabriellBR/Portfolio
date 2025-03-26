@@ -10,7 +10,7 @@ import { routing } from "@/i18n/routing";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: "400",
+  weight: "300",
   variable: "--font-poppins",
 });
 
