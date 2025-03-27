@@ -5,7 +5,7 @@ import { ParallaxImages } from "@/components/parallax-images";
 import Typography from "@/components/ui/typography";
 import { MagneticButton } from "@/components/ui/button-magnetic";
 import Projects from "@/components/projects";
-import { ReactLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from "lenis/react";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { Link } from "@/i18n/navigation";

@@ -3,11 +3,10 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ProfileForm } from "@/components/form";
 import Typography from "@/components/ui/typography";
-import { ReactLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
 import { GiWolfHead } from "react-icons/gi";
 import { SiDungeonsanddragons } from "react-icons/si";
-
 
 export default function Contact() {
   const t = useTranslations("Contact.Jumbotron");

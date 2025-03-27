@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/header";
-import { ReactLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from "lenis/react";
 import { notFound } from "next/navigation";
 import Typography from "@/components/ui/typography";
 import { MagneticButton } from "@/components/ui/button-magnetic";
@@ -112,7 +112,7 @@ export default function ProjectDetails({ params }: any) {
               <Typography text="upwrite" color="white" size="xl5" />
             </div>
           </section> */}
-          <Projects/>
+          <Projects />
         </main>
       </ReactLenis>
       <Footer />
