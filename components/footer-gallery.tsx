@@ -1,15 +1,15 @@
 "use client";
-import { useRef, useEffect, ReactElement } from "react";
+import { useRef, useEffect } from "react";
 import { scaleAnimation } from "@/utils/scale-animation";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 
-interface SkillProps {
+interface CursorFollowProps {
   modal: { active: boolean; index: number };
-  skills: { title: string; logo: ReactElement; type: string }[];
+  children: any;
 }
 
-export default function CursorFollow({ modal, skills }: SkillProps) {
+export default function CursorFollow({ modal, children }: CursorFollowProps) {
   const { active, index } = modal;
 
   const modalContainer = useRef(null);
@@ -72,14 +72,7 @@ export default function CursorFollow({ modal, skills }: SkillProps) {
           style={{ top: `${index * -100}%` }}
           className="rounded-full absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
         >
-          {skills.map((skill: any, index: any) => (
-            <div
-              key={`modal_${index}`}
-              className="flex h-full w-full items-center justify-center shadow-lg text-background bg-foreground rounded-full"
-            >
-              Ver contato
-            </div>
-          ))}
+          {children}
         </div>
       </motion.div>
     </>
