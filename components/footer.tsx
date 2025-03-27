@@ -7,54 +7,64 @@ import Typography from "./ui/typography";
 import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
+import { useState } from "react";
+import { SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
+import { FaReact, FaNode, FaDocker, FaAws, FaArrowRight } from "react-icons/fa";
+import CursorFollow from "./footer-gallery";
+
 export default function Footer() {
   const pathname = usePathname();
+
   const t = useTranslations("Footer");
 
-  const contacts = [
+  const [modal, setModal] = useState({ active: false, index: 0 });
+
+  const skillsStyles =
+    "text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-foreground";
+
+  const skills = [
     {
-      text: pathname === "/contact" ? "GitHub" : t("button"),
-      link:
-        pathname === "/contact"
-          ? "https://github.com/joaoGabriellBR"
-          : "/contact",
+      title: "React.js",
+      logo: <FaReact className={skillsStyles} />,
+      type: "Front end",
     },
-    { text: "LinkedIn", link: "https://linkedin.com/in/joaogabriel-silva" },
   ];
 
   return (
-    <footer
-      className="relative rounded-lg overflow-hidden radial-gradient-bg
-             [--gradient-center:#f3f4f6] [--gradient-edge:#f3f4f6]
-             dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]"
-    >
-      <div className="container px-4 mx-auto h-screen flex flex-col justify-center items-center space-y-6">
-        <div className="min-h-14 lg:min-h-32 flex flex-wrap justify-center items-center text-center gap-x-2 lg:gap-x-4">
-          <Typography text={t("title")} size="xl4" color="white" />
-          <Typography text={t("subtitle")} size="xl4" color="silver" />
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex flex-row justify-center lg:justify-start gap-4">
-          {contacts.map((contact, index) => (
-            <Link
-              key={index}
-              href={contact.link}
-              target={pathname === "/contact" ? "blank" : ""}
+    <footer className="h-screen rounded-lg overflow-hidden">
+      
+      <div className="h-full flex items-center justify-center">
+        {skills.map((skill, index) => {
+          return (
+            <div
+              onMouseEnter={() => {
+                setModal({ active: true, index });
+              }}
+              onMouseLeave={() => {
+                setModal({ active: false, index });
+              }}
+              className="mt-[-7rem] text-center px-0 lg:py-12 cursor-pointer transition-all duration-500"
             >
-              <ButtonArrow text={contact.text} />
-            </Link>
-          ))}
-        </div>
-      </div>
+              <Typography text="Algum projeto em mente?" color="silver" size="md" />
+              <Typography text="joaoname19@gmail.com" color="white" size="xl3" />
+            </div>
+          );
+        })}
 
-      {/* Animated Text */}
-      <div className="absolute bottom-0 left-0 w-full hidden lg:flex justify-center pointer-events-none z-0">
-        <AnimatedText
-          text="JOÃO GABRIEL SILVA"
-          className="text-[10vw] text-zinc-200 dark:text-neutral-700"
-        />
+        <CursorFollow modal={modal} skills={skills} />
+
       </div>
+        {/* Animated Text */}
+        <div className="relative">
+          <div className="absolute bottom-0 left-0 w-full hidden lg:flex justify-center pointer-events-none z-0">
+            <AnimatedText
+              text="JOÃO GABRIEL SILVA"
+              className="text-[10vw] text-zinc-200 dark:text-neutral-700"
+            />
+          </div>
+        </div>
+
     </footer>
+
   );
 }
