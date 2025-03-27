@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
 import { FaReact, FaNode, FaDocker, FaAws, FaArrowRight } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import SkillGallery from "./skill-gallery";
 import CursorFollow from "./cursor-follow";
 
 export default function Skills() {
@@ -95,7 +94,6 @@ export default function Skills() {
         })}
       </div>
 
-      {/* <SkillGallery modal={modal} skills={skills} /> */}
       <CursorFollow
         modal={modal}
         classNameContainer="h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem] 

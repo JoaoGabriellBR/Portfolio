@@ -73,7 +73,7 @@ export default function CursorFollow({
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className={`${classNameContainer} absolute p-11 text-center break-words flex items-center justify-center overflow-hidden pointer-events-none`}
+        className={`${classNameContainer} absolute p-16 text-center break-words flex items-center justify-center overflow-hidden pointer-events-none`}
       >
         <div
           style={{ top: `${index * -100}%` }}

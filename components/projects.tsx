@@ -7,7 +7,6 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { projects } from "@/utils/projects";
-import ProjectGallery from "./project-gallery";
 import CursorFollow from "./cursor-follow";
 import Image from "next/image";
 
@@ -31,7 +30,6 @@ export default function Projects() {
         })}
       </div>
 
-      {/* <ProjectGallery modal={modal} projects={projects} /> */}
       <CursorFollow
         modal={modal}
         classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[17rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem]"
