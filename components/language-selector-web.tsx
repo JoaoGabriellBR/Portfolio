@@ -46,14 +46,12 @@ export default function LanguageSelectorWeb() {
     "text-sm sm:text-sm md:text-md lg:text-[1rem] xl:text-[1rem]";
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative z-40" ref={dropdownRef}>
       <MagneticButton
         onClick={() => setIsOpen(!isOpen)}
         distance={0.5}
         className="h-[60px] flex gap-2 p-2 m-0 border-none"
       >
-        <FaGlobe className={`${textSize}`} />
-
         <p className={`${textColor} ${textSize}`}>
           {languages.map(
             (language) => currentLocale === language.locale && language.locale
@@ -71,7 +69,7 @@ export default function LanguageSelectorWeb() {
           {languages.map((language) => (
             <div
               key={language.locale}
-              className="flex flex-row justify-start items-center gap-2 px-4 py-2 hover:bg-neutral-200 hover:dark:bg-neutral-800 cursor-pointer transition"
+              className="flex flex-row justify-start items-center gap-2 px-[1rem] p-[0.7rem] bg-background hover:bg-neutral-200 hover:dark:bg-neutral-800 cursor-pointer transition"
             >
               <Link
                 className="text-background dark:text-foreground"

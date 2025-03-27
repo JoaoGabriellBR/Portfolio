@@ -47,7 +47,7 @@ export default function LanguageSelector() {
         className="w-fit h-20 text-[2xl] flex gap-4 p-5"
       >
         <FaGlobe className="text-foreground text-[1.2rem] lg:text-[2rem]" />
-        <p className="text-foreground font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+        <p className="text-foreground dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
           {languages.map(
             (language) => currentLocale === language.locale && language.label
           )}
@@ -66,14 +66,14 @@ export default function LanguageSelector() {
           {languages.map((language) => (
             <div
               key={language.locale}
-              className="flex flex-row justify-start items-center gap-2 px-4 py-2 hover:bg-neutral-200 hover:dark:bg-neutral-800 cursor-pointer transition"
+              className="flex flex-row justify-start items-center gap-2 px-[1rem] p-[0.7rem] hover:bg-neutral-200 hover:dark:bg-neutral-800 cursor-pointer transition"
             >
               <Link
                 className="text-foreground"
                 href={pathname}
                 locale={language.locale}
               >
-                <p className="text-foreground font-light dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+                <p className="text-foreground dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
                   {language.label}
                 </p>
               </Link>
