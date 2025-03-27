@@ -3,7 +3,7 @@ import { useState } from "react";
 import Typography from "./ui/typography";
 import { useTranslations } from "next-intl";
 import { SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
-import { FaReact, FaNode, FaDocker, FaAws } from "react-icons/fa";
+import { FaReact, FaNode, FaDocker, FaAws, FaArrowRight } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import SkillGallery from "./skill-gallery";
 
@@ -69,10 +69,26 @@ export default function Skills() {
               onMouseLeave={() => {
                 setModal({ active: false, index });
               }}
-              className="flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center px-0 lg:px-12 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
+              className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center px-0 lg:px-12 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
             >
-              <Typography text={skill.title} size="xl" color="white" />
-              <Typography text={skill.type} color="white" size="sm" />
+              <div className="flex flex-row items-center gap-4 group">
+                <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
+                  <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
+                  <Typography
+                    text={skill.title}
+                    color="white"
+                    size="xl"
+                    letterPadding={false}
+                  />
+                </div>
+              </div>
+
+              <Typography
+                text={skill.type}
+                color="silver"
+                size="sm"
+                letterPadding={false}
+              />
             </div>
           );
         })}

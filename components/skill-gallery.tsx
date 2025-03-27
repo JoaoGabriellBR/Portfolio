@@ -66,16 +66,16 @@ export default function SkillGallery({ modal, skills }: SkillProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="absolute h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem] bg-white flex items-center justify-center pointer-events-none overflow-hidden"
+        className="absolute h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem] flex items-center justify-center pointer-events-none overflow-hidden rounded-[2rem]"
       >
         <div
           style={{ top: `${index * -100}%` }}
-          className="absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+          className="rounded-[2rem] absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
         >
           {skills.map((skill: any, index: any) => (
             <div
               key={`modal_${index}`}
-              className="flex h-full w-full items-center justify-center shadow-lg bg-neutral-300 dark:bg-[#0c0c0c]"
+              className="flex h-full w-full items-center justify-center shadow-lg bg-neutral-300 dark:bg-[#0c0c0c] rounded-[2rem]"
             >
               {skill.logo}
             </div>

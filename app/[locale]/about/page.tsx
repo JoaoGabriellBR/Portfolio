@@ -36,28 +36,12 @@ export default function About() {
 
           {/* About Me */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
-            <div className="flex flex-col gap-6 mt-[-7rem]">
-              <div className="flex items-center justify-center lg:justify-start gap-3">
-                <SiSnapdragon
-                  aria-label="Icone Snapdragon"
-                  className="text-lg md:text-xl lg:text-2xl text-neutral-600"
-                />
-                <Typography
-                  text="João Gabriel Silva"
-                  color="silver"
-                  size="md"
-                  letterPadding={false}
-                />
-              </div>
-
-              <Typography
-                text={t("Jumbotron.title")}
-                color="white"
-                size="xl2"
-                className="max-w-3xl text-center lg:text-start"
-                style={{ lineHeight: "1.5" }}
-              />
-            </div>
+            <Typography
+              text={t("Jumbotron.title")}
+              color="white"
+              size="xl2"
+              className="max-w-3xl text-center lg:text-start mt-[-7rem]"
+            />
 
             <div className="flex justify-center items-end">
               <Link href="/contact">

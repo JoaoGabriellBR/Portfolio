@@ -40,7 +40,7 @@ export default function ProjectDetails({ params }: any) {
 
           <section className="container mx-auto px-4 py-20 lg:py-0 min-h-[20rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-between items-center gap-4">
             <Typography
-              text="Plataforma de e-commerce completa, fornecendo uma enorme variedade de produtos e um processo de pagamento fácil e rápido."
+              text="Plataforma de e-commerce completa, com ampla variedade de produtos e pagamento rápido e intuitivo."
               color="white"
               size="xl2"
               className="w-full lg:w-[60%] text-center lg:text-start"

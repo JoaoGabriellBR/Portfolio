@@ -33,11 +33,23 @@ export default function Project({
       target="blank"
       className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500 bg-background"
     >
-      <div className="flex flex-row justify-between items-center gap-4">
-        <FaArrowRight className="text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg size-5 -translate-x-full text-foreground opacity-0 transition-all duration-300 ease-out hover:z-20 group-hover:translate-x-0 group-hover:text-foreground group-hover:opacity-100 md:size-10" />
-        <Typography text={title} size="xl3" color="white" />
+      <div className="flex flex-row items-center gap-4 group">
+        <div className="relative flex items-center transition-all duration-300 group-hover:pl-4">
+          <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-7 sm:size-7 md:size-8 lg:size-9 xl:size-10" />
+          <Typography
+            text={title}
+            color="white"
+            size="xl3"
+            letterPadding={false}
+          />
+        </div>
       </div>
-      <Typography text={t("Projects.type")} color="white" size="sm" />
+      <Typography
+        text={t("Projects.type")}
+        color="silver"
+        size="sm"
+        letterPadding={false}
+      />
     </Link>
   );
 }
