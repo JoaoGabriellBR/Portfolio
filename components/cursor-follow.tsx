@@ -7,9 +7,16 @@ import gsap from "gsap";
 interface CursorFollowProps {
   modal: { active: boolean; index: number };
   children: any;
+  className?: any;
+  classNameContainer?: any;
 }
 
-export default function CursorFollow({ modal, children }: CursorFollowProps) {
+export default function CursorFollow({
+  modal,
+  children,
+  className,
+  classNameContainer,
+}: CursorFollowProps) {
   const { active, index } = modal;
 
   const modalContainer = useRef(null);
@@ -66,11 +73,11 @@ export default function CursorFollow({ modal, children }: CursorFollowProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="absolute p-11 text-center break-words flex items-center justify-center pointer-events-none overflow-hidden rounded-full"
+        className={`${classNameContainer} absolute p-11 text-center break-words flex items-center justify-center overflow-hidden pointer-events-none`}
       >
         <div
           style={{ top: `${index * -100}%` }}
-          className="rounded-full absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+          className={`${className} absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]`}
         >
           {children}
         </div>

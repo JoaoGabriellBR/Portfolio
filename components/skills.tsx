@@ -6,6 +6,7 @@ import { SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
 import { FaReact, FaNode, FaDocker, FaAws, FaArrowRight } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import SkillGallery from "./skill-gallery";
+import CursorFollow from "./cursor-follow";
 
 export default function Skills() {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -94,7 +95,22 @@ export default function Skills() {
         })}
       </div>
 
-      <SkillGallery modal={modal} skills={skills} />
+      {/* <SkillGallery modal={modal} skills={skills} /> */}
+      <CursorFollow
+        modal={modal}
+        classNameContainer="h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem] 
+        rounded-[2rem]"
+        className="rounded-[2rem] absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+      >
+        {skills.map((skill: any, index: any) => (
+          <div
+            key={`modal_${index}`}
+            className="flex h-full w-full items-center justify-center shadow-lg bg-neutral-300 dark:bg-[#0c0c0c] rounded-[2rem]"
+          >
+            {skill.logo}
+          </div>
+        ))}
+      </CursorFollow>
     </section>
   );
 }

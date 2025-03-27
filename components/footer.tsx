@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatedText } from "./ui/animated-text";
 import Typography from "./ui/typography";
-import CursorFollow from "./footer-gallery";
+import CursorFollow from "./cursor-follow";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -27,11 +27,16 @@ export default function Footer() {
           <Typography text="joaoname19@gmail.com" color="white" size="xl3" />
         </div>
 
-        <CursorFollow modal={modal}>
+        <CursorFollow
+          modal={modal}
+          classNameContainer="rounded-full"
+          className="rounded-full"
+        >
           <div className="flex h-full w-full items-center justify-center shadow-lg text-background bg-foreground rounded-full">
             Ver contato
           </div>
         </CursorFollow>
+
       </div>
       {/* Animated Text */}
       <div className="relative">

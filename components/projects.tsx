@@ -8,6 +8,8 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { projects } from "@/utils/projects";
 import ProjectGallery from "./project-gallery";
+import CursorFollow from "./cursor-follow";
+import Image from "next/image";
 
 export default function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -29,7 +31,26 @@ export default function Projects() {
         })}
       </div>
 
-      <ProjectGallery modal={modal} projects={projects} />
+      {/* <ProjectGallery modal={modal} projects={projects} /> */}
+      <CursorFollow
+        modal={modal}
+        classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[17rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem]"
+      >
+        {projects.map((project, idx) => (
+          <div
+            key={`modal_${idx}`}
+            className="flex h-full w-full items-center justify-center bg-neutral-900 p-4"
+          >
+            <Image
+              src={project.src}
+              width={600}
+              className="object-contain"
+              height={600}
+              alt="image"
+            />
+          </div>
+        ))}
+      </CursorFollow>
 
       <Link href="https://github.com/JoaoGabriellBR" target="blank">
         <MagneticButton
