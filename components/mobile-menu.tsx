@@ -24,7 +24,6 @@ type MobileMenuProps = {
   NAV_ITEMS: NavItemsProps;
 };
 
-
 export const MobileMenuButton = ({
   toggleMobileNav,
   mobileNavOpen,
@@ -105,9 +104,11 @@ export const MobileMenu = ({ mobileNavOpen, NAV_ITEMS }: MobileMenuProps) => {
 
         <div className="flex flex-row flex-wrap justify-end items-center gap-3">
           <LanguageSelector />
-          <MagneticButton distance={1} className={`p-5`}>
+
+          {/* <MagneticButton distance={1} className={`p-5`}> */}
             <ModeToggle type="mobile" />
-          </MagneticButton>
+          {/* </MagneticButton> */}
+
           <Link href="https://github.com/JoaoGabriellBR" target="blank">
             <MagneticButton distance={1} className={`p-5`}>
               <FaGithub className="text-foreground text-[1.2rem] lg:text-[2rem]" />

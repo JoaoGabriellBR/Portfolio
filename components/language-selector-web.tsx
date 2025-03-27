@@ -50,7 +50,7 @@ export default function LanguageSelectorWeb() {
       <MagneticButton
         onClick={() => setIsOpen(!isOpen)}
         distance={0.5}
-        className="h-[60px] flex gap-2 p-2 m-0 border-none"
+        className="h-[60px] flex gap-2 hover:bg-background m-0 border-none"
       >
         <p className={`${textColor} ${textSize}`}>
           {languages.map(
