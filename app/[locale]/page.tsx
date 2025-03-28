@@ -13,10 +13,14 @@ import { Meteors } from "@/components/ui/meteors";
 import { SiDungeonsanddragons } from "react-icons/si";
 
 import { useTranslations } from "next-intl";
+import CursorFollow from "@/components/cursor-follow";
+import { useState } from "react";
+import { GiDragonOrb } from "react-icons/gi";
 
 export default function Home() {
   const t = useTranslations("Home");
   const isMobile = () => window.innerWidth < 768;
+  const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
     <>
@@ -31,7 +35,15 @@ export default function Home() {
           {/* jumbotron  */}
           {/* <Meteors number={100} /> */}
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
-            <div className="flex flex-col items-center justify-center text-center uppercase">
+            <div
+              onMouseEnter={() => {
+                setModal({ active: true, index: 0 });
+              }}
+              onMouseLeave={() => {
+                setModal({ active: false, index: 0 });
+              }}
+              className="flex flex-col items-center justify-center text-center cursor-pointer"
+            >
               <Typography
                 text={t("title_jumbotron")}
                 color="white"
@@ -43,6 +55,12 @@ export default function Home() {
                 size="xl5"
               />
             </div>
+            <CursorFollow modal={modal}>
+              {/* <div className="flex items-center justify-center shadow-lg bg-neutral-300 dark:bg-[#0c0c0c] rounded-full p-8"> */}
+              <div>
+                <GiDragonOrb className="text-9xl bg-foreground text-background p-4 rounded-full cursor-pointer" />
+              </div>
+            </CursorFollow>
           </section>
 
           {/* Section2  */}

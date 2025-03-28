@@ -25,12 +25,15 @@ export default function Footer() {
             }}
             className="mt-[-7rem] text-center px-0 lg:py-12 cursor-pointer transition-all duration-500"
           >
-            <Typography
+            {/* <Typography
               text="Algum projeto em mente?"
               color="silver"
               size="md"
             />
-            <Typography text="joaoname19@gmail.com" color="white" size="xl3" />
+            <Typography text="joaoname19@gmail.com" color="white" size="xl3" /> */}
+
+
+            <Typography text="sobre mim" color="white" size="xl5" />
           </div>
 
           <CursorFollow

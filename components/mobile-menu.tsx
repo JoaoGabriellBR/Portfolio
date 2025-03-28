@@ -79,14 +79,6 @@ export const MobileMenu = ({ mobileNavOpen, NAV_ITEMS }: MobileMenuProps) => {
       }}
       className="fixed top-0 right-0 z-40 w-full h-screen shadow-lg bg-background flex flex-col items-start justify-start px-4 pt-40 pb-24 space-y-4 lg:space-y-10 overflow-hidden"
     >
-      <div className="w-full container mx-auto">
-        <Link href="mailto:joaoname9@gmail.com">
-          <p className="bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-md sm:text-md md:text-xl lg:text-2xl xl:text-3xl">
-            joaoname9@gmail.com
-          </p>
-        </Link>
-      </div>
-
       <p className="container mx-auto w-full h-[0.04rem] bg-neutral-700"></p>
       <motion.div
         initial={{ y: 48, opacity: 0 }}

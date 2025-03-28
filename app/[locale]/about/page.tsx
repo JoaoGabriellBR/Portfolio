@@ -35,39 +35,22 @@ export default function About() {
           </div>
 
           {/* About Me */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
+          <section className="container mx-auto min-h-screen px-4 flex items-center justify-start text-start mt-[-7rem]">
             <Typography
-              text={t("Jumbotron.title")}
+              text="Sobre mim"
               color="white"
-              size="xl2"
-              className="max-w-3xl text-center lg:text-start mt-[-7rem]"
+              size="xl5"
+              className="max-w-3xl"
             />
-
-            <div className="flex justify-center items-end">
-              <Link href="/contact">
-                <MagneticButton
-                  distance={1}
-                  type="3d"
-                  className="w-40 h-40 lg:w-64 lg:h-64 text-2xl p-5 flex flex-col justify-center items-center gap-2"
-                >
-                  <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
-                  <Typography
-                    size="md"
-                    text={t("Jumbotron.button")}
-                    letterPadding={false}
-                  />
-                </MagneticButton>
-              </Link>
-            </div>
           </section>
 
           {/* Competence */}
-          <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
+          {/* <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
             <TextReveal paragraph={t("competence")} />
-          </section>
+          </section> */}
 
           {/* Experience */}
-          <section className="container mx-auto min-h-screen px-4 py-20">
+          {/* <section className="container mx-auto min-h-screen px-4 py-20">
             <Typography
               text={t("Experience.section")}
               color="white"
@@ -75,7 +58,7 @@ export default function About() {
               className="text-center lg:hidden mb-[-4rem]"
             />
             <JobTimeline />
-          </section>
+          </section> */}
 
           {/* Skills */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col items-center gap-8 py-20">

@@ -27,7 +27,7 @@ const Typography: React.FC<TypographyProps> = ({
     xl2: "text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl",
     xl3: "text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
     xl4: "text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl",
-    xl5: "text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[10rem]",
+    xl5: "text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem]",
   } as const;
 
   const colorsClasses = {
