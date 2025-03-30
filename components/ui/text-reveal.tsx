@@ -18,12 +18,12 @@ export const TextReveal: FC<Props> = ({ paragraph, className }) => {
   const words = paragraph.split(" ");
 
   return (
-    <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
+    <div ref={targetRef} className={cn("relative z-0 min-h-[200vh]", className)}>
       <div className="sticky top-0 mx-auto flex h-[50%] items-center bg-transparent py-[5rem]">
         <h1
           style={{ lineHeight: 1.3 }}
           ref={targetRef}
-          className="flex flex-wrap bg-clip-text tracking-wide break-words text-neutral-950 dark:text-white text-7xl"
+          className="flex flex-wrap tracking-wide break-words text-neutral-950 dark:text-white text-7xl"
         >
           {words.map((word, i) => {
             const start = i / words.length;
@@ -50,11 +50,10 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className="xl:lg-3 relative mx-1 lg:mx-2.5">
-      <span className={"absolute opacity-10"}>{children}</span>
+      <span className={"absolute opacity-80 lg:opacity-10"}>{children}</span>
       <motion.h1
         style={{ opacity: opacity, lineHeight: 1.3 }}
-        // className="max-w-4xl bg-clip-text text-transparent tracking-wide break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
-        className="max-w-4xl bg-clip-text text-transparent tracking-wide break-words text-neutral-950 dark:text-white text-7xl"
+        className="max-w-4xl tracking-wide break-words text-neutral-950 dark:text-white text-7xl"
       >
         {children}
       </motion.h1>

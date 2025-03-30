@@ -43,7 +43,7 @@ export default function Footer() {
             classNameContainer="rounded-full group-hover:scale-90"
             className="rounded-full"
           >
-            <div className="flex h-full w-full items-center justify-center shadow-2xl text-background bg-white rounded-full p-4">
+            <div className="flex h-full w-full items-center justify-center shadow-2xl text-background bg-foreground dark:bg-white rounded-full p-4">
               {/* Próxima página */}
               <FaArrowRight className="text-7xl"/>
             </div>
@@ -55,7 +55,7 @@ export default function Footer() {
         <div className="absolute bottom-0 left-0 w-full hidden lg:flex justify-center pointer-events-none z-0">
           <AnimatedText
             text="JOÃO GABRIEL SILVA"
-            className="text-[10vw] text-zinc-200 dark:text-neutral-700"
+            className="text-[10vw] text-neutral-300 dark:text-neutral-700"
           />
         </div>
       </div>

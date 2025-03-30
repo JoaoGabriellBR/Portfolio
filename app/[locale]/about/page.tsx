@@ -21,6 +21,7 @@ import { RiPokerSpadesFill } from "react-icons/ri";
 
 export default function About() {
   const t = useTranslations("About");
+  const containerStyles = "container mx-auto min-h-screen px-4";
   const { theme } = useTheme();
 
   return (
@@ -32,14 +33,9 @@ export default function About() {
           lerp: 0.05,
         }}
       >
-        <main className=" flex flex-col gap-y-2 lg:gap-y-10">
+        <main className="flex flex-col gap-y-2 lg:gap-y-[20rem]">
           <div className="relative">
-            {/* <GiTie
-              aria-hidden="true"
-              className="text-[100vw] lg:text-[58vw] text-neutral-600 opacity-20 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
-            /> */}
             <Image
-              // src="/images/second-suit.png"
               src={
                 theme === "dark"
                   ? "/images/second-suit.png"
@@ -48,28 +44,32 @@ export default function About() {
               width={1000}
               height={1000}
               alt=""
-              className="text-[100vw] lg:text-[60vw] text-neutral-600 opacity-20 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
+              className="absolute top-40 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] text-neutral-600 opacity-20 -scale-x-100 pointer-events-none"
             />
           </div>
 
-
           {/* About Me */}
-          <section className="container mx-auto min-h-screen px-4 flex items-center justify-start text-start mt-[-7rem]">
+          <section
+            className={`${containerStyles} flex flex-col items-start justify-center lg:justify-start text-start mt-[-7rem]`}
+          >
             <Typography
               text="Sobre mim"
               color="white"
               size="xl5"
               className="max-w-3xl"
+              letterPadding={false}
             />
           </section>
 
           {/* Competence */}
-          <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
+          <section
+            className={`${containerStyles} flex flex-col lg:flex-row items-center justify-center lg:justify-between`}
+          >
             <TextReveal paragraph={t("competence")} />
           </section>
 
           {/* Experience */}
-          <section className="container mx-auto min-h-screen px-4 py-20">
+          <section className={`${containerStyles}`}>
             <Typography
               text={t("Experience.section")}
               color="white"
@@ -80,7 +80,7 @@ export default function About() {
           </section>
 
           {/* Skills */}
-          <section className="container mx-auto min-h-screen px-4 flex flex-col items-center gap-8 py-20">
+          <section className={`${containerStyles} flex flex-col items-center`}>
             <div className="text-center">
               <div className="flex items-center justify-center gap-4">
                 <RiPokerClubsFill
@@ -106,7 +106,9 @@ export default function About() {
           </section>
 
           {/* Services */}
-          <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col justify-center items-center gap-8 pt-20">
+          <section
+            className={`${containerStyles} flex flex-col justify-center items-center `}
+          >
             <Typography
               text={t("Services.section")}
               color="white"
