@@ -7,6 +7,9 @@ import { BorderNavbar } from "./border-navbar";
 
 import { Link } from "@/i18n/navigation";
 import LanguageSelectorWeb from "./language-selector-web";
+import Image from "next/image";
+import { TbTie } from "react-icons/tb";
+import { useTheme } from "next-themes";
 
 type NavItems = {
   NAV_ITEMS: {
@@ -16,17 +19,29 @@ type NavItems = {
 };
 
 export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
+  const { theme } = useTheme();
+
   return (
     <div className="w-full flex flex-row items-center justify-between px-4">
       <motion.div className="flex items-center relative z-50 cursor-pointer">
         <Link href="/">
-          <GiWolfHead
+          {/* <TbTie
             className="text-[3.5rem] lg:text-[5rem] text-foreground"
             aria-label="Logo"
+          /> */}
+
+          <Image
+            src={
+              theme === "dark"
+                ? "/images/logo.png"
+                : "/images/logo-light-mode.png"
+            }
+            width={70}
+            height={70}
+            alt="Logotipo João Gabriel Silva"
           />
         </Link>
       </motion.div>
-
       <div className="hidden md:flex items-center space-x-4">
         <BorderNavbar>
           {NAV_ITEMS.map((item, index) => (

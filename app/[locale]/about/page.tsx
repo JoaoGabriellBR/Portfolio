@@ -13,9 +13,14 @@ import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/ui/text-reveal";
 import Skills from "@/components/skills";
 import { SiDungeonsanddragons } from "react-icons/si";
+import Image from "next/image";
+import { GiTie } from "react-icons/gi";
+import { RiPokerClubsFill } from "react-icons/ri";
+import { useTheme } from "next-themes";
 
 export default function About() {
   const t = useTranslations("About");
+  const { theme } = useTheme();
 
   return (
     <>
@@ -28,9 +33,21 @@ export default function About() {
       >
         <main className=" flex flex-col gap-y-2 lg:gap-y-10">
           <div className="relative">
-            <SiDungeonsanddragons
+            {/* <GiTie
               aria-hidden="true"
               className="text-[100vw] lg:text-[58vw] text-neutral-600 opacity-20 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
+            /> */}
+            <Image
+              // src="/images/second-suit.png"
+              src={
+                theme === "dark"
+                  ? "/images/second-suit.png"
+                  : "/images/second-suit-light-mode.png"
+              }
+              width={800}
+              height={800}
+              alt=""
+              className="text-[100vw] lg:text-[60vw] text-neutral-600 opacity-20 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
             />
           </div>
 
@@ -45,12 +62,12 @@ export default function About() {
           </section>
 
           {/* Competence */}
-          {/* <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
+          <section className="container mx-auto min-h-screen px-6 lg:px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
             <TextReveal paragraph={t("competence")} />
-          </section> */}
+          </section>
 
           {/* Experience */}
-          {/* <section className="container mx-auto min-h-screen px-4 py-20">
+          <section className="container mx-auto min-h-screen px-4 py-20">
             <Typography
               text={t("Experience.section")}
               color="white"
@@ -58,14 +75,14 @@ export default function About() {
               className="text-center lg:hidden mb-[-4rem]"
             />
             <JobTimeline />
-          </section> */}
+          </section>
 
           {/* Skills */}
           <section className="container mx-auto min-h-screen px-4 flex flex-col items-center gap-8 py-20">
             <div className="text-center">
               <div className="flex items-center justify-center gap-4">
-                <SiSnapdragon
-                  aria-label="Icone Snapdragon"
+                <RiPokerClubsFill
+                  aria-label="Icone Poker"
                   className="text-lg md:text-xl lg:text-2xl text-neutral-600"
                 />
                 <Typography

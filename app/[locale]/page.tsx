@@ -16,9 +16,12 @@ import { useTranslations } from "next-intl";
 import CursorFollow from "@/components/cursor-follow";
 import { useState } from "react";
 import { GiDragonOrb } from "react-icons/gi";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function Home() {
   const t = useTranslations("Home");
+  const { theme } = useTheme();
   const isMobile = () => window.innerWidth < 768;
   const [modal, setModal] = useState({ active: false, index: 0 });
 
@@ -34,6 +37,19 @@ export default function Home() {
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           {/* jumbotron  */}
           {/* <Meteors number={100} /> */}
+          <section className="container mx-auto px-4 flex items-center justify-center">
+            <Image
+              src={
+                theme === "dark"
+                  ? "/images/suit.png"
+                  : "/images/suit-light-mode.png"
+              }
+              width={1000}
+              height={1000}
+              alt=""
+            />
+          </section>
+
           <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div
               onMouseEnter={() => {

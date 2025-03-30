@@ -5,6 +5,7 @@ import Typography from "@/components/ui/typography";
 import { ReactLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
 import GalleryComponent from "@/components/gallery/page";
+import DescriptionGallery from "@/components/gallery/description";
 
 export default function About() {
   const t = useTranslations("About");

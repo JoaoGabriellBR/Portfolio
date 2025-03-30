@@ -35,6 +35,7 @@ export const TextReveal: FC<Props> = ({ paragraph, className }) => {
             );
           })}
         </h1>
+        <h1>COLOCAR IMAGEM DE TERNO DO LADO</h1>
       </div>
     </div>
   );
@@ -53,7 +54,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
       <span className={"absolute opacity-30"}>{children}</span>
       <motion.h1
         style={{ opacity: opacity, lineHeight: 1.3 }}
-        className="bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+        className="max-w-4xl bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
       >
         {children}
       </motion.h1>

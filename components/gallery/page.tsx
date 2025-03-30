@@ -153,16 +153,29 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { useSpring, motion } from "framer-motion";
+import DescriptionGallery from "./description";
 
 const projects = [
-  { name: "Dyal Thak", handle: "banner1.png", handle2: "adidas-mockup1.png" },
   {
-    name: "Leidinger Matthias",
-    handle: "banner2.png",
-    handle2: "adidas-mockup2.png",
+    name: "Lamborghini",
+    handle: "lamborghini-jumbotron.png",
+    handle2: "lamborghini-small-image.png",
   },
-  { name: "Mark Rammers", handle: "banner3.png", handle2: "worldnews.png" },
-  { name: "Landon Speers", handle: "banner4.png", handle2: "upwrite.png" },
+  {
+    name: "Adidas",
+    handle: "adidas-jumbotron.png",
+    handle2: "adidas-small-image.png",
+  },
+  {
+    name: "UpWrite",
+    handle: "upwrite-jumbotron.png",
+    handle2: "upwrite-small-image.png",
+  },
+  {
+    name: "World News",
+    handle: "worldnews-jumbotron.png",
+    handle2: "worldnews-small-image.png",
+  },
 ];
 
 export default function GalleryComponent() {
@@ -196,6 +209,7 @@ export default function GalleryComponent() {
           handle2={handle2}
         />
       ))}
+      <DescriptionGallery mousePosition={mousePosition} projects={projects} />
     </main>
   );
 }
@@ -215,7 +229,7 @@ function Gallery({ handle, handle2, mousePosition }: any) {
         />
       </div>
       <motion.div
-        className="fixed top-0 left-0 h-[30vw] w-[25vw] rounded-[1.5vw] overflow-hidden pointer-events-none"
+        className="fixed top-0 left-0 h-[550px] w-[450px] rounded-[1.5vw] overflow-hidden pointer-events-none"
         style={{ x: mousePosition.x, y: mousePosition.y }}
       >
         <Image
