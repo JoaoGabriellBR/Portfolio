@@ -117,7 +117,7 @@ const ProjectLink = ({ heading, imgSrc, subheading, href, arialLabel }: ProjectL
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="relative z-10 block transition-colors duration-500 text-neutral-950 dark:text-neutral-200 tracking-normal break-words text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+          className="relative z-10 block transition-colors duration-500 text-neutral-950 dark:text-white tracking-normal break-words text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
         >
           {heading.split("").map((char, index) => (
             <motion.span

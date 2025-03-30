@@ -17,6 +17,7 @@ import Image from "next/image";
 import { GiTie } from "react-icons/gi";
 import { RiPokerClubsFill } from "react-icons/ri";
 import { useTheme } from "next-themes";
+import { RiPokerSpadesFill } from "react-icons/ri";
 
 export default function About() {
   const t = useTranslations("About");
@@ -44,12 +45,13 @@ export default function About() {
                   ? "/images/second-suit.png"
                   : "/images/second-suit-light-mode.png"
               }
-              width={800}
-              height={800}
+              width={1000}
+              height={1000}
               alt=""
               className="text-[100vw] lg:text-[60vw] text-neutral-600 opacity-20 absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none"
             />
           </div>
+
 
           {/* About Me */}
           <section className="container mx-auto min-h-screen px-4 flex items-center justify-start text-start mt-[-7rem]">

@@ -46,11 +46,11 @@ export default function Home() {
               }
               width={1000}
               height={1000}
-              alt=""
+              alt="Suit Image"
             />
           </section>
 
-          <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
+          {/* <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div
               onMouseEnter={() => {
                 setModal({ active: true, index: 0 });
@@ -72,12 +72,11 @@ export default function Home() {
               />
             </div>
             <CursorFollow modal={modal}>
-              {/* <div className="flex items-center justify-center shadow-lg bg-neutral-300 dark:bg-[#0c0c0c] rounded-full p-8"> */}
               <div>
                 <GiDragonOrb className="text-9xl bg-foreground text-background p-4 rounded-full cursor-pointer" />
               </div>
             </CursorFollow>
-          </section>
+          </section> */}
 
           {/* Section2  */}
           <section className="container mx-auto px-4 py-20 lg:py-0 min-h-[20rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-between items-center gap-4">

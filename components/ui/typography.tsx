@@ -32,7 +32,7 @@ const Typography: React.FC<TypographyProps> = ({
 
   const colorsClasses = {
     white:
-      "text-foreground",
+      "text-foreground dark:text-white",
     silver:
       "bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700",
   } as const;

@@ -6,6 +6,8 @@ import { AnimatedText } from "./ui/animated-text";
 import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
 import { Link } from "@/i18n/navigation";
+import { FaArrowRight } from "react-icons/fa";
+
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -41,8 +43,9 @@ export default function Footer() {
             classNameContainer="rounded-full group-hover:scale-90"
             className="rounded-full"
           >
-            <div className="flex h-full w-full items-center justify-center shadow-lg text-background bg-foreground rounded-full">
-              Enviar mensagem
+            <div className="flex h-full w-full items-center justify-center shadow-2xl text-background bg-white rounded-full p-4">
+              {/* Próxima página */}
+              <FaArrowRight className="text-7xl"/>
             </div>
           </CursorFollow>
         </div>
