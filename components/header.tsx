@@ -12,7 +12,8 @@ export default function Header() {
   const NAV_ITEMS = [
     { title: t("nav1"), href: "/" },
     { title: t("nav2"), href: "/about" },
-    { title: t("nav3"), href: "/contact" },
+    { title: t("nav3"), href: "/projects" },
+    { title: t("nav4"), href: "/contact" },
   ];
 
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);

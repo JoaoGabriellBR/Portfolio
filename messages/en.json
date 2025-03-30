@@ -2,7 +2,8 @@
     "Header": {
       "nav1": "Home",
       "nav2": "About",
-      "nav3": "Contact"
+      "nav3": "Projects",
+      "nav4": "Contact"
     },
     "Home": {
       "title_jumbotron": "Full Stack",

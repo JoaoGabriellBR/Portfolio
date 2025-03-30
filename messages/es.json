@@ -2,7 +2,8 @@
     "Header": {
       "nav1": "Inicio",
       "nav2": "Acerca de",
-      "nav3": "Contacto"
+      "nav3": "Proyectos",
+      "nav4": "Contacto"
     },
     "Home": {
       "title_jumbotron": "Desarrollador",

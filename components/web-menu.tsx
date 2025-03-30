@@ -42,7 +42,7 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
           />
         </Link>
       </motion.div>
-      <div className="hidden md:flex items-center space-x-4">
+      <div className="hidden md:flex items-center gap-x-4">
         <BorderNavbar>
           {NAV_ITEMS.map((item, index) => (
             <React.Fragment key={index}>
