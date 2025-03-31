@@ -58,8 +58,8 @@ export default function Skills() {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center gap-20 min-h-screen container mx-auto px-4">
-      <div className="flex flex-col items-center justify-center w-full">
+    <section className="flex flex-col items-center justify-center w-full">
+      {/* <div className="flex flex-col items-center justify-center w-full"> */}
         {skills.map((skill, index) => {
           return (
             <div
@@ -69,7 +69,7 @@ export default function Skills() {
               onMouseLeave={() => {
                 setModal({ active: false, index });
               }}
-              className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center px-0 lg:px-12 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
+              className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
             >
               <div className="flex flex-row items-center gap-4 group">
                 <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
@@ -92,7 +92,7 @@ export default function Skills() {
             </div>
           );
         })}
-      </div>
+      {/* </div> */}
 
       <CursorFollow
         modal={modal}

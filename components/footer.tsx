@@ -34,7 +34,7 @@ export default function Footer({ page = "", route = "/" }: any) {
             classNameContainer="rounded-full group-hover:scale-90"
             className="rounded-full"
           >
-            <div className="flex h-full w-full items-center justify-center shadow-2xl text-background bg-foreground dark:bg-white rounded-full p-4">
+            <div className="flex h-full w-full items-center justify-center shadow-2xl text-white bg-red-600 rounded-full p-4">
               {/* Próxima página */}
               <FaArrowRight className="text-7xl" />
             </div>

@@ -22,7 +22,7 @@ export const TextReveal: FC<Props> = ({ paragraph, className }) => {
       ref={targetRef}
       className={cn("relative z-0 min-h-[200vh]", className)}
     >
-      <div className="sticky top-0 mx-auto flex h-[50%] items-center bg-transparent py-[5rem]">
+      <div className="sticky top-20 mx-auto flex h-[50%] items-center bg-transparent py-[5rem]">
         <h1
           style={{ lineHeight: 1.3 }}
           ref={targetRef}
