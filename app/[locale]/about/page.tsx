@@ -21,6 +21,9 @@ import { RiPokerSpadesFill } from "react-icons/ri";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { BsArrowDownLeft } from "react-icons/bs";
 import { DrawCircleText } from "@/components/draw-circle-text";
+import { Experience } from "@/components/experience";
+import { RiPokerDiamondsFill } from "react-icons/ri";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 export default function About() {
   const t = useTranslations("About");
@@ -71,17 +74,6 @@ export default function About() {
             <TextReveal paragraph={t("competence")} />
           </section>
 
-          {/* Experience */}
-          {/* <section className={`${containerStyles}`}>
-            <Typography
-              text={t("Experience.section")}
-              color="white"
-              size="xl2"
-              className="text-center lg:hidden mb-[-4rem]"
-            />
-            <JobTimeline />
-          </section> */}
-
           {/* Skills */}
 
           <section
@@ -119,10 +111,138 @@ export default function About() {
             <Skills />
           </section>
 
+          {/* Experience */}
+
           <section
             className={`container mx-auto px-4 flex flex-col items-center text-center`}
           >
             <DrawCircleText />
+          </section>
+          <RiPokerDiamondsFill
+            aria-label="Icone Poker"
+            className="place-self-center text-lg md:text-xl lg:text-[12rem] text-red-600"
+          />
+
+          <section className={`${containerStyles}`}>
+            <Typography
+              text={t("Experience.section")}
+              color="white"
+              size="xl2"
+              className="text-center lg:hidden mb-[-4rem]"
+            />
+            <JobTimeline />
+          </section>
+
+          {/* <section className="container mx-auto px-4 h-fit">
+            <div className="w-full h-full flex flex-row items-center justify-between">
+              <div className="w-full h-full flex items-start">
+                <Image
+                  src="/images/tie.png"
+                  alt=""
+                  width={1000}
+                  height={1000}
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="w-full h-full flex flex-col items-end justify-between gap-8">
+                <div className="flex flex-col items-start gap-4">
+                  <Typography
+                    text="Experiência"
+                    size="xl3"
+                    className="ml-[-10rem]"
+                  />
+                  <Experience
+                    timeline="2024 - presente"
+                    jobName="Neway"
+                    position="Desenvolvedor Full Stack"
+                  />
+                  <Experience
+                    timeline="2022-presente"
+                    jobName="Neway"
+                    position="Estágio em Desenvolvimento"
+                  />
+                </div>
+                <div className="flex flex-col items-start gap-4">
+                  <Typography
+                    text="Experiência"
+                    size="xl3"
+                    className="ml-[-10rem]"
+                  />
+                  <Experience
+                    timeline="2024 - presente"
+                    jobName="Neway"
+                    position="Desenvolvedor Full Stack"
+                  />
+                  <Experience
+                    timeline="2022-presente"
+                    jobName="Neway"
+                    position="Estágio em Desenvolvimento"
+                  />
+                </div>
+              </div>
+            </div>
+          </section> */}
+
+          {/* Trabalhos em destaque  */}
+          <section className={`${containerStyles}`}>
+            {/* Título acima dos itens */}
+            <div className="text-center lg:text-left mb-6">
+              <Typography
+                text="Projetos em Destaque"
+                color="white"
+                size="xl5"
+                letterPadding={false}
+              />
+            </div>
+
+            <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-8">
+              {/* Texto à esquerda */}
+              <div className="lg:w-1/2 w-full text-left">
+                <Typography
+                  text="Adidas Shopping, 2024"
+                  color="white"
+                  size="xl2"
+                  className="mt-4"
+                />
+                <Typography
+                  text="Plataforma completa de e-commerce."
+                  color="white"
+                  size="lg"
+                  className="mt-4 font-extralight"
+                />
+                <MagneticButton
+                  distance={1}
+                  type="3d"
+                  className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
+                >
+                  <Typography
+                    className="pb-0 pr-0"
+                    text={"Conferir projeto"}
+                    letterPadding={false}
+                    size="md"
+                  />
+                  <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
+                </MagneticButton>
+              </div>
+
+              {/* Imagem à direita com ícone sobreposto */}
+              <div className="relative lg:w-1/2 w-full flex justify-center lg:justify-end">
+                <Image
+                  src="/images/adidas-about.png"
+                  width={800}
+                  height={800}
+                  alt="Adidas"
+                  className="object-contain pointer-events-none max-w-full"
+                />
+
+                {/* Ícone posicionado no canto superior direito da imagem */}
+                <RiPokerSpadesFill
+                  aria-label="Ícone Poker"
+                  className="absolute top-2 right-2 lg:top-4 lg:right-4 text-xl md:text-3xl lg:text-8xl text-white"
+                />
+              </div>
+            </div>
           </section>
 
           <div className="container mx-auto px-4 flex items-center justify-center">
@@ -132,49 +252,6 @@ export default function About() {
               height={600}
               alt=""
               className="text-[100vw] lg:text-[50vw] -scale-x-100 pointer-events-none"
-            />
-          </div>
-
-          <div className="container mx-auto px-4 flex items-center justify-center">
-            <Image
-              src="/images/adidas-about.png"
-              width={800}
-              height={800}
-              alt="Adidas"
-              className="object-contain -scale-x-100 pointer-events-none"
-              style={{
-                WebkitMaskImage: `
-                  linear-gradient(to left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%),
-                  linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
-      `,
-                maskImage: `
-                  linear-gradient(to left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%),
-                  linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
-  
-      `,
-                WebkitMaskComposite: "multiply",
-                maskComposite: "intersect",
-              }}
-            />
-            <Image
-              src="/images/lamborghini-about.png"
-              width={800}
-              height={800}
-              alt="Adidas"
-              className="object-contain -scale-x-100 pointer-events-none"
-              style={{
-                WebkitMaskImage: `
-                  linear-gradient(to right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%),
-                  linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
-      `,
-                maskImage: `
-                  linear-gradient(to right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%),
-                  linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
-  
-      `,
-                WebkitMaskComposite: "multiply",
-                maskComposite: "intersect",
-              }}
             />
           </div>
 

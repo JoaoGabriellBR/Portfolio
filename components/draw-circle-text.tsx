@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 export const DrawCircleText = () => {
   return (
     <div className="grid place-content-center text-white">
-      <h1 className="max-w-2xl text-center text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-        Sempre em {" "}
-        Busca de{" "}
+      <h1 className="max-w-2xl text-center flex flex-col gap-8 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl">
+        <span>Minhas</span>
         <span className="relative">
-          conhecimento{" "}
+          Experiências
           <svg
             viewBox="0 0 286 73"
             fill="none"
@@ -16,7 +15,7 @@ export const DrawCircleText = () => {
           >
             <motion.path
               initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
+              whileInView={{ pathLength: 2 }}
               transition={{
                 duration: 1.25,
                 ease: "easeInOut",
@@ -27,6 +26,7 @@ export const DrawCircleText = () => {
             />
           </svg>
         </span>
+        <span>Profissionais</span>
       </h1>
     </div>
   );

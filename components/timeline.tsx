@@ -48,7 +48,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
             <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 my-10 lg:mb-0 self-start max-w-xs lg:max-w-sm md:w-full">
               <Typography
                 text={step.type}
-                size="xl2"
+                size="xl3"
                 className="hidden lg:flex"
               />
             </div>
