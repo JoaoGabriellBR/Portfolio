@@ -8,15 +8,14 @@ import CursorFollow from "./cursor-follow";
 import { Link } from "@/i18n/navigation";
 import { FaArrowRight } from "react-icons/fa";
 
-
-export default function Footer() {
+export default function Footer({ page = "", route = "/" }: any) {
   const t = useTranslations("Footer");
 
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
     <footer className="h-screen rounded-lg overflow-hidden">
-      <Link href="/contact">
+      <Link href={route}>
         <div className="group h-full flex items-center justify-center">
           <div
             onMouseEnter={() => {
@@ -25,17 +24,9 @@ export default function Footer() {
             onMouseLeave={() => {
               setModal({ active: false, index: 0 });
             }}
-            className="mt-[-7rem] text-center px-0 lg:py-12 cursor-pointer transition-all duration-500"
+            className="mt-[-7rem] text-center break-words max-w-full px-0 lg:py-12 cursor-pointer transition-all duration-500"
           >
-            {/* <Typography
-              text="Algum projeto em mente?"
-              color="silver"
-              size="md"
-            />
-            <Typography text="joaoname19@gmail.com" color="white" size="xl3" /> */}
-
-
-            <Typography text="sobre mim" color="white" size="xl5" />
+            <Typography text={page} color="white" size="xl5" />
           </div>
 
           <CursorFollow
@@ -45,7 +36,7 @@ export default function Footer() {
           >
             <div className="flex h-full w-full items-center justify-center shadow-2xl text-background bg-foreground dark:bg-white rounded-full p-4">
               {/* Próxima página */}
-              <FaArrowRight className="text-7xl"/>
+              <FaArrowRight className="text-7xl" />
             </div>
           </CursorFollow>
         </div>

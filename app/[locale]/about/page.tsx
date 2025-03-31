@@ -120,7 +120,7 @@ export default function About() {
           </section>
         </main>
       </ReactLenis>
-      <Footer />
+      <Footer page="Projetos" route="/projects" />
     </>
   );
 }

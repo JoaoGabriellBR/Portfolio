@@ -50,7 +50,7 @@ export default function Projects() {
         ))}
       </CursorFollow>
 
-      <Link href="https://github.com/JoaoGabriellBR" target="blank">
+      <Link href="/projects">
         <MagneticButton
           distance={1}
           type="3d"
@@ -62,7 +62,7 @@ export default function Projects() {
             letterPadding={false}
             size="md"
           />
-          <IoIosArrowRoundForward className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl" />
+          <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
         </MagneticButton>
       </Link>
     </section>

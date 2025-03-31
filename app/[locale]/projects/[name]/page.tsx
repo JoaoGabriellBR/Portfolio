@@ -115,7 +115,7 @@ export default function ProjectDetails({ params }: any) {
           <Projects />
         </main>
       </ReactLenis>
-      <Footer />
+      <Footer page="Todos os projetos" route="/projects" />
     </>
   );
 }

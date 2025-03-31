@@ -1,16 +1,12 @@
 import { useState } from "react";
-import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-interface MousePosition {
-  x: number;
-  y: number;
-}
+import { Link } from "@/i18n/navigation";
 
 interface Project {
   name: string;
   handle: string;
+  projectRoute: string;
 }
 
 interface DescriptionGalleryProps {
@@ -18,7 +14,7 @@ interface DescriptionGalleryProps {
   projects: Project[];
 }
 
-export default function DescriptionGallery({
+export default function SmallImagesGallery({
   mousePosition,
   projects,
 }: DescriptionGalleryProps) {
@@ -31,17 +27,18 @@ export default function DescriptionGallery({
       style={{ clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)" }}
     >
       <div className="w-[100%] h-[100%] absolute flex flex-col items-center justify-center gap-8 z-10">
-        {projects.map(({ name }, i) => {
+        {projects.map(({ name, projectRoute }, i) => {
           return (
-            <p
-              className="text-9xl text-foreground cursor-default m-0 uppercase"
+            <Link
+              href={`/projects/${projectRoute}`}
+              className="cursor-pointer text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[10rem] text-foreground m-0"
               onMouseOver={() => {
                 setIndex(i);
               }}
               key={`p${i}`}
             >
               {name}
-            </p>
+            </Link>
           );
         })}
       </div>
@@ -57,9 +54,6 @@ export default function DescriptionGallery({
           fill
         />
       </motion.div>
-
-      
-      
     </div>
   );
 }

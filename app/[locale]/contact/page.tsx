@@ -36,7 +36,7 @@ export default function Contact() {
           </section>
         </main>
       </ReactLenis>
-      <Footer />
+      <Footer page="gmail.com" route="mailTo: joaoname19@gmail.com" />
     </>
   );
 }

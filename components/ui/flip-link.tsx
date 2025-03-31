@@ -46,7 +46,7 @@ export const FlipLink = ({
               className={`${
                 type === "web"
                   ? `text-[1rem]`
-                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem]`
+                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[7rem]`
               } inline-block leading-normal ${textColor}`}
               key={i}
             >
@@ -74,7 +74,7 @@ export const FlipLink = ({
               className={`${
                 type === "web"
                   ? `text-[1rem]`
-                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem]`
+                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[7rem]`
               } inline-block leading-normal ${textColor}`}
               key={i}
             >
