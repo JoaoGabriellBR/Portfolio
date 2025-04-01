@@ -25,6 +25,8 @@ import { Experience } from "@/components/experience";
 import { RiPokerDiamondsFill } from "react-icons/ri";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FeaturedWork } from "@/components/featured-work";
+import { FaArrowTurnDown } from "react-icons/fa6";
+import { BsArrow90DegDown } from "react-icons/bs";
 
 export default function About() {
   const t = useTranslations("About");
@@ -187,13 +189,14 @@ export default function About() {
 
           {/* Featured Works */}
           <section className={`${containerStyles} space-y-[10rem]`}>
-            <div className="text-center lg:text-left mb-6">
+            <div className="relatie text-center lg:text-left mb-6">
               <Typography
                 text="Projetos em Destaque"
                 color="white"
                 size="xl5"
                 letterPadding={false}
               />
+              <BsArrow90DegDown className="hidden lg:block absolute right-80 text-6xl scale-x-[-1]"/>
             </div>
 
             <FeaturedWork

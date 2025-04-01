@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 export const DrawCircleText = () => {
   return (
-    <div className="grid place-content-center text-white">
-      <h1 className="max-w-2xl text-center flex flex-col gap-8 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl">
+    <div className="text-foreground dark:text-white">
+      <h1 className="text-center flex flex-col text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem]">
         <span>Minha</span>
         <span className="relative">
           Trajetória

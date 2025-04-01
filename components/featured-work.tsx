@@ -41,7 +41,7 @@ export const FeaturedWork = ({
 
         <Link href={`/projects/${alt}`}>
           <MagneticButton
-            distance={1}
+            distance={0.5}
             type="3d"
             className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
           >

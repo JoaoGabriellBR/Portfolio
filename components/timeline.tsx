@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Typography from "./ui/typography";
 import { Tilt } from "./ui/tilt";
 import { BorderTrail } from "./ui/border-trail";
+import { GiTie } from "react-icons/gi";
 
 interface ListItemsProps {
   company_name: string;
@@ -59,37 +60,40 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
                   key={index}
                   rotationFactor={8}
                   isRevese
-                  className={`p-24 border border-neutral-200 dark:border-neutral-700 bg-background rounded-[2rem]`}
+                  className={`p-24 border border-neutral-200 dark:border-neutral-900 bg-background rounded-[3rem]`}
                 >
                   <BorderTrail
                     style={{
                       boxShadow:
                         "0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)",
                     }}
-                    size={100}
+                    size={300}
                   />
                   <div
-                    className="flex h-full flex-col items-start justify-start gap-4"
+                    className="flex h-full flex-col items-start justify-start gap-8"
                     role="status"
                     aria-label="Loading..."
                   >
+                    <GiTie className="text-8xl text-red-600 place-self-end"/>
                     <Typography
+                      // text={job.company_name}
                       text={job.company_name}
-                      size="lg"
+                      size="xl2"
                       color="white"
                       letterPadding={false}
                     />
                     <Typography
                       text={job.position}
-                      size="md"
-                      color="silver"
+                      size="lg"
+                      color="white"
                       letterPadding={false}
                     />
                     <Typography
                       text={job.activities}
-                      size="md"
+                      size="lg"
                       color="white"
                       letterPadding={false}
+                      className="font-extralight"
                     />
                     <Typography
                       text={job.company_time}
