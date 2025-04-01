@@ -24,6 +24,7 @@ import { DrawCircleText } from "@/components/draw-circle-text";
 import { Experience } from "@/components/experience";
 import { RiPokerDiamondsFill } from "react-icons/ri";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { FeaturedWork } from "@/components/featured-work";
 
 export default function About() {
   const t = useTranslations("About");
@@ -184,9 +185,8 @@ export default function About() {
             </div>
           </section> */}
 
-          {/* Trabalhos em destaque  */}
-          <section className={`${containerStyles}`}>
-            {/* Título acima dos itens */}
+          {/* Featured Works */}
+          <section className={`${containerStyles} space-y-[10rem]`}>
             <div className="text-center lg:text-left mb-6">
               <Typography
                 text="Projetos em Destaque"
@@ -196,56 +196,23 @@ export default function About() {
               />
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-8">
-              {/* Texto à esquerda */}
-              <div className="lg:w-1/2 w-full text-left">
-                <Typography
-                  text="Adidas Shopping, 2024"
-                  color="white"
-                  size="xl2"
-                  className="mt-4"
-                />
-                <Typography
-                  text="Plataforma completa de e-commerce."
-                  color="white"
-                  size="lg"
-                  className="mt-4 font-extralight"
-                />
-                <MagneticButton
-                  distance={1}
-                  type="3d"
-                  className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
-                >
-                  <Typography
-                    className="pb-0 pr-0"
-                    text={"Conferir projeto"}
-                    letterPadding={false}
-                    size="md"
-                  />
-                  <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
-                </MagneticButton>
-              </div>
+            <FeaturedWork
+              projectName="Adidas, 2024"
+              alt="adidas"
+              projectDescription="Plataforma completa que oferece todos os recursos de um e-commerce."
+              projectImage="adidas-about.png"
+            />
 
-              {/* Imagem à direita com ícone sobreposto */}
-              <div className="relative lg:w-1/2 w-full flex justify-center lg:justify-end">
-                <Image
-                  src="/images/adidas-about.png"
-                  width={800}
-                  height={800}
-                  alt="Adidas"
-                  className="object-contain pointer-events-none max-w-full"
-                />
-
-                {/* Ícone posicionado no canto superior direito da imagem */}
-                <RiPokerSpadesFill
-                  aria-label="Ícone Poker"
-                  className="absolute top-2 right-2 lg:top-4 lg:right-4 text-xl md:text-3xl lg:text-8xl text-white"
-                />
-              </div>
-            </div>
+            <FeaturedWork
+              projectName="Lamborghini, 2025"
+              alt="lamborghini"
+              projectDescription="Galeria de automóveis da marca de carros de luxo italiana."
+              projectImage="lamborghini-about.png"
+              imagePosition="left"
+            />
           </section>
 
-          <div className="container mx-auto px-4 flex items-center justify-center">
+          {/* <div className="container mx-auto px-4 flex items-center justify-center">
             <Image
               src="/images/suits.png"
               width={600}
@@ -253,7 +220,7 @@ export default function About() {
               alt=""
               className="text-[100vw] lg:text-[50vw] -scale-x-100 pointer-events-none"
             />
-          </div>
+          </div> */}
 
           <section
             className={`container mx-auto px-4 flex flex-col items-center text-center`}
