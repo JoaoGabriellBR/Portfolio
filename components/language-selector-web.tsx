@@ -64,7 +64,7 @@ export default function LanguageSelectorWeb() {
           initial={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
-          className={`absolute min-w-20 w-fit h-auto bg-background border-2 border-neutral-300 dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
+          className={`absolute min-w-20 w-fit h-auto bg-background border-2 border-white dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div

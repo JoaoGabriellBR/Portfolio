@@ -61,7 +61,7 @@ export default function LanguageSelector() {
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           className={`absolute ${
             openUpwards ? "bottom-full mb-2" : "mt-2"
-          } w-48 h-auto bg-background border-2 border-neutral-300 dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
+          } w-48 h-auto bg-background border-2 border-white dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div

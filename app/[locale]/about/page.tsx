@@ -115,16 +115,15 @@ export default function About() {
           </section>
 
           {/* Experience */}
-
           <section
             className={`container mx-auto px-4 flex flex-col items-center text-center`}
           >
+            <RiPokerDiamondsFill
+              aria-label="Icone Poker"
+              className="place-self-center text-lg md:text-xl lg:text-[12rem] text-red-600"
+            />
             <DrawCircleText />
           </section>
-          <RiPokerDiamondsFill
-            aria-label="Icone Poker"
-            className="place-self-center text-lg md:text-xl lg:text-[12rem] text-red-600"
-          />
 
           <section className={`${containerStyles}`}>
             <Typography
@@ -196,7 +195,7 @@ export default function About() {
                 size="xl5"
                 letterPadding={false}
               />
-              <BsArrow90DegDown className="hidden lg:block absolute right-80 text-6xl scale-x-[-1]"/>
+              <BsArrow90DegDown className="hidden lg:block absolute right-80 text-6xl scale-x-[-1]" />
             </div>
 
             <FeaturedWork
@@ -239,7 +238,6 @@ export default function About() {
               color="white"
               size="xl5"
               className="mx-auto mt-4 mb-[5rem]"
-              style={{ lineHeight: "1.5" }}
             />
           </section>
 

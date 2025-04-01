@@ -103,7 +103,7 @@ export default function Skills() {
         {skills.map((skill: any, index: any) => (
           <div
             key={`modal_${index}`}
-            className="flex h-full w-full items-center justify-center shadow-lg bg-neutral-300 dark:bg-[#0c0c0c] rounded-[2rem]"
+            className="flex h-full w-full items-center justify-center shadow-lg bg-white dark:bg-[#0c0c0c] rounded-[2rem]"
           >
             {skill.logo}
           </div>
