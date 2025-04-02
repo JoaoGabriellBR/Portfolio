@@ -49,7 +49,7 @@ export const FeaturedWork = ({
           width={800}
           height={800}
           alt={alt}
-          className="object-contain pointer-events-none max-w-full rounded-[3rem]"
+          className="object-contain pointer-events-none max-w-full"
         />
 
         {/* Icon */}

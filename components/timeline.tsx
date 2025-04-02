@@ -44,7 +44,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
         {steps.map((step, index) => (
           <div
             key={index}
-            className="min-h-screen flex flex-col lg:flex-row justify-start pt-10"
+            className="min-h-screen flex flex-col lg:flex-row justify-start"
           >
             <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 my-10 lg:mb-0 self-start max-w-xs lg:max-w-sm md:w-full">
               <Typography
