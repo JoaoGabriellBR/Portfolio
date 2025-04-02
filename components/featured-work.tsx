@@ -4,6 +4,7 @@ import { MagneticButton } from "@/components/ui/button-magnetic";
 import { RiPokerSpadesFill } from "react-icons/ri";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
+import { ButtonHover } from "./ui/button-hover";
 
 export const FeaturedWork = ({
   projectName,
@@ -35,25 +36,10 @@ export const FeaturedWork = ({
         <Typography
           text={projectDescription}
           color="white"
-          size="lg"
+          size="md"
           className="mt-4 font-extralight"
         />
-
-        <Link href={`/projects/${alt}`}>
-          <MagneticButton
-            distance={0.5}
-            type="3d"
-            className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
-          >
-            <Typography
-              className="pb-0 pr-0"
-              text={"Conferir projeto"}
-              letterPadding={false}
-              size="md"
-            />
-            <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
-          </MagneticButton>
-        </Link>
+        <ButtonHover href={`/projects/${alt}`}>Conferir projeto</ButtonHover>
       </div>
 
       {/* Image */}

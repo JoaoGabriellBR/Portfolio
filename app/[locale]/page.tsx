@@ -109,7 +109,7 @@ export default function Home() {
             <ScrollBaseAnimation delay={1000} baseVelocity={-1.5}>
               <Typography
                 text={t("Section3.title")}
-                color="silver"
+                color="white"
                 size="xl5"
                 className="lg:pb-20"
               />

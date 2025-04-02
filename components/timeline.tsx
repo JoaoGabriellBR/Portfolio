@@ -60,7 +60,7 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
                   key={index}
                   rotationFactor={8}
                   isRevese
-                  className={`p-24 border border-neutral-200 dark:border-neutral-900 bg-background rounded-[3rem]`}
+                  className={`p-16 border border-neutral-200 dark:border-neutral-900 bg-background rounded-[3rem]`}
                 >
                   <BorderTrail
                     style={{
@@ -84,13 +84,13 @@ export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
                     />
                     <Typography
                       text={job.position}
-                      size="lg"
+                      size="md"
                       color="white"
                       letterPadding={false}
                     />
                     <Typography
                       text={job.activities}
-                      size="lg"
+                      size="md"
                       color="white"
                       letterPadding={false}
                       className="font-extralight"

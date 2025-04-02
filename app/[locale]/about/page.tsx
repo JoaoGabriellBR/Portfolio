@@ -78,7 +78,6 @@ export default function About() {
           </section>
 
           {/* Skills */}
-
           <section
             className={`container mx-auto px-4 flex flex-col items-center text-center`}
           >
@@ -214,17 +213,7 @@ export default function About() {
             />
           </section>
 
-          {/* <div className="container mx-auto px-4 flex items-center justify-center">
-            <Image
-              src="/images/suits.png"
-              width={600}
-              height={600}
-              alt=""
-              className="text-[100vw] lg:text-[50vw] -scale-x-100 pointer-events-none"
-            />
-          </div> */}
-
-          <section
+          {/* <section
             className={`container mx-auto px-4 flex flex-col items-center text-center`}
           >
             <RiPokerSpadesFill
@@ -239,24 +228,41 @@ export default function About() {
               size="xl5"
               className="mx-auto mt-4 mb-[5rem]"
             />
-          </section>
-
-          <section
-            className={`${containerStyles} flex flex-col items-center text-center`}
-          >
-            <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full min-h-[10rem] mb-[10rem]">
+          </section> */}
+          <div className="container mx-auto px-4 flex items-center justify-center">
+            <Image
+              src="/images/suits.png"
+              width={600}
+              height={600}
+              alt=""
+              className="text-[100vw] lg:text-[50vw] -scale-x-100 pointer-events-none"
+            />
+          </div>
+          <ScrollBaseAnimation delay={10} baseVelocity={-1.5}>
+            <Typography
+              text={"* Serviços"}
+              color="white"
+              size="xl5"
+              className="lg:pb-20 text-center lg:text-start"
+            />
+          </ScrollBaseAnimation>
+          <section className="container mx-auto min-h-screen px-4">
+            <div className="flex flex-row justify-between items-center">
               <Typography
                 text={"Eu poderia te ajudar com..."}
                 color="white"
                 size="xl2"
-                className="w-full lg:w-[60%] text-center lg:text-start"
               />
-              <BsArrowDownLeft className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+
+              <BsArrowDownLeft className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl my-4" />
             </div>
+
+            {/* <Services /> */}
+            <Skills />
           </section>
 
           {/* Services */}
-          <section
+          {/* <section
             className={`${containerStyles} flex flex-col justify-center items-center `}
           >
             <Typography
@@ -266,8 +272,7 @@ export default function About() {
               className="text-center"
               style={{ lineHeight: "1.5" }}
             />
-            <Services />
-          </section>
+          </section> */}
         </main>
       </ReactLenis>
       <Footer page="Projetos" route="/projects" />

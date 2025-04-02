@@ -25,7 +25,7 @@ export const Services = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
       {services.map((service, index) => (
-        <div key={index} className="flex flex-col items-start sm:p-4 lg:p-6 rounded-lg bg-white">
+        <div key={index} className="flex flex-col items-start sm:p-4 lg:p-6 rounded-lg">
           <Typography
             text={service.number}
             color="silver"
@@ -36,13 +36,14 @@ export const Services = () => {
           <Typography
             text={service.name}
             color="white"
-            size="xl"
+            size="xl2"
             style={{ lineHeight: "1.5" }}
           />
           <Typography
             text={service.test}
-            color="silver"
+            color="white"
             size="md"
+            className="font-extralight"
             style={{ lineHeight: "1.5" }}
           />
         </div>
