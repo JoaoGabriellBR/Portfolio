@@ -1,6 +1,5 @@
-// import { Text } from "./text";
 import Typography from "./typography";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export const ButtonHover = ({ children, href }: any) => {
   return (

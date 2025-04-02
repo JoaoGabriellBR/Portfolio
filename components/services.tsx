@@ -23,9 +23,12 @@ export const Services = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+    <div className="w-full lg:w-1/2 flex flex-col items-start">
       {services.map((service, index) => (
-        <div key={index} className="flex flex-col items-start sm:p-4 lg:p-6 rounded-lg">
+        <div
+          key={index}
+          className="flex flex-col items-start sm:p-4 lg:p-6 rounded-lg"
+        >
           <Typography
             text={service.number}
             color="silver"

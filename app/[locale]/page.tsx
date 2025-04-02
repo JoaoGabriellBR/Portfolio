@@ -11,6 +11,7 @@ import { TfiArrowTopRight } from "react-icons/tfi";
 import { Link } from "@/i18n/navigation";
 import { Meteors } from "@/components/ui/meteors";
 import { SiDungeonsanddragons } from "react-icons/si";
+import { BsArrowDownLeft } from "react-icons/bs";
 
 import { useTranslations } from "next-intl";
 import CursorFollow from "@/components/cursor-follow";
@@ -105,16 +106,14 @@ export default function Home() {
           <ParallaxImages />
 
           {/* Section3  */}
-          <section className="min-h-20 lg:min-h-80 grid place-content-center">
-            <ScrollBaseAnimation delay={1000} baseVelocity={-1.5}>
-              <Typography
-                text={t("Section3.title")}
-                color="white"
-                size="xl5"
-                className="lg:pb-20"
-              />
-            </ScrollBaseAnimation>
-          </section>
+          <ScrollBaseAnimation delay={1000} baseVelocity={-1.5}>
+            <Typography
+              text={t("Section3.title")}
+              color="white"
+              size="xl5"
+              className="lg:pb-20"
+            />
+          </ScrollBaseAnimation>
 
           <Projects />
         </main>

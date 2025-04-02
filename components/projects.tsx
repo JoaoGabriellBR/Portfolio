@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { projects } from "@/utils/projects";
 import CursorFollow from "./cursor-follow";
 import Image from "next/image";
+import { BsArrowDownLeft } from "react-icons/bs";
 
 export default function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -16,6 +17,7 @@ export default function Projects() {
 
   return (
     <section className="flex flex-col items-center justify-center gap-20 min-h-screen container mx-auto px-4">
+        <BsArrowDownLeft className="place-self-end bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl my-4" />
       <div className="flex flex-col items-center justify-center w-full">
         {projects.map((project, index) => {
           return (

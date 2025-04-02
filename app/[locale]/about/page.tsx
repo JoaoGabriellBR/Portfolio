@@ -229,15 +229,7 @@ export default function About() {
               className="mx-auto mt-4 mb-[5rem]"
             />
           </section> */}
-          <div className="container mx-auto px-4 flex items-center justify-center">
-            <Image
-              src="/images/suits.png"
-              width={600}
-              height={600}
-              alt=""
-              className="text-[100vw] lg:text-[50vw] -scale-x-100 pointer-events-none"
-            />
-          </div>
+
           <ScrollBaseAnimation delay={10} baseVelocity={-1.5}>
             <Typography
               text={"* Serviços"}
@@ -257,8 +249,17 @@ export default function About() {
               <BsArrowDownLeft className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl my-4" />
             </div>
 
-            {/* <Services /> */}
-            <Skills />
+            <div className="flex flex-col lg:flex-row justify-start lg:justify-between items-start lg:items-center">
+              <Image
+                src="/images/suits.png"
+                width={500}
+                height={500}
+                alt="Suits icon"
+                className="text-[20vw] lg:text-[50vw] -scale-x-100 pointer-events-none"
+              />
+              <Services />
+            </div>
+            {/* <Skills /> */}
           </section>
 
           {/* Services */}
