@@ -1,21 +1,21 @@
 "use client";
 
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
+import { ReactLenis } from "lenis/react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { JobTimeline } from "@/components/job-timeline";
-import Typography from "@/components/ui/typography";
-import { ReactLenis } from "lenis/react";
-import { Services } from "@/components/services";
-import { useTranslations } from "next-intl";
-import { TextReveal } from "@/components/ui/text-reveal";
 import Skills from "@/components/skills";
-import Image from "next/image";
-import { RiPokerClubsFill, RiPokerDiamondsFill } from "react-icons/ri";
-import { useTheme } from "next-themes";
-import ScrollBaseAnimation from "@/components/text-marquee";
-import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
-import { DrawCircleText } from "@/components/draw-circle-text";
+import { Services } from "@/components/services";
+import Typography from "@/components/ui/typography";
+import { JobTimeline } from "@/components/job-timeline";
+import { TextReveal } from "@/components/ui/text-reveal";
 import { FeaturedWork } from "@/components/featured-work";
+import ScrollBaseAnimation from "@/components/text-marquee";
+import { DrawCircleText } from "@/components/draw-circle-text";
+import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
+import { RiPokerClubsFill } from "react-icons/ri";
 
 export default function About() {
   const t = useTranslations("About");
@@ -46,15 +46,31 @@ function renderBackgroundImage(theme: any) {
   return (
     <div className="relative">
       <Image
-        src={
-          theme === "dark"
-            ? "/images/second-suit.png"
-            : "/images/second-suit-light-mode.png"
-        }
+        // src={
+        //   theme === "dark"
+        //     ? "/images/second-suit.png"
+        //     : "/images/second-suit-light-mode.png"
+        // }
+        src="/images/photo.jpg"
         width={1000}
         height={1000}
         alt=""
-        className="absolute top-40 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] text-neutral-600 opacity-20 -scale-x-100 pointer-events-none"
+        className="absolute top-40 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] opacity-15 -scale-x-100 pointer-events-none"
+        style={{
+          WebkitMaskImage: `
+            linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
+            linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%),
+            linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
+`,
+          maskImage: `
+            linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
+            linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%),
+            linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
+
+`,
+          WebkitMaskComposite: "multiply",
+          maskComposite: "intersect",
+        }}
       />
     </div>
   );
@@ -62,7 +78,7 @@ function renderBackgroundImage(theme: any) {
 
 function renderAboutMeSection() {
   return (
-    <section className="container mx-auto min-h-screen px-4 flex flex-col items-start text-start">
+    <section className="container mx-auto min-h-screen px-4 flex flex-col items-start justify-center -mt-[7rem]">
       <Typography
         text="Sobre mim"
         color="white"
@@ -76,7 +92,7 @@ function renderAboutMeSection() {
 
 function renderCompetenceSection(t: any) {
   return (
-    <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between -mb-[4rem] lg:-mb-[8rem]">
+    <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
       <TextReveal paragraph={t("competence")} />
     </section>
   );
@@ -85,7 +101,6 @@ function renderCompetenceSection(t: any) {
 function renderSkillsSection() {
   return (
     <section className="container mx-auto px-4 flex flex-col items-center text-center">
-
       <div className="min-h-screen flex flex-col items-center justify-center">
         <RiPokerClubsFill className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem] text-red-600" />
         <Typography
@@ -96,7 +111,7 @@ function renderSkillsSection() {
         />
       </div>
 
-      <div className="text-center flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full min-h-[10rem] mb-[8rem]">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full m-[8rem] min-h-[10rem]">
         <Typography
           text={"Conheça algumas tecnologias que utilizo em meus projetos."}
           color="white"
@@ -114,7 +129,6 @@ function renderSkillsSection() {
 function renderExperienceSection(t: any) {
   return (
     <section className="container mx-auto px-4 space-y-[10rem]">
-
       <div className="min-h-screen flex flex-col items-center justify-center">
         <RiPokerClubsFill className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem] text-red-600" />
         <DrawCircleText />
@@ -134,7 +148,6 @@ function renderExperienceSection(t: any) {
 function renderFeaturedWorks() {
   return (
     <section className="container mx-auto px-4">
-
       <div className="min-h-screen flex items-center justify-center relative text-center lg:text-left ">
         <Typography
           text="Projetos em Destaque"
@@ -159,7 +172,6 @@ function renderFeaturedWorks() {
         projectImage="lamborghini-about.png"
         imagePosition="left"
       />
-
     </section>
   );
 }
@@ -177,7 +189,6 @@ function renderServicesSection() {
       </ScrollBaseAnimation>
 
       <section className="container mx-auto px-4 h-fit -mt-[8rem]">
-        
         <div className="flex flex-row justify-between items-center mb-[8rem]">
           <Typography
             text={"Eu poderia te ajudar com..."}
@@ -199,7 +210,6 @@ function renderServicesSection() {
           />
           <Services />
         </div>
-
       </section>
     </>
   );
