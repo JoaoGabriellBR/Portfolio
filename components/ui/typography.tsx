@@ -13,8 +13,8 @@ interface TypographyProps {
 
 const Typography: React.FC<TypographyProps> = ({
   text,
-  size = "md",
-  color = "white",
+  size = "",
+  color = "",
   className = "",
   letterPadding = true,
   style,
@@ -31,8 +31,7 @@ const Typography: React.FC<TypographyProps> = ({
   } as const;
 
   const colorsClasses = {
-    white:
-      "text-foreground dark:text-white",
+    white: "text-foreground dark:text-white",
     silver:
       "bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-400 dark:to-neutral-700",
   } as const;
@@ -43,11 +42,9 @@ const Typography: React.FC<TypographyProps> = ({
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
       style={style}
-      className={`${
+      className={`${className} ${
         letterPadding ? "pb-3 pr-2" : ""
-      } tracking-wide break-words ${
-        sizeClasses[size]
-      } ${colorsClasses[color]} ${className}`}
+      } tracking-wide break-words ${sizeClasses[size]} ${colorsClasses[color]}`}
     >
       {text}
     </motion.h1>

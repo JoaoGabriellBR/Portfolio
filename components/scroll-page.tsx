@@ -1,0 +1,23 @@
+import { Link } from "@/i18n/navigation";
+import { MagneticButton } from "./ui/button-magnetic";
+import { BsArrowDown } from "react-icons/bs";
+import Typography from "./ui/typography";
+
+export const ScrollPage = ({ sectionLink, className }: any) => {
+  return (
+    <Link className={className} href={sectionLink}>
+      <MagneticButton
+        distance={1}
+        type="3d"
+        className="flex flex-row justify-between items-center gap-2 border-none"
+      >
+        <BsArrowDown className="text-foreground dark:text-white text-md" />
+        <Typography
+          text={"Scroll"}
+          letterPadding={false}
+          className="text-md text-white"
+        />
+      </MagneticButton>
+    </Link>
+  );
+};

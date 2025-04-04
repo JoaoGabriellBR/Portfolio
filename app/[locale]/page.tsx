@@ -16,6 +16,7 @@ import { useState } from "react";
 import { GiDragonOrb } from "react-icons/gi";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { ScrollPage } from "@/components/scroll-page";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -42,7 +43,7 @@ export default function Home() {
 function renderJumbotron(theme: any, modal: any, setModal: any, t: any) {
   return (
     <>
-      <section className="container mx-auto px-4 flex items-center justify-center">
+      <section className="relative container mx-auto px-4 flex items-center justify-center">
         <Image
           src={
             theme === "dark"
@@ -53,6 +54,12 @@ function renderJumbotron(theme: any, modal: any, setModal: any, t: any) {
           height={1000}
           alt="Suit Image"
         />
+
+        <div className="hidden lg:block absolute bottom-40 left-0">
+          <ScrollPage sectionLink="#section2" />
+        </div>
+
+
       </section>
       {/* <section className="container mx-auto max-w-6xl min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
         <div
@@ -79,7 +86,10 @@ function renderJumbotron(theme: any, modal: any, setModal: any, t: any) {
 
 function renderSection2(t: any) {
   return (
-    <section className="container mx-auto px-4 py-20 lg:py-0 min-h-[20rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-between items-center gap-4">
+    <section
+      id="section2"
+      className="container mx-auto px-4 py-20 lg:py-0 min-h-[20rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-between items-center gap-4"
+    >
       <Typography
         text={t("Section2.title")}
         color="white"
