@@ -1,10 +1,9 @@
 "use client";
-import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Typography from "./ui/typography";
-import { Tilt } from "./ui/tilt";
-import { BorderTrail } from "./ui/border-trail";
-import { GiTie } from "react-icons/gi";
+import CursorFollow from "./cursor-follow";
+import { FaArrowRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 interface ListItemsProps {
   company_name: string;
@@ -14,115 +13,72 @@ interface ListItemsProps {
 }
 
 interface StepsProps {
-  type: string;
   jobs: ListItemsProps[];
 }
 
-export const Timeline = ({ steps }: { steps: StepsProps[] }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 10%", "end 50%"],
-  });
-
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+export const Timeline = ({ jobs }: { jobs: any }) => {
+  const [modal, setModal] = useState({ active: false, index: 0 });
+  const t = useTranslations("About.Experience");
 
   return (
-    <div ref={containerRef} className="overflow-hidden lg:overflow-clip">
-      <div ref={ref} className="relative">
-        {steps.map((step, index) => (
+    <section className="place-self-start w-[70%]">
+      {jobs.map((job: any, index: any) => {
+        return (
           <div
-            key={index}
-            className="min-h-screen flex flex-col lg:flex-row justify-start"
+            onMouseEnter={() => {
+              setModal({ active: true, index });
+            }}
+            onMouseLeave={() => {
+              setModal({ active: false, index });
+            }}
+            className="group w-full flex flex-col items-start justify-start py-12 gap-8 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
           >
-            <div className="min-w-40 lg:sticky flex flex-col items-start px-4 z-20 top-20 my-10 lg:mb-0 self-start max-w-xs lg:max-w-sm md:w-full">
+            <div className="w-full flex flex-row justify-between items-center">
+              <div className="flex flex-row items-center gap-4 group">
+                <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
+                  <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
+                  <Typography
+                    text={job.company_name}
+                    color="white"
+                    size="xl2"
+                    letterPadding={false}
+                  />
+                </div>
+              </div>
+
               <Typography
-                text={step.type}
-                size="xl3"
-                className="hidden lg:flex"
+                text={job.company_time}
+                color="white"
+                letterPadding={false}
+                className="text-sm"
               />
             </div>
+            <Typography
+              text={job.activities}
+              color="white"
+              size="md"
+              letterPadding={false}
+              className="w-[50%] font-normal"
+            />
+          </div>
+        );
+      })}
 
-            <div className="flex flex-col justify-start gap-20 pl-4 lg:pl-60">
-              {step.jobs.map((job, index) => (
-                <Tilt
-                  key={index}
-                  rotationFactor={8}
-                  isRevese
-                  className={`p-16 border border-neutral-200 dark:border-neutral-900 bg-background rounded-[3rem]`}
-                >
-                  <BorderTrail
-                    style={{
-                      boxShadow:
-                        "0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)",
-                    }}
-                    size={300}
-                  />
-                  <div
-                    className="flex h-full flex-col items-start justify-start gap-8"
-                    role="status"
-                    aria-label="Loading..."
-                  >
-                    <GiTie className="text-8xl text-red-600 place-self-end"/>
-                    <Typography
-                      // text={job.company_name}
-                      text={job.company_name}
-                      size="xl2"
-                      color="white"
-                      letterPadding={false}
-                    />
-                    <Typography
-                      text={job.position}
-                      size="md"
-                      color="white"
-                      letterPadding={false}
-                    />
-                    <Typography
-                      text={job.activities}
-                      size="md"
-                      color="white"
-                      letterPadding={false}
-                      className="font-extralight"
-                    />
-                    <Typography
-                      text={job.company_time}
-                      color="silver"
-                      className="self-end text-sm"
-                      letterPadding={false}
-                    />
-                  </div>
-                </Tilt>
-              ))}
-            </div>
+      <CursorFollow
+        modal={modal}
+        classNameContainer="h-[7rem] sm:h-[9rem] md:h-[12rem] lg:h-[17rem] w-[7rem] sm:w-[9rem] md:w-[12rem] lg:w-[17rem] 
+      rounded-[2rem]"
+        className="rounded-[2rem] absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+      >
+        {jobs.map((job: any, index: any) => (
+          <div
+            key={`modal_${index}`}
+            className="flex h-full w-full items-center justify-center shadow-lg rounded-[2rem]"
+          >
+            <span className="text-3xl">{job.position}</span>
           </div>
         ))}
-
-        <div
-          style={{
-            height: height + "px",
-          }}
-          className="absolute top-0 overflow-hidden w-[3px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
-        >
-          <motion.div
-            style={{
-              height: heightTransform,
-              opacity: opacityTransform,
-            }}
-            className="h-full absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-zinc-100 via-zinc-800 to-transparent from-[0%] via-[10%] rounded-full"
-          />
-        </div>
-      </div>
-    </div>
+      </CursorFollow>
+    </section>
   );
 };

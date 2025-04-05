@@ -12,7 +12,7 @@ export default function Skills() {
   const t = useTranslations("ModalSkills");
 
   const skillsStyles =
-    "text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-foreground";
+    "text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-white";
 
   const skills = [
     {
@@ -58,7 +58,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center w-full">
+    <section className="flex flex-col items-center justify-center place-self-end w-[70%]">
       {/* <div className="flex flex-col items-center justify-center w-full"> */}
         {skills.map((skill, index) => {
           return (
@@ -77,7 +77,7 @@ export default function Skills() {
                   <Typography
                     text={skill.title}
                     color="white"
-                    size="xl"
+                    size="xl2"
                     letterPadding={false}
                   />
                 </div>
@@ -103,7 +103,7 @@ export default function Skills() {
         {skills.map((skill: any, index: any) => (
           <div
             key={`modal_${index}`}
-            className="flex h-full w-full items-center justify-center shadow-lg bg-white dark:bg-[#0c0c0c] rounded-[2rem]"
+            className="flex h-full w-full items-center justify-center shadow-lg bg-foreground dark:bg-[#0c0c0c] rounded-[2rem]"
           >
             {skill.logo}
           </div>

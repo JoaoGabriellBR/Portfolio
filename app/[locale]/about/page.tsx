@@ -116,7 +116,7 @@ function renderSkillsSection() {
           text={"Conheça algumas tecnologias que utilizo em meus projetos."}
           color="white"
           size="xl3"
-          className="w-full lg:w-[60%] text-center lg:text-start"
+          className="w-full lg:w-[80%] text-center lg:text-start"
         />
         <BsArrowDownLeft className="text-foreground dark:text-white text-4xl lg:text-6xl" />
       </div>
@@ -140,6 +140,7 @@ function renderExperienceSection(t: any) {
         size="xl2"
         className="text-center lg:hidden"
       />
+
       <JobTimeline />
     </section>
   );

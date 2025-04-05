@@ -5,6 +5,7 @@ import { RiPokerSpadesFill } from "react-icons/ri";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
 import { ButtonHover } from "./ui/button-hover";
+import { GoArrowUpRight } from "react-icons/go";
 
 export const FeaturedWork = ({
   projectName,
@@ -39,7 +40,13 @@ export const FeaturedWork = ({
           size="md"
           className="mt-4 font-extralight"
         />
-        <ButtonHover href={`/projects/${alt}`}>Conferir projeto</ButtonHover>
+        <ButtonHover
+          href={`/projects/${alt}`}
+          className="flex flex-row justify-between items-center"
+        >
+          <Typography text="Conferir" size="sm" letterPadding={false} />
+          <GoArrowUpRight className="text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl -mb-[0.1rem]" />
+        </ButtonHover>
       </div>
 
       {/* Image */}
