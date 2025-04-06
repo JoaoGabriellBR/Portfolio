@@ -15,7 +15,8 @@ import { FeaturedWork } from "@/components/featured-work";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { DrawCircleText } from "@/components/draw-circle-text";
 import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
-import { RiPokerClubsFill } from "react-icons/ri";
+import { RiPokerClubsFill, RiPokerDiamondsFill } from "react-icons/ri";
+import { ScrollPage } from "@/components/scroll-page";
 
 export default function About() {
   const t = useTranslations("About");
@@ -46,11 +47,6 @@ function renderBackgroundImage(theme: any) {
   return (
     <div className="relative">
       <Image
-        // src={
-        //   theme === "dark"
-        //     ? "/images/second-suit.png"
-        //     : "/images/second-suit-light-mode.png"
-        // }
         src="/images/photo.jpg"
         width={1000}
         height={1000}
@@ -78,7 +74,7 @@ function renderBackgroundImage(theme: any) {
 
 function renderAboutMeSection() {
   return (
-    <section className="container mx-auto min-h-screen px-4 flex flex-col items-start justify-center -mt-[7rem]">
+    <section className="relative container mx-auto min-h-screen px-4 flex flex-col items-start justify-center -mt-[7rem]">
       <Typography
         text="Sobre mim"
         color="white"
@@ -86,13 +82,23 @@ function renderAboutMeSection() {
         className="max-w-3xl"
         letterPadding={false}
       />
+
+
+      <div className="hidden lg:block absolute bottom-12 left-0">
+        <ScrollPage sectionLink="#competence" />
+      </div>
+
+
     </section>
   );
 }
 
 function renderCompetenceSection(t: any) {
   return (
-    <section className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+    <section
+      id="competence"
+      className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between"
+    >
       <TextReveal paragraph={t("competence")} />
     </section>
   );
@@ -130,7 +136,7 @@ function renderExperienceSection(t: any) {
   return (
     <section className="container mx-auto px-4 space-y-[10rem]">
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <RiPokerClubsFill className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem] text-red-600" />
+        <RiPokerDiamondsFill className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem] text-red-600" />
         <DrawCircleText />
       </div>
 

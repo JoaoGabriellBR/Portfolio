@@ -71,6 +71,7 @@ export default function GalleryComponent() {
 function Gallery({ handle, handle2, mousePosition }: any) {
   return (
     <div
+      id="gallery"
       className="h-[120vh] relative overflow-hidden"
       style={{ clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)" }}
     >

@@ -14,6 +14,7 @@ import MonitorMockup from "@/components/ui/monitor-mockup";
 import SmartphoneMockup from "@/components/ui/smartphone-mockup";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import Projects from "@/components/projects";
+import { ScrollPage } from "@/components/scroll-page";
 
 export default function ProjectDetails({ params }: any) {
   //   const { name } = await params;
@@ -31,14 +32,20 @@ export default function ProjectDetails({ params }: any) {
         }}
       >
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
-          <section className="container mx-auto min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
+          <section className="relative container mx-auto min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div className="flex flex-row items-center justify-between gap-4 text-center">
               <SiAdidas className="text-[10rem] text-foreground" />
               <Typography text="adidas" color="white" size="xl5" />
             </div>
+            <div className="hidden lg:block absolute bottom-12 left-0">
+              <ScrollPage sectionLink="#project-description" />
+            </div>
           </section>
 
-          <section className="container mx-auto px-4 py-20 lg:py-0 min-h-[20rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-between items-center gap-4">
+          <section
+            id="project-description"
+            className="container mx-auto px-4 py-20 lg:py-0 min-h-[20rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-between items-center gap-4"
+          >
             <Typography
               text="Plataforma de e-commerce completa, com ampla variedade de produtos e pagamento rápido e intuitivo."
               color="white"
@@ -106,12 +113,6 @@ export default function ProjectDetails({ params }: any) {
             />
           </section>
 
-          {/* <section className="container mx-auto min-h-screen px-4 flex flex-col items-center justify-center">
-            <div className="flex flex-row items-center justify-between gap-4 text-center">
-              <FaArrowTrendUp className="text-[10rem] text-foreground" />
-              <Typography text="upwrite" color="white" size="xl5" />
-            </div>
-          </section> */}
           <Projects />
         </main>
       </ReactLenis>
