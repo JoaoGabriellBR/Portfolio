@@ -119,7 +119,7 @@ function renderSkillsSection() {
 
       <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full m-[8rem] min-h-[10rem]">
         <Typography
-          text={"Conheça algumas tecnologias que utilizo em meus projetos."}
+          text={"* Conheça algumas tecnologias que utilizo em meus projetos. *"}
           color="white"
           size="xl3"
           className="w-full lg:w-[80%] text-center lg:text-start"

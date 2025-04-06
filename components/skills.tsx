@@ -77,7 +77,7 @@ export default function Skills() {
                   <Typography
                     text={skill.title}
                     color="white"
-                    size="xl2"
+                    size="xl"
                     letterPadding={false}
                   />
                 </div>

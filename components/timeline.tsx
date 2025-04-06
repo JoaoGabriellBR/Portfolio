@@ -21,7 +21,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
   const t = useTranslations("About.Experience");
 
   return (
-    <section className="place-self-start w-[70%]">
+    <section className="place-self-start w-full">
       {jobs.map((job: any, index: any) => {
         return (
           <div
@@ -40,7 +40,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
                   <Typography
                     text={job.company_name}
                     color="white"
-                    size="xl2"
+                    size="xl3"
                     letterPadding={false}
                   />
                 </div>
@@ -49,17 +49,17 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
               <Typography
                 text={job.company_time}
                 color="white"
+                size="md"
                 letterPadding={false}
-                className="text-sm"
               />
             </div>
-            <Typography
+            {/* <Typography
               text={job.activities}
               color="white"
               size="md"
               letterPadding={false}
               className="w-[50%] font-normal"
-            />
+            /> */}
           </div>
         );
       })}

@@ -34,7 +34,7 @@ export default function ProjectDetails({ params }: any) {
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
           <section className="relative container mx-auto min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
             <div className="flex flex-row items-center justify-between gap-4 text-center">
-              <SiAdidas className="text-[10rem] text-foreground" />
+              <SiAdidas className="text-[10rem] text-foreground dark:text-white" />
               <Typography text="adidas" color="white" size="xl5" />
             </div>
             <div className="hidden lg:block absolute bottom-12 left-0">
