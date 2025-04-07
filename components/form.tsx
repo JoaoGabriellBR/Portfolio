@@ -134,8 +134,8 @@ export function ProfileForm() {
           ))}
           <MagneticButton
             onClick={form.handleSubmit(onSubmit)}
-            distance={1}
-            className="w-full lg:w-72 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
+            distance={0.5}
+            className="w-full lg:w-72 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2 font-normal"
           >
             <Typography
               className="pb-0 pr-0"
