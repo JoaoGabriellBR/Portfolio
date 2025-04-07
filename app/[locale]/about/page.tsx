@@ -17,6 +17,13 @@ import { DrawCircleText } from "@/components/draw-circle-text";
 import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
 import { RiPokerClubsFill, RiPokerDiamondsFill } from "react-icons/ri";
 import { ScrollPage } from "@/components/scroll-page";
+import { GiSuits } from "react-icons/gi";
+import {
+  SiSnapdragon,
+  SiDungeonsanddragons,
+  SiAdidas,
+  SiLamborghini,
+} from "react-icons/si";
 
 export default function About() {
   const t = useTranslations("About");
@@ -83,12 +90,9 @@ function renderAboutMeSection() {
         letterPadding={false}
       />
 
-
       <div className="hidden lg:block absolute bottom-12 left-0">
         <ScrollPage sectionLink="#competence" />
       </div>
-
-
     </section>
   );
 }
@@ -134,10 +138,14 @@ function renderSkillsSection() {
 
 function renderExperienceSection(t: any) {
   return (
-    <section className="container mx-auto px-4 space-y-[10rem]">
+    <section className="container mx-auto px-4">
       <div className="min-h-screen flex flex-col items-center justify-center">
         <RiPokerDiamondsFill className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem] text-red-600" />
-        <DrawCircleText />
+        <DrawCircleText
+          firstWord={"Minha"}
+          secondWord={"Trajetória"}
+          textSize="lg"
+        />
       </div>
 
       <Typography
@@ -165,20 +173,24 @@ function renderFeaturedWorks() {
         <BsArrow90DegDown className="text-foreground dark:text-white  hidden lg:block absolute bottom-20 right-80 text-4xl lg:text-6xl scale-x-[-1]" />
       </div>
 
-      <FeaturedWork
-        projectName="Adidas, 2024"
-        alt="adidas"
-        projectDescription="Plataforma completa que oferece todos os recursos de um e-commerce."
-        projectImage="adidas-about.png"
-      />
+      <div className="flex flex-col gap-24">
+        <FeaturedWork
+          projectName="Adidas"
+          alt="adidas"
+          projectDescription="Plataforma completa que oferece todos os recursos de um e-commerce."
+          projectImage="adidas-about.png"
+          Icon={SiAdidas}
+        />
 
-      <FeaturedWork
-        projectName="Lamborghini, 2025"
-        alt="lamborghini"
-        projectDescription="Galeria de automóveis da marca de carros de luxo italiana."
-        projectImage="lamborghini-about.png"
-        imagePosition="left"
-      />
+        <FeaturedWork
+          projectName="Lamborghini"
+          alt="lamborghini"
+          projectDescription="Galeria de automóveis da marca de carros de luxo italiana."
+          projectImage="lamborghini-about.png"
+          imagePosition="left"
+          Icon={SiLamborghini}
+        />
+      </div>
     </section>
   );
 }

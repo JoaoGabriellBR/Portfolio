@@ -6,6 +6,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
 import { ButtonHover } from "./ui/button-hover";
 import { GoArrowUpRight } from "react-icons/go";
+import { SiAdidas } from "react-icons/si";
 
 export const FeaturedWork = ({
   projectName,
@@ -13,32 +14,33 @@ export const FeaturedWork = ({
   projectImage,
   imagePosition = "right",
   alt,
+  Icon,
 }: any) => {
   const isRight = imagePosition === "right";
 
   return (
     <div
-      className={`flex flex-col lg:flex-row items-center justify-between gap-8 ${
+      className={`flex flex-col lg:flex-row items-center justify-between ${
         isRight ? "" : "lg:flex-row-reverse"
       }`}
     >
       {/* Text */}
       <div
-        className={`lg:w-1/3 w-full flex flex-col ${
-          isRight ? "items-start text-left" : "items-end text-right"
+        className={`lg:w-1/3 w-full flex flex-col gap-2 ${
+          isRight ? "items-start text-left" : "items-start text-left"
         }`}
       >
+        <Icon className="text-9xl"/>
         <Typography
           text={projectName}
           color="white"
-          size="xl2"
-          className="mt-4"
+          size="xl3"
         />
         <Typography
           text={projectDescription}
           color="white"
           size="md"
-          className="mt-4 font-extralight"
+          className="font-extralight"
         />
         <ButtonHover
           href={`/projects/${alt}`}

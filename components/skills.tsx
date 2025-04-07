@@ -85,8 +85,8 @@ export default function Skills() {
 
               <Typography
                 text={skill.type}
-                color="silver"
                 size="sm"
+                className="font-normal"
                 letterPadding={false}
               />
             </div>

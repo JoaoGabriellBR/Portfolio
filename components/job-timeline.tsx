@@ -3,6 +3,7 @@ import { Timeline } from "@/components/timeline";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import CursorFollow from "./cursor-follow";
+import Image from "next/image";
 
 export const JobTimeline = () => {
   const t = useTranslations("About.Experience");

@@ -4,6 +4,7 @@ import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
 import { FaArrowRight } from "react-icons/fa";
 import { useTranslations } from "next-intl";
+import { BsArrowRight } from "react-icons/bs";
 
 interface ListItemsProps {
   company_name: string;
@@ -31,35 +32,39 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
             onMouseLeave={() => {
               setModal({ active: false, index });
             }}
-            className="group w-full flex flex-col items-start justify-start py-12 gap-8 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
+            className="group w-full flex flex-row items-start justify-between py-12 gap-8 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
           >
-            <div className="w-full flex flex-row justify-between items-center">
+            <div className="flex-[1] flex items-center gap-4 group">
               <div className="flex flex-row items-center gap-4 group">
                 <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
                   <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
                   <Typography
                     text={job.company_name}
                     color="white"
-                    size="xl3"
+                    size="xl2"
                     letterPadding={false}
                   />
                 </div>
               </div>
+            </div>
 
+            <div className="flex-[1] flex justify-end items-center gap-4">
               <Typography
-                text={job.company_time}
+                text="2021"
                 color="white"
-                size="md"
+                size="sm"
+                className="font-normal"
+                letterPadding={false}
+              />
+              <BsArrowRight className="text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg" />
+              <Typography
+                text="2022"
+                color="white"
+                size="sm"
+                className="font-normal"
                 letterPadding={false}
               />
             </div>
-            {/* <Typography
-              text={job.activities}
-              color="white"
-              size="md"
-              letterPadding={false}
-              className="w-[50%] font-normal"
-            /> */}
           </div>
         );
       })}
