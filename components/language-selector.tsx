@@ -5,6 +5,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { MagneticButton } from "./ui/button-magnetic";
 import { languages } from "@/utils/languages";
+import { textSizes } from "@/utils/text-sizes";
 
 export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +48,7 @@ export default function LanguageSelector() {
         className="w-fit h-20 text-[2xl] flex gap-4 p-5"
       >
         <FaGlobe className="text-foreground text-[1.2rem] lg:text-[2rem]" />
-        <p className="text-foreground dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+        <p className={`${textSizes.sm} text-foreground dark:text-foreground`}>
           {languages.map(
             (language) => currentLocale === language.locale && language.label
           )}
@@ -73,7 +74,7 @@ export default function LanguageSelector() {
                 href={pathname}
                 locale={language.locale}
               >
-                <p className="text-foreground dark:text-foreground text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg">
+                <p className={`${textSizes.sm} text-foreground`}>
                   {language.label}
                 </p>
               </Link>

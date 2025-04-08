@@ -24,6 +24,7 @@ import {
   SiAdidas,
   SiLamborghini,
 } from "react-icons/si";
+import { textSizes } from "@/utils/text-sizes";
 
 export default function About() {
   const t = useTranslations("About");
@@ -112,7 +113,7 @@ function renderSkillsSection() {
   return (
     <section className="container mx-auto px-4 flex flex-col items-center text-center">
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <RiPokerClubsFill className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem] text-red-600" />
+        <RiPokerClubsFill className={`${textSizes.xl5} text-red-600`}/>
         <Typography
           text="Habilidades"
           color="white"
@@ -140,7 +141,7 @@ function renderExperienceSection(t: any) {
   return (
     <section className="container mx-auto px-4">
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <RiPokerDiamondsFill className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem] text-red-600" />
+        <RiPokerDiamondsFill className={`${textSizes.xl5} text-red-600`}/>
         <DrawCircleText
           firstWord={"Minha"}
           secondWord={"Trajetória"}

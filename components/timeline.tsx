@@ -5,6 +5,7 @@ import CursorFollow from "./cursor-follow";
 import { FaArrowRight } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import { BsArrowRight } from "react-icons/bs";
+import { textSizes } from "@/utils/text-sizes";
 
 interface ListItemsProps {
   company_name: string;
@@ -56,7 +57,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
                 className="font-normal"
                 letterPadding={false}
               />
-              <BsArrowRight className="text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg" />
+              <BsArrowRight className={textSizes.sm} />
               <Typography
                 text="2022"
                 color="white"

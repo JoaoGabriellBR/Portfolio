@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { textSizes } from "@/utils/text-sizes";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { FC, ReactNode, useRef } from "react";
 
@@ -26,7 +27,7 @@ export const TextReveal: FC<Props> = ({ paragraph, className }) => {
         <h1
           style={{ lineHeight: 1.3 }}
           ref={targetRef}
-          className="flex flex-wrap tracking-wide break-words text-neutral-950 dark:text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+          className={`${textSizes.xl3} flex flex-wrap tracking-wide break-words text-foreground dark:text-white`}
         >
           {words.map((word, i) => {
             const start = i / words.length;
@@ -56,7 +57,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
       <span className={"absolute opacity-10"}>{children}</span>
       <motion.h1
         style={{ opacity: opacity, lineHeight: 1.3 }}
-        className="max-w-4xl tracking-wide break-words text-neutral-950 dark:text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+        className={`${textSizes.xl3} max-w-4xl tracking-wide break-words text-neutral-950 dark:text-white`}
       >
         {children}
       </motion.h1>

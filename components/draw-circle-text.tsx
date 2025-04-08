@@ -1,14 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { textSizes } from "@/utils/text-sizes";
 
 export const DrawCircleText = ({ firstWord, secondWord, textSize = "lg" }: any) => {
-
-  const bigText = "text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[12rem]";
-  const mediumText = "text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
-
   return (
     <div className="text-foreground dark:text-white">
-      <h1 className={`${textSize === "lg" ? bigText : mediumText} text-center flex flex-col`}>
+      <h1 className={`${textSize === "lg" ? textSizes.xl5 : textSizes.xl4} text-center flex flex-col`}>
         <span>{firstWord}</span>
         <span className="relative">
           {secondWord}
