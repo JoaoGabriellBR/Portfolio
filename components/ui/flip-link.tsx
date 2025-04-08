@@ -15,7 +15,7 @@ export const FlipLink = ({
   type?: string;
 }) => {
   const textColor =
-    "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200";
+    "tracking-normal break-words text-foreground dark:text-white";
 
   return (
     <Link href={href}>

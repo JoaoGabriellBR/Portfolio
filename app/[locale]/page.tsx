@@ -17,6 +17,7 @@ import { GiDragonOrb } from "react-icons/gi";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { ScrollPage } from "@/components/scroll-page";
+import { Meteors } from "@/components/ui/meteors";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -54,6 +55,7 @@ function renderJumbotron(theme: any, modal: any, setModal: any, t: any) {
           height={1000}
           alt="Suit Image"
         />
+        <Meteors number={100} />
 
         <div className="hidden lg:block absolute bottom-40 left-0">
           <ScrollPage sectionLink="#section2" />

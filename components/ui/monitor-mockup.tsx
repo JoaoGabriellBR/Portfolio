@@ -17,7 +17,6 @@ const MonitorMockup: React.FC<MonitorMockupProps> = ({ children }) => {
         <div className="w-full aspect-[16/9] bg-background rounded-[3rem] overflow-hidden">
           {children}
         </div>
-        {/* <div className="absolute bottom-[-240px] left-1/2 transform -translate-x-1/2 bg-gradient-to-b from-neutral-700 to-neutral-950 w-56 h-60 rounded-b-lg"></div> */}
       </motion.div>
     </div>
   );
