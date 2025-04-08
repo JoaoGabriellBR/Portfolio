@@ -48,7 +48,7 @@ export default function LanguageSelector() {
         className="w-fit h-20 text-[2xl] flex gap-4 p-5"
       >
         <FaGlobe className="text-foreground text-[1.2rem] lg:text-[2rem]" />
-        <p className={`${textSizes.sm} text-foreground dark:text-foreground`}>
+        <p className={`${textSizes.sm} text-foreground font-normal`}>
           {languages.map(
             (language) => currentLocale === language.locale && language.label
           )}
@@ -62,7 +62,7 @@ export default function LanguageSelector() {
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           className={`absolute ${
             openUpwards ? "bottom-full mb-2" : "mt-2"
-          } w-48 h-auto bg-background border-2 border-white dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
+          } w-48 h-auto bg-background border-2 border-neutral-950 dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div
@@ -74,7 +74,7 @@ export default function LanguageSelector() {
                 href={pathname}
                 locale={language.locale}
               >
-                <p className={`${textSizes.sm} text-foreground`}>
+                <p className={`${textSizes.sm} text-foreground font-normal`}>
                   {language.label}
                 </p>
               </Link>

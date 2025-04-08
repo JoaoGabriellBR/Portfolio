@@ -46,7 +46,7 @@ export default function Footer({ page = "", route = "/" }: any) {
         <div className="absolute bottom-0 left-0 w-full hidden lg:flex justify-center pointer-events-none z-0">
           <AnimatedText
             text="JOÃO GABRIEL SILVA"
-            className="text-[10vw] text-white dark:text-neutral-700"
+            className="text-[10vw] text-neutral-950"
           />
         </div>
       </div>

@@ -14,8 +14,8 @@ interface TypographyProps {
 
 const Typography: React.FC<TypographyProps> = ({
   text,
-  size = "",
-  color = "",
+  size = "sm",
+  color = "white",
   className = "",
   letterPadding = true,
   style,

@@ -46,8 +46,9 @@ export default function Project({
       </div>
       <Typography
         text={t("Projects.type")}
-        color="silver"
+        color="white"
         size="sm"
+        className="font-normal"
         letterPadding={false}
       />
     </Link>

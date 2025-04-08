@@ -47,7 +47,7 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
           {NAV_ITEMS.map((item, index) => (
             <React.Fragment key={index}>
               {index !== 0 && (
-                <p className="bg-foreground rounded-full h-1 w-1" />
+                <p className="bg-foreground dark:bg-white rounded-full h-1 w-1" />
               )}
               <FlipLink type="web" href={item.href} aria-label={item.title}>
                 {`${item.title}`}

@@ -15,7 +15,7 @@ export const FlipLink = ({
   type?: string;
 }) => {
   const textColor =
-    "tracking-normal break-words text-foreground dark:text-white";
+    "tracking-wide break-words text-foreground dark:text-white";
 
   return (
     <Link href={href}>
@@ -45,7 +45,7 @@ export const FlipLink = ({
               }}
               className={`${
                 type === "web"
-                  ? `text-[1rem]`
+                  ? `text-[1rem] font-normal`
                   : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[7rem]`
               } inline-block leading-normal ${textColor}`}
               key={i}
@@ -73,7 +73,7 @@ export const FlipLink = ({
               }}
               className={`${
                 type === "web"
-                  ? `text-[1rem]`
+                  ? `text-[1rem] font-normal`
                   : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[7rem]`
               } inline-block leading-normal ${textColor}`}
               key={i}

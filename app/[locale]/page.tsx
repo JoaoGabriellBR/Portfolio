@@ -128,7 +128,3 @@ function renderSection3(t: any) {
     </ScrollBaseAnimation>
   );
 }
-
-{
-  /* <Meteors number={100} /> */
-}
