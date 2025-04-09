@@ -1,13 +1,10 @@
 "use client";
+import Image from "next/image";
+import { ReactLenis } from "lenis/react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ProfileForm } from "@/components/form";
-import Typography from "@/components/ui/typography";
-import { ReactLenis } from "lenis/react";
-import { useTranslations } from "next-intl";
-import { GiWolfHead } from "react-icons/gi";
-import { SiDungeonsanddragons } from "react-icons/si";
-import Image from "next/image";
 import { DrawCircleText } from "@/components/draw-circle-text";
 
 export default function Contact() {
@@ -28,12 +25,16 @@ export default function Contact() {
             alt="Suit image"
             width={1000}
             height={1000}
-            className="text-[100vw] lg:text-[58vw] text-foreground dark:text-white absolute top-40 lg:top-[-10rem] right-0 -scale-x-100 pointer-events-none opacity-10 lg:opacity-100"
+            className="absolute top-0 right-0 -scale-x-100 pointer-events-none hidden lg:block opacity-80"
           />
         </div>
         <main className="flex flex-col items-center lg:items-start justify-center gap-y-2 lg:gap-y-10">
-          <section className="container mx-auto px-4 min-h-screen flex flex-col items-center lg:items-start justify-center gap-20 text-center mt-[-4rem]">
-            <DrawCircleText firstWord={t("title")} secondWord={t("subtitle")} textSize="md"/>
+          <section className="container mx-auto px-4 min-h-screen flex flex-col items-center lg:items-start justify-center gap-20 text-center ">
+            <DrawCircleText
+              firstWord={t("title")}
+              secondWord={t("subtitle")}
+              textSize="md"
+            />
             <ProfileForm />
           </section>
         </main>

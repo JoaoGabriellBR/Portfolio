@@ -21,6 +21,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useTranslations } from "next-intl";
+import { textSizes } from "@/utils/text-sizes";
 
 type FormInputs = {
   username: string;
@@ -122,7 +123,11 @@ export function ProfileForm() {
                 <FormItem>
                   <FormControl>
                     {input.name !== "message" ? (
-                      <Input label={input.label} className="h-14" {...field} />
+                      <Input
+                        label={input.label}
+                        className="min-h-14"
+                        {...field}
+                      />
                     ) : (
                       <Textarea label={input.label} {...field} />
                     )}
@@ -135,18 +140,17 @@ export function ProfileForm() {
           <MagneticButton
             onClick={form.handleSubmit(onSubmit)}
             distance={0.5}
-            className="w-full lg:w-72 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2 font-normal"
+            className="w-fit lg:w-72 max-w-full h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2 font-semibold dark:font-normal"
           >
-            <Typography
-              className="pb-0 pr-0"
-              text={t("button")}
-              letterPadding={false}
-              size="md"
-            />
+            <Typography text={t("button")} letterPadding={false} size="md" />
             {isLoading ? (
-              <ImSpinner9 className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-xl animate-spin" />
+              <ImSpinner9
+                className={`${textSizes.md} text-foreground dark:text-white animate-spin`}
+              />
             ) : (
-              <IoIosArrowRoundForward className=" bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-3xl" />
+              <IoIosArrowRoundForward
+                className={`${textSizes.lg} text-foreground dark:text-white`}
+              />
             )}
           </MagneticButton>
         </form>
