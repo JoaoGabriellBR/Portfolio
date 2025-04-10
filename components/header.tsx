@@ -48,7 +48,8 @@ export default function Header() {
   }, [mobileNavOpen]);
 
   return (
-    <header className="container mx-auto px-4 py-4 relative z-40">
+    <header className="container mx-auto p-4 relative z-40 h-20">
+
       <WebMenu NAV_ITEMS={NAV_ITEMS} />
 
       {showMobileMenuButton || mobileNavOpen ? (

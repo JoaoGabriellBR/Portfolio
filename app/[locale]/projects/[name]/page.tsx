@@ -37,9 +37,11 @@ export default function ProjectDetails({ params }: any) {
               <SiAdidas className="text-[10rem] text-foreground dark:text-white" />
               <Typography text="adidas" color="white" size="xl5" />
             </div>
-            <div className="hidden lg:block absolute bottom-12 left-0">
-              <ScrollPage sectionLink="#project-description" />
+
+            <div className="absolute bottom-6 sm:bottom-8 lg:bottom-12 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-0">
+            <ScrollPage sectionLink="#project-description" />
             </div>
+
           </section>
 
           <section
