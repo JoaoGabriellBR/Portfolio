@@ -86,7 +86,7 @@ function renderSection2(t: any) {
           className="w-40 h-40 lg:w-64 lg:h-64 flex flex-col justify-center items-center gap-2 text-2xl p-5"
         >
           <TfiArrowTopRight
-            className={`${textSizes.xl2} text-foreground dark:text-white`}
+            className={`${textSizes.xl6} text-foreground dark:text-white`}
           />
           <Typography
             size="md"

@@ -15,6 +15,8 @@ import SmartphoneMockup from "@/components/ui/smartphone-mockup";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import Projects from "@/components/projects";
 import { ScrollPage } from "@/components/scroll-page";
+import { textSizes } from "@/utils/text-sizes";
+import { DrawCircleText } from "@/components/draw-circle-text";
 
 export default function ProjectDetails({ params }: any) {
   //   const { name } = await params;
@@ -32,16 +34,22 @@ export default function ProjectDetails({ params }: any) {
         }}
       >
         <main className="flex flex-col gap-y-2 lg:gap-y-10">
-          <section className="relative container mx-auto min-h-screen px-4 flex flex-col items-center justify-center space-y-4 text-center mt-[-7rem]">
-            <div className="flex flex-row items-center justify-between gap-4 text-center">
-              <SiAdidas className="text-[10rem] text-foreground dark:text-white" />
-              <Typography text="adidas" color="white" size="xl5" />
+          <section className="relative container mx-auto px-4 flex flex-col items-center justify-center space-y-4 text-center pt-12 min-h-[calc(100vh-80px)]">
+            <div className="flex flex-row items-center justify-between gap-4 text-center mt-[-7rem]">
+              <SiAdidas
+                className={`${textSizes.xl5} text-foreground dark:text-white mt-4`}
+              />
+              <Typography
+                text="adidas"
+                color="white"
+                size="xl5"
+                letterPadding={false}
+              />
             </div>
 
             <div className="absolute bottom-6 sm:bottom-8 lg:bottom-12 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-0">
-            <ScrollPage sectionLink="#project-description" />
+              <ScrollPage sectionLink="#project-description" />
             </div>
-
           </section>
 
           <section
@@ -60,7 +68,9 @@ export default function ProjectDetails({ params }: any) {
                 type="3d"
                 className="w-40 h-40 lg:w-64 lg:h-64 flex flex-col justify-center items-center gap-2 text-2xl p-5"
               >
-                <TfiArrowTopRight className="bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl" />
+                <TfiArrowTopRight
+                  className={`${textSizes.xl6} text-foreground dark:text-white`}
+                />
                 <Typography size="md" text="Ver site" letterPadding={false} />
               </MagneticButton>
             </Link>
@@ -77,7 +87,7 @@ export default function ProjectDetails({ params }: any) {
             </MonitorMockup>
           </section>
           <section className="w-full min-h-screen flex items-center rounded-[2rem]">
-            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-8 flex-wrap">
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-14 flex-wrap">
               <SmartphoneMockup>
                 <Image
                   src="/images/mockup-adidas-mobile-1.png"
@@ -106,19 +116,28 @@ export default function ProjectDetails({ params }: any) {
           </section>
 
           <section className="container mx-auto px-4 h-screen flex items-center justify-center">
-            <Image
-              src="/images/adidas-mockup1.png"
-              alt="Mockup image"
-              width={1800}
-              height={1800}
-              className="rounded-[3rem] h-fit"
-            />
+            <div className="overflow-hidden rounded-[3rem] group">
+              <Image
+                src="/images/adidas-mockup1.png"
+                alt="Mockup image"
+                width={1800}
+                height={1800}
+                className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+              />
+            </div>
           </section>
 
+          <section className="min-h-[calc(8vh)] lg:min-h-[calc(50vh)] flex flex-col items-center justify-center">
+            <DrawCircleText
+              firstWord="Próximo"
+              secondWord="Projeto..."
+              textSize="lg"
+            />
+          </section>
           <Projects />
         </main>
       </ReactLenis>
-      <Footer page="Todos os projetos" route="/projects" />
+      <Footer page="Contato" route="/contact" />
     </>
   );
 }

@@ -40,7 +40,7 @@ export default function LanguageSelectorWeb() {
   }, [isOpen]);
 
   const textColor =
-    "bg-clip-text text-transparent tracking-normal break-words bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200";
+    "tracking-wide break-words text-foreground dark:text-white font-normal";
 
   const textSize =
     "text-sm sm:text-sm md:text-md lg:text-[1rem] xl:text-[1rem]";
