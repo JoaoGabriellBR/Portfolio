@@ -58,41 +58,39 @@ export default function Skills() {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center place-self-end w-[70%]">
-      {/* <div className="flex flex-col items-center justify-center w-full"> */}
-        {skills.map((skill, index) => {
-          return (
-            <div
-              onMouseEnter={() => {
-                setModal({ active: true, index });
-              }}
-              onMouseLeave={() => {
-                setModal({ active: false, index });
-              }}
-              className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
-            >
-              <div className="flex flex-row items-center gap-4 group">
-                <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
-                  <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
-                  <Typography
-                    text={skill.title}
-                    color="white"
-                    size="xl"
-                    letterPadding={false}
-                  />
-                </div>
+    <section className="flex flex-col items-center justify-center place-self-end w-full lg:w-[70%]">
+      {skills.map((skill, index) => {
+        return (
+          <div
+            onMouseEnter={() => {
+              setModal({ active: true, index });
+            }}
+            onMouseLeave={() => {
+              setModal({ active: false, index });
+            }}
+            className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
+          >
+            <div className="flex flex-row items-center gap-4 group">
+              <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
+                <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
+                <Typography
+                  text={skill.title}
+                  color="white"
+                  size="xl"
+                  letterPadding={false}
+                />
               </div>
-
-              <Typography
-                text={skill.type}
-                size="sm"
-                className="font-normal"
-                letterPadding={false}
-              />
             </div>
-          );
-        })}
-      {/* </div> */}
+
+            <Typography
+              text={skill.type}
+              size="sm"
+              className="font-normal"
+              letterPadding={false}
+            />
+          </div>
+        );
+      })}
 
       <CursorFollow
         modal={modal}
