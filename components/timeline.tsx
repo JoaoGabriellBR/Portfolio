@@ -33,7 +33,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
             onMouseLeave={() => {
               setModal({ active: false, index });
             }}
-            className="group w-full flex flex-row items-start justify-between py-12 gap-8 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
+            className="group w-full flex flex-col lg:flex-row items-start justify-between py-12 gap-4 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
           >
             <div className="flex-[1] flex items-center gap-4 group">
               <div className="flex flex-row items-center gap-4 group">
@@ -48,6 +48,14 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
                 </div>
               </div>
             </div>
+
+            <Typography
+              text={job.position}
+              color="white"
+              size="sm"
+              className="font-normal lg:hidden"
+              letterPadding={false}
+            />
 
             <div className="flex-[1] flex justify-end items-center gap-4">
               <Typography

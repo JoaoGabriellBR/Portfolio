@@ -49,7 +49,7 @@ const renderBackgroundImage = () => {
         width={1000}
         height={1000}
         alt=""
-        className="absolute top-40 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] opacity-15 -scale-x-100 pointer-events-none"
+        className="absolute top-0 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] opacity-15 -scale-x-100 pointer-events-none"
         style={{
           WebkitMaskImage: `
             linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
@@ -102,7 +102,7 @@ const renderCompetenceSection = (t: any) => {
 const renderSkillsSection = () => {
   return (
     <section className="container mx-auto px-4 flex flex-col items-center text-center">
-      <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="min-h-[50vh] lg:min-h-screen flex flex-col items-center justify-center">
         <RiPokerClubsFill className={`${textSizes.xl5} text-red-600`} />
         <Typography
           text="Habilidades"
@@ -112,14 +112,16 @@ const renderSkillsSection = () => {
         />
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full m-[8rem] min-h-[10rem]">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full mb-[4rem] lg:mb-[8rem] lg:mt-[8rem] min-h-[10rem]">
         <Typography
-          text={"* Conheça algumas tecnologias que utilizo em meus projetos. *"}
+          text={"* Algumas tecnologias que utilizo em meus projetos. *"}
           color="white"
           size="xl3"
           className="w-full lg:w-[80%] text-center lg:text-start"
         />
-        <BsArrowDownLeft className={`${textSizes.xl6} text-foreground dark:text-white`}/>
+        <BsArrowDownLeft
+          className={`${textSizes.xl6} text-foreground dark:text-white`}
+        />
       </div>
 
       <Skills />
@@ -130,7 +132,7 @@ const renderSkillsSection = () => {
 const renderExperienceSection = (t: any) => {
   return (
     <section className="container mx-auto px-4">
-      <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="min-h-[50vh] lg:min-h-screen flex flex-col items-center justify-center">
         <RiPokerDiamondsFill className={`${textSizes.xl5} text-red-600`} />
         <DrawCircleText
           firstWord={"Minha"}
@@ -138,13 +140,6 @@ const renderExperienceSection = (t: any) => {
           textSize="lg"
         />
       </div>
-
-      <Typography
-        text={t("Experience.section")}
-        color="white"
-        size="xl2"
-        className="text-center lg:hidden"
-      />
 
       <JobTimeline />
     </section>
@@ -154,7 +149,7 @@ const renderExperienceSection = (t: any) => {
 const renderFeaturedWorks = () => {
   return (
     <section className="container mx-auto px-4">
-      <div className="min-h-screen flex items-center justify-center relative text-center lg:text-left ">
+      <div className="min-h-[50vh] lg:min-h-screen flex items-center justify-center relative text-center lg:text-left ">
         <Typography
           text="Projetos em Destaque"
           color="white"
@@ -196,12 +191,12 @@ const renderServicesSection = () => {
           text={"* Serviços"}
           color="white"
           size="xl5"
-          className="min-h-screen flex items-center justify-center"
+          className="min-h-[50vh] lg:min-h-screen flex items-center justify-center"
         />
       </ScrollBaseAnimation>
 
-      <section className="container mx-auto px-4 h-fit -mt-[8rem]">
-        <div className="flex flex-row justify-between items-center mb-[8rem]">
+      <section className="container mx-auto px-4 h-fit lg:-mt-[8rem]">
+        <div className="flex flex-col lg:flex-row justify-between items-center mb-[4rem] lg:mb-[8rem] lg:mt-[8rem]">
           <Typography
             text={"Eu poderia te ajudar com..."}
             color="white"
@@ -209,17 +204,22 @@ const renderServicesSection = () => {
             className="w-full lg:w-[60%] text-center lg:text-start"
             letterPadding={false}
           />
-          <BsArrowDownLeft className={`${textSizes.xl6} text-foreground dark:text-white my-4`}/>
+          <BsArrowDownLeft
+            className={`${textSizes.xl6} text-foreground dark:text-white my-4`}
+          />
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-start lg:justify-between items-start lg:items-center">
-          <Image
-            src="/images/suits.png"
-            width={450}
-            height={450}
-            alt="Suits icon"
-            className="text-[20vw] lg:text-[50vw] -scale-x-100 pointer-events-none"
-          />
+        <div className="flex flex-col-reverse lg:flex-row justify-start lg:justify-between items-center gap-8">
+          <div className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[450px]">
+            <Image
+              src="/images/suits.png"
+              alt="Suits icon"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-auto object-contain -scale-x-100 pointer-events-none"
+            />
+          </div>
           <Services />
         </div>
       </section>

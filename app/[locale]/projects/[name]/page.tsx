@@ -76,7 +76,7 @@ export default function ProjectDetails({ params }: any) {
             </Link>
           </section>
 
-          <section className="w-full mx-auto px-4 h-screen flex items-start justify-center">
+          <section className="w-full mx-auto px-4 min-h-[50vh] lg:min-h-screen mb-16 lg:mb-0 flex items-start justify-center">
             <MonitorMockup>
               <Image
                 src="/images/adidas-mockup2.png"
@@ -86,8 +86,10 @@ export default function ProjectDetails({ params }: any) {
               />
             </MonitorMockup>
           </section>
+
           <section className="w-full min-h-screen flex items-center rounded-[2rem]">
-            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-14 flex-wrap">
+            
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-16 flex-wrap">
               <SmartphoneMockup>
                 <Image
                   src="/images/mockup-adidas-mobile-1.png"
@@ -113,9 +115,10 @@ export default function ProjectDetails({ params }: any) {
                 />
               </SmartphoneMockup>
             </div>
+
           </section>
 
-          <section className="container mx-auto px-4 h-screen flex items-center justify-center">
+          <section className="container mx-auto px-4 min-h-screen flex items-center justify-center">
             <div className="overflow-hidden rounded-[3rem] group">
               <Image
                 src="/images/adidas-mockup1.png"

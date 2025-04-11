@@ -21,7 +21,7 @@ export const FeaturedWork = ({
 
   return (
     <div
-      className={`flex flex-col lg:flex-row items-center justify-between ${
+      className={`flex flex-col lg:flex-row flex-wrap items-center justify-between gap-8 ${
         isRight ? "" : "lg:flex-row-reverse"
       }`}
     >
@@ -31,12 +31,8 @@ export const FeaturedWork = ({
           isRight ? "items-start text-left" : "items-start text-left"
         }`}
       >
-        <Icon className="text-9xl"/>
-        <Typography
-          text={projectName}
-          color="white"
-          size="xl3"
-        />
+        <Icon className={`${textSizes.xl4} text-foreground dark:text-white`} />
+        <Typography text={projectName} color="white" size="xl3" />
         <Typography
           text={projectDescription}
           color="white"
@@ -65,10 +61,9 @@ export const FeaturedWork = ({
         {/* Icon */}
         <RiPokerSpadesFill
           aria-label="Ícone Poker"
-          className={`absolute top-2 ${
+          className={`${textSizes.xl4} absolute top-2 ${
             isRight ? "right-2 lg:right-4" : "left-2 lg:left-4"
-          } 
-          lg:top-4 text-xl md:text-3xl lg:text-8xl text-white`}
+          } lg:top-4 text-foreground dark:text-white`}
         />
       </div>
     </div>
