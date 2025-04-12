@@ -23,31 +23,31 @@ export const Services = () => {
   ];
 
   return (
-    <div className="w-full lg:w-1/2 flex flex-col items-start">
+    <div className="w-full lg:w-1/2 flex flex-col items-start gap-8 lg:gap-16">
       {services.map((service, index) => (
         <div
           key={index}
-          className="flex flex-col items-start sm:p-4 lg:p-6 rounded-lg"
+          className="flex flex-col items-start rounded-lg gap-4 lg:gap-8"
         >
           <Typography
             text={service.number}
             color="silver"
-            style={{ lineHeight: "1.5" }}
             className="text-sm"
+            letterPadding={false}
           />
-          <div className="bg-neutral-700 w-full h-[0.1rem] my-6 sm:my-6 lg:my-8"></div>
+          <div className="bg-neutral-700 w-full h-[0.1rem]"></div>
           <Typography
             text={service.name}
             color="white"
             size="xl2"
-            style={{ lineHeight: "1.5" }}
+            letterPadding={false}
           />
           <Typography
             text={service.test}
             color="white"
             size="md"
             className="font-extralight"
-            style={{ lineHeight: "1.5" }}
+            letterPadding={false}
           />
         </div>
       ))}

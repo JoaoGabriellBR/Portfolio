@@ -209,7 +209,7 @@ const renderServicesSection = () => {
           />
         </div>
 
-        <div className="flex flex-col-reverse lg:flex-row justify-start lg:justify-between items-center gap-8">
+        <div className="flex flex-col-reverse lg:flex-row justify-start lg:justify-between items-center gap-16">
           <div className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[450px]">
             <Image
               src="/images/suits.png"

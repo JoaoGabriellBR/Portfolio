@@ -37,19 +37,22 @@
           "name": "Neway",
           "position": "Développeur Full Stack",
           "activities": "Je corrige des bugs, implémente de nouvelles fonctionnalités et apporte un support aux systèmes de l'entreprise.",
-          "date": "janv/2024 - actuellement"
+          "first_year_company": "2024",
+          "last_year_company": "actuellement"
         },
         "Job2": {
           "name": "Split Risk",
           "position": "Stage en développement",
           "activities": "J'aidais les autres développeurs à créer des pages de destination et soutenais la création de prototypes de projets web en utilisant Figma.",
-          "date": "sept/2022 - janv/2024"
+          "first_year_company": "2022",
+          "last_year_company": "2024"
         },
         "Job3": {
           "name": "Online Shopping",
           "position": "Assistant de maintenance",
           "activities": "Je fournissais une assistance technique aux clients et aux collaborateurs de l'entreprise.",
-          "date": "sept/2021 - août/2022"
+          "first_year_company": "2021",
+          "last_year_company": "2022"
         }
       },
       "Services": {

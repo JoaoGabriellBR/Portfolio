@@ -59,7 +59,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
 
             <div className="flex-[1] flex justify-end items-center gap-4">
               <Typography
-                text="2021"
+                text={job.first_year_company}
                 color="white"
                 size="sm"
                 className="font-normal"
@@ -67,7 +67,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
               />
               <BsArrowRight className={textSizes.sm} />
               <Typography
-                text="2022"
+                text={job.last_year_company}
                 color="white"
                 size="sm"
                 className="font-normal"

@@ -31,7 +31,7 @@ export default function Project({
         setModal({ active: false, index });
       }}
       target="blank"
-      className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500 bg-background"
+      className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center gap-4 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500 bg-background"
     >
       <div className="flex flex-row items-center gap-4 group">
         <div className="relative flex items-center transition-all duration-300 group-hover:pl-4">
