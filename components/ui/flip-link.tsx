@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
+import { textSizes } from "@/utils/text-sizes";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
@@ -14,15 +15,14 @@ export const FlipLink = ({
   href: string;
   type?: string;
 }) => {
-  const textColor =
-    "tracking-wide break-words text-foreground dark:text-white";
+  const textColor = "tracking-wide break-words text-foreground dark:text-white";
 
   return (
     <Link href={href}>
       <motion.div
         initial="initial"
         whileHover="hovered"
-        className={`relative block overflow-hidden`}
+        className={`relative block overflow-hidden `}
         style={{
           lineHeight: 0.75,
         }}
@@ -45,9 +45,9 @@ export const FlipLink = ({
               }}
               className={`${
                 type === "web"
-                  ? `text-[1rem] font-normal`
-                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[7rem]`
-              } inline-block leading-normal ${textColor}`}
+                  ? `text-[1rem] dark:font-normal py-2`
+                  : `${textSizes.xl7} py-5 sm:py-5 md:py-6 lg:py-7 xl:py-8`
+              } inline-block ${textColor}`}
               key={i}
             >
               {l}
@@ -73,9 +73,9 @@ export const FlipLink = ({
               }}
               className={`${
                 type === "web"
-                  ? `text-[1rem] font-normal`
-                  : `text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[7rem]`
-              } inline-block leading-normal ${textColor}`}
+                  ? `text-[1rem] dark:font-normal py-2`
+                  : `${textSizes.xl7} py-5 sm:py-5 md:py-6 lg:py-7 xl:py-8`
+              } inline-block ${textColor}`}
               key={i}
             >
               {l}

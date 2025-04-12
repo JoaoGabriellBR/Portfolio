@@ -102,7 +102,7 @@ const renderCompetenceSection = (t: any) => {
 const renderSkillsSection = () => {
   return (
     <section className="container mx-auto px-4 flex flex-col items-center text-center">
-      <div className="min-h-[50vh] lg:min-h-screen flex flex-col items-center justify-center">
+      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
         <RiPokerClubsFill className={`${textSizes.xl5} text-red-600`} />
         <Typography
           text="Habilidades"
@@ -132,7 +132,7 @@ const renderSkillsSection = () => {
 const renderExperienceSection = (t: any) => {
   return (
     <section className="container mx-auto px-4">
-      <div className="min-h-[50vh] lg:min-h-screen flex flex-col items-center justify-center">
+      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
         <RiPokerDiamondsFill className={`${textSizes.xl5} text-red-600`} />
         <DrawCircleText
           firstWord={"Minha"}
@@ -149,7 +149,7 @@ const renderExperienceSection = (t: any) => {
 const renderFeaturedWorks = () => {
   return (
     <section className="container mx-auto px-4">
-      <div className="min-h-[50vh] lg:min-h-screen flex items-center justify-center relative text-center lg:text-left ">
+      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center relative text-center lg:text-left ">
         <Typography
           text="Projetos em Destaque"
           color="white"
@@ -191,7 +191,7 @@ const renderServicesSection = () => {
           text={"* Serviços"}
           color="white"
           size="xl5"
-          className="min-h-[50vh] lg:min-h-screen flex items-center justify-center"
+          className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center"
         />
       </ScrollBaseAnimation>
 

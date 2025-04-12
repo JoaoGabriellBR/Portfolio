@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { AiOutlineMoon, AiOutlineSun } from "react-icons/ai";
 import { MagneticButton } from "./ui/button-magnetic";
+import { textSizes } from "@/utils/text-sizes";
 
 export const ModeToggle = ({ type }: { type?: "mobile" | "web" }) => {
   const { theme, setTheme } = useTheme();
@@ -19,7 +20,7 @@ export const ModeToggle = ({ type }: { type?: "mobile" | "web" }) => {
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
   const Icon = theme === "dark" ? AiOutlineMoon : AiOutlineSun;
   const textSize =
-    type === "mobile" ? "text-[1.2rem] lg:text-[2rem]" : "text-[1.2rem]";
+    type === "mobile" ? textSizes.md : "text-[1.2rem]";
   const iconClass = `${textSize} text-foreground transition-all dark:rotate-0 dark:scale-100`;
 
   return type === "web" ? (

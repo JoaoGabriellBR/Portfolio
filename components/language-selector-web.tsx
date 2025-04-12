@@ -40,7 +40,7 @@ export default function LanguageSelectorWeb() {
   }, [isOpen]);
 
   const textColor =
-    "tracking-wide break-words text-foreground dark:text-white font-normal";
+    "tracking-wide break-words text-foreground dark:text-white dark:font-normal";
 
   const textSize =
     "text-sm sm:text-sm md:text-md lg:text-[1rem] xl:text-[1rem]";
@@ -64,7 +64,7 @@ export default function LanguageSelectorWeb() {
           initial={{ opacity: 0, y: openUpwards ? 10 : -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: openUpwards ? 10 : -10 }}
-          className={`absolute min-w-20 w-fit h-auto bg-background border-2 border-white dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
+          className={`absolute min-w-20 w-fit h-auto bg-background border-2 border-neutral-950 dark:border-neutral-800 rounded-3xl shadow-lg overflow-hidden`}
         >
           {languages.map((language) => (
             <div

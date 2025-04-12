@@ -20,7 +20,7 @@ interface StepsProps {
 
 export const Timeline = ({ jobs }: { jobs: any }) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
-  const t = useTranslations("About.Experience");
+  // const t = useTranslations("About.Experience");
 
   return (
     <section className="place-self-start w-full">

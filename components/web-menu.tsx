@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { GiWolfHead } from "react-icons/gi";
 import { FlipLink } from "./ui/flip-link";
 import { ModeToggle } from "./mode-toggle";
 import { BorderNavbar } from "./border-navbar";
@@ -8,7 +7,6 @@ import { BorderNavbar } from "./border-navbar";
 import { Link } from "@/i18n/navigation";
 import LanguageSelectorWeb from "./language-selector-web";
 import Image from "next/image";
-import { TbTie } from "react-icons/tb";
 import { useTheme } from "next-themes";
 
 type NavItems = {
@@ -23,13 +21,8 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
 
   return (
     <div className="w-full flex flex-row items-center justify-between px-4">
-      <motion.div className="flex items-center relative z-50 cursor-pointer">
+      <motion.div className="flex items-center relative z-10 cursor-pointer">
         <Link href="/">
-          {/* <TbTie
-            className="text-[3.5rem] lg:text-[5rem] text-foreground"
-            aria-label="Logo"
-          /> */}
-
           <Image
             src={
               theme === "dark"

@@ -15,7 +15,7 @@ export const ScrollPage = ({ sectionLink, className }: any) => {
         <Typography
           text={"Scroll"}
           letterPadding={false}
-          className="text-md text-foreground dark:text-white"
+          className="text-md text-foreground dark:text-white font-normal"
         />
       </MagneticButton>
     </Link>
