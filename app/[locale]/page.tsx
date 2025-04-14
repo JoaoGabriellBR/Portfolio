@@ -9,7 +9,7 @@ import { textSizes } from "@/utils/text-sizes";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { ParallaxImages } from "@/components/parallax-images";
+import { SmoothScrollHero } from "@/components/parallax-images";
 import Typography from "@/components/ui/typography";
 import { MagneticButton } from "@/components/ui/button-magnetic";
 import Projects from "@/components/projects";
@@ -19,6 +19,7 @@ import { Meteors } from "@/components/ui/meteors";
 
 export default function Home() {
   const t = useTranslations("Home");
+  const t2 = useTranslations("Header");
   const { theme } = useTheme();
 
   return (
@@ -30,12 +31,12 @@ export default function Home() {
             {renderJumbotron(theme)}
             {renderSection2(t)}
           </div>
-          <ParallaxImages />
+          <SmoothScrollHero />
           {renderSection3(t)}
           <Projects />
         </main>
       </ReactLenis>
-      <Footer page="Sobre mim" route="/about" />
+      <Footer page={t2("nav2")} route="/about" />
     </>
   );
 }

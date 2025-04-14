@@ -63,7 +63,7 @@ export const FeaturedWork = ({
           aria-label="Ícone Poker"
           className={`${textSizes.xl4} absolute top-2 ${
             isRight ? "right-2 lg:right-4" : "left-2 lg:left-4"
-          } lg:top-4 text-foreground dark:text-white`}
+          } lg:top-4 text-white`}
         />
       </div>
     </div>

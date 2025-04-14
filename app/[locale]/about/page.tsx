@@ -191,7 +191,7 @@ const renderServicesSection = () => {
           text={"* Serviços"}
           color="white"
           size="xl5"
-          className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center"
+          className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-[80vh] flex items-center justify-center"
         />
       </ScrollBaseAnimation>
 
