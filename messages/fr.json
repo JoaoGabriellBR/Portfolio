@@ -62,6 +62,18 @@
         "fullstack": "J'intègre des solutions complètes combinant le front-end et le back-end, garantissant des performances élevées, une évolutivité et une expérience améliorée."
       }
     },
+    "Project": {
+      "project-details": {
+        "next": "Projet suivant...",
+        "viewSite": "Voir le site",
+        "adidas": {
+          "description": "Plateforme de e-commerce complète, avec une large gamme de produits et un paiement rapide et intuitif."
+        },
+        "footer": {
+          "contact": "Contact"
+        }
+      }
+    },
     "Contact": {
       "Jumbotron": {
         "title": "Parlez-moi",
