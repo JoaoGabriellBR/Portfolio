@@ -8,26 +8,26 @@ import SmallImagesGallery from "./description";
 const projects = [
   {
     name: "Lamborghini",
-    handle: "lamborghini-jumbotron.png",
-    handle2: "lamborghini-small-image.png",
+    handle: "lamborghini/lamborghini-jumbotron.png",
+    handle2: "lamborghini/lamborghini-small-image.png",
     projectRoute: "/lamborghini",
   },
   {
     name: "Adidas",
-    handle: "adidas-jumbotron.png",
-    handle2: "adidas-small-image.png",
+    handle: "adidas/adidas-jumbotron.png",
+    handle2: "adidas/adidas-small-image.png",
     projectRoute: "/adidas",
   },
   {
     name: "UpWrite",
-    handle: "upwrite-jumbotron.png",
-    handle2: "upwrite-small-image.png",
+    handle: "upwrite/upwrite-jumbotron.png",
+    handle2: "upwrite/upwrite-small-image.png",
     projectRoute: "/upwrite",
   },
   {
     name: "World News",
-    handle: "worldnews-jumbotron.png",
-    handle2: "worldnews-small-image.png",
+    handle: "worldnews/worldnews-jumbotron.png",
+    handle2: "worldnews/worldnews-small-image.png",
     projectRoute: "/worldnews",
   },
 ];

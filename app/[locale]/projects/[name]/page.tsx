@@ -79,7 +79,7 @@ export default function ProjectDetails({ params }: any) {
           <section className="w-full mx-auto px-4 min-h-[50vh] lg:min-h-screen mb-16 lg:mb-0 flex items-start justify-center">
             <MonitorMockup>
               <Image
-                src="/images/adidas-mockup2.png"
+                src="/images/adidas/adidas-mockup2.png"
                 alt="Mockup image"
                 fill
                 className="rounded-[3rem] h-[90%]"
@@ -92,7 +92,7 @@ export default function ProjectDetails({ params }: any) {
             <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-16 flex-wrap">
               <SmartphoneMockup>
                 <Image
-                  src="/images/mockup-adidas-mobile-1.png"
+                  src="/images/adidas/mockup-adidas-mobile-1.png"
                   alt="Mockup image"
                   fill
                   className="rounded-[3rem] h-[90%]"
@@ -100,7 +100,7 @@ export default function ProjectDetails({ params }: any) {
               </SmartphoneMockup>
               <SmartphoneMockup>
                 <Image
-                  src="/images/mockup-adidas-mobile-2.png"
+                  src="/images/adidas/mockup-adidas-mobile-2.png"
                   alt="Mockup image"
                   fill
                   className="rounded-[3rem] h-[90%]"
@@ -108,7 +108,7 @@ export default function ProjectDetails({ params }: any) {
               </SmartphoneMockup>
               <SmartphoneMockup>
                 <Image
-                  src="/images/mockup-adidas-mobile-3.png"
+                  src="/images/adidas/mockup-adidas-mobile-3.png"
                   alt="Mockup image"
                   fill
                   className="rounded-[3rem] h-[90%]"
@@ -121,7 +121,7 @@ export default function ProjectDetails({ params }: any) {
           <section className="container mx-auto px-4 min-h-screen flex items-center justify-center">
             <div className="overflow-hidden rounded-[3rem] group">
               <Image
-                src="/images/adidas-mockup1.png"
+                src="/images/adidas/adidas-mockup1.png"
                 alt="Mockup image"
                 width={1800}
                 height={1800}

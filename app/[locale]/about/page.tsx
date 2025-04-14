@@ -166,7 +166,7 @@ const renderFeaturedWorks = () => {
           projectName="Adidas"
           alt="adidas"
           projectDescription="Plataforma completa que oferece todos os recursos de um e-commerce."
-          projectImage="adidas-about.png"
+          projectImage="adidas/adidas-about.png"
           Icon={SiAdidas}
         />
 
@@ -174,7 +174,7 @@ const renderFeaturedWorks = () => {
           projectName="Lamborghini"
           alt="lamborghini"
           projectDescription="Galeria de automóveis da marca de carros de luxo italiana."
-          projectImage="lamborghini-about.png"
+          projectImage="lamborghini/lamborghini-about.png"
           imagePosition="left"
           Icon={SiLamborghini}
         />

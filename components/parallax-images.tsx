@@ -37,15 +37,15 @@ const Hero = () => {
 const ParallaxBigImage = () => {
   const { scrollY } = useScroll();
 
-  const clip1 = useTransform(scrollY, [0, 1500], [25, 0]);
-  const clip2 = useTransform(scrollY, [0, 1500], [75, 100]);
+  const clip1 = useTransform(scrollY, [0, 1700], [25, 0]);
+  const clip2 = useTransform(scrollY, [0, 1700], [75, 100]);
 
   const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
 
   const backgroundSize = useTransform(
     scrollY,
     [0, SECTION_HEIGHT + 500],
-    ["170%", "100%"]
+    ["100%", "100%"]
   );
 
   const opacity = useTransform(
@@ -61,7 +61,7 @@ const ParallaxBigImage = () => {
         clipPath,
         backgroundSize,
         opacity,
-        backgroundImage: "url('/images/adidas-jumbotron.png')",
+        backgroundImage: "url('/images/adidas/adidas-jumbotron.png')",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -73,29 +73,29 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src="/images/adidas-small-image.png"
-        alt="And example of a space launch"
+        src="/images/adidas/adidas-small-image.png"
+        alt="Image of adidas project"
         start={-200}
         end={200}
         className="w-1/3"
       />
       <ParallaxImg
-        src="/images/lamborghini-jumbotron.png"
-        alt="An example of a space launch"
+        src="/images/lamborghini/lamborghini-jumbotron.png"
+        alt="Image of lamborghini project"
         start={200}
         end={-250}
         className="mx-auto w-2/3"
       />
       <ParallaxImg
-        src="/images/worldnews-small-image.png"
-        alt="Orbiting satellite"
+        src="/images/worldnews/worldnews-small-image.png"
+        alt="Small image of world news project"
         start={-200}
         end={200}
         className="ml-auto w-1/3"
       />
       <ParallaxImg
-        src="/images/upwrite-small-image.png"
-        alt="Orbiting satellite"
+        src="/images/upwrite/upwrite-small-image.png"
+        alt="Small image of up write project"
         start={0}
         end={-500}
         className="ml-24 w-5/12"
