@@ -70,6 +70,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         adidasbanner: "url('/assets/adidas-banner.png')",
+        certifications: "url('/images/certifications-image.png')",
       },
       colors: {
         background: "hsl(var(--background))",

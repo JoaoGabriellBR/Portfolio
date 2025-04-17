@@ -62,6 +62,21 @@
         "fullstack": "J'intègre des solutions complètes combinant le front-end et le back-end, garantissant des performances élevées, une évolutivité et une expérience améliorée."
       }
     },
+    "Certifications": {
+      "section": "Mes certifications",
+      "cybersecurity": {
+        "description": "Introduction à la cybersécurité"
+      },
+      "machine-learning": {
+        "description": "Fondations de l'apprentissage automatique AWS"
+      },
+      "cloud-foundations": {
+        "description": "Fondations du cloud AWS"
+      },
+      "web-development": {
+        "description": "Développement Web Full Stack"
+      }
+    },
     "Project": {
       "project-details": {
         "next": "Projet suivant...",

@@ -18,6 +18,9 @@ import { RiPokerClubsFill, RiPokerDiamondsFill } from "react-icons/ri";
 import { ScrollPage } from "@/components/scroll-page";
 import { SiAdidas, SiLamborghini } from "react-icons/si";
 import { textSizes } from "@/utils/text-sizes";
+// import { ButtonHover } from "./ui/button-hover";
+import { ButtonHover } from "@/components/ui/button-hover";
+import { GoArrowUpRight } from "react-icons/go";
 
 export default function About() {
   const t = useTranslations("About");
@@ -30,8 +33,21 @@ export default function About() {
           {renderBackgroundImage()}
           {renderAboutMeSection()}
           {renderCompetenceSection(t)}
-          {renderSkillsSection()}
           {renderExperienceSection(t)}
+          {renderSkillsSection()}
+          <section className="relative w-full h-screen bg-certifications bg-no-repeat bg-cover bg-center bg-fixed flex items-center justify-center bg-opacity-0 mt-[10rem]">
+            <ButtonHover
+              href={`/certifications`}
+              className="flex flex-row justify-between items-center font-semibold tracking-wide break-words"
+            >
+              <Typography
+                text="Certificações"
+                size="xl4"
+                letterPadding={false}
+              />
+              <GoArrowUpRight className={`${textSizes.xl4}`} />
+            </ButtonHover>
+          </section>
           {renderFeaturedWorks()}
           {renderServicesSection()}
         </main>
@@ -102,29 +118,31 @@ const renderCompetenceSection = (t: any) => {
 const renderSkillsSection = () => {
   return (
     <section className="container mx-auto px-4 flex flex-col items-center text-center">
-      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
+      {/* <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
         <RiPokerClubsFill className={`${textSizes.xl5} text-red-600`} />
         <Typography
-          text="Habilidades"
+          text="Certificações"
           color="white"
           size="xl5"
           letterPadding={false}
         />
-      </div>
+      </div> */}
 
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full mb-[4rem] lg:mb-[8rem] lg:mt-[8rem] min-h-[10rem]">
-        <Typography
-          text={"* Algumas tecnologias que utilizo em meus projetos. *"}
-          color="white"
-          size="xl3"
-          className="w-full lg:w-[80%] text-center lg:text-start"
-        />
-        <BsArrowDownLeft
-          className={`${textSizes.xl6} text-foreground dark:text-white`}
-        />
-      </div>
+      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen mt-[8rem]">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full mb-[4rem] lg:mb-[8rem] lg:mt-[8rem] min-h-[10rem]">
+          <Typography
+            text={"* Algumas tecnologias que utilizo em meus projetos. *"}
+            color="white"
+            size="xl4"
+            className="w-full lg:w-[80%] text-center lg:text-start"
+          />
+          <BsArrowDownLeft
+            className={`${textSizes.xl6} text-foreground dark:text-white`}
+          />
+        </div>
 
-      <Skills />
+        <Skills />
+      </div>
     </section>
   );
 };
