@@ -7,7 +7,7 @@ type ProjectsProps = {
 export const projects: ProjectsProps[] = [
   {
     title: "Adidas",
-    src: "/images/adidas/adidas.png",
+    src: "/images/adidas/adidas-mockup2.png",
     href: "https://adidasshopping.vercel.app",
   },
   {

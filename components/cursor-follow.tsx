@@ -2,13 +2,15 @@
 import { useRef, useEffect } from "react";
 import { scaleAnimation } from "@/utils/scale-animation";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 
 interface CursorFollowProps {
   modal: { active: boolean; index: number };
   children: any;
-  className?: any;
-  classNameContainer?: any;
+  className?: string;
+  classNameContainer?: string;
+  isProject?: boolean;
 }
 
 export default function CursorFollow({
@@ -16,12 +18,14 @@ export default function CursorFollow({
   children,
   className,
   classNameContainer,
+  isProject = false,
 }: CursorFollowProps) {
   const { active, index } = modal;
 
   const modalContainer = useRef(null);
   const cursor = useRef(null);
   const cursorLabel = useRef(null);
+  const t = useTranslations("Home.Projects");
 
   useEffect(() => {
     //Move Container
@@ -82,6 +86,19 @@ export default function CursorFollow({
           {children}
         </div>
       </motion.div>
+
+      {/* Cursor Label */}
+      {isProject && (
+        <motion.div
+          ref={cursorLabel}
+          variants={scaleAnimation}
+          initial="initial"
+          animate={active ? "enter" : "closed"}
+          className={`text-md text-foreground dark:text-white bg-background absolute z-20 rounded-full flex items-center justify-center pointer-events-none text-center w-20 h-20 max-w-xs max-h-fit p-14 shadow-lg`}
+        >
+          {t("cursorLabel")}
+        </motion.div>
+      )}
     </>
   );
 }

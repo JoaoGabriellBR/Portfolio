@@ -18,7 +18,7 @@
       "Projects": {
         "type": "Webentwicklung",
         "button": "Weitere Projekte",
-        "cursorLabel": "Projekt ansehen"
+        "cursorLabel": "Sicht"
       }
     },
     "About": {
@@ -76,6 +76,9 @@
       },
       "web-development": {
         "description": "Full Stack Webentwicklung"
+      },
+      "footer": {
+        "projects": "Projekte"
       }
     },
     "Project": {

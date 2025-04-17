@@ -8,7 +8,7 @@ import { ScrollPage } from "@/components/scroll-page";
 import MyCertifications from "@/components/my-certifications";
 
 export default function Certifications() {
-  const t = useTranslations("About");
+  const t = useTranslations("Certifications");
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function Certifications() {
           {/* <section className="relative container mx-auto px-4 flex flex-col items-center justify-center text-center pt-12 min-h-[calc(100vh-80px)]"> */}
           <section className="relative container mx-auto px-4 flex flex-col items-start justify-center text-start pt-12 min-h-[80vh]">
             <Typography
-              text="Minhas certificações"
+              text={t("section")}
               color="white"
               size="xl5"
               className="mt-[-7rem]"
@@ -39,7 +39,7 @@ export default function Certifications() {
           </section>
         </main>
       </ReactLenis>
-      <Footer page="Projetos" route="/projects" />
+      <Footer page={t("footer.projects")} route="/projects" />
     </>
   );
 }

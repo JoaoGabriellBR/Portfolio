@@ -34,12 +34,13 @@ export default function Projects() {
 
       <CursorFollow
         modal={modal}
-        classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[17rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem]"
+        classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[19rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[32rem]"
+        isProject
       >
         {projects.map((project, idx) => (
           <div
             key={`modal_${idx}`}
-            className="flex h-full w-full items-center justify-center bg-neutral-900 p-4"
+            className="flex h-full w-full items-center justify-center "
           >
             <Image
               src={project.src}
