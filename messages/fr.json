@@ -22,44 +22,58 @@
       }
     },
     "About": {
-      "Jumbotron": {
-        "title": "Développeur de logiciels axé sur les applications web et mobiles.",
-        "button": "Contact"
+      "AboutMe": {
+        "section": "À propos de moi"
       },
-      "competence": "Expérience dans la création et la maintenance d'APIs, de pages de destination, de portails back office et de boutiques en ligne. En plus du code, je surveille les performances des applications et assure la maintenance des systèmes.",
+      "Competence": {
+        "section": "Expérience dans la création et la maintenance d’API, de pages d’atterrissage, de portails back-office et de boutiques en ligne. En plus du développement, je m’occupe de la surveillance des performances des applications et de la maintenance des systèmes."
+      },
       "Skills": {
-        "section": "Compétences",
-        "title": "Quelques technologies que j'utilise"
+        "section": "Quelques technologies que j’utilise dans mes projets."
+      },
+      "Certifications": {
+        "section": "Certifications"
       },
       "Experience": {
-        "section": "Expérience",
-        "Job1": {
+        "section": "Mon parcours",
+        "neway": {
           "name": "Neway",
           "position": "Développeur Full Stack",
-          "activities": "Je corrige des bugs, implémente de nouvelles fonctionnalités et apporte un support aux systèmes de l'entreprise.",
           "first_year_company": "2024",
           "last_year_company": "actuellement"
         },
-        "Job2": {
+        "splitRisk": {
           "name": "Split Risk",
-          "position": "Stage en développement",
-          "activities": "J'aidais les autres développeurs à créer des pages de destination et soutenais la création de prototypes de projets web en utilisant Figma.",
+          "position": "Stagiaire en développement",
           "first_year_company": "2022",
           "last_year_company": "2024"
         },
-        "Job3": {
+        "onlineShopping": {
           "name": "Online Shopping",
-          "position": "Assistant de maintenance",
-          "activities": "Je fournissais une assistance technique aux clients et aux collaborateurs de l'entreprise.",
+          "position": "Assistant maintenance matériel",
           "first_year_company": "2021",
           "last_year_company": "2022"
         }
       },
+      "FeaturedWorks": {
+        "section": "Projets en vedette",
+        "button": "Voir",
+        "adidas": {
+          "description": "E-commerce complet avec une grande variété de produits et un paiement rapide."
+        },
+        "lamborghini": {
+          "description": "Galerie de voitures de la marque automobile de luxe italienne."
+        }
+      },
       "Services": {
-        "section": "Je pourrais vous aider avec...",
-        "frontend": "Je crée des interfaces intuitives en mettant l'accent sur les détails, des interactions fluides et des micro-animations qui améliorent l'expérience utilisateur.",
-        "backend": "Je développe des back-ends en privilégiant une gestion efficace des données et une évolutivité pour soutenir la croissance de la plateforme.",
-        "fullstack": "J'intègre des solutions complètes combinant le front-end et le back-end, garantissant des performances élevées, une évolutivité et une expérience améliorée."
+        "section": "Services",
+        "title": "Je peux vous aider avec...",
+        "frontend": "Je crée des interfaces intuitives avec une attention particulière aux détails, des interactions fluides et des micro-animations qui améliorent l'expérience utilisateur.",
+        "backend": "Je développe des back-ends en mettant l'accent sur la gestion efficace des données et l'évolutivité pour soutenir la croissance de la plateforme.",
+        "fullstack": "J'intègre des solutions complètes combinant front-end et back-end, garantissant de hautes performances, de l'évolutivité et une expérience utilisateur améliorée."
+      },
+      "footer": {
+        "projects": "Projets"
       }
     },
     "Certifications": {

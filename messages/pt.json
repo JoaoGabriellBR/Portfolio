@@ -22,44 +22,58 @@
       }
     },
     "About": {
-      "Jumbotron": {
-        "title": "Desenvolvedor de Software focado em aplicações web e mobile.",
-        "button": "Contato"
+      "AboutMe": {
+        "section": "Sobre Mim"
       },
-      "competence": "Experiência na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações e na sustentação de sistemas.",
+      "Competence": {
+        "section": "Experiência na criação e manutenção de APIs, landing pages, portais de back office e lojas virtuais. Além do código, atuo no monitoramento de desempenho de aplicações e na sustentação de sistemas."
+      },
       "Skills": {
-        "section": "Habilidades",
-        "title": "Algumas tecnologias que utilizo"
+        "section": "Algumas tecnologias que utilizo em meus projetos."
+      },
+      "Certifications": {
+        "section": "Certificações"
       },
       "Experience": {
-        "section": "Experiência",
-        "Job1": {
+        "section": "Minha Trajetória",
+        "neway": {
           "name": "Neway",
           "position": "Desenvolvedor Full Stack",
-          "activities": "Corrijo bugs, implemento novas funcionalidades e presto suporte aos sistemas da empresa.",
           "first_year_company": "2024",
           "last_year_company": "atualmente"
         },
-        "Job2": {
+        "splitRisk": {
           "name": "Split Risk",
           "position": "Estágio em Desenvolvimento",
-          "activities": "Auxiliava outros desenvolvedores na criação de landing pages e prestava suporte na prototipagem de projetos web utilizando Figma.",
           "first_year_company": "2022",
           "last_year_company": "2024"
         },
-        "Job3": {
+        "onlineShopping": {
           "name": "Online Shopping",
-          "position": "Assistente de Manutenção",
-          "activities": "Fornecia assistência técnica aos clientes e colaboradores da empresa.",
+          "position": "Assistente em Manutenção de Hardware",
           "first_year_company": "2021",
           "last_year_company": "2022"
         }
       },
+      "FeaturedWorks": {
+        "section": "Projetos em Destaque",
+        "button": "Visualizar",
+        "adidas": {
+          "description": "E-commerce completo com variedade de produtos e pagamento rápido."
+        },
+        "lamborghini": {
+          "description": "Galeria de automóveis da marca de carros de luxo italiana."
+        }
+      },
       "Services": {
-        "section": "Eu poderia te ajudar com...",
+        "section": "Serviços",
+        "title": "Eu poderia te ajudar com...",
         "frontend": "Crio interfaces intuitivas com foco em detalhes, interações fluidas e microanimações que elevam a experiência do usuário.",
         "backend": "Desenvolvo back-ends, priorizando gestão eficiente de dados e escalabilidade para sustentar o crescimento da plataforma.",
         "fullstack": "Integro soluções completas que combinam front e back-end, garantindo alto desempenho, escalabilidade e uma experiência aprimorada."
+      },
+      "footer": {
+        "projects": "Projetos"
       }
     },
     "Certifications": {

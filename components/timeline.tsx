@@ -3,24 +3,22 @@ import React, { useState } from "react";
 import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
 import { FaArrowRight } from "react-icons/fa";
-import { useTranslations } from "next-intl";
 import { BsArrowRight } from "react-icons/bs";
 import { textSizes } from "@/utils/text-sizes";
 
-interface ListItemsProps {
-  company_name: string;
-  company_time: string;
+interface ListJobsProps {
+  name: string;
   position: string;
-  activities: string;
+  first_year_company: string;
+  last_year_company: string;
 }
 
-interface StepsProps {
-  jobs: ListItemsProps[];
+interface JobsProps {
+  jobs: ListJobsProps[];
 }
 
 export const Timeline = ({ jobs }: { jobs: any }) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
-  // const t = useTranslations("About.Experience");
 
   return (
     <section className="place-self-start w-full">
@@ -40,7 +38,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
                 <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
                   <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
                   <Typography
-                    text={job.company_name}
+                    text={job.name}
                     color="white"
                     size="xl2"
                     letterPadding={false}

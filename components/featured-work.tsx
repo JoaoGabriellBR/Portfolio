@@ -8,6 +8,7 @@ import { ButtonHover } from "./ui/button-hover";
 import { GoArrowUpRight } from "react-icons/go";
 import { SiAdidas } from "react-icons/si";
 import { textSizes } from "@/utils/text-sizes";
+import { useTranslations } from "next-intl";
 
 export const FeaturedWork = ({
   projectName,
@@ -18,6 +19,7 @@ export const FeaturedWork = ({
   Icon,
 }: any) => {
   const isRight = imagePosition === "right";
+  const t = useTranslations("About.FeaturedWorks")
 
   return (
     <div
@@ -43,7 +45,7 @@ export const FeaturedWork = ({
           href={`/projects/${alt}`}
           className="flex flex-row justify-between items-center"
         >
-          <Typography text="Conferir" size="sm" letterPadding={false} />
+          <Typography text={t("button")} size="sm" letterPadding={false} />
           <GoArrowUpRight className={`${textSizes.md} -mb-[0.1rem]`} />
         </ButtonHover>
       </div>

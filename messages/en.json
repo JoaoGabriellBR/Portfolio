@@ -22,44 +22,58 @@
       }
     },
     "About": {
-      "Jumbotron": {
-        "title": "Software Developer focused on web and mobile applications.",
-        "button": "Contact"
+      "AboutMe": {
+        "section": "About Me"
       },
-      "competence": "Experience in creating and maintaining APIs, landing pages, back-office portals, and online stores. Beyond code, I monitor application performance and support system maintenance.",
+      "Competence": {
+        "section": "Experience in creating and maintaining APIs, landing pages, back office portals, and online stores. In addition to coding, I also monitor application performance and provide system support."
+      },
       "Skills": {
-        "section": "Skills",
-        "title": "Some technologies I use"
+        "section": "Some technologies I use in my projects."
+      },
+      "Certifications": {
+        "section": "Certifications"
       },
       "Experience": {
-        "section": "Experience",
-        "Job1": {
+        "section": "My Journey",
+        "neway": {
           "name": "Neway",
           "position": "Full Stack Developer",
-          "activities": "I fix bugs, implement new features, and provide support for the company's systems.",
           "first_year_company": "2024",
           "last_year_company": "present"
         },
-        "Job2": {
+        "splitRisk": {
           "name": "Split Risk",
           "position": "Development Intern",
-          "activities": "I assisted other developers in creating landing pages and supported web project prototyping using Figma.",
           "first_year_company": "2022",
           "last_year_company": "2024"
         },
-        "Job3": {
+        "onlineShopping": {
           "name": "Online Shopping",
-          "position": "Maintenance Assistant",
-          "activities": "I provided technical assistance to the company's clients and employees.",
+          "position": "Hardware Maintenance Assistant",
           "first_year_company": "2021",
           "last_year_company": "2022"
         }
       },
+      "FeaturedWorks": {
+        "section": "Featured Projects",
+        "button": "View",
+        "adidas": {
+          "description": "Complete e-commerce with a wide range of products and fast checkout."
+        },
+        "lamborghini": {
+          "description": "Car gallery of the Italian luxury automobile brand."
+        }
+      },
       "Services": {
-        "section": "I could help you with...",
-        "frontend": "I create intuitive interfaces with a focus on details, smooth interactions, and micro-animations that enhance the user experience.",
-        "backend": "I develop back-ends, prioritizing efficient data management and scalability to support platform growth.",
-        "fullstack": "I integrate complete solutions combining front-end and back-end, ensuring high performance, scalability, and an enhanced experience."
+        "section": "Services",
+        "title": "I could help you with...",
+        "frontend": "I create intuitive interfaces with attention to detail, smooth interactions, and micro-animations that enhance user experience.",
+        "backend": "I develop back-ends focusing on efficient data management and scalability to support platform growth.",
+        "fullstack": "I deliver complete solutions combining front and back-end, ensuring high performance, scalability, and an enhanced experience."
+      },
+      "footer": {
+        "projects": "Projects"
       }
     },
     "Certifications": {

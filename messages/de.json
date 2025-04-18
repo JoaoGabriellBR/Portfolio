@@ -22,45 +22,58 @@
       }
     },
     "About": {
-      "Jumbotron": {
-        "title": "Softwareentwickler mit Fokus auf Web- und Mobile-Anwendungen.",
-        "button": "Kontakt"
+      "AboutMe": {
+        "section": "Über mich"
       },
-      "competence": "Erfahrung in der Erstellung und Wartung von APIs, Landingpages, Backoffice-Portalen und Online-Shops. Neben dem Code arbeite ich auch an der Überwachung der Anwendungsleistung und der Systemunterstützung.",
+      "Competence": {
+        "section": "Erfahrung in der Erstellung und Wartung von APIs, Landingpages, Backoffice-Portalen und Onlineshops. Neben der Programmierung überwache ich auch die Anwendungsleistung und unterstütze die Systemwartung."
+      },
       "Skills": {
-        "section": "Fähigkeiten",
-        "title": "Einige Technologien, die ich verwende"
+        "section": "Einige Technologien, die ich in meinen Projekten verwende."
+      },
+      "Certifications": {
+        "section": "Zertifizierungen"
       },
       "Experience": {
-        "section": "Erfahrung",
-        "Job1": {
+        "section": "Mein Werdegang",
+        "neway": {
           "name": "Neway",
           "position": "Full Stack Entwickler",
-          "activities": "Ich behebe Fehler, implementiere neue Funktionen und unterstütze die Systeme des Unternehmens.",
           "first_year_company": "2024",
-          "last_year_company": "aktuell"
+          "last_year_company": "derzeit"
         },
-        "Job2": {
+        "splitRisk": {
           "name": "Split Risk",
           "position": "Entwicklungspraktikant",
-          "activities": "Ich unterstützte andere Entwickler bei der Erstellung von Landingpages und half bei der Prototypenerstellung von Webprojekten mit Figma.",
           "first_year_company": "2022",
           "last_year_company": "2024"
         },
-        "Job3": {
+        "onlineShopping": {
           "name": "Online Shopping",
-          "position": "Wartungsassistent",
-          "activities": "Ich leistete technischen Support für Kunden und Mitarbeiter des Unternehmens.",
-          "date": "Sep/2021 - Aug/2022",
+          "position": "Assistent für Hardwarewartung",
           "first_year_company": "2021",
           "last_year_company": "2022"
         }
       },
+      "FeaturedWorks": {
+        "section": "Ausgewählte Projekte",
+        "button": "Ansehen",
+        "adidas": {
+          "description": "Vollständiger E-Commerce mit großer Produktvielfalt und schnellem Checkout."
+        },
+        "lamborghini": {
+          "description": "Autogalerie der italienischen Luxusautomarke."
+        }
+      },
       "Services": {
-        "section": "Wobei kann ich Ihnen helfen...",
-        "frontend": "Ich erstelle intuitive Benutzeroberflächen mit Liebe zum Detail, flüssigen Interaktionen und Mikroanimationen, die das Benutzererlebnis verbessern.",
-        "backend": "Ich entwickle Backends mit Schwerpunkt auf effizientem Datenmanagement und Skalierbarkeit, um das Wachstum der Plattform zu unterstützen.",
-        "fullstack": "Ich integriere umfassende Lösungen, die Frontend und Backend kombinieren und so hohe Leistung, Skalierbarkeit und ein verbessertes Erlebnis gewährleisten."
+        "section": "Dienstleistungen",
+        "title": "Ich kann dir helfen mit...",
+        "frontend": "Ich gestalte intuitive Benutzeroberflächen mit Liebe zum Detail, flüssigen Interaktionen und Mikroanimationen für ein besseres Nutzungserlebnis.",
+        "backend": "Ich entwickle Backends mit Fokus auf effizientes Datenmanagement und Skalierbarkeit für das Wachstum der Plattform.",
+        "fullstack": "Ich integriere vollständige Lösungen mit Front- und Backend, die hohe Leistung, Skalierbarkeit und eine optimierte Erfahrung bieten."
+      },
+      "footer": {
+        "projects": "Projekte"
       }
     },
     "Certifications": {

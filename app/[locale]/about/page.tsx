@@ -14,11 +14,10 @@ import { FeaturedWork } from "@/components/featured-work";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { DrawCircleText } from "@/components/draw-circle-text";
 import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
-import { RiPokerClubsFill, RiPokerDiamondsFill } from "react-icons/ri";
+import { RiPokerDiamondsFill } from "react-icons/ri";
 import { ScrollPage } from "@/components/scroll-page";
 import { SiAdidas, SiLamborghini } from "react-icons/si";
 import { textSizes } from "@/utils/text-sizes";
-// import { ButtonHover } from "./ui/button-hover";
 import { ButtonHover } from "@/components/ui/button-hover";
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -31,28 +30,16 @@ export default function About() {
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
           {renderBackgroundImage()}
-          {renderAboutMeSection()}
+          {renderAboutMeSection(t)}
           {renderCompetenceSection(t)}
           {renderExperienceSection(t)}
-          {renderSkillsSection()}
-          <section className="relative w-full h-screen bg-certifications bg-no-repeat bg-cover bg-center bg-fixed flex items-center justify-center bg-opacity-0 mt-[10rem]">
-            <ButtonHover
-              href={`/certifications`}
-              className="flex flex-row justify-between items-center font-semibold tracking-wide break-words"
-            >
-              <Typography
-                text="Certificações"
-                size="xl4"
-                letterPadding={false}
-              />
-              <GoArrowUpRight className={`${textSizes.xl4}`} />
-            </ButtonHover>
-          </section>
-          {renderFeaturedWorks()}
-          {renderServicesSection()}
+          {renderSkillsSection(t)}
+          {renderCertificationsSection(t)}
+          {renderFeaturedWorks(t)}
+          {renderServicesSection(t)}
         </main>
       </ReactLenis>
-      <Footer page="Projetos" route="/projects" />
+      <Footer page={t("footer.projects")} route="/projects" />
     </>
   );
 }
@@ -86,11 +73,11 @@ const renderBackgroundImage = () => {
   );
 };
 
-const renderAboutMeSection = () => {
+const renderAboutMeSection = (t: any) => {
   return (
     <section className="relative container mx-auto px-4 flex flex-col items-start justify-center min-h-[calc(100vh-80px)]">
       <Typography
-        text="Sobre mim"
+        text={t("AboutMe.section")}
         color="white"
         size="xl5"
         className="max-w-3xl -mt-[7rem]"
@@ -110,28 +97,18 @@ const renderCompetenceSection = (t: any) => {
       id="competence"
       className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between"
     >
-      <TextReveal paragraph={t("competence")} />
+      <TextReveal paragraph={t("Competence.section")} />
     </section>
   );
 };
 
-const renderSkillsSection = () => {
+const renderSkillsSection = (t: any) => {
   return (
     <section className="container mx-auto px-4 flex flex-col items-center text-center">
-      {/* <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
-        <RiPokerClubsFill className={`${textSizes.xl5} text-red-600`} />
-        <Typography
-          text="Certificações"
-          color="white"
-          size="xl5"
-          letterPadding={false}
-        />
-      </div> */}
-
       <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen mt-[8rem]">
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full mb-[4rem] lg:mb-[8rem] lg:mt-[8rem] min-h-[10rem]">
           <Typography
-            text={"* Algumas tecnologias que utilizo em meus projetos. *"}
+            text={`* ${t("Skills.section")} *`}
             color="white"
             size="xl4"
             className="w-full lg:w-[80%] text-center lg:text-start"
@@ -147,14 +124,33 @@ const renderSkillsSection = () => {
   );
 };
 
+const renderCertificationsSection = (t: any) => {
+  return (
+    <section className="relative w-full h-screen bg-certifications bg-no-repeat bg-cover bg-center bg-fixed flex items-center justify-center bg-opacity-0 mt-[10rem]">
+      <ButtonHover
+        href={`/certifications`}
+        className="text-white flex flex-row justify-between items-center font-semibold tracking-wide break-words after:bg-white"
+      >
+        <Typography
+          text={t("Certifications.section")}
+          size="xl4"
+          letterPadding={false}
+          className="text-white"
+        />
+        <GoArrowUpRight className={`${textSizes.xl4}`} />
+      </ButtonHover>
+    </section>
+  );
+};
+
 const renderExperienceSection = (t: any) => {
   return (
     <section className="container mx-auto px-4">
       <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
         <RiPokerDiamondsFill className={`${textSizes.xl5} text-red-600`} />
         <DrawCircleText
-          firstWord={"Minha"}
-          secondWord={"Trajetória"}
+          firstWord={t("Experience.section").split(" ")[0]}
+          secondWord={t("Experience.section").split(" ")[1]}
           textSize="lg"
         />
       </div>
@@ -164,12 +160,12 @@ const renderExperienceSection = (t: any) => {
   );
 };
 
-const renderFeaturedWorks = () => {
+const renderFeaturedWorks = (t: any) => {
   return (
     <section className="container mx-auto px-4">
       <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center relative text-center lg:text-left ">
         <Typography
-          text="Projetos em Destaque"
+          text={t("FeaturedWorks.section")}
           color="white"
           size="xl5"
           letterPadding={false}
@@ -179,11 +175,11 @@ const renderFeaturedWorks = () => {
         />
       </div>
 
-      <div className="flex flex-col gap-24">
+      <div className="flex flex-col gap-32">
         <FeaturedWork
           projectName="Adidas"
           alt="adidas"
-          projectDescription="Plataforma completa que oferece todos os recursos de um e-commerce."
+          projectDescription={t("FeaturedWorks.adidas.description")}
           projectImage="adidas/adidas-about.png"
           Icon={SiAdidas}
         />
@@ -191,7 +187,7 @@ const renderFeaturedWorks = () => {
         <FeaturedWork
           projectName="Lamborghini"
           alt="lamborghini"
-          projectDescription="Galeria de automóveis da marca de carros de luxo italiana."
+          projectDescription={t("FeaturedWorks.lamborghini.description")}
           projectImage="lamborghini/lamborghini-about.png"
           imagePosition="left"
           Icon={SiLamborghini}
@@ -201,12 +197,12 @@ const renderFeaturedWorks = () => {
   );
 };
 
-const renderServicesSection = () => {
+const renderServicesSection = (t: any) => {
   return (
     <>
       <ScrollBaseAnimation delay={10} baseVelocity={-1.5}>
         <Typography
-          text={"* Serviços"}
+          text={` ${t("Services.section")} *`}
           color="white"
           size="xl5"
           className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-[80vh] flex items-center justify-center"
@@ -216,7 +212,7 @@ const renderServicesSection = () => {
       <section className="container mx-auto px-4 h-fit lg:-mt-[8rem]">
         <div className="flex flex-col lg:flex-row justify-between items-center mb-[4rem] lg:mb-[8rem] lg:mt-[8rem]">
           <Typography
-            text={"Eu poderia te ajudar com..."}
+            text={t("Services.title")}
             color="white"
             size="xl3"
             className="w-full lg:w-[60%] text-center lg:text-start"

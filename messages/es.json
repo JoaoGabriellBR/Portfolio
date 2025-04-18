@@ -22,44 +22,58 @@
       }
     },
     "About": {
-      "Jumbotron": {
-        "title": "Desarrollador de Software enfocado en aplicaciones web y móviles.",
-        "button": "Contacto"
+      "AboutMe": {
+        "section": "Sobre mí"
       },
-      "competence": "Experiencia en la creación y mantenimiento de APIs, páginas de destino, portales de back office y tiendas virtuales. Además del código, actúo en el monitoreo del rendimiento de aplicaciones y en el mantenimiento de sistemas.",
+      "Competence": {
+        "section": "Experiencia en la creación y mantenimiento de APIs, páginas de destino, portales administrativos y tiendas online. Además de programar, también monitoreo el rendimiento de las aplicaciones y doy soporte a los sistemas."
+      },
       "Skills": {
-        "section": "Habilidades",
-        "title": "Algunas tecnologías que utilizo"
+        "section": "Algunas tecnologías que uso en mis proyectos."
+      },
+      "Certifications": {
+        "section": "Certificaciones"
       },
       "Experience": {
-        "section": "Experiencia",
-        "Job1": {
+        "section": "Mi trayectoria",
+        "neway": {
           "name": "Neway",
           "position": "Desarrollador Full Stack",
-          "activities": "Corrijo errores, implemento nuevas funcionalidades y brindo soporte a los sistemas de la empresa.",
           "first_year_company": "2024",
           "last_year_company": "actualmente"
         },
-        "Job2": {
+        "splitRisk": {
           "name": "Split Risk",
-          "position": "Pasantía en Desarrollo",
-          "activities": "Asistía a otros desarrolladores en la creación de páginas de destino y brindaba soporte en la creación de prototipos de proyectos web utilizando Figma.",
+          "position": "Prácticas en Desarrollo",
           "first_year_company": "2022",
           "last_year_company": "2024"
         },
-        "Job3": {
+        "onlineShopping": {
           "name": "Online Shopping",
-          "position": "Asistente de Mantenimiento",
-          "activities": "Proporcionaba asistencia técnica a los clientes y empleados de la empresa.",
+          "position": "Asistente de Mantenimiento de Hardware",
           "first_year_company": "2021",
           "last_year_company": "2022"
         }
       },
+      "FeaturedWorks": {
+        "section": "Proyectos Destacados",
+        "button": "Ver",
+        "adidas": {
+          "description": "E-commerce completo con una amplia variedad de productos y un pago rápido."
+        },
+        "lamborghini": {
+          "description": "Galería de autos de la marca italiana de lujo."
+        }
+      },
       "Services": {
-        "section": "Podría ayudarte con...",
-        "frontend": "Creo interfaces intuitivas con enfoque en detalles, interacciones fluidas y microanimaciones que elevan la experiencia del usuario.",
-        "backend": "Desarrollo back-ends, priorizando una gestión eficiente de datos y escalabilidad para sustentar el crecimiento de la plataforma.",
-        "fullstack": "Integro soluciones completas que combinan front-end y back-end, garantizando alto rendimiento, escalabilidad y una experiencia mejorada."
+        "section": "Servicios",
+        "title": "Podría ayudarte con...",
+        "frontend": "Creo interfaces intuitivas con atención al detalle, interacciones fluidas y microanimaciones que mejoran la experiencia del usuario.",
+        "backend": "Desarrollo backends con enfoque en la gestión eficiente de datos y escalabilidad para soportar el crecimiento de la plataforma.",
+        "fullstack": "Integro soluciones completas que combinan frontend y backend, garantizando alto rendimiento, escalabilidad y una experiencia mejorada."
+      },
+      "footer": {
+        "projects": "Proyectos"
       }
     },
     "Certifications": {
@@ -135,4 +149,4 @@
       "mysql": "Base de datos",
       "aws": "Nube"
     }
-  }
+}
