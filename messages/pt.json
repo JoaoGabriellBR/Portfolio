@@ -101,6 +101,9 @@
         "adidas": {
           "description": "Plataforma de e-commerce completa, com ampla variedade de produtos e pagamento rápido e intuitivo."
         },
+        "upWrite": {
+          "description": "Criador de notas com recursos avançados de edição de texto."
+        },
         "footer": {
           "contact": "Contato"
         }

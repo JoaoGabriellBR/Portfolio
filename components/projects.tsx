@@ -10,26 +10,34 @@ import { projects } from "@/utils/projects";
 import CursorFollow from "./cursor-follow";
 import Image from "next/image";
 import { BsArrowDownLeft } from "react-icons/bs";
+import { usePathname } from "@/i18n/navigation";
 
-export default function Projects() {
+export default function Projects({
+  currentProject,
+}: {
+  currentProject: string;
+}) {
   const [modal, setModal] = useState({ active: false, index: 0 });
   const t = useTranslations("Home");
+  const pathname = usePathname();
 
   return (
     <section className="flex flex-col items-center justify-center gap-20 min-h-screen container mx-auto px-4">
-        <BsArrowDownLeft className="place-self-end bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl my-4" />
+      <BsArrowDownLeft className="place-self-end bg-clip-text bg-gradient-to-b from-neutral-800 to-neutral-950 dark:bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-200 text-4xl lg:text-6xl my-4" />
       <div className="flex flex-col items-center justify-center w-full">
-        {projects.map((project, index) => {
-          return (
-            <Project
-              index={index}
-              title={project.title}
-              href={project.href}
-              setModal={setModal}
-              key={index}
-            />
-          );
-        })}
+        {projects
+          .filter((project) => project.name != currentProject)
+          .map((project, index) => {
+            return (
+              <Project
+                index={index}
+                title={project.title}
+                href={project.href}
+                setModal={setModal}
+                key={index}
+              />
+            );
+          })}
       </div>
 
       <CursorFollow
@@ -53,21 +61,23 @@ export default function Projects() {
         ))}
       </CursorFollow>
 
-      <Link href="/projects">
-        <MagneticButton
-          distance={1}
-          type="3d"
-          className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
-        >
-          <Typography
-            className="pb-0 pr-0"
-            text={t("Projects.button")}
-            letterPadding={false}
-            size="md"
-          />
-          <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
-        </MagneticButton>
-      </Link>
+      {pathname === "/" && (
+        <Link href="/projects">
+          <MagneticButton
+            distance={1}
+            type="3d"
+            className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
+          >
+            <Typography
+              className="pb-0 pr-0"
+              text={t("Projects.button")}
+              letterPadding={false}
+              size="md"
+            />
+            <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
+          </MagneticButton>
+        </Link>
+      )}
     </section>
   );
 }

@@ -1,7 +1,9 @@
 import adidas from "./adidas";
+import upwrite from "./upwrite";
 
 const myProjects = {
   adidas,
+  upwrite,
   // future projects...
 };
 

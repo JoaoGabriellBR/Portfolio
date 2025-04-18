@@ -26,7 +26,13 @@ type ProjectData = {
   fullImage: string;
 };
 
-export default function ProjectDetails({ project }: { project: ProjectData }) {
+export default function ProjectDetails({
+  project,
+  currentProject,
+}: {
+  project: ProjectData;
+  currentProject: string;
+}) {
   const Icon = iconMap[project.icon as keyof typeof iconMap];
   const t = useTranslations("Project.project-details");
 
@@ -132,7 +138,8 @@ export default function ProjectDetails({ project }: { project: ProjectData }) {
             />
           </section>
 
-          <Projects />
+          {/* <Projects /> */}
+          <Projects currentProject={currentProject} />
         </main>
       </ReactLenis>
       <Footer page={t("footer.contact")} route="/contact" />

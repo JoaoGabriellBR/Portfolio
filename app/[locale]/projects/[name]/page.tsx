@@ -12,7 +12,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   if (!project) return notFound();
 
-  return <ProjectDetails project={project} />;
+  return <ProjectDetails project={project} currentProject={name} />;
 }
 
 // 👇 Código para gerar rotas estáticas
