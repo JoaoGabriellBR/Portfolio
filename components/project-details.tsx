@@ -21,7 +21,7 @@ type ProjectData = {
   descriptionKey: string;
   icon: string;
   siteUrl: string;
-  desktopImage: string;
+  desktopImages: string[];
   mobileImages: string[];
   fullImage: string;
 };
@@ -88,11 +88,11 @@ export default function ProjectDetails({
             </Link>
           </section>
 
-          {/* Desktop Mockup */}
+          {/* Full Image */}
           <section className="w-full mx-auto px-4 min-h-[50vh] lg:min-h-screen mb-16 lg:mb-0 flex items-start justify-center">
             <MonitorMockup>
               <Image
-                src={project.desktopImage}
+                src={project.fullImage}
                 alt="Mockup image"
                 fill
                 className="rounded-[3rem] h-[90%]"
@@ -116,30 +116,26 @@ export default function ProjectDetails({
             </div>
           </section>
 
-          {/* Full Image */}
-          <section className="container mx-auto px-4 min-h-screen flex items-center justify-center">
-            <div className="overflow-hidden rounded-[3rem] group">
-              <Image
-                src={project.fullImage}
-                alt="Full mockup"
-                width={1800}
-                height={1800}
-                className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+          {/* Desktop Mockups */}
+          <section className="w-full min-h-screen mt-[8rem]">
+            {project.desktopImages.map((src, i) => (
+              <div
+                key={i}
+                className="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-fixed"
+                style={{ backgroundImage: `url(${src})` }}
               />
-            </div>
+            ))}
           </section>
 
           {/* Call to Action */}
-          <section className="min-h-[calc(8vh)] lg:min-h-[calc(50vh)] flex flex-col items-center justify-center">
+          <section className="min-h-[calc(8vh)] lg:min-h-[calc(50vh)] mt-[10rem] flex flex-col items-center justify-center">
             <DrawCircleText
               firstWord={t("next").split(" ")[0]}
               secondWord={t("next").split(" ")[1]}
               textSize="lg"
             />
+            <Projects currentProject={currentProject} />
           </section>
-
-          {/* <Projects /> */}
-          <Projects currentProject={currentProject} />
         </main>
       </ReactLenis>
       <Footer page={t("footer.contact")} route="/contact" />
