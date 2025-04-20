@@ -45,20 +45,22 @@ export default function Projects({
         classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[19rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[32rem]"
         isProject
       >
-        {projects.map((project, idx) => (
-          <div
-            key={`modal_${idx}`}
-            className="flex h-full w-full items-center justify-center "
-          >
-            <Image
-              src={project.src}
-              width={600}
-              className="object-contain"
-              height={600}
-              alt="image"
-            />
-          </div>
-        ))}
+        {projects
+          .filter((project) => project.name != currentProject)
+          .map((project, idx) => (
+            <div
+              key={`modal_${idx}`}
+              className="flex h-full w-full items-center justify-center "
+            >
+              <Image
+                src={project.src}
+                width={600}
+                className="object-contain"
+                height={600}
+                alt="image"
+              />
+            </div>
+          ))}
       </CursorFollow>
 
       {pathname === "/" && (

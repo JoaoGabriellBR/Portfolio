@@ -5,7 +5,10 @@ const koffieProject = {
     "Protótipo de um site de apresentação de uma cafeteria chamada Koffie.", // chave de tradução
   icon: "GiCoffeeCup",
   siteUrl: "https://adidasshopping.vercel.app",
-  desktopImages: ["/images/koffie/mockup-koffie-web-1.png"],
+  desktopImages: [
+    "/images/koffie/mockup-koffie-web-1.png",
+    "/images/koffie/mockup-koffie-web-2.png",
+  ],
   mobileImages: [
     "/images/koffie/mockup-koffie-mobile-1.png",
     "/images/koffie/mockup-koffie-mobile-2.png",
