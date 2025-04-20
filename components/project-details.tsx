@@ -21,6 +21,7 @@ type ProjectData = {
   descriptionKey: string;
   icon: string;
   siteUrl: string;
+  stroke?: string;
   desktopImages: string[];
   mobileImages: string[];
   smallImages: string[];
@@ -59,7 +60,7 @@ export default function ProjectDetails({
           {!!project.smallImages?.length &&
             renderSmallImages(project.smallImages, project.title)}
 
-          {renderCallToAction(t("next"), currentProject)}
+          {renderCallToAction(t("next"), project.stroke, currentProject)}
         </main>
       </ReactLenis>
       <Footer page={t("footer.contact")} route="/contact" />
@@ -197,7 +198,7 @@ function renderSmallImages(images: string[], title: string) {
   );
 }
 
-function renderCallToAction(nextText: string, currentProject: string) {
+function renderCallToAction(nextText: string, stroke: any, currentProject: string) {
   const [firstWord, secondWord] = nextText.split(" ");
 
   return (
@@ -205,6 +206,7 @@ function renderCallToAction(nextText: string, currentProject: string) {
       <DrawCircleText
         firstWord={firstWord}
         secondWord={secondWord}
+        stroke={stroke}
         textSize="lg"
       />
       <Projects currentProject={currentProject} />

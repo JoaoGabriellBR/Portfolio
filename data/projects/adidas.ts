@@ -4,7 +4,7 @@ const adidasProject = {
   descriptionKey: "adidas.description", // chave de tradução
   icon: "SiAdidas",
   siteUrl: "https://adidasshopping.vercel.app",
-  // desktopImage: "/images/adidas/adidas-mockup2.png",
+  stroke: "#f2f2f2",
   desktopImages: [
     "/images/adidas/mockup-adidas-web-1.png",
     "/images/adidas/mockup-adidas-web-2.png",
