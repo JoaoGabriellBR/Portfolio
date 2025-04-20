@@ -23,6 +23,7 @@ type ProjectData = {
   siteUrl: string;
   desktopImages: string[];
   mobileImages: string[];
+  smallImages: string[];
   fullImage: string;
 };
 
@@ -45,7 +46,7 @@ export default function ProjectDetails({
           <section className="relative container mx-auto px-4 flex flex-col items-center justify-center space-y-4 text-center pt-12 min-h-[calc(100vh-80px)]">
             <div className="flex flex-row items-center justify-between gap-4 text-center mt-[-7rem]">
               <Icon
-                className={`${textSizes.xl5} text-foreground dark:text-white mt-4`}
+                className={`${textSizes.xl5} text-foreground dark:text-white`}
               />
               <Typography
                 text={project.title}
@@ -117,14 +118,38 @@ export default function ProjectDetails({
           </section>
 
           {/* Desktop Mockups */}
-          <section className="w-full min-h-screen mt-[8rem]">
-            {project.desktopImages.map((src, i) => (
-              <div
-                key={i}
-                className="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-fixed"
-                style={{ backgroundImage: `url(${src})` }}
+          {project.desktopImages && (
+            <section className="w-full min-h-screen mt-[8rem]">
+              {project.desktopImages.map((src, i) => (
+                <div
+                  key={i}
+                  className="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-fixed"
+                  style={{ backgroundImage: `url(${src})` }}
+                />
+              ))}
+            </section>
+          )}
+
+          <section className="container mx-auto px-4 mt-[10rem] flex flex-col justify-start items-center gap-16">
+            <div className="flex items-start justify-start w-full min-h-[50vh]">
+              <Image
+                src={project.smallImages[0]}
+                width={700}
+                height={700}
+                alt={`${project.title}`}
+                className="object-contain pointer-events-none"
               />
-            ))}
+            </div>
+
+            <div className="flex items-end justify-end w-full min-h-[50vh]">
+              <Image
+                src={project.smallImages[1]}
+                width={700}
+                height={700}
+                alt={`${project.title}`}
+                className="object-contain pointer-events-none"
+              />
+            </div>
           </section>
 
           {/* Call to Action */}

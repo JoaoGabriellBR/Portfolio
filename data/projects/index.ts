@@ -1,9 +1,11 @@
 import adidas from "./adidas";
 import upwrite from "./upwrite";
+import koffie from "./koffie";
 
 const myProjects = {
   adidas,
   upwrite,
+  koffie,
   // future projects...
 };
 
