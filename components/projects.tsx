@@ -15,7 +15,7 @@ import { usePathname } from "@/i18n/navigation";
 export default function Projects({
   currentProject,
 }: {
-  currentProject: string;
+  currentProject?: string;
 }) {
   const [modal, setModal] = useState({ active: false, index: 0 });
   const t = useTranslations("Home");

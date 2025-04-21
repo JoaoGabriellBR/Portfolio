@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { textSizes } from "@/utils/text-sizes";
 
 interface Project {
   name: string;
@@ -23,7 +24,7 @@ export default function SmallImagesGallery({
 
   return (
     <div
-      className="w-full h-[120vh] relative"
+      className="w-full min-h-[150vh] relative"
       style={{ clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)" }}
     >
       <div className="w-[100%] h-[100%] absolute flex flex-col items-center justify-center gap-8 z-10">
@@ -31,7 +32,8 @@ export default function SmallImagesGallery({
           return (
             <Link
               href={`/projects/${projectRoute}`}
-              className="cursor-pointer text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[10rem] text-foreground m-0"
+              // className="cursor-pointer text-5xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[10rem] text-foreground m-0"
+              className={`cursor-pointer ${textSizes.xl4}`}
               onMouseOver={() => {
                 setIndex(i);
               }}

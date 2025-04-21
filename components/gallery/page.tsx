@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { useSpring, motion } from "framer-motion";
 import SmallImagesGallery from "./description";
+import Projects from "../projects";
 
 const projects = [
   {
@@ -54,16 +55,17 @@ export default function GalleryComponent() {
   }, []);
 
   return (
-    <main onMouseMove={mouseMove} className="relative overflow-hidden">
-      {projects.map(({ handle, handle2 }, i) => (
+    <main onMouseMove={mouseMove} className="">
+      {/* {projects.map(({ handle, handle2 }, i) => (
         <Gallery
           key={i}
           mousePosition={mousePosition}
           handle={handle}
           handle2={handle2}
         />
-      ))}
-      <SmallImagesGallery mousePosition={mousePosition} projects={projects} />
+      ))} */}
+      {/* <SmallImagesGallery mousePosition={mousePosition} projects={projects} /> */}
+      <Projects/>
     </main>
   );
 }
@@ -76,13 +78,19 @@ function Gallery({ handle, handle2, mousePosition }: any) {
       style={{ clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)" }}
     >
       <div className="w-full h-full relative">
-        <Image
+        {/* <Image
           src={`/images/${handle}`}
           alt="image"
           fill
           className="w-full object-cover"
+        /> */}
+
+        <div
+          className="w-full h-full bg-no-repeat bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: `url(/images/${handle})` }}
         />
       </div>
+
       <motion.div
         className="hidden lg:block fixed top-0 left-0 h-[550px] w-[450px] rounded-[1.5vw] overflow-hidden pointer-events-none"
         style={{ x: mousePosition.x, y: mousePosition.y }}
