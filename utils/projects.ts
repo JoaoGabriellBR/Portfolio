@@ -13,6 +13,12 @@ export const projects: ProjectsProps[] = [
     href: "/projects/adidas",
   },
   {
+    title: "Dark Bulls",
+    name: "darkbulls",
+    src: "/images/darkbulls/mockup-darkbulls-web-1.png",
+    href: "/projects/darkbulls",
+  },
+  {
     title: "Koffie",
     name: "koffie",
     src: "/images/koffie/mockup-koffie.png",
