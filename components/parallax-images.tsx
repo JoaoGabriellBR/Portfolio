@@ -80,7 +80,7 @@ const ParallaxImages = () => {
         className="w-1/3"
       />
       <ParallaxImg
-        src="/images/lamborghini/lamborghini-jumbotron.png"
+        src="/images/darkbulls/lamborghini-jumbotron.png"
         alt="Image of lamborghini project"
         start={200}
         end={-250}

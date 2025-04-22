@@ -186,9 +186,9 @@ const renderFeaturedWorks = (t: any) => {
 
         <FeaturedWork
           projectName="Lamborghini"
-          alt="lamborghini"
+          alt="darkbulls"
           projectDescription={t("FeaturedWorks.lamborghini.description")}
-          projectImage="lamborghini/lamborghini-about.png"
+          projectImage="darkbulls/lamborghini-about.png"
           imagePosition="left"
           Icon={SiLamborghini}
         />

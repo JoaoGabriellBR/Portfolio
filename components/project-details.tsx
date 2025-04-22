@@ -15,12 +15,14 @@ import Projects from "@/components/projects";
 import { iconMap } from "@/utils/icons";
 import { textSizes } from "@/utils/text-sizes";
 import { useTranslations } from "next-intl";
+import VideoMockup from "./full-screen-video";
 
 type ProjectData = {
   title: string;
   descriptionKey: string;
   icon: string;
   siteUrl: string;
+  mockupVideo?: string;
   stroke?: string;
   desktopImages: string[];
   mobileImages: string[];
@@ -51,15 +53,14 @@ export default function ProjectDetails({
             project.siteUrl,
             t("viewSite")
           )}
-          {renderFullImage(project.fullImage)}
-
+          {!!project.mockupVideo?.length && renderVideoSection()}
+          {!!project.fullImage?.length && renderFullImage(project.fullImage)}
           {!!project.mobileImages?.length &&
             renderMobileMockups(project.mobileImages)}
           {!!project.desktopImages?.length &&
             renderDesktopMockups(project.desktopImages)}
           {!!project.smallImages?.length &&
             renderSmallImages(project.smallImages, project.title)}
-
           {renderCallToAction(t("next"), project.stroke, currentProject)}
         </main>
       </ReactLenis>
@@ -117,6 +118,14 @@ function renderDescriptionSection(
           <Typography size="md" text={buttonText} letterPadding={false} />
         </MagneticButton>
       </Link>
+    </section>
+  );
+}
+
+function renderVideoSection() {
+  return (
+    <section className="relative container mx-auto px-4 overflow-hidden">
+      <VideoMockup src="/videos/darkbulls/aventador.mp4" autoPlay={true} />
     </section>
   );
 }
@@ -198,7 +207,11 @@ function renderSmallImages(images: string[], title: string) {
   );
 }
 
-function renderCallToAction(nextText: string, stroke: any, currentProject: string) {
+function renderCallToAction(
+  nextText: string,
+  stroke: any,
+  currentProject: string
+) {
   const [firstWord, secondWord] = nextText.split(" ");
 
   return (
