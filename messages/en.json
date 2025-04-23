@@ -95,6 +95,7 @@
     }
   },
   "Project": {
+    "section": "Projects",
     "project-details": {
       "next": "Next Project...",
       "viewSite": "View site",

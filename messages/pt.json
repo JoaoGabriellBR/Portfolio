@@ -96,6 +96,7 @@
     },
 
     "Project": {
+      "section": "Projetos",
       "project-details": {
         "next": "Próximo Projeto...",
         "viewSite": "Ver site",

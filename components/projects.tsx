@@ -89,23 +89,23 @@ export default function Projects({
         ))}
       </CursorFollow>
 
-      {/* {pathname === "/" && ( */}
-      <Link href="/projects">
-        <MagneticButton
-          distance={1}
-          type="3d"
-          className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
-        >
-          <Typography
-            className="pb-0 pr-0"
-            text={t("Projects.button")}
-            letterPadding={false}
-            size="md"
-          />
-          <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
-        </MagneticButton>
-      </Link>
-      {/* )} */}
+      {pathname !== "/projects" && (
+        <Link href="/projects">
+          <MagneticButton
+            distance={1}
+            type="3d"
+            className="w-64 h-20 text-2xl p-5 flex flex-row justify-center items-center gap-2"
+          >
+            <Typography
+              className="pb-0 pr-0"
+              text={t("Projects.button")}
+              letterPadding={false}
+              size="md"
+            />
+            <IoIosArrowRoundForward className="text-foreground dark:text-white text-4xl" />
+          </MagneticButton>
+        </Link>
+      )}
     </section>
   );
 }

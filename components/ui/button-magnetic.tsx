@@ -64,7 +64,7 @@ export const MagneticButton = ({
   return (
     <motion.div
       onClick={onClick}
-      className={`${className} cursor-pointer rounded-full flex flex-row items-center justify-center ${
+      className={`${className} cursor-pointer rounded-full flex flex-row items-center justify-center text-center ${
         border &&
         "border border-neutral-700 hover:bg-neutral-500 hover:bg-opacity-10"
       }`}

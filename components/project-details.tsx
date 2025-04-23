@@ -25,10 +25,10 @@ type ProjectData = {
   mockupVideo?: string;
   palette?: string;
   arrowFooterColor?: string;
-  desktopImages: string[];
-  mobileImages: string[];
-  smallImages: string[];
-  fullImage: string;
+  desktopImages?: string[];
+  mobileImages?: string[];
+  smallImages?: string[];
+  fullImage?: string;
 };
 
 type ProjectDetailsProps = {
