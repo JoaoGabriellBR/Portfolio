@@ -9,6 +9,7 @@ interface ProjectProps {
   index: number;
   title: string;
   href: string;
+  type: string;
   setModal: (modalState: { active: boolean; index: number }) => void;
 }
 
@@ -16,6 +17,7 @@ export default function Project({
   index,
   title,
   href,
+  type,
   setModal,
 }: ProjectProps) {
   const t = useTranslations("Home");
@@ -44,7 +46,8 @@ export default function Project({
         </div>
       </div>
       <Typography
-        text={t("Projects.type")}
+        // text={t("Projects.type")}
+        text={type}
         color="white"
         size="sm"
         className="font-normal"

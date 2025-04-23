@@ -8,7 +8,12 @@ import CursorFollow from "./cursor-follow";
 import { Link } from "@/i18n/navigation";
 import { FaArrowRight } from "react-icons/fa";
 
-export default function Footer({ page = "", route = "/" }: any) {
+export default function Footer({
+  page = "",
+  route = "/",
+  palette = "#dc2626",
+  arrowFooterColor = "#FFFFFF",
+}: any) {
   const t = useTranslations("Footer");
 
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -34,7 +39,10 @@ export default function Footer({ page = "", route = "/" }: any) {
             classNameContainer="rounded-full group-hover:scale-90"
             className="rounded-full"
           >
-            <div className="flex h-full w-full items-center justify-center shadow-2xl text-white bg-red-600 rounded-full p-4">
+            <div
+              className={`flex h-full w-full items-center justify-center shadow-2xl rounded-full p-4`}
+              style={{ backgroundColor: palette, color: arrowFooterColor }}
+            >
               {/* Próxima página */}
               <FaArrowRight className="text-7xl" />
             </div>

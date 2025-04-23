@@ -94,6 +94,7 @@
         "projects": "Projetos"
       }
     },
+
     "Project": {
       "project-details": {
         "next": "Próximo Projeto...",
@@ -101,14 +102,24 @@
         "adidas": {
           "description": "Plataforma de e-commerce completa, com ampla variedade de produtos e pagamento rápido e intuitivo."
         },
+        "darkBulls": {
+          "description": "Galeria de automóveis da Lamborghini, que apresenta modelos icônicos da marca e destaca as principais características e inovações de cada carro."
+        },
+        "koffie": {
+          "description": "Protótipo de um site moderno e responsivo desenvolvido para representar a identidade visual de uma cafeteria fictícia chamada Koffie."
+        },
         "upWrite": {
-          "description": "Criador de notas com recursos avançados de edição de texto."
+          "description": "Ferramenta web para criação e organização de anotações, equipada com funcionalidades avançadas de edição de texto."
+        },
+        "solarToy": {
+          "description": "Landing page desenvolvida para exibir um mini carro de brinquedo movido a energia solar, destacando suas principais características."
         },
         "footer": {
           "contact": "Contato"
         }
       }
     },
+
     "Contact": {
       "Jumbotron": {
         "title": "Me conte",

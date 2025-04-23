@@ -23,7 +23,8 @@ type ProjectData = {
   icon: string;
   siteUrl: string;
   mockupVideo?: string;
-  stroke?: string;
+  palette?: string;
+  arrowFooterColor?: string;
   desktopImages: string[];
   mobileImages: string[];
   smallImages: string[];
@@ -61,10 +62,15 @@ export default function ProjectDetails({
             renderDesktopMockups(project.desktopImages)}
           {!!project.smallImages?.length &&
             renderSmallImages(project.smallImages, project.title)}
-          {renderCallToAction(t("next"), project.stroke, currentProject)}
+          {renderCallToAction(t("next"), project.palette, currentProject)}
         </main>
       </ReactLenis>
-      <Footer page={t("footer.contact")} route="/contact" />
+      <Footer
+        page={t("footer.contact")}
+        route="/contact"
+        palette={project.palette}
+        arrowFooterColor={project.arrowFooterColor}
+      />
     </>
   );
 }
@@ -209,7 +215,7 @@ function renderSmallImages(images: string[], title: string) {
 
 function renderCallToAction(
   nextText: string,
-  stroke: any,
+  palette: any,
   currentProject: string
 ) {
   const [firstWord, secondWord] = nextText.split(" ");
@@ -219,7 +225,7 @@ function renderCallToAction(
       <DrawCircleText
         firstWord={firstWord}
         secondWord={secondWord}
-        stroke={stroke}
+        palette={palette}
         textSize="lg"
       />
       <Projects currentProject={currentProject} />

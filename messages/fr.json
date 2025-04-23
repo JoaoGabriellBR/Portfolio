@@ -1,152 +1,164 @@
 {
-    "Header": {
-      "nav1": "Accueil",
-      "nav2": "À propos",
-      "nav3": "Projets",
-      "nav4": "Contact"
+  "Header": {
+    "nav1": "Accueil",
+    "nav2": "À propos",
+    "nav3": "Projets",
+    "nav4": "Contact"
+  },
+  "Home": {
+    "title_jumbotron": "Développeur",
+    "subtitle_jumbotron": "Full Stack",
+    "Section2": {
+      "title": "Je conçois, développe et crée des applications optimisées grâce aux bonnes pratiques de développement.",
+      "button": "À propos de moi"
     },
-    "Home": {
-      "title_jumbotron": "Développeur",
-      "subtitle_jumbotron": "Full Stack",
-      "Section2": {
-        "title": "Je conçois, développe et crée des applications optimisées grâce aux bonnes pratiques de développement.",
-        "button": "À propos de moi"
-      },
-      "Section3": {
-        "title": "* Projets récents"
-      },
-      "Projects": {
-        "type": "Développement web",
-        "button": "Plus de projets",
-        "cursorLabel": "Voir"
-      }
+    "Section3": {
+      "title": "* Projets récents"
     },
-    "About": {
-      "AboutMe": {
-        "section": "À propos de moi"
-      },
-      "Competence": {
-        "section": "Expérience dans la création et la maintenance d’API, de pages d’atterrissage, de portails back-office et de boutiques en ligne. En plus du développement, je m’occupe de la surveillance des performances des applications et de la maintenance des systèmes."
-      },
-      "Skills": {
-        "section": "Quelques technologies que j’utilise dans mes projets."
-      },
-      "Certifications": {
-        "section": "Certifications"
-      },
-      "Experience": {
-        "section": "Mon parcours",
-        "neway": {
-          "name": "Neway",
-          "position": "Développeur Full Stack",
-          "first_year_company": "2024",
-          "last_year_company": "actuellement"
-        },
-        "splitRisk": {
-          "name": "Split Risk",
-          "position": "Stagiaire en développement",
-          "first_year_company": "2022",
-          "last_year_company": "2024"
-        },
-        "onlineShopping": {
-          "name": "Online Shopping",
-          "position": "Assistant maintenance matériel",
-          "first_year_company": "2021",
-          "last_year_company": "2022"
-        }
-      },
-      "FeaturedWorks": {
-        "section": "Projets en vedette",
-        "button": "Voir",
-        "adidas": {
-          "description": "E-commerce complet avec une grande variété de produits et un paiement rapide."
-        },
-        "lamborghini": {
-          "description": "Galerie de voitures de la marque automobile de luxe italienne."
-        }
-      },
-      "Services": {
-        "section": "Services",
-        "title": "Je peux vous aider avec...",
-        "frontend": "Je crée des interfaces intuitives avec une attention particulière aux détails, des interactions fluides et des micro-animations qui améliorent l'expérience utilisateur.",
-        "backend": "Je développe des back-ends en mettant l'accent sur la gestion efficace des données et l'évolutivité pour soutenir la croissance de la plateforme.",
-        "fullstack": "J'intègre des solutions complètes combinant front-end et back-end, garantissant de hautes performances, de l'évolutivité et une expérience utilisateur améliorée."
-      },
-      "footer": {
-        "projects": "Projets"
-      }
+    "Projects": {
+      "type": "Développement web",
+      "button": "Plus de projets",
+      "cursorLabel": "Voir"
+    }
+  },
+  "About": {
+    "AboutMe": {
+      "section": "À propos de moi"
+    },
+    "Competence": {
+      "section": "Expérience dans la création et la maintenance d’API, de pages d’atterrissage, de portails back-office et de boutiques en ligne. En plus du développement, je m’occupe de la surveillance des performances des applications et de la maintenance des systèmes."
+    },
+    "Skills": {
+      "section": "Quelques technologies que j’utilise dans mes projets."
     },
     "Certifications": {
-      "section": "Mes certifications",
-      "cybersecurity": {
-        "description": "Introduction à la cybersécurité"
+      "section": "Certifications"
+    },
+    "Experience": {
+      "section": "Mon parcours",
+      "neway": {
+        "name": "Neway",
+        "position": "Développeur Full Stack",
+        "first_year_company": "2024",
+        "last_year_company": "actuellement"
       },
-      "machine-learning": {
-        "description": "Fondations de l'apprentissage automatique AWS"
+      "splitRisk": {
+        "name": "Split Risk",
+        "position": "Stagiaire en développement",
+        "first_year_company": "2022",
+        "last_year_company": "2024"
       },
-      "cloud-foundations": {
-        "description": "Fondations du cloud AWS"
+      "onlineShopping": {
+        "name": "Online Shopping",
+        "position": "Assistant maintenance matériel",
+        "first_year_company": "2021",
+        "last_year_company": "2022"
+      }
+    },
+    "FeaturedWorks": {
+      "section": "Projets en vedette",
+      "button": "Voir",
+      "adidas": {
+        "description": "E-commerce complet avec une grande variété de produits et un paiement rapide."
       },
-      "web-development": {
-        "description": "Développement Web Full Stack"
+      "lamborghini": {
+        "description": "Galerie de voitures de la marque automobile de luxe italienne."
+      }
+    },
+    "Services": {
+      "section": "Services",
+      "title": "Je peux vous aider avec...",
+      "frontend": "Je crée des interfaces intuitives avec une attention particulière aux détails, des interactions fluides et des micro-animations qui améliorent l'expérience utilisateur.",
+      "backend": "Je développe des back-ends en mettant l'accent sur la gestion efficace des données et l'évolutivité pour soutenir la croissance de la plateforme.",
+      "fullstack": "J'intègre des solutions complètes combinant front-end et back-end, garantissant de hautes performances, de l'évolutivité et une expérience utilisateur améliorée."
+    },
+    "footer": {
+      "projects": "Projets"
+    }
+  },
+  "Certifications": {
+    "section": "Mes certifications",
+    "cybersecurity": {
+      "description": "Introduction à la cybersécurité"
+    },
+    "machine-learning": {
+      "description": "Fondations de l'apprentissage automatique AWS"
+    },
+    "cloud-foundations": {
+      "description": "Fondations du cloud AWS"
+    },
+    "web-development": {
+      "description": "Développement Web Full Stack"
+    },
+    "footer": {
+      "projects": "Projets"
+    }
+  },
+  "Project": {
+    "project-details": {
+      "next": "Projet Suivant...",
+      "viewSite": "Voir le site",
+      "adidas": {
+        "description": "Plateforme e-commerce complète, proposant une large gamme de produits et un processus de paiement rapide et intuitif."
+      },
+      "darkBulls": {
+        "description": "Galerie automobile Lamborghini présentant des modèles emblématiques et mettant en avant les caractéristiques et innovations de chaque voiture."
+      },
+      "koffie": {
+        "description": "Prototype d’un site web moderne et réactif conçu pour représenter l’identité visuelle d’un café fictif appelé Koffie."
+      },
+      "upWrite": {
+        "description": "Outil web pour la création et l’organisation de notes, doté de fonctionnalités avancées d’édition de texte."
+      },
+      "solarToy": {
+        "description": "Page d’atterrissage développée pour présenter une mini voiture jouet alimentée à l’énergie solaire, en mettant en avant ses principales caractéristiques."
       },
       "footer": {
-        "projects": "Projets"
+        "contact": "Contact"
       }
-    },
-    "Project": {
-      "project-details": {
-        "next": "Projet suivant...",
-        "viewSite": "Voir le site",
-        "adidas": {
-          "description": "Plateforme de e-commerce complète, avec une large gamme de produits et un paiement rapide et intuitif."
-        },
-        "footer": {
-          "contact": "Contact"
-        }
-      }
-    },
-    "Contact": {
-      "Jumbotron": {
-        "title": "Parlez-moi",
-        "subtitle": "De vos idées"
-      },
-      "Form": {
-        "inputName": {
-          "label": "Nom",
-          "error1": "Le nom doit contenir au moins 2 caractères.",
-          "error2": "Le nom d'utilisateur a dépassé les 50 caractères."
-        },
-        "inputEmail": {
-          "label": "E-mail",
-          "error1": "L'e-mail est obligatoire.",
-          "error2": "Adresse e-mail invalide."
-        },
-        "inputMessage": {
-          "label": "Tapez votre message",
-          "error1": "Le message doit contenir au moins 5 caractères."
-        },
-        "toast": {
-          "success": {
-            "title": "Message envoyé avec succès !",
-            "description": "Je vous contacterai bientôt."
-          },
-          "error": {
-            "title": "Erreur lors de l'envoi du formulaire !",
-            "description": "Veuillez réessayer plus tard."
-          }
-        },
-        "button": "Envoyer le message"
-      }
-    },
-    "Footer": {
-      "title": "Un projet",
-      "subtitle": "en tête ?",
-      "button": "Contact"
-    },
-    "ModalSkills": {
-      "typescript": "Langage de programmation",
-      "mysql": "Base de données",
-      "aws": "Cloud"
     }
+  },
+  "Contact": {
+    "Jumbotron": {
+      "title": "Parlez-moi",
+      "subtitle": "De vos idées"
+    },
+    "Form": {
+      "inputName": {
+        "label": "Nom",
+        "error1": "Le nom doit contenir au moins 2 caractères.",
+        "error2": "Le nom d'utilisateur a dépassé les 50 caractères."
+      },
+      "inputEmail": {
+        "label": "E-mail",
+        "error1": "L'e-mail est obligatoire.",
+        "error2": "Adresse e-mail invalide."
+      },
+      "inputMessage": {
+        "label": "Tapez votre message",
+        "error1": "Le message doit contenir au moins 5 caractères."
+      },
+      "toast": {
+        "success": {
+          "title": "Message envoyé avec succès !",
+          "description": "Je vous contacterai bientôt."
+        },
+        "error": {
+          "title": "Erreur lors de l'envoi du formulaire !",
+          "description": "Veuillez réessayer plus tard."
+        }
+      },
+      "button": "Envoyer le message"
+    }
+  },
+  "Footer": {
+    "title": "Un projet",
+    "subtitle": "en tête ?",
+    "button": "Contact"
+  },
+  "ModalSkills": {
+    "typescript": "Langage de programmation",
+    "mysql": "Base de données",
+    "aws": "Cloud"
+  }
 }

@@ -4,7 +4,7 @@ const upwriteProject = {
   descriptionKey: "upWrite.description", // chave de tradução
   icon: "FaArrowTrendUp",
   siteUrl: "https://adidasshopping.vercel.app",
-  stroke: "#6D28D9",
+  palette: "#6D28D9",
   desktopImages: [
     "/images/upwrite/mockup-upwrite-web-1.png",
     "/images/upwrite/mockup-upwrite-web-2.png",

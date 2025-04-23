@@ -1,152 +1,164 @@
 {
-    "Header": {
-      "nav1": "Home",
-      "nav2": "About",
-      "nav3": "Projects",
-      "nav4": "Contact"
+  "Header": {
+    "nav1": "Home",
+    "nav2": "About",
+    "nav3": "Projects",
+    "nav4": "Contact"
+  },
+  "Home": {
+    "title_jumbotron": "Full Stack",
+    "subtitle_jumbotron": "Developer",
+    "Section2": {
+      "title": "I design, develop, and create optimized applications through good development practices.",
+      "button": "About me"
     },
-    "Home": {
-      "title_jumbotron": "Full Stack",
-      "subtitle_jumbotron": "Developer",
-      "Section2": {
-        "title": "I design, develop, and create optimized applications through good development practices.",
-        "button": "About me"
-      },
-      "Section3": {
-        "title": "* Recent Projects"
-      },
-      "Projects": {
-        "type": "Web development",
-        "button": "More projects",
-        "cursorLabel": "View"
-      }
+    "Section3": {
+      "title": "* Recent Projects"
     },
-    "About": {
-      "AboutMe": {
-        "section": "About Me"
-      },
-      "Competence": {
-        "section": "Experience in creating and maintaining APIs, landing pages, back office portals, and online stores. In addition to coding, I also monitor application performance and provide system support."
-      },
-      "Skills": {
-        "section": "Some technologies I use in my projects."
-      },
-      "Certifications": {
-        "section": "Certifications"
-      },
-      "Experience": {
-        "section": "My Journey",
-        "neway": {
-          "name": "Neway",
-          "position": "Full Stack Developer",
-          "first_year_company": "2024",
-          "last_year_company": "present"
-        },
-        "splitRisk": {
-          "name": "Split Risk",
-          "position": "Development Intern",
-          "first_year_company": "2022",
-          "last_year_company": "2024"
-        },
-        "onlineShopping": {
-          "name": "Online Shopping",
-          "position": "Hardware Maintenance Assistant",
-          "first_year_company": "2021",
-          "last_year_company": "2022"
-        }
-      },
-      "FeaturedWorks": {
-        "section": "Featured Projects",
-        "button": "View",
-        "adidas": {
-          "description": "Complete e-commerce with a wide range of products and fast checkout."
-        },
-        "lamborghini": {
-          "description": "Car gallery of the Italian luxury automobile brand."
-        }
-      },
-      "Services": {
-        "section": "Services",
-        "title": "I could help you with...",
-        "frontend": "I create intuitive interfaces with attention to detail, smooth interactions, and micro-animations that enhance user experience.",
-        "backend": "I develop back-ends focusing on efficient data management and scalability to support platform growth.",
-        "fullstack": "I deliver complete solutions combining front and back-end, ensuring high performance, scalability, and an enhanced experience."
-      },
-      "footer": {
-        "projects": "Projects"
-      }
+    "Projects": {
+      "type": "Web development",
+      "button": "More projects",
+      "cursorLabel": "View"
+    }
+  },
+  "About": {
+    "AboutMe": {
+      "section": "About Me"
+    },
+    "Competence": {
+      "section": "Experience in creating and maintaining APIs, landing pages, back office portals, and online stores. In addition to coding, I also monitor application performance and provide system support."
+    },
+    "Skills": {
+      "section": "Some technologies I use in my projects."
     },
     "Certifications": {
-      "section": "My certifications",
-      "cybersecurity": {
-        "description": "Introduction to Cybersecurity"
+      "section": "Certifications"
+    },
+    "Experience": {
+      "section": "My Journey",
+      "neway": {
+        "name": "Neway",
+        "position": "Full Stack Developer",
+        "first_year_company": "2024",
+        "last_year_company": "present"
       },
-      "machine-learning": {
-        "description": "AWS Machine Learning Foundations"
+      "splitRisk": {
+        "name": "Split Risk",
+        "position": "Development Intern",
+        "first_year_company": "2022",
+        "last_year_company": "2024"
       },
-      "cloud-foundations": {
-        "description": "AWS Cloud Foundations"
+      "onlineShopping": {
+        "name": "Online Shopping",
+        "position": "Hardware Maintenance Assistant",
+        "first_year_company": "2021",
+        "last_year_company": "2022"
+      }
+    },
+    "FeaturedWorks": {
+      "section": "Featured Projects",
+      "button": "View",
+      "adidas": {
+        "description": "Complete e-commerce with a wide range of products and fast checkout."
       },
-      "web-development": {
-        "description": "Full Stack Web Development"
+      "lamborghini": {
+        "description": "Car gallery of the Italian luxury automobile brand."
+      }
+    },
+    "Services": {
+      "section": "Services",
+      "title": "I could help you with...",
+      "frontend": "I create intuitive interfaces with attention to detail, smooth interactions, and micro-animations that enhance user experience.",
+      "backend": "I develop back-ends focusing on efficient data management and scalability to support platform growth.",
+      "fullstack": "I deliver complete solutions combining front and back-end, ensuring high performance, scalability, and an enhanced experience."
+    },
+    "footer": {
+      "projects": "Projects"
+    }
+  },
+  "Certifications": {
+    "section": "My certifications",
+    "cybersecurity": {
+      "description": "Introduction to Cybersecurity"
+    },
+    "machine-learning": {
+      "description": "AWS Machine Learning Foundations"
+    },
+    "cloud-foundations": {
+      "description": "AWS Cloud Foundations"
+    },
+    "web-development": {
+      "description": "Full Stack Web Development"
+    },
+    "footer": {
+      "projects": "Projects"
+    }
+  },
+  "Project": {
+    "project-details": {
+      "next": "Next Project...",
+      "viewSite": "View site",
+      "adidas": {
+        "description": "Complete e-commerce platform featuring a wide range of products and a fast, intuitive checkout process."
+      },
+      "darkBulls": {
+        "description": "Lamborghini car gallery showcasing iconic models and highlighting each car's key features and innovations."
+      },
+      "koffie": {
+        "description": "Prototype of a modern, responsive website designed to represent the visual identity of a fictional coffee shop named Koffie."
+      },
+      "upWrite": {
+        "description": "Web tool for creating and organizing notes, equipped with advanced text editing features."
+      },
+      "solarToy": {
+        "description": "Landing page developed to showcase a mini toy car powered by solar energy, emphasizing its main features."
       },
       "footer": {
-        "projects": "Projects"
+        "contact": "Contact"
       }
-    },
-    "Project": {
-      "project-details": {
-        "next": "Next project...",
-        "viewSite": "View site",
-        "adidas": {
-          "description": "Complete e-commerce platform with a wide variety of products and fast, intuitive checkout."
-        },
-        "footer": {
-          "contact": "Contact"
-        }
-      }
-    },
-    "Contact": {
-      "Jumbotron": {
-        "title": "Tell me",
-        "subtitle": "Your ideas"
-      },
-      "Form": {
-        "inputName": {
-          "label": "Name",
-          "error1": "The name must have at least 2 characters.",
-          "error2": "Username exceeded 50 characters."
-        },
-        "inputEmail": {
-          "label": "Email",
-          "error1": "Email is required.",
-          "error2": "Invalid email address."
-        },
-        "inputMessage": {
-          "label": "Type your message",
-          "error1": "The message must have at least 5 characters."
-        },
-        "toast": {
-          "success": {
-            "title": "Message sent successfully!",
-            "description": "I will contact you soon."
-          },
-          "error": {
-            "title": "Error sending the form!",
-            "description": "Please try again later."
-          }
-        },
-        "button": "Send message"
-      }
-    },
-    "Footer": {
-      "title": "Any project",
-      "subtitle": "in mind?",
-      "button": "Contact"
-    },
-    "ModalSkills": {
-      "typescript": "Programming language",
-      "mysql": "Database",
-      "aws": "Cloud"
     }
+  },
+  "Contact": {
+    "Jumbotron": {
+      "title": "Tell me",
+      "subtitle": "Your ideas"
+    },
+    "Form": {
+      "inputName": {
+        "label": "Name",
+        "error1": "The name must have at least 2 characters.",
+        "error2": "Username exceeded 50 characters."
+      },
+      "inputEmail": {
+        "label": "Email",
+        "error1": "Email is required.",
+        "error2": "Invalid email address."
+      },
+      "inputMessage": {
+        "label": "Type your message",
+        "error1": "The message must have at least 5 characters."
+      },
+      "toast": {
+        "success": {
+          "title": "Message sent successfully!",
+          "description": "I will contact you soon."
+        },
+        "error": {
+          "title": "Error sending the form!",
+          "description": "Please try again later."
+        }
+      },
+      "button": "Send message"
+    }
+  },
+  "Footer": {
+    "title": "Any project",
+    "subtitle": "in mind?",
+    "button": "Contact"
+  },
+  "ModalSkills": {
+    "typescript": "Programming language",
+    "mysql": "Database",
+    "aws": "Cloud"
+  }
 }

@@ -1,8 +1,7 @@
 const darkbullsProject = {
   name: "darkbulls",
   title: "dark bulls",
-  descriptionKey:
-    "Galeria de automóveis da Lamborghini, que apresenta modelos icônicos da marca e destaca as principais características e inovações de cada carro.", // chave de tradução
+  descriptionKey: "darkBulls.description", // chave de tradução
   icon: "SiLamborghini",
   siteUrl: "https://darkbullsshopping.vercel.app",
   mockupVideo: "/videos/aventador.mp4",
