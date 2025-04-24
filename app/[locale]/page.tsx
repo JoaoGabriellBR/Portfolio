@@ -16,8 +16,6 @@ import Projects from "@/components/projects";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { ScrollPage } from "@/components/scroll-page";
 import { Meteors } from "@/components/ui/meteors";
-import { useIsMounted } from "@/hooks/useIsMounted";
-import Loading from "@/components/loading";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/preloader";
@@ -47,7 +45,7 @@ export default function Home() {
   return (
     <>
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
+        {isLoading && <Preloader text="Olá"/>}
       </AnimatePresence>
 
       {!isLoading && <PageContent theme={theme} t={t} t2={t2} />}

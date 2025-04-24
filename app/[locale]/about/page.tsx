@@ -20,12 +20,13 @@ import { SiAdidas, SiLamborghini } from "react-icons/si";
 import { textSizes } from "@/utils/text-sizes";
 import { ButtonHover } from "@/components/ui/button-hover";
 import { GoArrowUpRight } from "react-icons/go";
+import PageWithLoader from "@/components/page-with-loader";
 
 export default function About() {
   const t = useTranslations("About");
 
   return (
-    <>
+    <PageWithLoader text={t("AboutMe.section")}>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
@@ -40,7 +41,7 @@ export default function About() {
         </main>
       </ReactLenis>
       <Footer page={t("footer.projects")} route="/projects" />
-    </>
+    </PageWithLoader>
   );
 }
 

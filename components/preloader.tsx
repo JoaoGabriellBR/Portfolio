@@ -3,28 +3,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { textSizes } from "@/utils/text-sizes";
 
-const words = [
-  "Bom dia",
-  "Bonjour",
-  "Buenos días",
-  "Good morning",
-  "Guten Morgen",
-];
-
 export const opacity = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 0.75,
-    transition: { duration: 1, delay: 0.2 },
-  },
+  initial: { opacity: 0 },
+  enter: { opacity: 100, transition: { duration: 1, delay: 0.2 } },
 };
 
 export const slideUp = {
-  initial: {
-    top: 0,
-  },
+  initial: { top: 0 },
   exit: {
     top: "-100vh",
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
@@ -32,29 +17,22 @@ export const slideUp = {
 };
 
 const introductionStyles =
-  "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-foreground dark:bg-neutral-950";
+  "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-neutral-950";
 const svgStyles = "absolute top-0 w-[100%] h-calc(100% + 300px)";
 const pathStyles = "fill-neutral-950";
-const paragraph = `${textSizes.xl3} flex text-foreground dark:text-white items-center absolute z-10 tracking-wide break-words` ;
+const paragraph = `${textSizes.xl4} flex text-white items-center absolute z-10 tracking-wide break-words`;
 const spanStyles = "block w-[10px] h-[10px] bg-white rounded-[50%] mr-[10px]";
 
-export default function Preloader() {
-  const [index, setIndex] = useState(0);
+type PreloaderProps = {
+  text: string;
+};
+
+export default function Preloader({ text }: PreloaderProps) {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
   }, []);
-
-  useEffect(() => {
-    if (index == words.length - 1) return;
-    setTimeout(
-      () => {
-        setIndex(index + 1);
-      },
-      index == 0 ? 1000 : 150
-    );
-  }, [index]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
@@ -92,7 +70,7 @@ export default function Preloader() {
             animate="enter"
           >
             <span className={spanStyles}></span>
-            {words[index]}
+            {text}
           </motion.p>
           <svg className={svgStyles}>
             <motion.path
@@ -100,7 +78,7 @@ export default function Preloader() {
               variants={curve}
               initial="initial"
               exit="exit"
-            ></motion.path>
+            />
           </svg>
         </>
       )}
