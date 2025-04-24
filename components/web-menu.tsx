@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import LanguageSelectorWeb from "./language-selector-web";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 type NavItems = {
   NAV_ITEMS: {
@@ -18,22 +19,25 @@ type NavItems = {
 
 export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
   const { theme } = useTheme();
+  const isMounted = useIsMounted();
 
   return (
     <div className="w-full flex flex-row items-center justify-between px-4">
       <motion.div className="flex items-center relative z-10 cursor-pointer">
-        <Link href="/">
-          <Image
-            src={
-              theme === "dark"
-                ? "/images/logo.png"
-                : "/images/logo-light-mode.png"
-            }
-            width={70}
-            height={70}
-            alt="Logotipo João Gabriel Silva"
-          />
-        </Link>
+        {isMounted && (
+          <Link href="/">
+            <Image
+              src={
+                theme === "dark"
+                  ? "/images/logo.png"
+                  : "/images/logo-light-mode.png"
+              }
+              width={70}
+              height={70}
+              alt="Logotipo João Gabriel Silva"
+            />
+          </Link>
+        )}
       </motion.div>
       <div className="hidden md:flex items-center gap-x-4">
         <BorderNavbar>

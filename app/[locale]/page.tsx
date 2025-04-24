@@ -16,11 +16,16 @@ import Projects from "@/components/projects";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { ScrollPage } from "@/components/scroll-page";
 import { Meteors } from "@/components/ui/meteors";
+import { useIsMounted } from "@/hooks/useIsMounted";
+import Loading from "@/components/loading";
 
 export default function Home() {
   const t = useTranslations("Home");
   const t2 = useTranslations("Header");
   const { theme } = useTheme();
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return <Loading />;
 
   return (
     <>
@@ -28,7 +33,7 @@ export default function Home() {
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
           <div className="flex flex-col-reverse lg:flex-col">
-            {renderJumbotron(theme)}
+            {isMounted && renderJumbotron(theme)}
             {renderSection2(t)}
           </div>
           <SmoothScrollHero />
