@@ -18,22 +18,40 @@ import { ScrollPage } from "@/components/scroll-page";
 import { Meteors } from "@/components/ui/meteors";
 import { useIsMounted } from "@/hooks/useIsMounted";
 import Loading from "@/components/loading";
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import Preloader from "@/components/preloader";
 
 export default function Home() {
   const t = useTranslations("Home");
   const t2 = useTranslations("Header");
   const { theme } = useTheme();
-  const isMounted = useIsMounted();
 
-  if (!isMounted) return <Loading />;
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      // const LocomotiveScroll = (await import("../../")).default;
+      // const locomotiveScroll = new LocomotiveScroll();
+
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.cursor = "default";
+        window.scrollTo(0, 0);
+      }, 2000);
+    })();
+  }, []);
 
   return (
     <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
+          <AnimatePresence mode="wait">
+            {isLoading && <Preloader />}
+          </AnimatePresence>
           <div className="flex flex-col-reverse lg:flex-col">
-            {isMounted && renderJumbotron(theme)}
+            {renderJumbotron(theme)}
             {renderSection2(t)}
           </div>
           <SmoothScrollHero />
