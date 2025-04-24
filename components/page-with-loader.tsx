@@ -24,7 +24,7 @@ export default function PageWithLoader({
       setIsLoading(false);
       document.body.style.cursor = "default";
       window.scrollTo(0, 0);
-    }, 800);
+    }, pathname === "/" ? 2000 : 800);
     return () => clearTimeout(timeout);
   }, [pathname]);
 

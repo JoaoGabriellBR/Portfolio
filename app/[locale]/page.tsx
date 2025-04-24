@@ -19,43 +19,33 @@ import { Meteors } from "@/components/ui/meteors";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/preloader";
+import PageWithLoader from "@/components/page-with-loader";
 
 export default function Home() {
   const t = useTranslations("Home");
   const t2 = useTranslations("Header");
   const { theme } = useTheme();
 
-  const [isMounted, setIsMounted] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isMounted, setIsMounted] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsMounted(true);
+  // useEffect(() => {
+  //   setIsMounted(true);
 
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.cursor = "default";
-      window.scrollTo(0, 0);
-    }, 2000);
+  //   const timeout = setTimeout(() => {
+  //     setIsLoading(false);
+  //     document.body.style.cursor = "default";
+  //     window.scrollTo(0, 0);
+  //   }, 2000);
 
-    return () => clearTimeout(timeout);
-  }, []);
+  //   return () => clearTimeout(timeout);
+  // }, []);
 
-  if (!isMounted) return null;
+  // if (!isMounted) return null;
+
 
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader text="Olá"/>}
-      </AnimatePresence>
-
-      {!isLoading && <PageContent theme={theme} t={t} t2={t2} />}
-    </>
-  );
-}
-
-function PageContent({ theme, t, t2 }: any) {
-  return (
-    <>
+    <PageWithLoader text="Olá pessoas">
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
@@ -69,9 +59,29 @@ function PageContent({ theme, t, t2 }: any) {
         </main>
       </ReactLenis>
       <Footer page={t2("nav2")} route="/about" />
-    </>
+    </PageWithLoader>
   );
 }
+
+// function PageContent({ theme, t, t2 }: any) {
+//   return (
+//     <PageWithLoader text="Olá pessoas">
+//       <Header />
+//       <ReactLenis root options={{ lerp: 0.05 }}>
+//         <main className="flex flex-col">
+//           <div className="flex flex-col-reverse lg:flex-col">
+//             {renderJumbotron(theme)}
+//             {renderSection2(t)}
+//           </div>
+//           <SmoothScrollHero />
+//           {renderSection3(t)}
+//           <Projects />
+//         </main>
+//       </ReactLenis>
+//       <Footer page={t2("nav2")} route="/about" />
+//     </PageWithLoader>
+//   );
+// }
 
 function renderJumbotron(theme: any) {
   return (
