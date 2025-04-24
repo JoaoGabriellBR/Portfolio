@@ -27,29 +27,40 @@ export default function Home() {
   const t2 = useTranslations("Header");
   const { theme } = useTheme();
 
+  const [isMounted, setIsMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      // const LocomotiveScroll = (await import("../../")).default;
-      // const locomotiveScroll = new LocomotiveScroll();
+    setIsMounted(true);
 
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = "default";
-        window.scrollTo(0, 0);
-      }, 2000);
-    })();
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = "default";
+      window.scrollTo(0, 0);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
   }, []);
 
+  if (!isMounted) return null;
+
+  return (
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+
+      {!isLoading && <PageContent theme={theme} t={t} t2={t2} />}
+    </>
+  );
+}
+
+function PageContent({ theme, t, t2 }: any) {
   return (
     <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
-          <AnimatePresence mode="wait">
-            {isLoading && <Preloader />}
-          </AnimatePresence>
           <div className="flex flex-col-reverse lg:flex-col">
             {renderJumbotron(theme)}
             {renderSection2(t)}

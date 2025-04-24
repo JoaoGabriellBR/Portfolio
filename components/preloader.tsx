@@ -1,16 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { textSizes } from "@/utils/text-sizes";
 
 const words = [
-  "Hello",
+  "Bom dia",
   "Bonjour",
-  "Ciao",
-  "Olà",
-  "やあ",
-  "Hallå",
-  "Guten tag",
-  "Hallo",
+  "Buenos días",
+  "Good morning",
+  "Guten Morgen",
 ];
 
 export const opacity = {
@@ -34,10 +32,10 @@ export const slideUp = {
 };
 
 const introductionStyles =
-  "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-neutral-950";
+  "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-foreground dark:bg-neutral-950";
 const svgStyles = "absolute top-0 w-[100%] h-calc(100% + 300px)";
 const pathStyles = "fill-neutral-950";
-const paragraph = "flex text-white text-[42px] items-center absolute z-10";
+const paragraph = `${textSizes.xl3} flex text-foreground dark:text-white items-center absolute z-10 tracking-wide break-words` ;
 const spanStyles = "block w-[10px] h-[10px] bg-white rounded-[50%] mr-[10px]";
 
 export default function Preloader() {
