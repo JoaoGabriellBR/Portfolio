@@ -20,32 +20,16 @@ import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/preloader";
 import PageWithLoader from "@/components/page-with-loader";
+import { DetectReload } from "@/components/detect-reload";
 
 export default function Home() {
   const t = useTranslations("Home");
   const t2 = useTranslations("Header");
   const { theme } = useTheme();
 
-  // const [isMounted, setIsMounted] = useState(false);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   setIsMounted(true);
-
-  //   const timeout = setTimeout(() => {
-  //     setIsLoading(false);
-  //     document.body.style.cursor = "default";
-  //     window.scrollTo(0, 0);
-  //   }, 2000);
-
-  //   return () => clearTimeout(timeout);
-  // }, []);
-
-  // if (!isMounted) return null;
-
-
   return (
-    <PageWithLoader text="Olá pessoas">
+    <PageWithLoader text={t2("nav1")}>
+      <DetectReload />
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">

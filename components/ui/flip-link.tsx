@@ -17,8 +17,13 @@ export const FlipLink = ({
 }) => {
   const textColor = "tracking-wide break-words text-foreground dark:text-white";
 
+  const handleClick = () => {
+    sessionStorage.setItem("AcessouPeloFlipLink", "true");
+    sessionStorage.setItem("AcessouPeloRecarregamento", "false");
+  };
+
   return (
-    <Link href={href}>
+    <Link href={href} onClick={handleClick}>
       <motion.div
         initial="initial"
         whileHover="hovered"

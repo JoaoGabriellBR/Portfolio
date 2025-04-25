@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { DetectReload } from "@/components/detect-reload";
 
 const poppins = Poppins({
   subsets: ["latin"],

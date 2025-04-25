@@ -96,7 +96,9 @@ export default function Preloader({ text }: PreloaderProps) {
     >
       {dimension.width > 0 && (
         <>
-          {pathname === "/" ? (
+          {pathname === "/" &&
+          sessionStorage.getItem("AcessouPeloRecarregamento") === "true" &&
+          sessionStorage.getItem("AcessouPeloFlipLink") === "false" ? (
             <motion.p
               className={paragraph}
               variants={opacity}
