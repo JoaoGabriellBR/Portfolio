@@ -6,12 +6,13 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ProfileForm } from "@/components/form";
 import { DrawCircleText } from "@/components/draw-circle-text";
+import PageWithLoader from "@/components/page-with-loader";
 
 export default function Contact() {
-  const t = useTranslations("Contact.Jumbotron");
+  const t = useTranslations("Contact");
 
   return (
-    <>
+    <PageWithLoader text={t("section")}>
       <Header />
       <ReactLenis
         root
@@ -40,6 +41,6 @@ export default function Contact() {
         </main>
       </ReactLenis>
       <Footer page="gmail.com" route="mailTo: joaoname19@gmail.com" />
-    </>
+    </PageWithLoader>
   );
 }

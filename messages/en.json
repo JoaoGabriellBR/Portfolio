@@ -120,10 +120,9 @@
     }
   },
   "Contact": {
-    "Jumbotron": {
-      "title": "Tell me",
-      "subtitle": "Your ideas"
-    },
+    "section": "Contact",
+    "title": "Tell me",
+    "subtitle": "Your ideas",
     "Form": {
       "inputName": {
         "label": "Name",

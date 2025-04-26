@@ -4,16 +4,15 @@ import Footer from "@/components/footer";
 import Typography from "@/components/ui/typography";
 import { ReactLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
-import GalleryComponent from "@/components/gallery/page";
-import SmallImagesGallery from "@/components/gallery/description";
 import { ScrollPage } from "@/components/scroll-page";
 import Projects from "@/components/projects";
+import PageWithLoader from "@/components/page-with-loader";
 
 export default function ProjectsPage() {
   const t = useTranslations("Project");
 
   return (
-    <>
+    <PageWithLoader text={t("section")}>
       <Header />
       <ReactLenis
         root
@@ -41,6 +40,6 @@ export default function ProjectsPage() {
         </main>
       </ReactLenis>
       <Footer page={t("project-details.footer.contact")} route="/contact" />
-    </>
+    </PageWithLoader>
   );
 }

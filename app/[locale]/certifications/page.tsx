@@ -6,12 +6,13 @@ import { ReactLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
 import { ScrollPage } from "@/components/scroll-page";
 import MyCertifications from "@/components/my-certifications";
+import PageWithLoader from "@/components/page-with-loader";
 
 export default function Certifications() {
   const t = useTranslations("Certifications");
 
   return (
-    <>
+    <PageWithLoader text={t("section")}>
       <Header />
       <ReactLenis
         root
@@ -20,7 +21,6 @@ export default function Certifications() {
         }}
       >
         <main className="flex flex-col gap-y-6 lg:gap-y-10">
-          {/* <section className="relative container mx-auto px-4 flex flex-col items-center justify-center text-center pt-12 min-h-[calc(100vh-80px)]"> */}
           <section className="relative container mx-auto px-4 flex flex-col items-start justify-center text-start pt-12 min-h-[80vh]">
             <Typography
               text={t("section")}
@@ -40,6 +40,6 @@ export default function Certifications() {
         </main>
       </ReactLenis>
       <Footer page={t("footer.projects")} route="/projects" />
-    </>
+    </PageWithLoader>
   );
 }
