@@ -3,13 +3,28 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { textSizes } from "@/utils/text-sizes";
 import { usePathname } from "@/i18n/navigation";
+import {
+  RiPokerClubsFill,
+  RiPokerDiamondsFill,
+  RiPokerSpadesFill,
+  RiPokerHeartsFill,
+} from "react-icons/ri";
+
+// const greetings = [
+//   "Bom dia",
+//   "Bonjour",
+//   "Buenos días",
+//   "Good morning",
+//   "Guten Morgen",
+// ];
 
 const greetings = [
-  "Bom dia",
-  "Bonjour",
-  "Buenos días",
-  "Good morning",
-  "Guten Morgen",
+  <RiPokerClubsFill className={`${textSizes.xl5} text-white`} />,
+  <RiPokerDiamondsFill className={`${textSizes.xl5} text-white`} />,
+  <RiPokerSpadesFill className={`${textSizes.xl5} text-white`} />,
+  <RiPokerHeartsFill className={`${textSizes.xl5} text-white`} />,
+  <RiPokerDiamondsFill className={`${textSizes.xl5} text-white`} />,
+  <RiPokerSpadesFill className={`${textSizes.xl5} text-white`} />,
 ];
 
 export const opacity = {
@@ -26,11 +41,10 @@ export const slideUp = {
 };
 
 const introductionStyles =
-  "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-neutral-950";
+  "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-[#050505]";
 const svgStyles = "absolute top-0 w-full h-calc(100vh + 300px)";
-const pathStyles = "fill-neutral-950";
-const paragraph = `${textSizes.xl4} flex text-white items-center absolute z-10 tracking-wide break-words`;
-const spanStyles = "block w-[10px] h-[10px] bg-white rounded-full mr-[10px]";
+const pathStyles = "fill-[#050505]";
+const paragraph = `${textSizes.xl3} flex flex-row gap-4 text-white items-center absolute z-10 tracking-wide break-words`;
 
 type PreloaderProps = {
   text: string;
@@ -39,6 +53,7 @@ type PreloaderProps = {
 export default function Preloader({ text }: PreloaderProps) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [showGreetings, setShowGreetings] = useState<boolean | null>(null); // null enquanto não decide
   const pathname = usePathname();
 
   useEffect(() => {
@@ -51,9 +66,18 @@ export default function Preloader({ text }: PreloaderProps) {
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 1000 : 150
+      index == 0 ? 700 : 200
     );
   }, [index]);
+
+  useEffect(() => {
+    const isHome = pathname === "/";
+    const isReload =
+      sessionStorage.getItem("AcessouPeloRecarregamento") === "true";
+    const isFlipLink = sessionStorage.getItem("AcessouPeloFlipLink") === "true";
+
+    setShowGreetings(isHome && isReload && !isFlipLink);
+  }, [pathname]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
@@ -94,20 +118,12 @@ export default function Preloader({ text }: PreloaderProps) {
       }}
       className={`${introductionStyles} overflow-hidden`}
     >
-      {dimension.width > 0 && (
+      {dimension.width > 0 && showGreetings !== null && (
         <>
-          {pathname === "/" &&
-          sessionStorage.getItem("AcessouPeloRecarregamento") === "true" &&
-          sessionStorage.getItem("AcessouPeloFlipLink") === "false" ? (
-            <motion.p
-              className={paragraph}
-              variants={opacity}
-              initial="initial"
-              animate="enter"
-            >
-              <span className={spanStyles}></span>
+          {showGreetings ? (
+            <div className="flex items-center justify-center">
               {greetings[index]}
-            </motion.p>
+            </div>
           ) : (
             <motion.p
               className={paragraph}
@@ -115,7 +131,7 @@ export default function Preloader({ text }: PreloaderProps) {
               initial="initial"
               animate="enter"
             >
-              <span className={spanStyles}></span>
+              <RiPokerDiamondsFill className={`${textSizes.md} text-white`} />
               {text}
             </motion.p>
           )}

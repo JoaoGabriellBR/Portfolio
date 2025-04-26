@@ -16,9 +16,6 @@ import Projects from "@/components/projects";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { ScrollPage } from "@/components/scroll-page";
 import { Meteors } from "@/components/ui/meteors";
-import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import Preloader from "@/components/preloader";
 import PageWithLoader from "@/components/page-with-loader";
 import { DetectReload } from "@/components/detect-reload";
 
@@ -29,8 +26,8 @@ export default function Home() {
 
   return (
     <PageWithLoader text={t2("nav1")}>
-      <DetectReload />
       <Header />
+      <DetectReload />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
           <div className="flex flex-col-reverse lg:flex-col">
@@ -46,26 +43,6 @@ export default function Home() {
     </PageWithLoader>
   );
 }
-
-// function PageContent({ theme, t, t2 }: any) {
-//   return (
-//     <PageWithLoader text="Olá pessoas">
-//       <Header />
-//       <ReactLenis root options={{ lerp: 0.05 }}>
-//         <main className="flex flex-col">
-//           <div className="flex flex-col-reverse lg:flex-col">
-//             {renderJumbotron(theme)}
-//             {renderSection2(t)}
-//           </div>
-//           <SmoothScrollHero />
-//           {renderSection3(t)}
-//           <Projects />
-//         </main>
-//       </ReactLenis>
-//       <Footer page={t2("nav2")} route="/about" />
-//     </PageWithLoader>
-//   );
-// }
 
 function renderJumbotron(theme: any) {
   return (
