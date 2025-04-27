@@ -36,13 +36,6 @@ export const projects: ProjectsProps[] = [
     type: "Full Stack",
   },
   {
-    title: "World News",
-    name: "worldnews",
-    src: "/images/worldnews/worldnews.png",
-    href: "h/projects/worldnews",
-    type: "Front end",
-  },
-  {
     title: "Solar Toy",
     name: "solartoy",
     src: "/images/solartoy/solartoy.png",

@@ -25,12 +25,6 @@ const projects = [
     handle2: "upwrite/upwrite-small-image.png",
     projectRoute: "/upwrite",
   },
-  {
-    name: "World News",
-    handle: "worldnews/worldnews-jumbotron.png",
-    handle2: "worldnews/worldnews-small-image.png",
-    projectRoute: "/worldnews",
-  },
 ];
 
 export default function GalleryComponent() {

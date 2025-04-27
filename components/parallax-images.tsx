@@ -7,6 +7,37 @@ import {
   useTransform,
 } from "framer-motion";
 
+const images = [
+  {
+    src: "/images/parallax/alarm-clock.png",
+    alt: "Small image of an alarm clock",
+    start: -200,
+    end: 200,
+    className: "w-1/3",
+  },
+  {
+    src: "/images/parallax/adidas.png",
+    alt: "Small image of adidas project",
+    start: 200,
+    end: -250,
+    className: "mx-auto w-2/3",
+  },
+  {
+    src: "/images/parallax/coffe.png",
+    alt: "Small image of Koffie project",
+    start: -200,
+    end: 200,
+    className: "ml-auto w-1/3",
+  },
+  {
+    src: "/images/parallax/lamborghini.png",
+    alt: "Small image of dark bulls project",
+    start: 0,
+    end: -500,
+    className: "ml-24 w-5/12",
+  },
+];
+
 export const SmoothScrollHero = () => {
   return (
     <ReactLenis
@@ -20,7 +51,7 @@ export const SmoothScrollHero = () => {
   );
 };
 
-const SECTION_HEIGHT = 1700;
+const SECTION_HEIGHT = 2200;
 
 const Hero = () => {
   return (
@@ -61,7 +92,7 @@ const ParallaxBigImage = () => {
         clipPath,
         backgroundSize,
         opacity,
-        backgroundImage: "url('/images/adidas/adidas-jumbotron.png')",
+        backgroundImage: "url('/images/darkbulls/mockup-darkbulls-web-4.png')",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -72,34 +103,16 @@ const ParallaxBigImage = () => {
 const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
-      <ParallaxImg
-        src="/images/adidas/adidas-small-image.png"
-        alt="Image of adidas project"
-        start={-200}
-        end={200}
-        className="w-1/3"
-      />
-      <ParallaxImg
-        src="/images/darkbulls/lamborghini-jumbotron.png"
-        alt="Image of lamborghini project"
-        start={200}
-        end={-250}
-        className="mx-auto w-2/3"
-      />
-      <ParallaxImg
-        src="/images/worldnews/worldnews-small-image.png"
-        alt="Small image of world news project"
-        start={-200}
-        end={200}
-        className="ml-auto w-1/3"
-      />
-      <ParallaxImg
-        src="/images/upwrite/upwrite-small-image.png"
-        alt="Small image of up write project"
-        start={0}
-        end={-500}
-        className="ml-24 w-5/12"
-      />
+      {images.map((img, index) => (
+        <ParallaxImg
+          key={index}
+          src={img.src}
+          alt={img.alt}
+          start={img.start}
+          end={img.end}
+          className={img.className}
+        />
+      ))}
     </div>
   );
 };
