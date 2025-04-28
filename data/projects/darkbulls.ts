@@ -4,7 +4,7 @@ const darkbullsProject = {
   descriptionKey: "darkBulls.description", // chave de tradução
   icon: "SiLamborghini",
   siteUrl: "https://darkbullsshopping.vercel.app",
-  mockupVideo: "/videos/aventador.mp4",
+  mockupVideo: "/videos/darkbulls/aventador.mp4",
   desktopImages: [
     "/images/darkbulls/mockup-darkbulls-web-1.png",
     "/images/darkbulls/mockup-darkbulls-web-2.png",

@@ -1,21 +1,24 @@
 "use client";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import { ReactLenis } from "lenis/react";
-import Typography from "@/components/ui/typography";
-import { MagneticButton } from "@/components/ui/button-magnetic";
-import { TfiArrowTopRight } from "react-icons/tfi";
-import { Link } from "@/i18n/navigation";
+
 import Image from "next/image";
-import MonitorMockup from "@/components/ui/monitor-mockup";
-import SmartphoneMockup from "@/components/ui/smartphone-mockup";
-import { ScrollPage } from "@/components/scroll-page";
-import { DrawCircleText } from "@/components/draw-circle-text";
-import Projects from "@/components/projects";
+import { ReactLenis } from "lenis/react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { iconMap } from "@/utils/icons";
 import { textSizes } from "@/utils/text-sizes";
-import { useTranslations } from "next-intl";
 import VideoMockup from "./full-screen-video";
+import PageWithLoader from "./page-with-loader";
+import { TfiArrowTopRight } from "react-icons/tfi";
+
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Typography from "@/components/ui/typography";
+import MonitorMockup from "@/components/ui/monitor-mockup";
+import SmartphoneMockup from "@/components/ui/smartphone-mockup";
+import Projects from "@/components/projects";
+import { ScrollPage } from "@/components/scroll-page";
+import { DrawCircleText } from "@/components/draw-circle-text";
+import { MagneticButton } from "@/components/ui/button-magnetic";
 
 type ProjectData = {
   title: string;
@@ -40,30 +43,19 @@ export default function ProjectDetails({
   project,
   currentProject,
 }: ProjectDetailsProps) {
-  const Icon = iconMap[project.icon as keyof typeof iconMap];
   const t = useTranslations("Project.project-details");
+  const Icon = iconMap[project.icon as keyof typeof iconMap];
 
   return (
-    <>
+    <PageWithLoader text={project.title}>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
-        <main className="flex flex-col gap-y-2 lg:gap-y-10">
-          {renderHero(project.title, Icon)}
-          {renderDescriptionSection(
-            t(project.descriptionKey),
-            project.siteUrl,
-            t("viewSite")
-          )}
-          {!!project.mockupVideo?.length && renderVideoSection()}
-          {!!project.fullImage?.length && renderFullImage(project.fullImage)}
-          {!!project.mobileImages?.length &&
-            renderMobileMockups(project.mobileImages)}
-          {!!project.desktopImages?.length &&
-            renderDesktopMockups(project.desktopImages)}
-          {!!project.smallImages?.length &&
-            renderSmallImages(project.smallImages, project.title)}
-          {renderCallToAction(t("next"), project.palette, currentProject)}
-        </main>
+        <MainContent
+          project={project}
+          currentProject={currentProject}
+          translation={t}
+          Icon={Icon}
+        />
       </ReactLenis>
       <Footer
         page={t("footer.contact")}
@@ -71,16 +63,66 @@ export default function ProjectDetails({
         palette={project.palette}
         arrowFooterColor={project.arrowFooterColor}
       />
-    </>
+    </PageWithLoader>
   );
 }
 
-// Subcomponent render functions
+type MainContentProps = {
+  project: ProjectData;
+  currentProject: string;
+  translation: ReturnType<typeof useTranslations>;
+  Icon: React.ElementType;
+};
 
-function renderHero(title: string, Icon: React.ElementType) {
+function MainContent({
+  project,
+  currentProject,
+  translation,
+  Icon,
+}: MainContentProps) {
   return (
-    <section className="relative container mx-auto px-4 flex flex-col items-center justify-center space-y-4 text-center pt-12 min-h-[calc(100vh-80px)]">
-      <div className="flex flex-row items-center justify-between gap-4 text-center mt-[-7rem]">
+    <main className="flex flex-col gap-y-2 lg:gap-y-10">
+      <HeroSection title={project.title} Icon={Icon} />
+      <DescriptionSection
+        description={translation(project.descriptionKey)}
+        siteUrl={project.siteUrl}
+        buttonText={translation("viewSite")}
+      />
+      {project.mockupVideo && <VideoSection videoSrc={project.mockupVideo} />}
+      {project.fullImage && <FullImageSection imageSrc={project.fullImage} />}
+      {project.mobileImages && (
+        <MobileMockupsSection images={project.mobileImages} />
+      )}
+      {project.desktopImages && (
+        <DesktopMockupsSection images={project.desktopImages} />
+      )}
+      {project.smallImages && (
+        <SmallImagesSection
+          images={project.smallImages}
+          title={project.title}
+        />
+      )}
+      <CallToActionSection
+        nextText={translation("next")}
+        palette={project.palette}
+        currentProject={currentProject}
+      />
+    </main>
+  );
+}
+
+// --- Sections ---
+
+function HeroSection({
+  title,
+  Icon,
+}: {
+  title: string;
+  Icon: React.ElementType;
+}) {
+  return (
+    <section className="relative container mx-auto px-4 flex flex-col items-center justify-center text-center pt-12 min-h-[calc(100vh-80px)]">
+      <div className="flex flex-row items-center justify-between gap-4 -mt-28">
         <Icon className={`${textSizes.xl5} text-foreground dark:text-white`} />
         <Typography
           text={title}
@@ -89,18 +131,22 @@ function renderHero(title: string, Icon: React.ElementType) {
           letterPadding={false}
         />
       </div>
-      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-12 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-0">
+      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0">
         <ScrollPage sectionLink="#project-description" />
       </div>
     </section>
   );
 }
 
-function renderDescriptionSection(
-  description: string,
-  siteUrl: string,
-  buttonText: string
-) {
+function DescriptionSection({
+  description,
+  siteUrl,
+  buttonText,
+}: {
+  description: string;
+  siteUrl: string;
+  buttonText: string;
+}) {
   return (
     <section
       id="project-description"
@@ -128,21 +174,21 @@ function renderDescriptionSection(
   );
 }
 
-function renderVideoSection() {
+function VideoSection({ videoSrc }: { videoSrc: string }) {
   return (
     <section className="relative container mx-auto px-4 overflow-hidden">
-      <VideoMockup src="/videos/darkbulls/aventador.mp4" autoPlay={true} />
+      <VideoMockup src={videoSrc} autoPlay />
     </section>
   );
 }
 
-function renderFullImage(imageSrc: string) {
+function FullImageSection({ imageSrc }: { imageSrc: string }) {
   return (
     <section className="w-full mx-auto px-4 min-h-[50vh] lg:min-h-screen mb-16 lg:mb-0 flex items-start justify-center">
       <MonitorMockup>
         <Image
           src={imageSrc}
-          alt="Mockup image"
+          alt="Full screen mockup"
           fill
           className="rounded-[3rem] h-[90%]"
         />
@@ -151,15 +197,15 @@ function renderFullImage(imageSrc: string) {
   );
 }
 
-function renderMobileMockups(images: string[]) {
+function MobileMockupsSection({ images }: { images: string[] }) {
   return (
-    <section className="w-full min-h-screen flex items-center rounded-[2rem]">
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-16 flex-wrap">
-        {images.map((src, i) => (
-          <SmartphoneMockup key={i}>
+    <section className="w-full min-h-screen flex items-center">
+      <div className="container mx-auto px-4 flex flex-wrap gap-16 items-center justify-between">
+        {images.map((src, index) => (
+          <SmartphoneMockup key={index}>
             <Image
               src={src}
-              alt={`Mockup ${i + 1}`}
+              alt={`Mobile mockup ${index + 1}`}
               fill
               className="rounded-[3rem] h-[90%]"
             />
@@ -170,12 +216,12 @@ function renderMobileMockups(images: string[]) {
   );
 }
 
-function renderDesktopMockups(images: string[]) {
+function DesktopMockupsSection({ images }: { images: string[] }) {
   return (
-    <section className="w-full min-h-screen mt-[8rem]">
-      {images.map((src, i) => (
+    <section className="w-full min-h-screen mt-32">
+      {images.map((src, index) => (
         <div
-          key={i}
+          key={index}
           className="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-fixed"
           style={{ backgroundImage: `url(${src})` }}
         />
@@ -184,44 +230,48 @@ function renderDesktopMockups(images: string[]) {
   );
 }
 
-function renderSmallImages(images: string[], title: string) {
+function SmallImagesSection({
+  images,
+  title,
+}: {
+  images: string[];
+  title: string;
+}) {
   return (
-    <section className="container mx-auto px-4 mt-[10rem] flex flex-col justify-start items-center gap-16">
-      {images[0] && (
-        <div className="flex items-start justify-start w-full min-h-[50vh]">
+    <section className="container mx-auto px-4 mt-40 flex flex-col items-center gap-16">
+      {images.map((src, index) => (
+        <div
+          key={index}
+          className={`flex w-full min-h-[50vh] ${
+            index === 0 ? "items-start justify-start" : "items-end justify-end"
+          }`}
+        >
           <Image
-            src={images[0]}
+            src={src}
             width={700}
             height={700}
-            alt={`${title}`}
+            alt={`${title} small image ${index + 1}`}
             className="object-contain pointer-events-none"
           />
         </div>
-      )}
-      {images[1] && (
-        <div className="flex items-end justify-end w-full min-h-[50vh]">
-          <Image
-            src={images[1]}
-            width={700}
-            height={700}
-            alt={`${title}`}
-            className="object-contain pointer-events-none"
-          />
-        </div>
-      )}
+      ))}
     </section>
   );
 }
 
-function renderCallToAction(
-  nextText: string,
-  palette: any,
-  currentProject: string
-) {
+function CallToActionSection({
+  nextText,
+  palette,
+  currentProject,
+}: {
+  nextText: string;
+  palette?: string;
+  currentProject: string;
+}) {
   const [firstWord, secondWord] = nextText.split(" ");
 
   return (
-    <section className="min-h-[calc(8vh)] lg:min-h-[calc(50vh)] mt-[10rem] flex flex-col items-center justify-center">
+    <section className="min-h-[8vh] lg:min-h-[50vh] mt-40 flex flex-col items-center justify-center">
       <DrawCircleText
         firstWord={firstWord}
         secondWord={secondWord}
@@ -232,3 +282,32 @@ function renderCallToAction(
     </section>
   );
 }
+
+// function renderSmallImages(images: string[], title: string) {
+//   return (
+//     <section className="container mx-auto px-4 mt-[10rem] flex flex-col justify-start items-center gap-16">
+//       {images[0] && (
+//         <div className="flex items-start justify-start w-full min-h-[50vh]">
+//           <Image
+//             src={images[0]}
+//             width={700}
+//             height={700}
+//             alt={`${title}`}
+//             className="object-contain pointer-events-none"
+//           />
+//         </div>
+//       )}
+//       {images[1] && (
+//         <div className="flex items-end justify-end w-full min-h-[50vh]">
+//           <Image
+//             src={images[1]}
+//             width={700}
+//             height={700}
+//             alt={`${title}`}
+//             className="object-contain pointer-events-none"
+//           />
+//         </div>
+//       )}
+//     </section>
+//   );
+// }
