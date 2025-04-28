@@ -200,7 +200,7 @@ function FullImageSection({ imageSrc }: { imageSrc: string }) {
 function MobileMockupsSection({ images }: { images: string[] }) {
   return (
     <section className="w-full min-h-screen flex items-center">
-      <div className="container mx-auto px-4 flex flex-wrap gap-16 items-center justify-between">
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row flex-wrap gap-16 items-center justify-center lg:justify-between">
         {images.map((src, index) => (
           <SmartphoneMockup key={index}>
             <Image
