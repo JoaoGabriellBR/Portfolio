@@ -53,7 +53,7 @@ const renderBackgroundImage = () => {
         width={1000}
         height={1000}
         alt=""
-        className="absolute top-0 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] opacity-15 -scale-x-100 pointer-events-none"
+        className="absolute top-0 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] opacity-20 dark:opacity-15 -scale-x-100 pointer-events-none"
         style={{
           WebkitMaskImage: `
             linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
