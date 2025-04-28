@@ -94,4 +94,4 @@ export const MagneticButton = ({
       {children}
     </motion.div>
   );
-}
+};

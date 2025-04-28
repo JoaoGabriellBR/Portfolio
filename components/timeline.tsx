@@ -22,7 +22,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
 
   return (
     <section className="place-self-start w-full">
-      {jobs.map((job: any, index: any) => {
+      {jobs.map((job: any, index: number) => {
         return (
           <div
             onMouseEnter={() => {
@@ -82,7 +82,7 @@ export const Timeline = ({ jobs }: { jobs: any }) => {
       rounded-[2rem]"
         className="rounded-[2rem] absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
       >
-        {jobs.map((job: any, index: any) => (
+        {jobs.map((job: any, index: number) => (
           <div
             key={`modal_${index}`}
             className="flex h-full w-full items-center justify-center shadow-lg rounded-[2rem]"

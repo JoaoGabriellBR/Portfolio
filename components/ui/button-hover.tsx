@@ -1,4 +1,3 @@
-import Typography from "./typography";
 import { Link } from "@/i18n/navigation";
 
 export const ButtonHover = ({ children, href, className }: any) => {

@@ -98,7 +98,7 @@ export default function Skills() {
         rounded-[2rem]"
         className="rounded-[2rem] absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
       >
-        {skills.map((skill: any, index: any) => (
+        {skills.map((skill: any, index: number) => (
           <div
             key={`modal_${index}`}
             className="flex h-full w-full items-center justify-center shadow-lg bg-foreground dark:bg-[#0c0c0c] rounded-[2rem]"
