@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaGlobe } from "react-icons/fa";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { MagneticButton } from "./ui/button-magnetic";

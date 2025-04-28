@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Typography from "@/components/ui/typography";
-import { MagneticButton } from "@/components/ui/button-magnetic";
 import { RiPokerSpadesFill } from "react-icons/ri";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { Link } from "@/i18n/navigation";
 import { ButtonHover } from "./ui/button-hover";
 import { GoArrowUpRight } from "react-icons/go";
-import { SiAdidas } from "react-icons/si";
 import { textSizes } from "@/utils/text-sizes";
 import { useTranslations } from "next-intl";
 

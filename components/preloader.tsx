@@ -10,14 +10,6 @@ import {
   RiPokerHeartsFill,
 } from "react-icons/ri";
 
-// const greetings = [
-//   "Bom dia",
-//   "Bonjour",
-//   "Buenos días",
-//   "Good morning",
-//   "Guten Morgen",
-// ];
-
 const greetings = [
   <RiPokerClubsFill className={`${textSizes.xl5} text-white`} />,
   <RiPokerDiamondsFill className={`${textSizes.xl5} text-white`} />,

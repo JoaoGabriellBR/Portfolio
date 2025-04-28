@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import ProjectDetails from "@/components/project-details";
 import myProjects, { ProjectName } from "@/data/projects";
-import PageWithLoader from "@/components/page-with-loader";
 
 type ProjectPageProps = {
   params: { name: string };

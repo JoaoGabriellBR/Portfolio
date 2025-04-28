@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { iconMap } from "@/utils/icons";
 import { textSizes } from "@/utils/text-sizes";
-import VideoMockup from "./full-screen-video";
+import VideoMockup from "./ui/video-mockup";
 import PageWithLoader from "./page-with-loader";
 import { TfiArrowTopRight } from "react-icons/tfi";
 

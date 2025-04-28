@@ -11,7 +11,6 @@ import CursorFollow from "./cursor-follow";
 import Image from "next/image";
 import { BsArrowDownLeft } from "react-icons/bs";
 import { usePathname } from "@/i18n/navigation";
-import { useMemo } from "react";
 import { useEffect } from "react";
 
 export default function Projects({
