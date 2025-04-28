@@ -9,34 +9,23 @@ import {
   RiPokerSpadesFill,
   RiPokerHeartsFill,
 } from "react-icons/ri";
+import { opacity, preloader } from "@/utils/animations";
 
-const greetings = [
-  <RiPokerClubsFill className={`${textSizes.xl5} text-white`} />,
-  <RiPokerDiamondsFill className={`${textSizes.xl5} text-white`} />,
-  <RiPokerSpadesFill className={`${textSizes.xl5} text-white`} />,
-  <RiPokerHeartsFill className={`${textSizes.xl5} text-white`} />,
-  <RiPokerDiamondsFill className={`${textSizes.xl5} text-white`} />,
-  <RiPokerSpadesFill className={`${textSizes.xl5} text-white`} />,
-];
-
-export const opacity = {
-  initial: { opacity: 0 },
-  enter: { opacity: 100, transition: { duration: 1, delay: 0.2 } },
-};
-
-export const slideUp = {
-  initial: { top: 0 },
-  exit: {
-    top: "-100vh",
-    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
-  },
-};
-
+const greetingStyles = `${textSizes.xl5} text-white`;
 const introductionStyles =
   "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-[#050505]";
 const svgStyles = "absolute top-0 w-full h-calc(100vh + 300px)";
 const pathStyles = "fill-[#050505]";
 const paragraph = `${textSizes.xl3} flex flex-row gap-4 text-white items-center absolute z-10 tracking-wide break-words`;
+
+const greetings = [
+  <RiPokerClubsFill className={greetingStyles} />,
+  <RiPokerDiamondsFill className={greetingStyles} />,
+  <RiPokerSpadesFill className={greetingStyles} />,
+  <RiPokerHeartsFill className={greetingStyles} />,
+  <RiPokerDiamondsFill className={greetingStyles} />,
+  <RiPokerSpadesFill className={greetingStyles} />,
+];
 
 type PreloaderProps = {
   text: string;
@@ -93,39 +82,16 @@ export default function Preloader({ text }: PreloaderProps) {
 
   return (
     <motion.div
-      initial={{
-        top: 0,
-        borderBottomLeftRadius: "0px",
-        borderBottomRightRadius: "0px",
-      }}
-      exit={{
-        top: "-100vh",
-        borderBottomLeftRadius: "400px",
-        borderBottomRightRadius: "400px",
-        transition: {
-          top: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
-          borderBottomLeftRadius: { duration: 0.5, ease: "easeInOut" },
-          borderBottomRightRadius: { duration: 0.5, ease: "easeInOut" },
-        },
-      }}
+      initial={preloader.initial}
+      exit={preloader.exit}
       className={`${introductionStyles} overflow-hidden`}
     >
       {dimension.width > 0 && showGreetings !== null && (
         <>
           {showGreetings ? (
-            <div className="flex items-center justify-center">
-              {greetings[index]}
-            </div>
+            <GreetingIcon currentIndex={index} />
           ) : (
-            <motion.p
-              className={paragraph}
-              variants={opacity}
-              initial="initial"
-              animate="enter"
-            >
-              <RiPokerDiamondsFill className={`${textSizes.md} text-white`} />
-              {text}
-            </motion.p>
+            <AnimatedText text={text} />
           )}
 
           <svg className={svgStyles}>
@@ -139,5 +105,27 @@ export default function Preloader({ text }: PreloaderProps) {
         </>
       )}
     </motion.div>
+  );
+}
+
+function GreetingIcon({ currentIndex }: { currentIndex: number }) {
+  return (
+    <div className="flex items-center justify-center">
+      {greetings[currentIndex]}
+    </div>
+  );
+}
+
+function AnimatedText({ text }: { text: string }) {
+  return (
+    <motion.p
+      className={paragraph}
+      variants={opacity}
+      initial="initial"
+      animate="enter"
+    >
+      <RiPokerDiamondsFill className={`${textSizes.md} text-white`} />
+      {text}
+    </motion.p>
   );
 }

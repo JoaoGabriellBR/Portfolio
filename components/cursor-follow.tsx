@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useEffect } from "react";
-import { scaleAnimation } from "@/utils/scale-animation";
+import { scaleAnimation } from "@/utils/animations";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
