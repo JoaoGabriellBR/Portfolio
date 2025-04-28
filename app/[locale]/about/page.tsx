@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ReactLenis } from "lenis/react";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Skills from "@/components/skills";
@@ -13,16 +14,17 @@ import { TextReveal } from "@/components/ui/text-reveal";
 import { FeaturedWork } from "@/components/featured-work";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { DrawCircleText } from "@/components/draw-circle-text";
-import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
-import { RiPokerDiamondsFill } from "react-icons/ri";
 import { ScrollPage } from "@/components/scroll-page";
-import { SiAdidas, SiLamborghini } from "react-icons/si";
-import { textSizes } from "@/utils/text-sizes";
 import { ButtonHover } from "@/components/ui/button-hover";
-import { GoArrowUpRight } from "react-icons/go";
 import PageWithLoader from "@/components/page-with-loader";
 
-export default function About() {
+import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
+import { RiPokerDiamondsFill } from "react-icons/ri";
+import { GoArrowUpRight } from "react-icons/go";
+import { SiAdidas, SiLamborghini } from "react-icons/si";
+import { textSizes } from "@/utils/text-sizes";
+
+export default function AboutPage() {
   const t = useTranslations("About");
 
   return (
@@ -30,14 +32,21 @@ export default function About() {
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
-          {renderBackgroundImage()}
-          {renderAboutMeSection(t)}
-          {renderCompetenceSection(t)}
-          {renderExperienceSection(t)}
-          {renderSkillsSection(t)}
-          {renderCertificationsSection(t)}
-          {renderFeaturedWorks(t)}
-          {renderServicesSection(t)}
+          <BackgroundImage />
+          <AboutMeSection title={t("AboutMe.section")} />
+          <CompetenceSection text={t("Competence.section")} />
+          <ExperienceSection title={t("Experience.section")} />
+          <SkillsSection title={t("Skills.section")} />
+          <CertificationsSection title={t("Certifications.section")} />
+          <FeaturedWorksSection
+            title={t("FeaturedWorks.section")}
+            adidasDescription={t("FeaturedWorks.adidas.description")}
+            lamborghiniDescription={t("FeaturedWorks.lamborghini.description")}
+          />
+          <ServicesSection
+            sectionTitle={t("Services.section")}
+            servicesTitle={t("Services.title")}
+          />
         </main>
       </ReactLenis>
       <Footer page={t("footer.projects")} route="/projects" />
@@ -45,7 +54,7 @@ export default function About() {
   );
 }
 
-const renderBackgroundImage = () => {
+function BackgroundImage() {
   return (
     <div className="relative">
       <Image
@@ -59,57 +68,55 @@ const renderBackgroundImage = () => {
             linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
             linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%),
             linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
-`,
+          `,
           maskImage: `
             linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
             linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%),
             linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
-
-`,
+          `,
           WebkitMaskComposite: "multiply",
           maskComposite: "intersect",
         }}
       />
     </div>
   );
-};
+}
 
-const renderAboutMeSection = (t: any) => {
+function AboutMeSection({ title }: { title: string }) {
   return (
     <section className="relative container mx-auto px-4 flex flex-col items-start justify-center min-h-[calc(100vh-80px)]">
       <Typography
-        text={t("AboutMe.section")}
+        text={title}
         color="white"
         size="xl5"
         className="max-w-3xl -mt-[7rem]"
         letterPadding={false}
       />
-
       <div className="absolute bottom-6 sm:bottom-8 lg:bottom-12 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-0">
         <ScrollPage sectionLink="#competence" />
       </div>
     </section>
   );
-};
+}
 
-const renderCompetenceSection = (t: any) => {
+function CompetenceSection({ text }: { text: string }) {
   return (
     <section
       id="competence"
       className="container mx-auto min-h-screen px-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between"
     >
-      <TextReveal paragraph={t("Competence.section")} />
+      <TextReveal paragraph={text} />
     </section>
   );
-};
+}
 
-const renderSkillsSection = (t: any) => {
+function SkillsSection({ title }: { title: string }) {
   return (
     <section className="container mx-auto px-4 flex flex-col items-center text-center">
       <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen mt-[8rem]">
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center w-full mb-[4rem] lg:mb-[8rem] lg:mt-[8rem] min-h-[10rem]">
           <Typography
-            text={`* ${t("Skills.section")} *`}
+            text={`* ${title} *`}
             color="white"
             size="xl4"
             className="w-full lg:w-[80%] text-center lg:text-start"
@@ -118,22 +125,39 @@ const renderSkillsSection = (t: any) => {
             className={`${textSizes.xl6} text-foreground dark:text-white`}
           />
         </div>
-
         <Skills />
       </div>
     </section>
   );
-};
+}
 
-const renderCertificationsSection = (t: any) => {
+function ExperienceSection({ title }: { title: string }) {
+  const [firstWord, secondWord] = title.split(" ");
+
+  return (
+    <section className="container mx-auto px-4">
+      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
+        <RiPokerDiamondsFill className={`${textSizes.xl5} text-red-600`} />
+        <DrawCircleText
+          firstWord={firstWord}
+          secondWord={secondWord}
+          textSize="lg"
+        />
+      </div>
+      <JobTimeline />
+    </section>
+  );
+}
+
+function CertificationsSection({ title }: { title: string }) {
   return (
     <section className="relative w-full h-screen bg-certifications bg-no-repeat bg-cover bg-center bg-fixed flex items-center justify-center bg-opacity-0 mt-[10rem]">
       <ButtonHover
-        href={`/certifications`}
+        href="/certifications"
         className="text-white flex flex-row justify-between items-center font-semibold tracking-wide break-words after:bg-white"
       >
         <Typography
-          text={t("Certifications.section")}
+          text={title}
           size="xl4"
           letterPadding={false}
           className="text-white"
@@ -142,31 +166,22 @@ const renderCertificationsSection = (t: any) => {
       </ButtonHover>
     </section>
   );
-};
+}
 
-const renderExperienceSection = (t: any) => {
+function FeaturedWorksSection({
+  title,
+  adidasDescription,
+  lamborghiniDescription,
+}: {
+  title: string;
+  adidasDescription: string;
+  lamborghiniDescription: string;
+}) {
   return (
     <section className="container mx-auto px-4">
-      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center">
-        <RiPokerDiamondsFill className={`${textSizes.xl5} text-red-600`} />
-        <DrawCircleText
-          firstWord={t("Experience.section").split(" ")[0]}
-          secondWord={t("Experience.section").split(" ")[1]}
-          textSize="lg"
-        />
-      </div>
-
-      <JobTimeline />
-    </section>
-  );
-};
-
-const renderFeaturedWorks = (t: any) => {
-  return (
-    <section className="container mx-auto px-4">
-      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center relative text-center lg:text-left ">
+      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center relative text-center lg:text-left">
         <Typography
-          text={t("FeaturedWorks.section")}
+          text={title}
           color="white"
           size="xl5"
           letterPadding={false}
@@ -180,15 +195,14 @@ const renderFeaturedWorks = (t: any) => {
         <FeaturedWork
           projectName="Adidas"
           alt="adidas"
-          projectDescription={t("FeaturedWorks.adidas.description")}
+          projectDescription={adidasDescription}
           projectImage="adidas/adidas-about.png"
           Icon={SiAdidas}
         />
-
         <FeaturedWork
           projectName="Lamborghini"
           alt="darkbulls"
-          projectDescription={t("FeaturedWorks.lamborghini.description")}
+          projectDescription={lamborghiniDescription}
           projectImage="darkbulls/lamborghini-about.png"
           imagePosition="left"
           Icon={SiLamborghini}
@@ -196,14 +210,20 @@ const renderFeaturedWorks = (t: any) => {
       </div>
     </section>
   );
-};
+}
 
-const renderServicesSection = (t: any) => {
+function ServicesSection({
+  sectionTitle,
+  servicesTitle,
+}: {
+  sectionTitle: string;
+  servicesTitle: string;
+}) {
   return (
     <>
       <ScrollBaseAnimation delay={10} baseVelocity={-1.5}>
         <Typography
-          text={` ${t("Services.section")} *`}
+          text={` ${sectionTitle} *`}
           color="white"
           size="xl5"
           className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-[80vh] flex items-center justify-center"
@@ -213,7 +233,7 @@ const renderServicesSection = (t: any) => {
       <section className="container mx-auto px-4 h-fit lg:-mt-[8rem]">
         <div className="flex flex-col lg:flex-row justify-between items-center mb-[4rem] lg:mb-[8rem] lg:mt-[8rem]">
           <Typography
-            text={t("Services.title")}
+            text={servicesTitle}
             color="white"
             size="xl3"
             className="w-full lg:w-[60%] text-center lg:text-start"
@@ -240,4 +260,4 @@ const renderServicesSection = (t: any) => {
       </section>
     </>
   );
-};
+}
