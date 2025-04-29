@@ -151,7 +151,7 @@ function ExperienceSection({ title }: { title: string }) {
 
 function CertificationsSection({ title }: { title: string }) {
   return (
-    <section className="relative w-full h-screen bg-certifications bg-no-repeat bg-cover bg-center bg-fixed flex items-center justify-center bg-opacity-0 mt-[10rem]">
+    <section className="relative w-full h-screen bg-certificationsMobile lg:bg-certifications bg-no-repeat bg-cover bg-center bg-fixed flex items-center justify-center bg-opacity-0 mt-[10rem]">
       <ButtonHover
         href="/certifications"
         className="text-white flex flex-row justify-between items-center font-semibold tracking-wide break-words after:bg-white"

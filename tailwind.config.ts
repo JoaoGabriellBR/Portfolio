@@ -71,6 +71,7 @@ const config: Config = {
       backgroundImage: {
         adidasbanner: "url('/assets/adidas-banner.png')",
         certifications: "url('/images/certifications-image.png')",
+        certificationsMobile: "url('/images/certifications-mobile-image.png')"
       },
       colors: {
         background: "hsl(var(--background))",
