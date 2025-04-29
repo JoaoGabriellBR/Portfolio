@@ -19,12 +19,16 @@ import Projects from "@/components/projects";
 import { ScrollPage } from "@/components/scroll-page";
 import { DrawCircleText } from "@/components/draw-circle-text";
 import { MagneticButton } from "@/components/ui/button-magnetic";
+import { SpinningText } from "./ui/spinning-text";
+import { RiPokerDiamondsLine, RiPokerSpadesFill } from "react-icons/ri";
 
 type ProjectData = {
   title: string;
   descriptionKey: string;
+  loadingText: string;
   icon: string;
   siteUrl: string;
+  inDevelopment?: boolean;
   mockupVideo?: string;
   palette?: string;
   arrowFooterColor?: string;
@@ -85,7 +89,9 @@ function MainContent({
       <HeroSection title={project.title} Icon={Icon} />
       <DescriptionSection
         description={translation(project.descriptionKey)}
+        loadingText={translation("loadingText")}
         siteUrl={project.siteUrl}
+        inDevelopment={project.inDevelopment}
         buttonText={translation("viewSite")}
       />
       {project.mockupVideo && <VideoSection videoSrc={project.mockupVideo} />}
@@ -140,11 +146,15 @@ function HeroSection({
 
 function DescriptionSection({
   description,
+  loadingText,
   siteUrl,
+  inDevelopment,
   buttonText,
 }: {
   description: string;
+  loadingText: string;
   siteUrl: string;
+  inDevelopment?: boolean;
   buttonText: string;
 }) {
   return (
@@ -158,18 +168,34 @@ function DescriptionSection({
         size="xl2"
         className="w-full lg:w-[60%] text-center lg:text-start"
       />
-      <Link href={siteUrl} target="blank">
-        <MagneticButton
-          distance={1}
-          type="3d"
-          className="w-40 h-40 lg:w-64 lg:h-64 flex flex-col justify-center items-center gap-2 text-2xl p-5"
-        >
-          <TfiArrowTopRight
-            className={`${textSizes.xl6} text-foreground dark:text-white`}
+      {inDevelopment ? (
+        <div className="relative max-w-full p-10 min-w-[15rem] min-h-[15rem] flex justify-center items-center">
+          <SpinningText
+            children={loadingText}
+            fontSize={1}
+            radius={6}
+            duration={12}
+            centerElement={
+              <RiPokerSpadesFill
+                className={`${textSizes.xl6} text-foreground dark:text-white`}
+              />
+            }
           />
-          <Typography size="md" text={buttonText} letterPadding={false} />
-        </MagneticButton>
-      </Link>
+        </div>
+      ) : (
+        <Link href={siteUrl} target="blank">
+          <MagneticButton
+            distance={1}
+            type="3d"
+            className="w-40 h-40 lg:w-64 lg:h-64 flex flex-col justify-center items-center gap-2 text-2xl p-5"
+          >
+            <TfiArrowTopRight
+              className={`${textSizes.xl6} text-foreground dark:text-white`}
+            />
+            <Typography size="md" text={buttonText} letterPadding={false} />
+          </MagneticButton>
+        </Link>
+      )}
     </section>
   );
 }

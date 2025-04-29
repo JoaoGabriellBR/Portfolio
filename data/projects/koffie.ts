@@ -4,6 +4,7 @@ const koffieProject = {
   descriptionKey: "koffie.description", // chave de tradução
   icon: "GiCoffeeCup",
   siteUrl: "https://adidasshopping.vercel.app",
+  inDevelopment: true,
   palette: "#386950",
   desktopImages: [
     "/images/koffie/mockup-koffie-web-1.png",

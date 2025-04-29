@@ -97,6 +97,7 @@
   "Project": {
     "section": "Projekte",
     "project-details": {
+      "loadingText":  "* Laden * Laden * Laden ",
       "next": "Nächstes Projekt...",
       "viewSite": "Website anzeigen",
       "adidas": {
