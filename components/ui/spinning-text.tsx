@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { motion, Transition, Variants } from "framer-motion";
+import { motion, Transition, Tween, Variants } from "framer-motion";
 import React, { CSSProperties } from "react";
 
 export type SpinningTextProps = {
@@ -52,7 +52,7 @@ export function SpinningText({
     ...BASE_TRANSITION,
     ...transition,
     type: "tween",
-    duration: (transition as any)?.duration ?? duration,
+    duration: (transition as Tween)?.duration ?? duration,
   };
 
   const containerVariants: Variants = {

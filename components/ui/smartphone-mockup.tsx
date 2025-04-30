@@ -1,4 +1,10 @@
-export default function SmartphoneMockup({ children }: any) {
+import React from "react";
+
+type SmartphoneMockupProps = {
+  children: React.ReactNode;
+};
+
+export default function SmartphoneMockup({ children }: SmartphoneMockupProps) {
   return (
     <div className="relative flex justify-center h-[700px] w-[340px] border-[0.5rem] border-neutral-500 bg-neutral-700 rounded-[3rem] shadow-2xl shadow-neutral-950 dark:shadow-black aspect-[9/16]">
       {children}

@@ -3,7 +3,12 @@ import { MagneticButton } from "./ui/button-magnetic";
 import { BsArrowDown } from "react-icons/bs";
 import Typography from "./ui/typography";
 
-export const ScrollPage = ({ sectionLink, className }: any) => {
+type ScrollPageProps = {
+  sectionLink: string;
+  className: string;
+};
+
+export const ScrollPage = ({ sectionLink, className }: ScrollPageProps) => {
   return (
     <Link className={className} href={sectionLink}>
       <MagneticButton

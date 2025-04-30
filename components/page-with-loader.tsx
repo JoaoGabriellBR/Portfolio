@@ -5,7 +5,7 @@ import { usePathname } from "@/i18n/navigation";
 import Preloader from "./preloader";
 
 type PageWithLoaderProps = {
-  text: any;
+  text: string;
   children: ReactNode;
 };
 

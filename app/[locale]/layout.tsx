@@ -19,19 +19,21 @@ export const metadata: Metadata = {
   description: "Desenvolvedor Full Stack",
 };
 
+type RootLayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{ locale: "pt" | "en" | "es" | "fr" | "de" }>;
+};
+
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}>) {
+}: RootLayoutProps) {
   const { locale } = await params;
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  // Providing all messages to the client
+  // Providing all translations to the client
   const messages = await getMessages();
 
   return (

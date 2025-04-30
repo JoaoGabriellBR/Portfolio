@@ -1,6 +1,16 @@
 import { Link } from "@/i18n/navigation";
 
-export const ButtonHover = ({ children, href, className }: any) => {
+type ButtonHoverProps = {
+  children: React.ReactNode;
+  href: string;
+  className?: string;
+};
+
+export const ButtonHover: React.FC<ButtonHoverProps> = ({
+  children,
+  href,
+  className,
+}: ButtonHoverProps) => {
   return (
     <Link href={href}>
       <button
