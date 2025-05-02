@@ -112,7 +112,7 @@ export function ProfileForm() {
   }
 
   return (
-    <div className="w-full lg:w-1/3 flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
       <Form {...form}>
         <form className="space-y-8 text-start w-full">
           {inputs.map((input) => (

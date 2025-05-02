@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import ProjectDetails from "@/components/projectDetails";
+import ProjectDetails from "@/components/project-details";
 import myProjects, { ProjectName } from "@/data/projects";
 
 type ProjectPageProps = {

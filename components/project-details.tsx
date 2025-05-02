@@ -25,7 +25,7 @@ import { RiPokerSpadesFill } from "react-icons/ri";
 type ProjectData = {
   title: string;
   descriptionKey: string;
-  loadingText: string;
+  loadingText?: string;
   icon: string;
   siteUrl: string;
   inDevelopment?: boolean;

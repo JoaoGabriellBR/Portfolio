@@ -19,7 +19,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.75 }}
           type={type}
-          className={cn(`${textSizes.md} ${inputStyles} peer flex h-10 w-full rounded-md border-b-2 border-neutral-400 dark:border-neutral-800 bg-background px-3 pt-4 pb-2 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder-transparent focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50  font-normal`,
+          className={cn(`${textSizes.md} ${inputStyles} peer flex h-10 w-full rounded-md border-b-2 border-neutral-400 dark:border-neutral-800 bg-transparent px-3 pt-4 pb-2 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder-transparent focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50  font-normal`,
             className
           )}
           ref={ref}
