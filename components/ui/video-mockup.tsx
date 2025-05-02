@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 type VideoMockupProps = {
@@ -20,6 +20,12 @@ const VideoMockup: React.FC<VideoMockupProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(initialMuted);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.volume = 0.2; // Define o volume inicial
+    }
+  }, []);
 
   const toggleMute = () => {
     if (videoRef.current) {

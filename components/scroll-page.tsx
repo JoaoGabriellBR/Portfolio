@@ -5,7 +5,7 @@ import Typography from "./ui/typography";
 
 type ScrollPageProps = {
   sectionLink: string;
-  className: string;
+  className?: string;
 };
 
 export const ScrollPage = ({ sectionLink, className }: ScrollPageProps) => {

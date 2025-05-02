@@ -1,16 +1,53 @@
 "use client";
+
 import { useState } from "react";
-import Typography from "./ui/typography";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FaArrowRight } from "react-icons/fa";
+
+import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
-import Image from "next/image";
+
+interface Certification {
+  description: string;
+  image: string;
+  type: string;
+}
+
+interface ModalState {
+  active: boolean;
+  index: number;
+}
 
 export default function MyCertifications() {
-  const [modal, setModal] = useState({ active: false, index: 0 });
   const t = useTranslations("Certifications");
+  const [modal, setModal] = useState<ModalState>({ active: false, index: 0 });
 
-  const certifications = [
+  const certifications: Certification[] = getCertifications(t);
+
+  return (
+    <section className="flex flex-col items-center justify-center w-full place-self-end">
+      <RenderCertificationsList
+        certifications={certifications}
+        onHover={setModal}
+      />
+
+      <CursorFollow
+        modal={modal}
+        classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[25rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem]"
+      >
+        {certifications.map((cert, idx) => (
+          <CertificationImage key={`modal_${idx}`} image={cert.image} />
+        ))}
+      </CursorFollow>
+    </section>
+  );
+}
+
+function getCertifications(
+  t: ReturnType<typeof useTranslations>
+): Certification[] {
+  return [
     {
       description: t("cybersecurity.description"),
       image: "introduction-to-cybersecurity.png",
@@ -32,61 +69,75 @@ export default function MyCertifications() {
       type: "2023",
     },
   ];
+}
+
+function RenderCertificationsList({
+  certifications,
+  onHover,
+}: {
+  certifications: Certification[];
+  onHover: (modal: ModalState) => void;
+}) {
+  return certifications.map((cert, index) => (
+    <CertificationItem
+      key={`cert_${index}`}
+      certification={cert}
+      index={index}
+      onHover={onHover}
+    />
+  ));
+}
+
+function CertificationItem({
+  certification,
+  index,
+  onHover,
+}: {
+  certification: Certification;
+  index: number;
+  onHover: (modal: ModalState) => void;
+}) {
+  const handleMouseEnter = () => onHover({ active: true, index });
+  const handleMouseLeave = () => onHover({ active: false, index });
 
   return (
-    <section className="flex flex-col items-center justify-center place-self-end w-full">
-      {certifications.map((c, index) => {
-        return (
-          <div
-            onMouseEnter={() => {
-              setModal({ active: true, index });
-            }}
-            onMouseLeave={() => {
-              setModal({ active: false, index });
-            }}
-            className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center gap-4 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
-          >
-            <div className="flex flex-row items-center gap-4 group">
-              <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
-                <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
-                <Typography
-                  text={c.description}
-                  color="white"
-                  size="xl"
-                  letterPadding={false}
-                />
-              </div>
-            </div>
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center gap-4 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
+    >
+      <div className="flex flex-row items-center gap-4 group">
+        <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
+          <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
+          <Typography
+            text={certification.description}
+            color="white"
+            size="xl"
+            letterPadding={false}
+          />
+        </div>
+      </div>
 
-            <Typography
-              text={c.type}
-              size="sm"
-              className="font-normal"
-              letterPadding={false}
-            />
-          </div>
-        );
-      })}
+      <Typography
+        text={certification.type}
+        size="sm"
+        className="font-normal"
+        letterPadding={false}
+      />
+    </div>
+  );
+}
 
-      <CursorFollow
-        modal={modal}
-        classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[25rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem]"
-      >
-        {certifications.map((c, idx) => (
-          <div
-            key={`modal_${idx}`}
-            className="flex h-full w-full items-center justify-center bg-transparent"
-          >
-            <Image
-              src={`/images/${c.image}`}
-              width={600}
-              className="object-contain"
-              height={600}
-              alt="image"
-            />
-          </div>
-        ))}
-      </CursorFollow>
-    </section>
+function CertificationImage({ image }: { image: string }) {
+  return (
+    <div className="flex h-full w-full items-center justify-center bg-transparent">
+      <Image
+        src={`/images/${image}`}
+        width={600}
+        height={600}
+        alt="Certification"
+        className="object-contain"
+      />
+    </div>
   );
 }

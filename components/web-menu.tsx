@@ -23,7 +23,7 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
 
   return (
     <div className="w-full flex flex-row items-center justify-between px-4">
-      <motion.div className="flex items-center relative z-10 cursor-pointer">
+      <motion.div className="flex items-center relative z-10 cursor-pointer pt-4 lg:pt-0">
         {isMounted && (
           <Link href="/">
             <Image

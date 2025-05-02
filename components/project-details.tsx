@@ -20,7 +20,7 @@ import { ScrollPage } from "@/components/scroll-page";
 import { DrawCircleText } from "@/components/draw-circle-text";
 import { MagneticButton } from "@/components/ui/button-magnetic";
 import { SpinningText } from "./ui/spinning-text";
-import { RiPokerDiamondsLine, RiPokerSpadesFill } from "react-icons/ri";
+import { RiPokerSpadesFill } from "react-icons/ri";
 
 type ProjectData = {
   title: string;

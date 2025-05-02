@@ -32,7 +32,7 @@ export default function Projects({
   const isProjectDetailPage =
     pathname.startsWith("/projects/") && !isExactProjectsPage;
 
-  // Função para sortear aleatoriamente os projetos
+  // Sorteia aleatoriamente os projetos
   function getRandomProjects(array: typeof projects, count: number) {
     const shuffled = [...array].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);

@@ -49,7 +49,6 @@ export default function Project({
         </div>
       </div>
       <Typography
-        // text={t("Projects.type")}
         text={type}
         color="white"
         size="sm"
