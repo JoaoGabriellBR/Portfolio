@@ -10,10 +10,10 @@ export default function Header() {
   const t = useTranslations("Header");
 
   const NAV_ITEMS = [
-    { title: t("nav1"), href: "/" },
-    { title: t("nav2"), href: "/about" },
-    { title: t("nav3"), href: "/projects" },
-    { title: t("nav4"), href: "/contact" },
+    { title: t("home"), href: "/" },
+    { title: t("about"), href: "/about" },
+    { title: t("projects"), href: "/projects" },
+    { title: t("contact"), href: "/contact" },
   ];
 
   const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
@@ -48,7 +48,6 @@ export default function Header() {
 
   return (
     <header className="container mx-auto p-4 relative z-40 h-20">
-
       <WebMenu NAV_ITEMS={NAV_ITEMS} />
 
       {showMobileMenuButton || mobileNavOpen ? (

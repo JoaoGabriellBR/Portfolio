@@ -1,13 +1,11 @@
 {
   "Header": {
-    "nav1": "Home",
-    "nav2": "About",
-    "nav3": "Projects",
-    "nav4": "Contact"
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
   },
   "Home": {
-    "title_jumbotron": "Full Stack",
-    "subtitle_jumbotron": "Developer",
     "Section2": {
       "title": "I design, develop, and create optimized applications through good development practices.",
       "button": "About me"
@@ -81,13 +79,13 @@
     "cybersecurity": {
       "description": "Introduction to Cybersecurity"
     },
-    "machine-learning": {
+    "machineLearning": {
       "description": "AWS Machine Learning Foundations"
     },
-    "cloud-foundations": {
+    "cloudFoundations": {
       "description": "AWS Cloud Foundations"
     },
-    "web-development": {
+    "webDevelopment": {
       "description": "Full Stack Web Development"
     },
     "footer": {
@@ -96,7 +94,7 @@
   },
   "Project": {
     "section": "Projects",
-    "project-details": {
+    "projectDetails": {
       "loadingText": "* Loading * Loading * Loading ",
       "next": "Next Project...",
       "viewSite": "View site",

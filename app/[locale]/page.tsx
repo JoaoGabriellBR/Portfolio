@@ -26,7 +26,7 @@ export default function HomePage() {
   const { theme } = useTheme();
 
   return (
-    <PageWithLoader text={tHeader("nav1")}>
+    <PageWithLoader text={tHeader("home")}>
       <Header />
       <DetectReload />
 
@@ -42,7 +42,7 @@ export default function HomePage() {
         </main>
       </ReactLenis>
 
-      <Footer page={tHeader("nav2")} route="/about" />
+      <Footer page={tHeader("about")} route="/about" />
     </PageWithLoader>
   );
 }

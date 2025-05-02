@@ -33,7 +33,7 @@ export const FlipLink = ({
         }}
       >
         <div>
-          {children.split("").map((l, i) => (
+          {children.split("").map((letter, i) => (
             <motion.span
               variants={{
                 initial: {
@@ -55,13 +55,13 @@ export const FlipLink = ({
               } inline-block ${textColor}`}
               key={i}
             >
-              {l}
+              {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
         </div>
 
         <div className="absolute inset-0">
-          {children.split("").map((l, i) => (
+          {children.split("").map((letter, i) => (
             <motion.span
               variants={{
                 initial: {
@@ -83,7 +83,7 @@ export const FlipLink = ({
               } inline-block ${textColor}`}
               key={i}
             >
-              {l}
+              {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
         </div>

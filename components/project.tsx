@@ -13,8 +13,8 @@ interface ProjectProps {
   setModal: (modalState: { active: boolean; index: number }) => void;
 }
 
-// EDITAR OS JSONS PARA MELHOR LEGILIBILIDADE 
-// EX: web-development para 'webDevelopment'
+// EDITAR OS JSONS PARA MELHOR LEGILIBILIDADE
+// EX: webDevelopment para 'webDevelopment'
 
 export default function Project({
   index,

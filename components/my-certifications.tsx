@@ -54,17 +54,17 @@ function getCertifications(
       type: "2025",
     },
     {
-      description: t("machine-learning.description"),
+      description: t("machineLearning.description"),
       image: "aws-machine-learning.png",
       type: "2024",
     },
     {
-      description: t("cloud-foundations.description"),
+      description: t("cloudFoundations.description"),
       image: "aws-cloud-foundations.png",
       type: "2024",
     },
     {
-      description: t("web-development.description"),
+      description: t("webDevelopment.description"),
       image: "programador-web.png",
       type: "2023",
     },

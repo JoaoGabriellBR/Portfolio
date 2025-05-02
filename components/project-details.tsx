@@ -47,7 +47,7 @@ export default function ProjectDetails({
   project,
   currentProject,
 }: ProjectDetailsProps) {
-  const t = useTranslations("Project.project-details");
+  const t = useTranslations("Project.projectDetails");
   const Icon = iconMap[project.icon as keyof typeof iconMap];
 
   return (

@@ -19,7 +19,7 @@ export default function ProjectsPage() {
       <ReactLenis root options={{ lerp: 0.05 }}>
         <MainContent sectionTitle={t("section")} />
       </ReactLenis>
-      <Footer page={t("project-details.footer.contact")} route="/contact" />
+      <Footer page={t("projectDetails.footer.contact")} route="/contact" />
     </PageWithLoader>
   );
 }
