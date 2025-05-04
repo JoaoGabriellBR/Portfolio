@@ -248,7 +248,7 @@ function DesktopMockupsSection({ images }: { images: string[] }) {
       {images.map((src, index) => (
         <div
           key={index}
-          className="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-fixed"
+          className="w-full min-h-screen bg-no-repeat bg-contain lg:bg-cover bg-center bg-fixed"
           style={{ backgroundImage: `url(${src})` }}
         />
       ))}
@@ -308,32 +308,3 @@ function CallToActionSection({
     </section>
   );
 }
-
-// function renderSmallImages(images: string[], title: string) {
-//   return (
-//     <section className="container mx-auto px-4 mt-[10rem] flex flex-col justify-start items-center gap-16">
-//       {images[0] && (
-//         <div className="flex items-start justify-start w-full min-h-[50vh]">
-//           <Image
-//             src={images[0]}
-//             width={700}
-//             height={700}
-//             alt={`${title}`}
-//             className="object-contain pointer-events-none"
-//           />
-//         </div>
-//       )}
-//       {images[1] && (
-//         <div className="flex items-end justify-end w-full min-h-[50vh]">
-//           <Image
-//             src={images[1]}
-//             width={700}
-//             height={700}
-//             alt={`${title}`}
-//             className="object-contain pointer-events-none"
-//           />
-//         </div>
-//       )}
-//     </section>
-//   );
-// }

@@ -58,6 +58,7 @@ export default function Projects({
             <Project
               index={index}
               title={project.title}
+              image={project.src}
               href={project.href}
               type={project.type}
               setModal={setModal}

@@ -61,12 +61,12 @@ const JobItem = ({
     onMouseEnter={onHover}
     onMouseLeave={onLeave}
     className={`group w-full flex flex-col lg:flex-row items-start justify-between py-12 gap-4 border-t border-neutral-800 cursor-pointer last:border-b transition-all duration-500 ${
-      isActive ? "opacity-40 ml-12" : "hover:opacity-40 hover:ml-12"
+      isActive ? "opacity-40" : "hover:opacity-40 lg:hover:ml-12"
     }`}
   >
     <div className="flex-[1] flex items-center gap-4 group">
-      <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
-        <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
+      <div className="relative flex items-center transition-all duration-300 lg:group-hover:pl-2">
+        <FaArrowRight className="hidden lg:block absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
         <Typography
           text={job.name}
           color="white"

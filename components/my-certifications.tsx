@@ -7,6 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
+import useIsMobile from "@/hooks/use-mobile";
 
 interface Certification {
   description: string;
@@ -37,7 +38,11 @@ export default function MyCertifications() {
         classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[25rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem]"
       >
         {certifications.map((cert, idx) => (
-          <CertificationImage key={`modal_${idx}`} image={cert.image} />
+          <CertificationImage
+            key={`modal_${idx}`}
+            image={cert.image}
+            description={cert.description}
+          />
         ))}
       </CursorFollow>
     </section>
@@ -97,6 +102,7 @@ function CertificationItem({
   index: number;
   onHover: (modal: ModalState) => void;
 }) {
+  const isMobile = useIsMobile();
   const handleMouseEnter = () => onHover({ active: true, index });
   const handleMouseLeave = () => onHover({ active: false, index });
 
@@ -104,11 +110,20 @@ function CertificationItem({
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center gap-4 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 hover:ml-12 transition-all duration-500"
+      className="group flex flex-col lg:flex-row w-full justify-start lg:justify-between items-start lg:items-center gap-4 py-12 border-t border-neutral-800 cursor-pointer last:border-b hover:opacity-40 lg:hover:ml-12 transition-all duration-500"
     >
+      {isMobile && (
+        <Image
+          src={`/images/${certification.image}`}
+          width={600}
+          height={600}
+          className="object-contain"
+          alt={certification.description}
+        />
+      )}
       <div className="flex flex-row items-center gap-4 group">
-        <div className="relative flex items-center transition-all duration-300 group-hover:pl-2">
-          <FaArrowRight className="absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
+        <div className="relative flex items-center transition-all duration-300 lg:group-hover:pl-2">
+          <FaArrowRight className="hidden lg:block absolute left-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-x-10 text-foreground size-5 sm:size-5 md:size-5 lg:size-6 xl:size-7" />
           <Typography
             text={certification.description}
             color="white"
@@ -128,14 +143,20 @@ function CertificationItem({
   );
 }
 
-function CertificationImage({ image }: { image: string }) {
+function CertificationImage({
+  image,
+  description,
+}: {
+  image: string;
+  description: string;
+}) {
   return (
     <div className="flex h-full w-full items-center justify-center bg-transparent">
       <Image
         src={`/images/${image}`}
         width={600}
         height={600}
-        alt="Certification"
+        alt={description}
         className="object-contain"
       />
     </div>
