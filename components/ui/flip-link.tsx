@@ -10,12 +10,14 @@ export const FlipLink = ({
   children,
   href,
   type,
+  size,
 }: {
   children: string;
   href: string;
   type?: string;
+  size?: string;
 }) => {
-  const textColor = "tracking-wide break-words text-foreground dark:text-white";
+  const textColor = `${size} tracking-wide break-words text-foreground dark:text-white`;
 
   const handleClick = () => {
     sessionStorage.setItem("AcessouPeloFlipLink", "true");

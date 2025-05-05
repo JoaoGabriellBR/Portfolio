@@ -60,8 +60,8 @@ const JobItem = ({
   <div
     onMouseEnter={onHover}
     onMouseLeave={onLeave}
-    className={`group w-full flex flex-col lg:flex-row items-start justify-between py-12 gap-4 border-t border-neutral-800 cursor-pointer last:border-b transition-all duration-500 ${
-      isActive ? "opacity-40" : "hover:opacity-40 lg:hover:ml-12"
+    className={`group w-full flex flex-col lg:flex-row items-start justify-between py-12 gap-4 border-t border-neutral-800 cursor-pointer last:border-b transition-all duration-500 lg:hover:ml-12 ${
+      isActive ? "opacity-40" : "hover:opacity-40"
     }`}
   >
     <div className="flex-[1] flex items-center gap-4 group">

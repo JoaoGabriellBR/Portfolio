@@ -6,9 +6,8 @@ import { BorderNavbar } from "./border-navbar";
 
 import { Link } from "@/i18n/navigation";
 import LanguageSelectorWeb from "./language-selector-web";
-import Image from "next/image";
-import { useTheme } from "next-themes";
 import { useIsMounted } from "@/hooks/useIsMounted";
+import { GiSuits } from "react-icons/gi";
 
 type NavItems = {
   NAV_ITEMS: {
@@ -18,27 +17,34 @@ type NavItems = {
 };
 
 export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
-  const { theme } = useTheme();
   const isMounted = useIsMounted();
+  const logoSize = "text-md sm:text-md md:text-xl lg:text-xl xl:text-2xl";
 
   return (
-    <div className="w-full flex flex-row items-center justify-between px-4">
-      <motion.div className="flex items-center relative z-10 cursor-pointer pt-4 lg:pt-0">
+    <div className="w-full relative flex items-center justify-center h-20">
+      {/* Logo + Nome */}
+      <motion.div
+        initial={{ y: 48, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
+        className="absolute left-4 lg:left-0 flex items-center z-10"
+      >
         {isMounted && (
-          <Link href="/">
-            <Image
-              src={
-                theme === "dark"
-                  ? "/images/logo.png"
-                  : "/images/logo-light-mode.png"
-              }
-              width={70}
-              height={70}
-              alt="Logotipo João Gabriel Silva"
+          <Link
+            href="/"
+            className="flex flex-row items-center gap-2 min-w-[100px]"
+          >
+            <GiSuits
+              className={`${logoSize} text-foreground dark:text-white`}
             />
+            <motion.h1 className={`tracking-wide break-words ${logoSize}`}>
+              João
+            </motion.h1>
           </Link>
         )}
       </motion.div>
+
+      {/* Itens de Navegação */}
       <div className="hidden md:flex items-center gap-x-4">
         <BorderNavbar>
           {NAV_ITEMS.map((item, index) => (
@@ -47,14 +53,15 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
                 <p className="bg-foreground dark:bg-white rounded-full h-1 w-1" />
               )}
               <FlipLink type="web" href={item.href} aria-label={item.title}>
-                {`${item.title}`}
+                {item.title}
               </FlipLink>
             </React.Fragment>
           ))}
         </BorderNavbar>
       </div>
 
-      <div className="hidden md:flex items-center gap-x-4">
+      {/* Idioma + Tema */}
+      <div className="absolute right-4 lg:right-0 hidden md:flex items-center gap-x-4">
         <LanguageSelectorWeb />
         <ModeToggle type="web" />
       </div>
