@@ -6,6 +6,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import useDeviceType from "@/hooks/use-device-type";
 
 const images = [
   {
@@ -51,21 +52,28 @@ export const SmoothScrollHero = () => {
   );
 };
 
-const SECTION_HEIGHT = 2200;
-
 const Hero = () => {
+  const { isMobile, isTablet, isLandscape, isVeryShortHeight } = useDeviceType();
+
+  const sectionHeight = (() => {
+    if (isMobile && (isLandscape || isVeryShortHeight)) return 1400;
+    if (isTablet) return 1900;
+    if (isMobile) return 1200;
+    return 2200;
+  })();
+
   return (
     <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
+      style={{ height: `calc(${sectionHeight}px + 100vh)` }}
       className="relative w-full"
     >
-      <ParallaxBigImage />
-      <ParallaxImages />
+      <ParallaxBigImage sectionHeight={sectionHeight} />
+      <ParallaxImages isMobile={isMobile} />
     </div>
   );
 };
 
-const ParallaxBigImage = () => {
+const ParallaxBigImage = ({ sectionHeight }: { sectionHeight: number }) => {
   const { scrollY } = useScroll();
 
   const clip1 = useTransform(scrollY, [0, 1700], [25, 0]);
@@ -75,13 +83,13 @@ const ParallaxBigImage = () => {
 
   const backgroundSize = useTransform(
     scrollY,
-    [0, SECTION_HEIGHT + 500],
+    [0, sectionHeight + 500],
     ["100%", "100%"]
   );
 
   const opacity = useTransform(
     scrollY,
-    [SECTION_HEIGHT, SECTION_HEIGHT + 1000],
+    [sectionHeight, sectionHeight + 1000],
     [1, 0]
   );
 
@@ -100,9 +108,13 @@ const ParallaxBigImage = () => {
   );
 };
 
-const ParallaxImages = () => {
+const ParallaxImages = ({ isMobile }: { isMobile: boolean }) => {
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
+    <div
+      className={`mx-auto max-w-5xl px-4 ${
+        isMobile ? "pt-[80px]" : "pt-[200px]"
+      }`}
+    >
       {images.map((img, index) => (
         <ParallaxImg
           key={index}

@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
-import useIsMobile from "@/hooks/use-mobile";
+import useDeviceType from "@/hooks/use-device-type";
 
 interface Certification {
   description: string;
@@ -102,7 +102,7 @@ function CertificationItem({
   index: number;
   onHover: (modal: ModalState) => void;
 }) {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDeviceType();
   const handleMouseEnter = () => onHover({ active: true, index });
   const handleMouseLeave = () => onHover({ active: false, index });
 

@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
-import useIsMobile from "@/hooks/use-mobile";
+import useDeviceType from "@/hooks/use-device-type";
 
 interface ProjectProps {
   index: number;
@@ -25,7 +25,7 @@ export default function Project({
   setModal,
 }: ProjectProps) {
   const t = useTranslations("Home");
-  const isMobile = useIsMobile();
+  const { isMobile } = useDeviceType();
 
   return (
     <Link
