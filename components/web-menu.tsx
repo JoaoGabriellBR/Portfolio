@@ -21,13 +21,13 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
   const logoSize = "text-md sm:text-md md:text-xl lg:text-xl xl:text-2xl";
 
   return (
-    <div className="w-full relative flex items-center justify-center h-20">
+    <div className="w-full relative flex items-center justify-center">
       {/* Logo + Nome */}
       <motion.div
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="absolute left-4 lg:left-0 flex items-center z-10"
+        className="absolute left-4 top-4 lg:left-0 flex items-center z-10"
       >
         {isMounted && (
           <Link
