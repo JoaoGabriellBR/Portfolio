@@ -117,6 +117,7 @@ export function ProfileForm() {
         <form className="space-y-8 text-start w-full">
           {inputs.map((input) => (
             <FormField
+              key={input.name}
               control={form.control}
               name={input.name}
               render={({ field }) => (

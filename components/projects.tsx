@@ -24,14 +24,6 @@ export default function Projects({
 
   const [visibleProjects, setVisibleProjects] = useState<typeof projects>([]);
 
-  const filteredProjects = projects.filter(
-    (project) => project.name !== currentProject
-  );
-
-  const isExactProjectsPage = pathname === "/projects";
-  const isProjectDetailPage =
-    pathname.startsWith("/projects/") && !isExactProjectsPage;
-
   // Sorteia aleatoriamente os projetos
   function getRandomProjects(array: typeof projects, count: number) {
     const shuffled = [...array].sort(() => 0.5 - Math.random());
@@ -40,6 +32,14 @@ export default function Projects({
 
   // Executa a lógica de visibilidade de projetos no cliente
   useEffect(() => {
+    const filteredProjects = projects.filter(
+      (project) => project.name !== currentProject
+    );
+
+    const isExactProjectsPage = pathname === "/projects";
+    const isProjectDetailPage =
+      pathname.startsWith("/projects/") && !isExactProjectsPage;
+
     if (isExactProjectsPage) {
       setVisibleProjects(filteredProjects);
     } else if (isProjectDetailPage) {

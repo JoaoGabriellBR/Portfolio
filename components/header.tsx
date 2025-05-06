@@ -21,11 +21,7 @@ export default function Header() {
   const isMobile = () => window.innerWidth < 768;
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
     const handleResizeOrScroll = () => {
-      lastScrollY = window.scrollY;
-
       if (window.scrollY > 80 || isMobile()) {
         setShowMobileMenuButton(true);
       } else {

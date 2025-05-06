@@ -19,12 +19,12 @@ const pathStyles = "fill-[#050505]";
 const paragraph = `${textSizes.xl3} flex flex-row gap-4 text-white items-center absolute z-10 tracking-wide break-words`;
 
 const greetings = [
-  <RiPokerClubsFill className={greetingStyles} />,
-  <RiPokerDiamondsFill className={greetingStyles} />,
-  <RiPokerSpadesFill className={greetingStyles} />,
-  <RiPokerHeartsFill className={greetingStyles} />,
-  <RiPokerDiamondsFill className={greetingStyles} />,
-  <RiPokerSpadesFill className={greetingStyles} />,
+  { PokerIcon: RiPokerClubsFill },
+  { PokerIcon: RiPokerDiamondsFill },
+  { PokerIcon: RiPokerSpadesFill },
+  { PokerIcon: RiPokerHeartsFill },
+  { PokerIcon: RiPokerDiamondsFill },
+  { PokerIcon: RiPokerSpadesFill },
 ];
 
 type PreloaderProps = {
@@ -109,9 +109,10 @@ export default function Preloader({ text }: PreloaderProps) {
 }
 
 function GreetingIcon({ currentIndex }: { currentIndex: number }) {
+  const { PokerIcon } = greetings[currentIndex];
   return (
     <div className="flex items-center justify-center">
-      {greetings[currentIndex]}
+      <PokerIcon className={greetingStyles} />
     </div>
   );
 }

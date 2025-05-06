@@ -2,7 +2,6 @@
 import React from "react";
 import Typography from "./ui/typography";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
 import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import useDeviceType from "@/hooks/use-device-type";
@@ -24,7 +23,6 @@ export default function Project({
   type,
   setModal,
 }: ProjectProps) {
-  const t = useTranslations("Home");
   const { isMobile } = useDeviceType();
 
   return (

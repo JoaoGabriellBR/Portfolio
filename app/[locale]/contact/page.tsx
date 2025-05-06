@@ -30,19 +30,18 @@ export default function ContactPage() {
   );
 }
 
-function MainContent({
-  title,
-  subtitle,
-  theme,
-}: {
+type MainContentProps = {
   title: string;
   subtitle: string;
-  theme: any;
-}) {
+  theme: string | undefined;
+};
+
+function MainContent({ title, subtitle, theme }: MainContentProps) {
   const imageSrc =
     theme === "dark"
       ? "/images/suit-contact.png"
       : "/images/suit-contact-light-mode.png";
+
   return (
     <main className="container mx-auto px-4 flex flex-wrap flex-row justify-center lg:justify-between items-center gap-y-2 lg:gap-y-4">
       <section className="w-full lg:w-[40%] min-h-screen flex flex-col items-center lg:items-start justify-center gap-20 text-center">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 import { AnimatedText } from "./ui/animated-text";
 import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
@@ -27,7 +26,6 @@ export default function Footer({
   palette = "#dc2626",
   arrowFooterColor = "#FFFFFF",
 }: FooterProps) {
-  const t = useTranslations("Footer");
   const [modal, setModal] = useState<ModalState>({ active: false, index: 0 });
 
   return (

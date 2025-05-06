@@ -59,7 +59,7 @@ export const MagneticButton = ({
     return () => {
       document.removeEventListener("mousemove", calculateDistance);
     };
-  }, [ref, isHovered, isMobile]);
+  }, [isHovered, distance, x, y]);
 
   return (
     <motion.div

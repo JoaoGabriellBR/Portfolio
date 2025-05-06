@@ -171,7 +171,6 @@ function DescriptionSection({
       {inDevelopment ? (
         <div className="relative max-w-full p-10 min-w-[15rem] min-h-[15rem] flex justify-center items-center">
           <SpinningText
-            children={loadingText}
             fontSize={1}
             radius={6}
             duration={12}
@@ -180,7 +179,9 @@ function DescriptionSection({
                 className={`${textSizes.xl6} text-foreground dark:text-white`}
               />
             }
-          />
+          >
+            {loadingText}
+          </SpinningText>
         </div>
       ) : (
         <Link href={siteUrl} target="blank">

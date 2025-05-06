@@ -53,7 +53,8 @@ export const SmoothScrollHero = () => {
 };
 
 const Hero = () => {
-  const { isMobile, isTablet, isLandscape, isVeryShortHeight } = useDeviceType();
+  const { isMobile, isTablet, isLandscape, isVeryShortHeight } =
+    useDeviceType();
 
   const sectionHeight = (() => {
     if (isMobile && (isLandscape || isVeryShortHeight)) return 1400;
@@ -146,7 +147,6 @@ const ParallaxImg = ({
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    // @ts-ignore
     offset: [`${start}px end`, `end ${end * -1}px`],
   });
 
