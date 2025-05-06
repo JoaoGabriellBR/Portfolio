@@ -61,7 +61,7 @@ function BackgroundImage() {
         src="/images/photo.jpg"
         width={1000}
         height={1000}
-        alt=""
+        alt="Personal photo"
         className="absolute top-0 lg:top-[-10rem] right-0 text-[100vw] lg:text-[60vw] opacity-20 dark:opacity-15 -scale-x-100 pointer-events-none"
         style={{
           WebkitMaskImage: `

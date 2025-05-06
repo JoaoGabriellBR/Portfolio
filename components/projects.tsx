@@ -83,7 +83,7 @@ export default function Projects({
               width={600}
               className="object-contain"
               height={600}
-              alt="image"
+              alt="Project image"
             />
           </div>
         ))}

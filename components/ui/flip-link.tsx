@@ -26,7 +26,7 @@ export const FlipLink = ({
 
   return (
     <Link href={href} onClick={handleClick}>
-      <motion.div
+      <motion.ul
         initial="initial"
         whileHover="hovered"
         className={`relative block overflow-hidden `}
@@ -34,7 +34,7 @@ export const FlipLink = ({
           lineHeight: 0.75,
         }}
       >
-        <div>
+        <li>
           {children.split("").map((letter, i) => (
             <motion.span
               variants={{
@@ -60,9 +60,9 @@ export const FlipLink = ({
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
-        </div>
+        </li>
 
-        <div className="absolute inset-0">
+        <li className="absolute inset-0">
           {children.split("").map((letter, i) => (
             <motion.span
               variants={{
@@ -88,8 +88,8 @@ export const FlipLink = ({
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
-        </div>
-      </motion.div>
+        </li>
+      </motion.ul>
     </Link>
   );
 };
