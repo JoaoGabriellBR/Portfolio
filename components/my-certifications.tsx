@@ -70,7 +70,7 @@ function getCertifications(
     },
     {
       description: t("webDevelopment.description"),
-      image: "programador-web.png",
+      image: "web-developer.png",
       type: "2023",
     },
   ];
