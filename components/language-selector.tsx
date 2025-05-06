@@ -47,7 +47,9 @@ export default function LanguageSelector() {
         distance={0.5}
         className={`${textSizes.lg} w-fit flex gap-2 p-5`}
       >
-        <FaGlobe className={`text-foreground dark:text-white ${textSizes.md}`} />
+        <FaGlobe
+          className={`text-foreground dark:text-white ${textSizes.md}`}
+        />
         <p className={`${textSizes.sm} text-foreground dark:font-normal`}>
           {languages.map(
             (language) => currentLocale === language.locale && language.label
@@ -74,12 +76,14 @@ export default function LanguageSelector() {
                 href={pathname}
                 locale={language.locale}
               >
-                <p className={`${textSizes.sm} text-foreground dark:font-normal`}>
+                <p
+                  className={`${textSizes.sm} text-foreground dark:font-normal`}
+                >
                   {language.label}
                 </p>
               </Link>
               {currentLocale === language.locale && (
-                <p className="bg-foreground rounded-full h-1 w-1"/>
+                <p className="bg-foreground rounded-full h-1 w-1" />
               )}
             </div>
           ))}

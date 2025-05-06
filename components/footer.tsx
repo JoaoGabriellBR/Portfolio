@@ -7,6 +7,7 @@ import Typography from "./ui/typography";
 import CursorFollow from "./cursor-follow";
 import { Link } from "@/i18n/navigation";
 import { FaArrowRight } from "react-icons/fa";
+import { textSizes } from "@/utils/text-sizes";
 
 interface FooterProps {
   page?: string;
@@ -99,7 +100,7 @@ function FooterArrow({ palette, arrowColor }: FooterArrowProps) {
       className="flex h-full w-full items-center justify-center shadow-2xl rounded-full p-4"
       style={{ backgroundColor: palette, color: arrowColor }}
     >
-      <FaArrowRight className="text-7xl" />
+      <FaArrowRight className={textSizes.xl3} />
     </div>
   );
 }

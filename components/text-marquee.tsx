@@ -13,7 +13,7 @@ import { wrap } from "@motionone/utils";
 import { cn } from "@/lib/utils";
 
 interface ParallaxProps {
-  children: React.ReactNode; // Aceita JSX ou texto
+  children: React.ReactNode;
   baseVelocity?: number;
   clasname?: string;
   scrollDependent?: boolean;

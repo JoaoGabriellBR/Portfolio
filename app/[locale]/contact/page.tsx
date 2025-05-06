@@ -19,7 +19,6 @@ export default function ContactPage() {
     <PageWithLoader text={t("section")}>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
-        {/* <BackgroundImage theme={theme} /> */}
         <MainContent
           title={t("title")}
           subtitle={t("subtitle")}
@@ -30,26 +29,6 @@ export default function ContactPage() {
     </PageWithLoader>
   );
 }
-
-// function BackgroundImage({ theme }: { theme?: string }) {
-//   const imageSrc =
-//     theme === "dark"
-//       ? "/images/suit-contact.png"
-//       : "/images/suit-contact-light-mode.png";
-
-//   return (
-//     <div className="relative">
-//       <Image
-//         src={imageSrc}
-//         alt="Suit"
-//         width={1000}
-//         height={1000}
-//         priority
-//         className="absolute top-0 right-0 -scale-x-100 pointer-events-none hidden lg:block opacity-100 dark:opacity-80"
-//       />
-//     </div>
-//   );
-// }
 
 function MainContent({
   title,

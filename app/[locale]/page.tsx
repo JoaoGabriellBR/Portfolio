@@ -47,7 +47,6 @@ export default function HomePage() {
   );
 }
 
-// Components
 function HeroSection({ theme }: { theme: string | undefined }) {
   const imageSrc =
     theme === "dark" ? "/images/suit.png" : "/images/suit-light-mode.png";

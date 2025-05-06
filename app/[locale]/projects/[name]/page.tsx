@@ -15,7 +15,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return <ProjectDetails project={project} currentProject={name} />;
 }
 
-// 👇 Código para gerar rotas estáticas
+// 👇 Gerar rotas estáticas
 export async function generateStaticParams() {
   return Object.keys(myProjects).map((name) => ({ name }));
 }
