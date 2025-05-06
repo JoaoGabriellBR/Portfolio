@@ -99,7 +99,7 @@ export function ProfileForm() {
       });
 
       form.reset();
-    } catch (error) {
+    } catch (_) {
       toast({
         variant: "error",
         duration: 4000,
