@@ -99,7 +99,8 @@ export function ProfileForm() {
       });
 
       form.reset();
-    } catch (_) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
       toast({
         variant: "error",
         duration: 4000,
