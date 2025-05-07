@@ -3,10 +3,10 @@ import ProjectDetails from "@/components/project-details";
 import myProjects, { ProjectName } from "@/data/projects";
 
 type ProjectPageProps = {
-  params: { name: ProjectName };
+  params: { locale: string; name: ProjectName };
 };
 
-export const dynamicParams = false; // Impede que Next.js aceite nomes não definidos em generateStaticParams
+export const dynamicParams = false;
 
 export default function ProjectPage({ params }: ProjectPageProps) {
   const { name } = params;
@@ -18,5 +18,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(myProjects).map((name) => ({ name }));
+  const locales = ["pt", "en", "es", "fr", "de"];
+  const projectNames = Object.keys(myProjects) as ProjectName[];
+
+  return locales.flatMap((locale) =>
+    projectNames.map((name) => ({ locale, name }))
+  );
 }
