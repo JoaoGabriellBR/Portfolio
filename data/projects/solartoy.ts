@@ -1,4 +1,4 @@
-const solartoyProject = {
+const solartoy = {
   name: "solartoy",
   title: "solar toy",
   descriptionKey: "solarToy.description", // chave de tradução
@@ -21,4 +21,4 @@ const solartoyProject = {
   fullImage: "/images/solartoy/mockup-solartoy-fullimage.png",
 };
 
-export default solartoyProject;
+export default solartoy;

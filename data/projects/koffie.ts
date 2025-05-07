@@ -1,4 +1,4 @@
-const koffieProject = {
+const koffie = {
   name: "koffie",
   title: "koffie",
   descriptionKey: "koffie.description", // chave de tradução
@@ -22,4 +22,4 @@ const koffieProject = {
   fullImage: "/images/koffie/mockup-koffie.png",
 };
 
-export default koffieProject;
+export default koffie;

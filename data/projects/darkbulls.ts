@@ -1,4 +1,4 @@
-const darkbullsProject = {
+const darkbulls = {
   name: "darkbulls",
   title: "dark bulls",
   descriptionKey: "darkBulls.description", // chave de tradução
@@ -14,4 +14,4 @@ const darkbullsProject = {
   ],
 };
 
-export default darkbullsProject;
+export default darkbulls;

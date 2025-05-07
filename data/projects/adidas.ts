@@ -1,4 +1,4 @@
-const adidasProject = {
+const adidas = {
   name: "adidas",
   title: "adidas",
   descriptionKey: "adidas.description", // chave de tradução
@@ -19,4 +19,4 @@ const adidasProject = {
   fullImage: "/images/adidas/adidas-mockup2.png",
 };
 
-export default adidasProject;
+export default adidas;

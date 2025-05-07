@@ -1,4 +1,4 @@
-const upwriteProject = {
+const upwrite = {
   name: "upwrite",
   title: "upwrite",
   descriptionKey: "upWrite.description", // chave de tradução
@@ -18,4 +18,4 @@ const upwriteProject = {
   fullImage: "/images/upwrite/upwrite-mockup.png",
 };
 
-export default upwriteProject;
+export default upwrite;
