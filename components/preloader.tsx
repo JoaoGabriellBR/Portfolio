@@ -47,7 +47,7 @@ export default function Preloader({ text }: PreloaderProps) {
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 700 : 200
+      index == 0 ? 600 : 100
     );
   }, [index]);
 
