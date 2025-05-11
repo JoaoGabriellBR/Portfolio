@@ -3,7 +3,6 @@ import { useEffect, useState, ReactNode } from "react";
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "@/i18n/navigation";
 import Preloader from "./preloader";
-import { useIsMounted } from "@/hooks/useIsMounted";
 
 type PageWithLoaderProps = {
   text: string;
@@ -19,11 +18,6 @@ export default function PageWithLoader({
 
   useEffect(() => {
     const isHome = pathname === "/";
-    const isReload =
-      sessionStorage.getItem("AcessouPeloRecarregamento") === "true";
-    const isFlipLink = sessionStorage.getItem("AcessouPeloFlipLink") === "true";
-    const showGreetings = isHome && isReload && !isFlipLink;
-
     const timeout = setTimeout(
       () => {
         // Aguarda o próximo frame para garantir que o layout foi montado
@@ -33,7 +27,7 @@ export default function PageWithLoader({
           setIsLoading(false);
         });
       },
-      showGreetings ? 1200 : 700
+      isHome ? 1300 : 700
     );
 
     return () => clearTimeout(timeout);

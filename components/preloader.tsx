@@ -3,39 +3,26 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { textSizes } from "@/utils/text-sizes";
 import { usePathname } from "@/i18n/navigation";
-import {
-  RiPokerClubsFill,
-  RiPokerDiamondsFill,
-  RiPokerSpadesFill,
-  RiPokerHeartsFill,
-} from "react-icons/ri";
+import { RiPokerDiamondsFill } from "react-icons/ri";
 import { opacity, preloader } from "@/utils/animations";
 
-const greetingStyles = `${textSizes.xl5} text-white`;
+type PreloaderProps = {
+  text: string;
+};
+
+const greetings = ["Olá", "Hallo", "Hola", "Bonjour", "Hello"];
+
 const introductionStyles =
   "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-[#050505]";
 const svgStyles = "absolute top-0 w-full h-calc(100vh + 300px)";
 const pathStyles = "fill-[#050505]";
 const paragraph = `${textSizes.xl3} flex flex-row gap-4 text-white items-center absolute z-10 tracking-wide break-words`;
 
-const greetings = [
-  { PokerIcon: RiPokerClubsFill },
-  { PokerIcon: RiPokerDiamondsFill },
-  { PokerIcon: RiPokerSpadesFill },
-  { PokerIcon: RiPokerHeartsFill },
-  { PokerIcon: RiPokerDiamondsFill },
-  { PokerIcon: RiPokerSpadesFill },
-];
-
-type PreloaderProps = {
-  text: string;
-};
-
 export default function Preloader({ text }: PreloaderProps) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
-  const [showGreetings, setShowGreetings] = useState<boolean | null>(null); // null enquanto não decide
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -47,18 +34,9 @@ export default function Preloader({ text }: PreloaderProps) {
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 600 : 100
+      index == 0 ? 700 : 150
     );
   }, [index]);
-
-  useEffect(() => {
-    const isHome = pathname === "/";
-    const isReload =
-      sessionStorage.getItem("AcessouPeloRecarregamento") === "true";
-    const isFlipLink = sessionStorage.getItem("AcessouPeloFlipLink") === "true";
-
-    setShowGreetings(isHome && isReload && !isFlipLink);
-  }, [pathname]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
@@ -86,10 +64,10 @@ export default function Preloader({ text }: PreloaderProps) {
       exit={preloader.exit}
       className={`${introductionStyles} overflow-hidden`}
     >
-      {dimension.width > 0 && showGreetings !== null && (
+      {dimension.width > 0 && (
         <>
-          {showGreetings ? (
-            <GreetingIcon currentIndex={index} />
+          {isHome ? (
+            <AnimatedText text={greetings[index]} />
           ) : (
             <AnimatedText text={text} />
           )}
@@ -105,15 +83,6 @@ export default function Preloader({ text }: PreloaderProps) {
         </>
       )}
     </motion.div>
-  );
-}
-
-function GreetingIcon({ currentIndex }: { currentIndex: number }) {
-  const { PokerIcon } = greetings[currentIndex];
-  return (
-    <div className="flex items-center justify-center">
-      <PokerIcon className={greetingStyles} />
-    </div>
   );
 }
 

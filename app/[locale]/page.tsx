@@ -18,7 +18,6 @@ import ScrollBaseAnimation from "@/components/text-marquee";
 import { ScrollPage } from "@/components/scroll-page";
 import { Meteors } from "@/components/ui/meteors";
 import PageWithLoader from "@/components/page-with-loader";
-import { DetectReload } from "@/components/detect-reload";
 
 export default function HomePage() {
   const tHome = useTranslations("Home");
@@ -28,8 +27,6 @@ export default function HomePage() {
   return (
     <PageWithLoader text={tHeader("home")}>
       <Header />
-      <DetectReload />
-
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
           <div className="flex flex-col-reverse lg:flex-col">
