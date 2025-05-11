@@ -3,7 +3,6 @@ const koffie = {
   title: "koffie",
   descriptionKey: "koffie.description", // chave de tradução
   icon: "GiCoffeeCup",
-  siteUrl: "https://adidasshopping.vercel.app",
   inDevelopment: true,
   palette: "#386950",
   desktopImages: [

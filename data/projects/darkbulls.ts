@@ -3,7 +3,6 @@ const darkbulls = {
   title: "dark bulls",
   descriptionKey: "darkBulls.description", // chave de tradução
   icon: "SiLamborghini",
-  siteUrl: "https://darkbullsshopping.vercel.app",
   inDevelopment: true,
   mockupVideo: "/videos/darkbulls/aventador.mp4",
   desktopImages: [

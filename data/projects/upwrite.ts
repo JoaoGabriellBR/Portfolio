@@ -3,7 +3,7 @@ const upwrite = {
   title: "upwrite",
   descriptionKey: "upWrite.description", // chave de tradução
   icon: "FaArrowTrendUp",
-  siteUrl: "https://adidasshopping.vercel.app",
+  siteUrl: "https://up-write.vercel.app",
   palette: "#6D28D9",
   desktopImages: [
     "/images/upwrite/mockup-upwrite-web-1.png",

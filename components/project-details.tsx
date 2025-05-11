@@ -168,7 +168,7 @@ function DescriptionSection({
         size="xl2"
         className="w-full lg:w-[60%] text-center lg:text-start"
       />
-      {inDevelopment ? (
+      {inDevelopment && !siteUrl ? (
         <div className="relative max-w-full p-10 min-w-[15rem] min-h-[15rem] flex justify-center items-center">
           <SpinningText
             fontSize={1}
