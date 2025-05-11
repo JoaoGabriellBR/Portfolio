@@ -27,7 +27,7 @@ type ProjectData = {
   descriptionKey: string;
   loadingText?: string;
   icon: string;
-  siteUrl: string;
+  siteUrl?: string;
   inDevelopment?: boolean;
   mockupVideo?: string;
   palette?: string;
@@ -147,13 +147,13 @@ function HeroSection({
 function DescriptionSection({
   description,
   loadingText,
-  siteUrl,
+  siteUrl = "",
   inDevelopment,
   buttonText,
 }: {
   description: string;
   loadingText: string;
-  siteUrl: string;
+  siteUrl?: string;
   inDevelopment?: boolean;
   buttonText: string;
 }) {
