@@ -2,15 +2,22 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { textSizes } from "@/utils/text-sizes";
-import { usePathname } from "@/i18n/navigation";
 import { RiPokerDiamondsFill } from "react-icons/ri";
 import { opacity, preloader } from "@/utils/animations";
 
 type PreloaderProps = {
   text: string;
+  showGreetings?: boolean;
 };
 
-const greetings = ["Olá", "Hallo", "Hola", "Bonjour", "Hello"];
+const greetings = [
+  "Olá, tudo bem?",
+  "Hallo, wie geht's?",
+  "Bonjour, ça va ?",
+  "Hola, ¿todo bien?",
+  "Hola, tot bé?",
+  "Hello, how are you?",
+];
 
 const introductionStyles =
   "h-[100vh] w-[100vw] flex items-center justify-center fixed z-50 bg-[#050505]";
@@ -18,11 +25,9 @@ const svgStyles = "absolute top-0 w-full h-calc(100vh + 300px)";
 const pathStyles = "fill-[#050505]";
 const paragraph = `${textSizes.xl3} flex flex-row gap-4 text-white items-center absolute z-10 tracking-wide break-words`;
 
-export default function Preloader({ text }: PreloaderProps) {
+export default function Preloader({ text, showGreetings }: PreloaderProps) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
-  const pathname = usePathname();
-  const isHome = pathname === "/";
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -34,7 +39,7 @@ export default function Preloader({ text }: PreloaderProps) {
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 700 : 150
+      index == 0 ? 1000 : 180
     );
   }, [index]);
 
@@ -66,7 +71,7 @@ export default function Preloader({ text }: PreloaderProps) {
     >
       {dimension.width > 0 && (
         <>
-          {isHome ? (
+          {showGreetings ? (
             <AnimatedText text={greetings[index]} />
           ) : (
             <AnimatedText text={text} />

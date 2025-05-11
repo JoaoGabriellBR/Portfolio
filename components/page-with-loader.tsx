@@ -16,27 +16,45 @@ export default function PageWithLoader({
   const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(true);
 
+  const isHome = pathname === "/";
+  const [shouldShowGreetings, setShouldShowGreetings] = useState(false);
+
   useEffect(() => {
-    const isHome = pathname === "/";
+    const navEntries = performance.getEntriesByType(
+      "navigation"
+    ) as PerformanceNavigationTiming[];
+    const isHardNavigation =
+      navEntries.length && navEntries[0].type === "navigate";
+
+    const hasSeenGreetings = sessionStorage.getItem("seen-home-greetings");
+
+    if (isHome && isHardNavigation && !hasSeenGreetings) {
+      setShouldShowGreetings(true);
+      sessionStorage.setItem("seen-home-greetings", "true");
+    }
+  }, [pathname]);
+
+  useEffect(() => {
     const timeout = setTimeout(
       () => {
-        // Aguarda o próximo frame para garantir que o layout foi montado
         requestAnimationFrame(() => {
           document.body.style.cursor = "default";
           window.scrollTo(0, 0);
           setIsLoading(false);
         });
       },
-      isHome ? 1300 : 700
+      shouldShowGreetings ? 2000 : 700
     );
 
     return () => clearTimeout(timeout);
-  }, [pathname]);
+  }, [pathname, shouldShowGreetings]);
 
   return (
     <>
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader text={text} />}
+        {isLoading && (
+          <Preloader text={text} showGreetings={shouldShowGreetings} />
+        )}
       </AnimatePresence>
       {!isLoading && children}
     </>
