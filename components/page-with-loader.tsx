@@ -15,22 +15,27 @@ export default function PageWithLoader({
 }: PageWithLoaderProps) {
   const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(true);
-
-  const isHome = pathname === "/";
   const [shouldShowGreetings, setShouldShowGreetings] = useState(false);
 
   useEffect(() => {
+    const isHome = pathname === "/";
     const navEntries = performance.getEntriesByType(
       "navigation"
     ) as PerformanceNavigationTiming[];
     const isHardNavigation =
       navEntries.length && navEntries[0].type === "navigate";
 
-    const hasSeenGreetings = sessionStorage.getItem("seen-home-greetings");
+    const GREETING_TIMEOUT_MINUTES = 30;
+    const lastShown = sessionStorage.getItem("last-home-greeting");
+    const now = Date.now();
 
-    if (isHome && isHardNavigation && !hasSeenGreetings) {
+    const hasExpired =
+      !lastShown ||
+      now - parseInt(lastShown, 10) > GREETING_TIMEOUT_MINUTES * 60 * 1000;
+
+    if (isHome && isHardNavigation && hasExpired) {
       setShouldShowGreetings(true);
-      sessionStorage.setItem("seen-home-greetings", "true");
+      sessionStorage.setItem("last-home-greeting", now.toString());
     }
   }, [pathname]);
 
