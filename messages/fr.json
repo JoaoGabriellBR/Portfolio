@@ -6,6 +6,7 @@
     "contact": "Contact"
   },
   "Home": {
+    "jumbotron": "* Développeur Full Stack",
     "Section2": {
       "title": "Je conçois, développe et crée des applications optimisées grâce aux bonnes pratiques de développement.",
       "button": "À propos de moi"

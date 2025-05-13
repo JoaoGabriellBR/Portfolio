@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
 import { Link } from "@/i18n/navigation";
 import { textSizes } from "@/utils/text-sizes";
 import { TfiArrowTopRight } from "react-icons/tfi";
@@ -15,58 +14,83 @@ import Typography from "@/components/ui/typography";
 import { MagneticButton } from "@/components/ui/button-magnetic";
 import Projects from "@/components/projects";
 import ScrollBaseAnimation from "@/components/text-marquee";
-import { ScrollPage } from "@/components/scroll-page";
 import { Meteors } from "@/components/ui/meteors";
 import PageWithLoader from "@/components/page-with-loader";
+import useDeviceType from "@/hooks/use-device-type";
 
 export default function HomePage() {
   const tHome = useTranslations("Home");
   const tHeader = useTranslations("Header");
-  const { theme } = useTheme();
 
   return (
     <PageWithLoader text={tHeader("home")}>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
-          <div className="flex flex-col-reverse lg:flex-col">
-            <HeroSection theme={theme} />
-            <AboutSection translations={tHome} />
-          </div>
+          <Meteors number={200} />
+          <Jumbotron translations={tHome} />
+          <AboutSection translations={tHome} />
           <SmoothScrollHero />
           <ProjectsIntro translations={tHome} />
           <Projects />
         </main>
       </ReactLenis>
-
       <Footer page={tHeader("about")} route="/about" />
     </PageWithLoader>
   );
 }
 
-function HeroSection({ theme }: { theme: string | undefined }) {
-  const imageSrc =
-    theme === "dark" ? "/images/suit.png" : "/images/suit-light-mode.png";
-
+function Jumbotron({
+  translations,
+}: {
+  translations: ReturnType<typeof useTranslations>;
+}) {
   return (
-    <section className="relative container mx-auto px-4 py-6 flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)]">
-      <div className="w-full max-w-[900px]">
-        <Image
-          src={imageSrc}
-          alt="Suit Image"
-          width={1200}
-          height={1200}
-          className="w-full h-auto object-contain"
-          priority
-        />
+    <>
+      <div className="absolute top-0 inset-0 flex justify-center items-center z-0 pointer-events-none">
+        <BackgroundImage />
       </div>
-
-      <Meteors number={120} />
-
-      <div className="hidden lg:block absolute bottom-[7.5rem] transform -translate-x-1/2 lg:translate-x-0 left-0">
-        <ScrollPage sectionLink="#about-section" />
+      <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full z-10 pb-20">
+          <ScrollBaseAnimation delay={1000} baseVelocity={-1.5}>
+            <Typography
+              text={translations("jumbotron")}
+              color="white"
+              size="xl5"
+              className="text-center"
+            />
+          </ScrollBaseAnimation>
+        </div>
       </div>
-    </section>
+    </>
+  );
+}
+
+function BackgroundImage() {
+  return (
+    <Image
+      src="/images/photo.jpg"
+      width={1100}
+      height={1100}
+      alt="Personal photo"
+      className="opacity-80 dark:opacity-70 -scale-x-100 pointer-events-none"
+      style={{
+        WebkitMaskImage: `
+            linear-gradient(to top, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%),
+            linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%),
+            linear-gradient(to left, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%),
+            linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%)
+          `,
+        maskImage: `
+            linear-gradient(to top, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%),
+            linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%),
+            linear-gradient(to left, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%),
+            linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%)
+          `,
+        WebkitMaskComposite: "multiply",
+        maskComposite: "intersect",
+      }}
+    />
   );
 }
 
@@ -75,10 +99,12 @@ function AboutSection({
 }: {
   translations: ReturnType<typeof useTranslations>;
 }) {
+  const { isMobile, isTablet, isLandscape } = useDeviceType();
   return (
     <section
-      id="about-section"
-      className="relative container mx-auto px-4 py-20 lg:py-0 min-h-[calc(100vh-80px)] lg:min-h-[40rem] flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4"
+      className={`${
+        isMobile ? "-mb-[12rem]" : isTablet && !isLandscape ? "-mb-[6rem]" : ""
+      } relative container mx-auto px-4 min-h-[10rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4`}
     >
       <Typography
         text={translations("Section2.title")}
@@ -103,10 +129,6 @@ function AboutSection({
           />
         </MagneticButton>
       </Link>
-
-      <div className="lg:hidden place-self-center absolute bottom-6">
-        <ScrollPage sectionLink="#about-section" />
-      </div>
     </section>
   );
 }
