@@ -81,9 +81,9 @@ export default function Projects({
             <Image
               src={project.src}
               width={600}
-              className="object-contain"
               height={600}
               alt="Project image"
+              priority
             />
           </div>
         ))}

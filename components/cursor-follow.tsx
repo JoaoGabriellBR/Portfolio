@@ -60,7 +60,14 @@ export default function CursorFollow({
       ease: "power3",
     });
 
+    let lastCall = 0;
+    const delay = 10; // ms
+
     const handleMouseMove = (e: MouseEvent) => {
+      const now = Date.now();
+      if (now - lastCall < delay) return;
+      lastCall = now;
+
       const { pageX, pageY } = e;
       xMoveContainer(pageX);
       yMoveContainer(pageY);
@@ -82,7 +89,7 @@ export default function CursorFollow({
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className={`${classNameContainer} absolute p-16 text-center break-words hidden lg:flex items-center justify-center overflow-hidden pointer-events-none`}
+        className={`${classNameContainer} absolute p-16 text-center break-words opacity-0 lg:opacity-100 lg:flex items-center justify-center overflow-hidden pointer-events-none`}
       >
         <div
           style={{ top: `${index * -100}%` }}
