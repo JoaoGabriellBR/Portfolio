@@ -37,6 +37,7 @@ export default function CursorFollow({
       duration: 0.8,
       ease: "power3",
     });
+
     const yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
       duration: 0.8,
       ease: "power3",
@@ -60,14 +61,11 @@ export default function CursorFollow({
       ease: "power3",
     });
 
-    let lastCall = 0;
-    const delay = 10; // ms
-
+    let lastTime = 0;
     const handleMouseMove = (e: MouseEvent) => {
-      const now = Date.now();
-      if (now - lastCall < delay) return;
-      lastCall = now;
-
+      const now = performance.now();
+      if (now - lastTime < 16) return;
+      lastTime = now;
       const { pageX, pageY } = e;
       xMoveContainer(pageX);
       yMoveContainer(pageY);
