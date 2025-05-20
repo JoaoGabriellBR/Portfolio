@@ -18,7 +18,7 @@ const koffie = {
     "/images/koffie/mockup-small-koffie-1.png",
     "/images/koffie/mockup-small-koffie-2.png",
   ],
-  fullImage: "/images/koffie/mockup-koffie.png",
+  fullImage: "/images/koffie/mockup-koffie.webp",
 };
 
 export default koffie;

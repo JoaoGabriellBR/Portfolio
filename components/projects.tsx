@@ -80,9 +80,9 @@ export default function Projects({
           >
             <Image
               src={project.src}
+              alt={project.title}
               width={600}
               height={600}
-              alt="Project image"
               priority
             />
           </div>
