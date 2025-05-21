@@ -10,28 +10,28 @@ import useDeviceType from "@/hooks/use-device-type";
 
 const images = [
   {
-    src: "/images/parallax/alarm-clock.png",
+    src: "/images/parallax/alarm-clock.webp",
     alt: "Small image of an alarm clock",
     start: -200,
     end: 200,
     className: "w-1/3",
   },
   {
-    src: "/images/parallax/adidas.png",
+    src: "/images/parallax/adidas.webp",
     alt: "Small image of adidas project",
     start: 200,
     end: -250,
     className: "mx-auto w-2/3",
   },
   {
-    src: "/images/parallax/coffe.png",
+    src: "/images/parallax/coffe.webp",
     alt: "Small image of Koffie project",
     start: -200,
     end: 200,
     className: "ml-auto w-1/3",
   },
   {
-    src: "/images/parallax/lamborghini.png",
+    src: "/images/parallax/lamborghini.webp",
     alt: "Small image of dark bulls project",
     start: 0,
     end: -500,

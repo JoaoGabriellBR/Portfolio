@@ -25,9 +25,9 @@ export default function HomePage() {
   return (
     <PageWithLoader text={tHeader("home")}>
       <Header />
+      <Meteors number={120} />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
-          <Meteors number={200} />
           <Jumbotron translations={tHome} />
           <AboutSection translations={tHome} />
           <SmoothScrollHero />
