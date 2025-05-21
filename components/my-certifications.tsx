@@ -12,7 +12,7 @@ import useDeviceType from "@/hooks/use-device-type";
 interface Certification {
   description: string;
   image: string;
-  type: string;
+  received_in: string;
 }
 
 interface ModalState {
@@ -37,9 +37,9 @@ export default function MyCertifications() {
         modal={modal}
         classNameContainer="h-[8rem] sm:h-[8rem] md:h-[19rem] lg:h-[25rem] w-[8rem] sm:w-[8rem] md:w-[22rem] lg:w-[30rem]"
       >
-        {certifications.map((cert, idx) => (
+        {certifications.map((cert, index) => (
           <CertificationImage
-            key={`modal_${idx}`}
+            key={`modal_${index}`}
             image={cert.image}
             description={cert.description}
           />
@@ -55,23 +55,23 @@ function getCertifications(
   return [
     {
       description: t("cybersecurity.description"),
-      image: "introduction-to-cybersecurity.png",
-      type: "2025",
+      image: "certifications/introduction-to-cybersecurity.webp",
+      received_in: "2025",
     },
     {
       description: t("machineLearning.description"),
-      image: "aws-machine-learning.png",
-      type: "2024",
+      image: "certifications/aws-machine-learning.webp",
+      received_in: "2024",
     },
     {
       description: t("cloudFoundations.description"),
-      image: "aws-cloud-foundations.png",
-      type: "2024",
+      image: "certifications/aws-cloud-foundations.webp",
+      received_in: "2024",
     },
     {
       description: t("webDevelopment.description"),
-      image: "web-developer.png",
-      type: "2023",
+      image: "certifications/web-developer.webp",
+      received_in: "2023",
     },
   ];
 }
@@ -114,7 +114,7 @@ function CertificationItem({
     >
       {isMobile && (
         <Image
-          src={`/images/${certification.image}`}
+          src={`${certification.image}`}
           width={600}
           height={600}
           className="object-contain"
@@ -134,7 +134,7 @@ function CertificationItem({
       </div>
 
       <Typography
-        text={certification.type}
+        text={certification.received_in}
         size="sm"
         className="font-normal"
         letterPadding={false}
