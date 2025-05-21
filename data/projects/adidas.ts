@@ -16,7 +16,7 @@ const adidas = {
     "/images/adidas/mockups/mockup-adidas-mobile-2.webp",
     "/images/adidas/mockups/mockup-adidas-mobile-3.webp",
   ],
-  fullImage: "/images/adidas/mockups/adidas-mockup2.webp",
+  fullImage: "/images/adidas/adidas.webp",
 };
 
 export default adidas;

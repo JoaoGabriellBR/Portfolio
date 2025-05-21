@@ -101,7 +101,8 @@ const ParallaxBigImage = ({ sectionHeight }: { sectionHeight: number }) => {
         clipPath,
         backgroundSize,
         opacity,
-        backgroundImage: "url('/images/darkbulls/mockup-darkbulls-web-4.png')",
+        backgroundImage:
+          "url('/images/darkbulls/mockups/darkbulls-web-4.webp')",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}

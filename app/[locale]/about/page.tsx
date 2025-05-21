@@ -203,7 +203,7 @@ function FeaturedWorksSection({
           projectName="Lamborghini"
           alt="darkbulls"
           projectDescription={lamborghiniDescription}
-          projectImage="darkbulls/lamborghini-about.png"
+          projectImage="darkbulls/darkbulls-about.webp"
           imagePosition="left"
           Icon={SiLamborghini}
         />
