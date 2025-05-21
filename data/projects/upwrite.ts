@@ -6,16 +6,16 @@ const upwrite = {
   siteUrl: "https://up-write.vercel.app",
   palette: "#6D28D9",
   desktopImages: [
-    "/images/upwrite/mockup-upwrite-web-1.png",
-    "/images/upwrite/mockup-upwrite-web-2.png",
-    "/images/upwrite/mockup-upwrite-web-3.png",
+    "/images/upwrite/mockups/upwrite-web-1.webp",
+    "/images/upwrite/mockups/upwrite-web-2.webp",
+    "/images/upwrite/mockups/upwrite-web-3.webp",
   ],
   mobileImages: [
-    "/images/upwrite/mockup-upwrite-mobile-1.png",
-    "/images/upwrite/mockup-upwrite-mobile-2.png",
-    "/images/upwrite/mockup-upwrite-mobile-3.png",
+    "/images/upwrite/mockups/upwrite-mobile-1.webp",
+    "/images/upwrite/mockups/upwrite-mobile-2.webp",
+    "/images/upwrite/mockups/upwrite-mobile-3.webp",
   ],
-  fullImage: "/images/upwrite/upwrite-mockup.png",
+  fullImage: "/images/upwrite/mockups/upwrite-mockup.webp",
 };
 
 export default upwrite;
