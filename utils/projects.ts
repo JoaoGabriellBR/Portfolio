@@ -10,7 +10,7 @@ export const projects: ProjectsProps[] = [
   {
     title: "Adidas",
     name: "adidas",
-    src: "/images/adidas/adidas-mockup2.webp",
+    src: "/images/adidas/mockups/adidas-mockup2.webp",
     href: "/projects/adidas",
     type: "Full Stack",
   },

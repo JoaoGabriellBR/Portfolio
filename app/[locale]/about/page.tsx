@@ -196,7 +196,7 @@ function FeaturedWorksSection({
           projectName="Adidas"
           alt="adidas"
           projectDescription={adidasDescription}
-          projectImage="adidas/adidas-about.png"
+          projectImage="adidas/adidas-about.webp"
           Icon={SiAdidas}
         />
         <FeaturedWork

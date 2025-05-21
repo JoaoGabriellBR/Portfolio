@@ -7,16 +7,16 @@ const adidas = {
   palette: "#f2f2f2",
   arrowFooterColor: "#0c0c0c",
   desktopImages: [
-    "/images/adidas/mockup-adidas-web-1.png",
-    "/images/adidas/mockup-adidas-web-2.png",
-    "/images/adidas/mockup-adidas-web-3.png",
+    "/images/adidas/mockups/mockup-adidas-web-1.webp",
+    "/images/adidas/mockups/mockup-adidas-web-2.webp",
+    "/images/adidas/mockups/mockup-adidas-web-3.webp",
   ],
   mobileImages: [
-    "/images/adidas/mockup-adidas-mobile-1.png",
-    "/images/adidas/mockup-adidas-mobile-2.png",
-    "/images/adidas/mockup-adidas-mobile-3.png",
+    "/images/adidas/mockups/mockup-adidas-mobile-1.webp",
+    "/images/adidas/mockups/mockup-adidas-mobile-2.webp",
+    "/images/adidas/mockups/mockup-adidas-mobile-3.webp",
   ],
-  fullImage: "/images/adidas/adidas-mockup2.webp",
+  fullImage: "/images/adidas/mockups/adidas-mockup2.webp",
 };
 
 export default adidas;
