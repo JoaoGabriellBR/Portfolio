@@ -69,7 +69,7 @@ function Jumbotron({
 function BackgroundImage() {
   return (
     <Image
-      src="/images/photo.jpg"
+      src="/images/photo.webp"
       width={1100}
       height={1100}
       alt="Personal photo"

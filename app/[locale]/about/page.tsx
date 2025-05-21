@@ -58,7 +58,7 @@ function BackgroundImage() {
   return (
     <div className="relative">
       <Image
-        src="/images/photo.jpg"
+        src="/images/photo.webp"
         width={1000}
         height={1000}
         alt="Personal photo"
