@@ -114,7 +114,7 @@ function CertificationItem({
     >
       {isMobile && (
         <Image
-          src={`${certification.image}`}
+          src={`/images/${certification.image}`}
           width={600}
           height={600}
           className="object-contain"
