@@ -24,7 +24,7 @@ export const projects: ProjectsProps[] = [
   {
     title: "Koffie",
     name: "koffie",
-    src: "/images/koffie/mockup-koffie.webp",
+    src: "/images/koffie/koffie.webp",
     href: "/projects/koffie",
     type: "Front end",
   },

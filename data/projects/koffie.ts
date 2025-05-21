@@ -6,19 +6,19 @@ const koffie = {
   inDevelopment: true,
   palette: "#386950",
   desktopImages: [
-    "/images/koffie/mockup-koffie-web-1.png",
-    "/images/koffie/mockup-koffie-web-2.png",
+    "/images/koffie/mockups/koffie-web-1.webp",
+    "/images/koffie/mockups/koffie-web-2.webp",
   ],
   mobileImages: [
-    "/images/koffie/mockup-koffie-mobile-1.png",
-    "/images/koffie/mockup-koffie-mobile-2.png",
-    "/images/koffie/mockup-koffie-mobile-3.png",
+    "/images/koffie/mockups/koffie-mobile-1.webp",
+    "/images/koffie/mockups/koffie-mobile-2.webp",
+    "/images/koffie/mockups/koffie-mobile-3.webp",
   ],
   smallImages: [
-    "/images/koffie/mockup-small-koffie-1.png",
-    "/images/koffie/mockup-small-koffie-2.png",
+    "/images/koffie/mockups/small-koffie-1.webp",
+    "/images/koffie/mockups/small-koffie-2.webp",
   ],
-  fullImage: "/images/koffie/mockup-koffie.webp",
+  fullImage: "/images/koffie/koffie.webp",
 };
 
 export default koffie;
