@@ -6,19 +6,19 @@ const solartoy = {
   siteUrl: "https://solartoy.netlify.app",
   palette: "#0B2B40",
   desktopImages: [
-    "/images/solartoy/mockup-solartoy-web-1.png",
-    "/images/solartoy/mockup-solartoy-web-2.png",
+    "/images/solartoy/mockups/solartoy-web-1.webp",
+    "/images/solartoy/mockups/solartoy-web-2.webp",
   ],
   mobileImages: [
-    "/images/solartoy/mockup-solartoy-mobile-1.png",
-    "/images/solartoy/mockup-solartoy-mobile-2.png",
-    "/images/solartoy/mockup-solartoy-mobile-3.png",
+    "/images/solartoy/mockups/solartoy-mobile-1.webp",
+    "/images/solartoy/mockups/solartoy-mobile-2.webp",
+    "/images/solartoy/mockups/solartoy-mobile-3.webp",
   ],
   smallImages: [
-    "/images/solartoy/mockup-small-solartoy-1.png",
-    "/images/solartoy/mockup-small-solartoy-2.png",
+    "/images/solartoy/mockups/small-solartoy-1.webp",
+    "/images/solartoy/mockups/small-solartoy-2.webp",
   ],
-  fullImage: "/images/solartoy/mockup-solartoy-fullimage.png",
+  fullImage: "/images/solartoy/mockups/solartoy-fullimage.webp",
 };
 
 export default solartoy;
