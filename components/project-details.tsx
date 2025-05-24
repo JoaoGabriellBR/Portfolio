@@ -1,5 +1,6 @@
 "use client";
 
+import React, { memo } from "react";
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
@@ -43,6 +44,12 @@ type ProjectDetailsProps = {
   currentProject: string;
 };
 
+const MemoizedImage = memo(Image);
+const MemoizedTypography = memo(Typography);
+const MemoizedVideoMockup = memo(VideoMockup);
+const MemoizedMonitorMockup = memo(MonitorMockup);
+const MemoizedSmartphoneMockup = memo(SmartphoneMockup);
+
 export default function ProjectDetails({
   project,
   currentProject,
@@ -78,7 +85,7 @@ type MainContentProps = {
   Icon: React.ElementType;
 };
 
-function MainContent({
+const MainContent = memo(function MainContent({
   project,
   currentProject,
   translation,
@@ -115,11 +122,11 @@ function MainContent({
       />
     </main>
   );
-}
+});
 
 // --- Sections ---
 
-function HeroSection({
+const HeroSection = memo(function HeroSection({
   title,
   Icon,
 }: {
@@ -127,10 +134,17 @@ function HeroSection({
   Icon: React.ElementType;
 }) {
   return (
-    <section className="relative container mx-auto px-4 flex flex-col items-center justify-center text-center pt-12 min-h-[calc(100vh-80px)]">
+    <section
+      className="relative container mx-auto px-4 flex flex-col items-center justify-center text-center pt-12 min-h-[calc(100vh-80px)]"
+      role="banner"
+      aria-label="Project hero section"
+    >
       <div className="flex flex-row items-center justify-between gap-4 -mt-28">
-        <Icon className={`${textSizes.xl5} text-foreground dark:text-white`} />
-        <Typography
+        <Icon
+          className={`${textSizes.xl5} text-foreground dark:text-white`}
+          aria-hidden="true"
+        />
+        <MemoizedTypography
           text={title}
           color="white"
           size="xl5"
@@ -142,7 +156,7 @@ function HeroSection({
       </div>
     </section>
   );
-}
+});
 
 function DescriptionSection({
   description,
@@ -162,7 +176,7 @@ function DescriptionSection({
       id="project-description"
       className="container mx-auto px-4 py-20 lg:py-0 min-h-[20rem] lg:min-h-[40rem] flex flex-col lg:flex-row justify-between items-center gap-4"
     >
-      <Typography
+      <MemoizedTypography
         text={description}
         color="white"
         size="xl2"
@@ -184,7 +198,7 @@ function DescriptionSection({
           </SpinningText>
         </div>
       ) : (
-        <Link href={siteUrl} target="blank">
+        <Link href={siteUrl} target="_blank" rel="noopener noreferrer">
           <MagneticButton
             distance={1}
             type="3d"
@@ -193,7 +207,11 @@ function DescriptionSection({
             <TfiArrowTopRight
               className={`${textSizes.xl6} text-foreground dark:text-white`}
             />
-            <Typography size="md" text={buttonText} letterPadding={false} />
+            <MemoizedTypography
+              size="md"
+              text={buttonText}
+              letterPadding={false}
+            />
           </MagneticButton>
         </Link>
       )}
@@ -203,8 +221,16 @@ function DescriptionSection({
 
 function VideoSection({ videoSrc }: { videoSrc: string }) {
   return (
-    <section className="relative container mx-auto px-4 overflow-hidden">
-      <VideoMockup src={videoSrc} autoPlay />
+    <section
+      className="relative container mx-auto px-4 overflow-hidden"
+      role="region"
+      aria-label="Project video demonstration"
+    >
+      <MemoizedVideoMockup
+        src={videoSrc}
+        autoPlay
+        aria-label="Project demonstration video"
+      />
     </section>
   );
 }
@@ -212,31 +238,44 @@ function VideoSection({ videoSrc }: { videoSrc: string }) {
 function FullImageSection({ imageSrc }: { imageSrc: string }) {
   return (
     <section className="w-full mx-auto px-4 min-h-[50vh] lg:min-h-screen mb-16 lg:mb-0 flex items-start justify-center">
-      <MonitorMockup>
-        <Image
+      <MemoizedMonitorMockup>
+        <MemoizedImage
           src={imageSrc}
           alt="Full screen mockup"
           fill
           className="rounded-[3rem] h-[90%]"
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.src = "/images/fallback.webp";
+          }}
         />
-      </MonitorMockup>
+      </MemoizedMonitorMockup>
     </section>
   );
 }
 
 function MobileMockupsSection({ images }: { images: string[] }) {
   return (
-    <section className="w-full min-h-screen flex items-center">
+    <section
+      className="w-full min-h-screen flex items-center"
+      role="region"
+      aria-label="Mobile mockups gallery"
+    >
       <div className="container mx-auto px-4 flex flex-col lg:flex-row flex-wrap gap-16 items-center justify-center lg:justify-between">
         {images.map((src, index) => (
-          <SmartphoneMockup key={index}>
-            <Image
+          <MemoizedSmartphoneMockup key={index}>
+            <MemoizedImage
               src={src}
-              alt={`Mobile mockup ${index + 1}`}
+              alt={`Mobile application mockup ${index + 1}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="rounded-[3rem] h-[90%]"
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.src = "/images/fallback.webp";
+              }}
             />
-          </SmartphoneMockup>
+          </MemoizedSmartphoneMockup>
         ))}
       </div>
     </section>
@@ -245,10 +284,16 @@ function MobileMockupsSection({ images }: { images: string[] }) {
 
 function DesktopMockupsSection({ images }: { images: string[] }) {
   return (
-    <section className="w-full min-h-screen mt-32">
+    <section
+      className="w-full min-h-screen mt-32"
+      role="region"
+      aria-label="Desktop mockups gallery"
+    >
       {images.map((src, index) => (
         <div
           key={index}
+          role="img"
+          aria-label={`Desktop application mockup ${index + 1}`}
           className="w-full min-h-screen bg-no-repeat bg-contain lg:bg-cover bg-center bg-fixed"
           style={{ backgroundImage: `url(${src})` }}
         />
@@ -273,7 +318,7 @@ function SmallImagesSection({
             index === 0 ? "items-start justify-start" : "items-end justify-end"
           }`}
         >
-          <Image
+          <MemoizedImage
             src={src}
             width={700}
             height={700}
