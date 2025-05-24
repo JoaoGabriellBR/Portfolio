@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { scaleAnimation } from "@/utils/animations";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import gsap from "gsap";
-import React from "react";
+import { scaleAnimation } from "@/utils/animations";
+import { useCursorAnimation } from "@/hooks/use-cursor-animation";
+import { usePointerEvents } from "@/hooks/use-pointer-events";
+import { BREAKPOINTS } from "@/utils/animation-config";
 
 interface CursorFollowProps {
   modal: {
@@ -26,58 +27,27 @@ export default function CursorFollow({
   isProject = false,
 }: CursorFollowProps) {
   const { active, index } = modal;
-
-  const modalContainer = useRef<HTMLDivElement | null>(null);
-  const cursor = useRef<HTMLDivElement | null>(null);
-  const cursorLabel = useRef<HTMLDivElement | null>(null);
   const t = useTranslations("Home.Projects");
 
-  useEffect(() => {
-    const xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
-      duration: 0.8,
-      ease: "power3",
-    });
+  // Refs for animation targets
+  const modalContainer = useRef<HTMLDivElement>(null);
+  const cursor = useRef<HTMLDivElement>(null);
+  const cursorLabel = useRef<HTMLDivElement>(null);
 
-    const yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
-      duration: 0.8,
-      ease: "power3",
-    });
+  // Setup animations
+  const { updatePositions } = useCursorAnimation({
+    modalContainer,
+    cursor: isProject ? cursor : undefined,
+    cursorLabel: isProject ? cursorLabel : undefined,
+  });
 
-    const xMoveCursor = gsap.quickTo(cursor.current, "left", {
-      duration: 0.5,
-      ease: "power3",
-    });
-    const yMoveCursor = gsap.quickTo(cursor.current, "top", {
-      duration: 0.5,
-      ease: "power3",
-    });
+  // Setup pointer events
+  usePointerEvents({ onMove: updatePositions });
 
-    const xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", {
-      duration: 0.45,
-      ease: "power3",
-    });
-    const yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", {
-      duration: 0.45,
-      ease: "power3",
-    });
-
-    let lastTime = 0;
-    const handleMouseMove = (e: MouseEvent) => {
-      const now = performance.now();
-      if (now - lastTime < 16) return;
-      lastTime = now;
-      const { pageX, pageY } = e;
-      xMoveContainer(pageX);
-      yMoveContainer(pageY);
-      xMoveCursor(pageX);
-      yMoveCursor(pageY);
-      xMoveCursorLabel(pageX);
-      yMoveCursorLabel(pageY);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  // Early return for mobile devices
+  if (typeof window !== 'undefined' && window.innerWidth < BREAKPOINTS.mobile) {
+    return null;
+  }
 
   return (
     <>
@@ -88,6 +58,7 @@ export default function CursorFollow({
         initial="initial"
         animate={active ? "enter" : "closed"}
         className={`${classNameContainer} absolute p-16 text-center break-words opacity-0 lg:opacity-100 lg:flex items-center justify-center overflow-hidden pointer-events-none`}
+        aria-hidden="true" // Since this is decorative
       >
         <div
           style={{ top: `${index * -100}%` }}
@@ -105,6 +76,7 @@ export default function CursorFollow({
           initial="initial"
           animate={active ? "enter" : "closed"}
           className="text-md text-foreground dark:text-white bg-background absolute z-20 rounded-full flex items-center justify-center pointer-events-none text-center w-20 h-20 max-w-xs max-h-fit p-14 shadow-lg"
+          aria-hidden="true"
         >
           {t("cursorLabel")}
         </motion.div>
