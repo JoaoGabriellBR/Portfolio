@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { motion } from "framer-motion";
 import { textSizes } from "@/utils/text-sizes";
 import { RiPokerDiamondsFill } from "react-icons/ri";
@@ -25,29 +25,67 @@ const svgStyles = "absolute top-0 w-full h-calc(100vh + 300px)";
 const pathStyles = "fill-[#050505]";
 const paragraph = `${textSizes.xl3} flex flex-row gap-4 text-white items-center absolute z-10 tracking-wide break-words`;
 
-export default function Preloader({ text, showGreetings }: PreloaderProps) {
+const AnimatedText = memo(function AnimatedText({ text }: { text: string }) {
+  return (
+    <motion.p
+      className={paragraph}
+      variants={opacity}
+      initial="initial"
+      animate="enter"
+    >
+      <RiPokerDiamondsFill className={`${textSizes.md} text-white`} />
+      {text}
+    </motion.p>
+  );
+});
+
+function Preloader({ text, showGreetings }: PreloaderProps) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
+  // Otimiza a medição das dimensões da janela
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
-  }, []);
+    const updateDimension = () => {
+      requestAnimationFrame(() => {
+        setDimension({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      });
+    };
 
+    updateDimension();
+
+    // Adiciona listener para redimensionamento apenas se necessário
+    if (showGreetings) {
+      window.addEventListener("resize", updateDimension);
+      return () => window.removeEventListener("resize", updateDimension);
+    }
+  }, [showGreetings]);
+
+  // Otimiza a animação de saudações
   useEffect(() => {
-    if (index == greetings.length - 1) return;
-    setTimeout(
+    if (!showGreetings || index === greetings.length - 1) return;
+
+    const timer = setTimeout(
       () => {
-        setIndex(index + 1);
+        requestAnimationFrame(() => {
+          setIndex((i) => i + 1);
+        });
       },
-      index == 0 ? 1000 : 180
+      index === 0 ? 1000 : 180
     );
-  }, [index]);
 
+    return () => clearTimeout(timer);
+  }, [index, showGreetings]);
+
+  // Calcula os paths para a animação SVG
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
   } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
     dimension.height
   }  L0 0`;
+
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
   } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
@@ -91,16 +129,4 @@ export default function Preloader({ text, showGreetings }: PreloaderProps) {
   );
 }
 
-function AnimatedText({ text }: { text: string }) {
-  return (
-    <motion.p
-      className={paragraph}
-      variants={opacity}
-      initial="initial"
-      animate="enter"
-    >
-      <RiPokerDiamondsFill className={`${textSizes.md} text-white`} />
-      {text}
-    </motion.p>
-  );
-}
+export default memo(Preloader);

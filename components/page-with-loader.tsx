@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, ReactNode } from "react";
+import { useEffect, useState, ReactNode, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "@/i18n/navigation";
 import Preloader from "./preloader";
@@ -14,9 +14,11 @@ export default function PageWithLoader({
   children,
 }: PageWithLoaderProps) {
   const pathname = usePathname();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
   const [shouldShowGreetings, setShouldShowGreetings] = useState(false);
+  const [isContentReady, setIsContentReady] = useState(false);
 
+  // Gerencia a lógica de saudações na página inicial
   useEffect(() => {
     const isHome = pathname === "/";
     const navEntries = performance.getEntriesByType(
@@ -39,29 +41,48 @@ export default function PageWithLoader({
     }
   }, [pathname]);
 
+  // Gerencia a transição do preloader e conteúdo
   useEffect(() => {
-    const timeout = setTimeout(
+    // Inicia o carregamento do conteúdo imediatamente
+    const contentLoadTimeout = setTimeout(() => {
+      setIsContentReady(true);
+    }, 100); // Pequeno delay para garantir que o React tenha tempo de montar o componente
+
+    // Configura o timer para remover o preloader
+    const preloaderTimeout = setTimeout(
       () => {
         requestAnimationFrame(() => {
           document.body.style.cursor = "default";
           window.scrollTo(0, 0);
-          setIsLoading(false);
+          setIsPreloaderVisible(false);
         });
       },
       shouldShowGreetings ? 2000 : 700
     );
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(contentLoadTimeout);
+      clearTimeout(preloaderTimeout);
+    };
   }, [pathname, shouldShowGreetings]);
 
   return (
     <>
       <AnimatePresence mode="wait">
-        {isLoading && (
+        {isPreloaderVisible && (
           <Preloader text={text} showGreetings={shouldShowGreetings} />
         )}
       </AnimatePresence>
-      {!isLoading && children}
+
+      <div
+        style={{
+          opacity: isPreloaderVisible ? 0 : 1,
+          transition: "opacity 0.3s ease-in-out",
+          visibility: isPreloaderVisible ? "hidden" : "visible",
+        }}
+      >
+        <Suspense fallback={null}>{isContentReady && children}</Suspense>
+      </div>
     </>
   );
 }
