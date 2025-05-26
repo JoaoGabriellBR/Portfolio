@@ -2,11 +2,6 @@ import { useEffect, useRef, RefObject } from 'react';
 import gsap from 'gsap';
 import { CURSOR_ANIMATION_CONFIG, BREAKPOINTS } from '@/utils/animation-config';
 
-// Extended type for GSAP's QuickToFunc that includes the kill method
-type GSAPQuickToFunc = gsap.QuickToFunc & {
-  kill: () => void;
-};
-
 interface AnimationRefs {
   modalContainer: RefObject<HTMLDivElement>;
   cursor?: RefObject<HTMLDivElement>;
