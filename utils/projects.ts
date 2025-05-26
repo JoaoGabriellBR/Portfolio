@@ -15,6 +15,13 @@ export const projects: ProjectsProps[] = [
     type: "Full Stack",
   },
   {
+    title: "UpWrite",
+    name: "upwrite",
+    src: "/images/upwrite/upwrite.webp",
+    href: "/projects/upwrite",
+    type: "Full Stack",
+  },
+  {
     title: "Dark Bulls",
     name: "darkbulls",
     src: "/images/darkbulls/darkbulls.webp",
@@ -27,13 +34,6 @@ export const projects: ProjectsProps[] = [
     src: "/images/koffie/koffie.webp",
     href: "/projects/koffie",
     type: "Front end",
-  },
-  {
-    title: "UpWrite",
-    name: "upwrite",
-    src: "/images/upwrite/upwrite.webp",
-    href: "/projects/upwrite",
-    type: "Full Stack",
   },
   {
     title: "Solar Toy",

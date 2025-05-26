@@ -37,7 +37,7 @@ class ErrorBoundary extends Component<Props, State> {
             />
             <Typography
               text="Please try refreshing the page"
-              color="gray"
+              color="silver"
               size="md"
             />
             <button
