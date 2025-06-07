@@ -4,7 +4,6 @@ const darkbulls = {
   descriptionKey: "darkBulls.description", // chave de tradução
   icon: "SiLamborghini",
   inDevelopment: true,
-  mockupVideo: "/videos/darkbulls/aventador.mp4",
   desktopImages: [
     "/images/darkbulls/darkbulls.webp",
     "/images/darkbulls/mockups/darkbulls-web-2.webp",

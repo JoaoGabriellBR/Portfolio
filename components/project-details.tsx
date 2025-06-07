@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { iconMap } from "@/utils/icons";
 import { textSizes } from "@/utils/text-sizes";
-import VideoMockup from "./ui/video-mockup";
 import PageWithLoader from "./page-with-loader";
 import { TfiArrowTopRight } from "react-icons/tfi";
 
@@ -30,7 +29,6 @@ type ProjectData = {
   icon: string;
   siteUrl?: string;
   inDevelopment?: boolean;
-  mockupVideo?: string;
   palette?: string;
   arrowFooterColor?: string;
   desktopImages?: string[];
@@ -46,7 +44,6 @@ type ProjectDetailsProps = {
 
 const MemoizedImage = memo(Image);
 const MemoizedTypography = memo(Typography);
-const MemoizedVideoMockup = memo(VideoMockup);
 const MemoizedMonitorMockup = memo(MonitorMockup);
 const MemoizedSmartphoneMockup = memo(SmartphoneMockup);
 
@@ -101,7 +98,6 @@ const MainContent = memo(function MainContent({
         inDevelopment={project.inDevelopment}
         buttonText={translation("viewSite")}
       />
-      {project.mockupVideo && <VideoSection videoSrc={project.mockupVideo} />}
       {project.fullImage && <FullImageSection imageSrc={project.fullImage} />}
       {project.mobileImages && (
         <MobileMockupsSection images={project.mobileImages} />
@@ -215,22 +211,6 @@ function DescriptionSection({
           </MagneticButton>
         </Link>
       )}
-    </section>
-  );
-}
-
-function VideoSection({ videoSrc }: { videoSrc: string }) {
-  return (
-    <section
-      className="relative container mx-auto px-4 overflow-hidden"
-      role="region"
-      aria-label="Project video demonstration"
-    >
-      <MemoizedVideoMockup
-        src={videoSrc}
-        autoPlay
-        aria-label="Project demonstration video"
-      />
     </section>
   );
 }
