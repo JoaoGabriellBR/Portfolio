@@ -139,7 +139,7 @@ function AboutSection({ translations, responsiveClasses }: AboutSectionProps) {
         className="w-full lg:w-[60%] text-center lg:text-start"
       />
 
-      <Link href="/about">
+      <Link href="/about" className="z-10">
         <MagneticButton
           distance={1}
           type="3d"
