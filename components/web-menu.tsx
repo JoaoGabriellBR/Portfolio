@@ -63,6 +63,7 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
       {/* Idioma + Tema */}
       <div className="absolute right-4 lg:right-0 hidden md:flex items-center gap-x-4">
         <LanguageSelectorWeb />
+        
         <ModeToggle type="web" />
       </div>
     </div>
