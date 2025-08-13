@@ -54,16 +54,6 @@
         "last_year_company": "2022"
       }
     },
-    "FeaturedWorks": {
-      "section": "Featured Projects",
-      "button": "View",
-      "adidas": {
-        "description": "Complete e-commerce with a wide range of products and fast checkout."
-      },
-      "lamborghini": {
-        "description": "Car gallery of the Italian luxury automobile brand."
-      }
-    },
     "Services": {
       "section": "Services",
       "title": "I could help you with...",
