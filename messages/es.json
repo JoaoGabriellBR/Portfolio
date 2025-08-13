@@ -54,16 +54,6 @@
         "last_year_company": "2022"
       }
     },
-    "FeaturedWorks": {
-      "section": "Proyectos Destacados",
-      "button": "Ver",
-      "adidas": {
-        "description": "E-commerce completo con una amplia variedad de productos y un pago rápido."
-      },
-      "lamborghini": {
-        "description": "Galería de autos de la marca italiana de lujo."
-      }
-    },
     "Services": {
       "section": "Servicios",
       "title": "Podría ayudarte con...",

@@ -11,17 +11,15 @@ import { Services } from "@/components/services";
 import Typography from "@/components/ui/typography";
 import { JobTimeline } from "@/components/job-timeline";
 import { TextReveal } from "@/components/ui/text-reveal";
-import { FeaturedWork } from "@/components/featured-work";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { DrawCircleText } from "@/components/draw-circle-text";
 import { ScrollPage } from "@/components/scroll-page";
 import { ButtonHover } from "@/components/ui/button-hover";
 import PageWithLoader from "@/components/page-with-loader";
 
-import { BsArrowDownLeft, BsArrow90DegDown } from "react-icons/bs";
+import { BsArrowDownLeft } from "react-icons/bs";
 import { RiPokerDiamondsFill } from "react-icons/ri";
 import { GoArrowUpRight } from "react-icons/go";
-import { SiAdidas, SiLamborghini } from "react-icons/si";
 import { textSizes } from "@/utils/text-sizes";
 
 export default function AboutPage() {
@@ -38,11 +36,6 @@ export default function AboutPage() {
           <ExperienceSection title={t("Experience.section")} />
           <SkillsSection title={t("Skills.section")} />
           <CertificationsSection title={t("Certifications.section")} />
-          <FeaturedWorksSection
-            title={t("FeaturedWorks.section")}
-            adidasDescription={t("FeaturedWorks.adidas.description")}
-            lamborghiniDescription={t("FeaturedWorks.lamborghini.description")}
-          />
           <ServicesSection
             sectionTitle={t("Services.section")}
             servicesTitle={t("Services.title")}
@@ -164,50 +157,6 @@ function CertificationsSection({ title }: { title: string }) {
         />
         <GoArrowUpRight className={`${textSizes.xl4}`} />
       </ButtonHover>
-    </section>
-  );
-}
-
-function FeaturedWorksSection({
-  title,
-  adidasDescription,
-  lamborghiniDescription,
-}: {
-  title: string;
-  adidasDescription: string;
-  lamborghiniDescription: string;
-}) {
-  return (
-    <section className="container mx-auto px-4">
-      <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center relative text-center lg:text-left">
-        <Typography
-          text={title}
-          color="white"
-          size="xl5"
-          letterPadding={false}
-        />
-        <BsArrow90DegDown
-          className={`${textSizes.xl6} text-foreground dark:text-white hidden lg:block absolute bottom-20 right-80 scale-x-[-1]`}
-        />
-      </div>
-
-      <div className="flex flex-col gap-32">
-        <FeaturedWork
-          projectName="Adidas"
-          alt="adidas"
-          projectDescription={adidasDescription}
-          projectImage="adidas/adidas-about.webp"
-          Icon={SiAdidas}
-        />
-        <FeaturedWork
-          projectName="Lamborghini"
-          alt="darkbulls"
-          projectDescription={lamborghiniDescription}
-          projectImage="darkbulls/darkbulls-about.webp"
-          imagePosition="left"
-          Icon={SiLamborghini}
-        />
-      </div>
     </section>
   );
 }
