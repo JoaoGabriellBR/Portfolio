@@ -29,7 +29,7 @@ type ProjectData = {
   loadingText?: string;
   icon: string;
   siteUrl?: string;
-  github: string;
+  github?: string;
   inDevelopment?: boolean;
   palette?: string;
   arrowFooterColor?: string;
@@ -160,13 +160,13 @@ function DescriptionSection({
   description,
   loadingText,
   siteUrl = "",
-  github,
+  github = "",
   inDevelopment,
 }: {
   description: string;
   loadingText: string;
   siteUrl?: string;
-  github: string;
+  github?: string;
   inDevelopment?: boolean;
 }) {
   const projectLinks = [
