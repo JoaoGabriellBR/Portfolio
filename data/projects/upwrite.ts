@@ -2,7 +2,7 @@ const upwrite = {
   name: "upwrite",
   title: "upwrite",
   descriptionKey: "upWrite.description", // chave de tradução
-  icon: "FaArrowTrendUp",
+  icon: "FiCheckSquare",
   siteUrl: "https://up-write.vercel.app",
   github: "https://github.com/JoaoGabriellBR/UpWrite",
   palette: "#6D28D9",
