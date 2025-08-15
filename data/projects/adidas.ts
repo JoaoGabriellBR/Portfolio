@@ -4,6 +4,7 @@ const adidas = {
   descriptionKey: "adidas.description", // chave de tradução
   icon: "SiAdidas",
   siteUrl: "https://adidasshopping.vercel.app",
+  github: "https://github.com/JoaoGabriellBR/Adidas-shopping",
   palette: "#f2f2f2",
   arrowFooterColor: "#0c0c0c",
   desktopImages: [

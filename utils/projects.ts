@@ -17,7 +17,7 @@ export const projects: ProjectsProps[] = [
   {
     title: "UpWrite",
     name: "upwrite",
-    src: "/images/upwrite/upwrite.webp",
+    src: "/images/upwrite/mockups/upwrite.webp",
     href: "/projects/upwrite",
     type: "Full Stack",
   },

@@ -4,6 +4,7 @@ const solartoy = {
   descriptionKey: "solarToy.description", // chave de tradução
   icon: "RiLightbulbFlashLine",
   siteUrl: "https://solartoy.netlify.app",
+  github: "https://github.com/JoaoGabriellBR/solartoy",
   palette: "#0B2B40",
   desktopImages: [
     "/images/solartoy/mockups/solartoy-web-1.webp",
