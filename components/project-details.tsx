@@ -21,6 +21,8 @@ import { DrawCircleText } from "@/components/draw-circle-text";
 import { MagneticButton } from "@/components/ui/button-magnetic";
 import { SpinningText } from "./ui/spinning-text";
 import { RiPokerSpadesFill } from "react-icons/ri";
+import { FiExternalLink } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa6";
 
 type ProjectData = {
   title: string;
@@ -28,6 +30,7 @@ type ProjectData = {
   loadingText?: string;
   icon: string;
   siteUrl?: string;
+  github: string;
   inDevelopment?: boolean;
   palette?: string;
   arrowFooterColor?: string;
@@ -95,6 +98,7 @@ const MainContent = memo(function MainContent({
         description={translation(project.descriptionKey)}
         loadingText={translation("loadingText")}
         siteUrl={project.siteUrl}
+        github={project.github}
         inDevelopment={project.inDevelopment}
         buttonText={translation("viewSite")}
       />
@@ -158,15 +162,22 @@ function DescriptionSection({
   description,
   loadingText,
   siteUrl = "",
+  github,
   inDevelopment,
   buttonText,
 }: {
   description: string;
   loadingText: string;
   siteUrl?: string;
+  github: string;
   inDevelopment?: boolean;
   buttonText: string;
 }) {
+  const projectLinks = [
+    { projectLink: github, Icon: FaGithub },
+    { projectLink: siteUrl, Icon: FiExternalLink },
+  ];
+
   return (
     <section
       id="project-description"
@@ -178,7 +189,7 @@ function DescriptionSection({
         size="xl2"
         className="w-full lg:w-[60%] text-center lg:text-start"
       />
-      {inDevelopment && !siteUrl ? (
+      {inDevelopment && !github ? (
         <div className="relative max-w-full p-10 min-w-[15rem] min-h-[15rem] flex justify-center items-center">
           <SpinningText
             fontSize={1}
@@ -194,22 +205,26 @@ function DescriptionSection({
           </SpinningText>
         </div>
       ) : (
-        <Link href={siteUrl} target="_blank" rel="noopener noreferrer">
-          <MagneticButton
-            distance={1}
-            type="3d"
-            className="w-40 h-40 lg:w-64 lg:h-64 flex flex-col justify-center items-center gap-2 text-2xl p-5"
-          >
-            <TfiArrowTopRight
-              className={`${textSizes.xl6} text-foreground dark:text-white`}
-            />
-            <MemoizedTypography
-              size="md"
-              text={buttonText}
-              letterPadding={false}
-            />
-          </MagneticButton>
-        </Link>
+        <div className="flex flex-row flex-wrap gap-6 items-center justify-end">
+          {projectLinks.map(({ projectLink, Icon }, index) => (
+            <Link
+              key={index}
+              href={projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MagneticButton
+                distance={1}
+                type="3d"
+                className="w-20 h-20 lg:w-28 lg:h-28 flex flex-col justify-center items-center gap-2 text-2xl p-5"
+              >
+                <Icon
+                  className={`${textSizes.xl6} text-foreground dark:text-white`}
+                />
+              </MagneticButton>
+            </Link>
+          ))}
+        </div>
       )}
     </section>
   );
