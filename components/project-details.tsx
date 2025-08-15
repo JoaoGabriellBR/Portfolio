@@ -8,7 +8,6 @@ import { Link } from "@/i18n/navigation";
 import { iconMap } from "@/utils/icons";
 import { textSizes } from "@/utils/text-sizes";
 import PageWithLoader from "./page-with-loader";
-import { TfiArrowTopRight } from "react-icons/tfi";
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -100,7 +99,6 @@ const MainContent = memo(function MainContent({
         siteUrl={project.siteUrl}
         github={project.github}
         inDevelopment={project.inDevelopment}
-        buttonText={translation("viewSite")}
       />
       {project.fullImage && <FullImageSection imageSrc={project.fullImage} />}
       {project.mobileImages && (
@@ -164,14 +162,12 @@ function DescriptionSection({
   siteUrl = "",
   github,
   inDevelopment,
-  buttonText,
 }: {
   description: string;
   loadingText: string;
   siteUrl?: string;
   github: string;
   inDevelopment?: boolean;
-  buttonText: string;
 }) {
   const projectLinks = [
     { projectLink: github, Icon: FaGithub },
