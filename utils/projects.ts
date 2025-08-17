@@ -26,20 +26,20 @@ export const projects: ProjectsProps[] = [
     name: "darkbulls",
     src: "/images/darkbulls/darkbulls.webp",
     href: "/projects/darkbulls",
-    type: "Front end",
+    type: "Front-end",
   },
   {
     title: "Koffie",
     name: "koffie",
     src: "/images/koffie/koffie.webp",
     href: "/projects/koffie",
-    type: "Front end",
+    type: "Front-end",
   },
   {
     title: "Solar Toy",
     name: "solartoy",
     src: "/images/solartoy/solartoy.webp",
     href: "/projects/solartoy",
-    type: "Front end",
+    type: "Front-end",
   },
 ];

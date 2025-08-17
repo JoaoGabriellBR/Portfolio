@@ -7,12 +7,12 @@ export const Services = () => {
   const services = [
     {
       number: "01",
-      name: "Front end",
+      name: "Front-end",
       test: t("frontend"),
     },
     {
       number: "02",
-      name: "Back end",
+      name: "Back-end",
       test: t("backend"),
     },
     {
