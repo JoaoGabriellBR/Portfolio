@@ -147,8 +147,7 @@
     "button": "Kontakt"
   },
   "ModalSkills": {
-    "typescript": "Programmiersprache",
-    "mysql": "Datenbank",
-    "aws": "Cloud"
+    "programmingLanguage": "Programmiersprache",
+    "database": "Datenbank"
   }
 }

@@ -3,8 +3,22 @@
 import { useState } from "react";
 import Typography from "./ui/typography";
 import { useTranslations } from "next-intl";
-import { SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
-import { FaReact, FaNode, FaDocker, FaAws, FaArrowRight } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiMysql,
+  SiPostgresql,
+  SiPrisma,
+  SiJavascript,
+} from "react-icons/si";
+import {
+  FaReact,
+  FaNode,
+  FaDocker,
+  FaArrowRight,
+  FaGit,
+  FaGithub,
+} from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import CursorFollow from "./cursor-follow";
 
@@ -26,7 +40,7 @@ export default function Skills() {
   const skills = getSkills(t);
 
   return (
-    <section className="flex flex-col items-center justify-center place-self-end w-full lg:w-[70%]">
+    <section className="flex flex-col items-center justify-center place-self-end w-full">
       {skills.map((skill, index) => (
         <SkillItem
           key={skill.title}
@@ -57,38 +71,62 @@ function getSkills(t: ReturnType<typeof useTranslations>): Skill[] {
     {
       title: "React.js",
       logo: <FaReact className={iconClass} />,
-      type: "Front end",
+      type: "Front-end",
     },
     {
       title: "Next.js",
       logo: <SiNextdotjs className={iconClass} />,
-      type: "Front end",
+      type: "Front-end",
+    },
+    {
+      title: "Tailwind CSS",
+      logo: <RiTailwindCssFill className={iconClass} />,
+      type: "Front-end",
     },
     {
       title: "Node.js",
       logo: <FaNode className={iconClass} />,
-      type: "Back end",
+      type: "Back-end",
+    },
+    {
+      title: "Prisma ORM",
+      logo: <SiPrisma className={iconClass} />,
+      type: "Back-end",
     },
     {
       title: "Docker",
       logo: <FaDocker className={iconClass} />,
       type: "DevOps",
     },
-    { title: "AWS", logo: <FaAws className={iconClass} />, type: t("aws") },
     {
-      title: "Tailwind CSS",
-      logo: <RiTailwindCssFill className={iconClass} />,
-      type: "Front end",
+      title: "Git",
+      logo: <FaGit className={iconClass} />,
+      type: "DevOps",
+    },
+    {
+      title: "GitHub",
+      logo: <FaGithub className={iconClass} />,
+      type: "DevOps",
     },
     {
       title: "TypeScript",
       logo: <SiTypescript className={iconClass} />,
-      type: t("typescript"),
+      type: t("programmingLanguage"),
+    },
+    {
+      title: "JavaScript",
+      logo: <SiJavascript className={iconClass} />,
+      type: t("programmingLanguage"),
+    },
+    {
+      title: "PostgreSQL",
+      logo: <SiPostgresql className={iconClass} />,
+      type: t("database"),
     },
     {
       title: "MySQL",
       logo: <SiMysql className={iconClass} />,
-      type: t("mysql"),
+      type: t("database"),
     },
   ];
 }
