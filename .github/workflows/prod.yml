@@ -3,11 +3,14 @@ name: "Build and Deploy to Production"
 on:
   push:
     branches: ["master"]
+  pull_request:
+    branches: ["master"]
 jobs:
   build-porfolio:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: "Checking the Application"
+        uses: actions/checkout@v3
 
       - name: "Installing Node.js"
         uses: actions/setup-node@v3
