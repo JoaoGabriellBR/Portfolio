@@ -15,7 +15,6 @@ import {
   FaReact,
   FaNode,
   FaDocker,
-  FaAws,
   FaArrowRight,
   FaGit,
   FaGithub,
