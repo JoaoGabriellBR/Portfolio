@@ -1,26 +1,101 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import Script from "next/script";
 import ProjectDetails from "@/components/project-details";
 import myProjects, { ProjectName } from "@/data/projects";
+import { getTranslations } from "next-intl/server";
+import { SITE, type Locale } from "@/config/site";
+import {
+  buildAlternates,
+  buildCanonical,
+  ogLocale,
+} from "@/lib/seo";
 
 type ProjectPageProps = {
-  params: { locale: string; name: ProjectName };
+  params: { locale: Locale; name: ProjectName };
 };
 
 export const dynamicParams = false;
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const { name } = params;
+  const { locale, name } = params;
   const project = myProjects[name];
-
   if (!project) return notFound();
 
-  return <ProjectDetails project={project} currentProject={name} />;
+  const home = buildCanonical(locale, "/projects");
+  const url = buildCanonical(locale, `/projects/${name}`);
+
+  return (
+    <>
+      <ProjectDetails project={project} currentProject={name} />
+      <Script
+        id="jsonld-project"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: SITE.siteName, item: home },
+                { "@type": "ListItem", position: 2, name: project.title, item: url },
+              ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: project.title,
+              author: { "@type": "Person", name: SITE.siteName },
+              image: new URL(project.fullImage, SITE.metadataBase).toString(),
+              inLanguage: locale,
+            },
+          ]),
+        }}
+      />
+    </>
+  );
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { locale, name } = params;
+  const project = myProjects[name];
+  if (!project) {
+    return {
+      title: "Projeto não encontrado",
+      description: "",
+      robots: { index: false, follow: false },
+    };
+  }
+  const t = await getTranslations({ locale });
+  const description = t(project.descriptionKey);
+  const title = `${project.title} — ${SITE.siteName}`;
+  const alternates = buildAlternates(locale, `/projects/${name}`);
+  const url = alternates.canonical;
+  return {
+    title,
+    description,
+    keywords: [project.title.toLowerCase(), "project", "portfolio"],
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: SITE.siteName,
+      type: "article",
+      locale: ogLocale[locale],
+      images: [
+        {
+          url: new URL(project.fullImage, SITE.metadataBase).toString(),
+          alt: project.title,
+        },
+      ],
+    },
+  };
 }
 
 export async function generateStaticParams() {
-  const locales = ["pt", "en", "es", "fr", "de"];
+  const locales: Locale[] = ["pt", "en", "es", "fr", "de"];
   const projectNames = Object.keys(myProjects) as ProjectName[];
-
   return locales.flatMap((locale) =>
     projectNames.map((name) => ({ locale, name }))
   );
