@@ -49,7 +49,12 @@ export default function AboutPage({ params }: PageProps) {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: SITE.siteName, item: home },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: SITE.siteName,
+                item: home,
+              },
               { "@type": "ListItem", position: 2, name: meta.title, item: url },
             ],
           }),

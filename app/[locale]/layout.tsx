@@ -43,10 +43,10 @@ export function generateMetadata({ params }: LayoutParams): Metadata {
     icons: {
       icon: "/favicon.ico",
       shortcut: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
-      other: [{ rel: "mask-icon", url: "/mask-icon.svg" }],
+      // apple: "/apple-touch-icon.png",
+      // other: [{ rel: "mask-icon", url: "/mask-icon.svg" }],
     },
-    manifest: "/site.webmanifest",
+    // manifest: "/site.webmanifest",
     openGraph: {
       title: meta.title,
       description: meta.description,

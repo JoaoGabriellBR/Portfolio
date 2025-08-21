@@ -5,11 +5,7 @@ import ProjectDetails from "@/components/project-details";
 import myProjects, { ProjectName } from "@/data/projects";
 import { getTranslations } from "next-intl/server";
 import { SITE, type Locale } from "@/config/site";
-import {
-  buildAlternates,
-  buildCanonical,
-  ogLocale,
-} from "@/lib/seo";
+import { buildAlternates, buildCanonical, ogLocale } from "@/lib/seo";
 import type { ProjectData } from "@/components/project-details";
 
 type ProjectPageProps = {
@@ -39,8 +35,18 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: SITE.siteName, item: home },
-                { "@type": "ListItem", position: 2, name: project.title, item: url },
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: SITE.siteName,
+                  item: home,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: project.title,
+                  item: url,
+                },
               ],
             },
             {
@@ -58,7 +64,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   );
 }
 
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
   const { locale, name } = params;
   const project: ProjectData = myProjects[name];
   if (!project) {
@@ -68,7 +76,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       robots: { index: false, follow: false },
     };
   }
-  const t = await getTranslations({ locale });
+  const t = await getTranslations("Project.projectDetails");
   const description = t(project.descriptionKey);
   const title = `${project.title} — ${SITE.siteName}`;
   const alternates = buildAlternates(locale, `/projects/${name}`);
