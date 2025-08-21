@@ -13,7 +13,7 @@ import { BsArrowDownLeft } from "react-icons/bs";
 import { usePathname } from "@/i18n/navigation";
 import { useEffect } from "react";
 
-export default function Projects({
+export default function ProjectsComponent({
   currentProject,
 }: {
   currentProject?: string;
