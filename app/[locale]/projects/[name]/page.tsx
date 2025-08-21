@@ -10,6 +10,7 @@ import {
   buildCanonical,
   ogLocale,
 } from "@/lib/seo";
+import type { ProjectData } from "@/components/project-details";
 
 type ProjectPageProps = {
   params: { locale: Locale; name: ProjectName };
@@ -19,11 +20,12 @@ export const dynamicParams = false;
 
 export default function ProjectPage({ params }: ProjectPageProps) {
   const { locale, name } = params;
-  const project = myProjects[name];
+  const project: ProjectData = myProjects[name];
   if (!project) return notFound();
 
   const home = buildCanonical(locale, "/projects");
   const url = buildCanonical(locale, `/projects/${name}`);
+  const imageUrl = project.fullImage ?? project.desktopImages;
 
   return (
     <>
@@ -46,7 +48,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               "@type": "Article",
               headline: project.title,
               author: { "@type": "Person", name: SITE.siteName },
-              image: new URL(project.fullImage, SITE.metadataBase).toString(),
+              image: new URL(String(imageUrl), SITE.metadataBase).toString(),
               inLanguage: locale,
             },
           ]),
@@ -58,7 +60,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { locale, name } = params;
-  const project = myProjects[name];
+  const project: ProjectData = myProjects[name];
   if (!project) {
     return {
       title: "Projeto não encontrado",
@@ -71,6 +73,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const title = `${project.title} — ${SITE.siteName}`;
   const alternates = buildAlternates(locale, `/projects/${name}`);
   const url = alternates.canonical;
+  const imageUrl = project.fullImage ?? project.desktopImages;
   return {
     title,
     description,
@@ -85,7 +88,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       locale: ogLocale[locale],
       images: [
         {
-          url: new URL(project.fullImage, SITE.metadataBase).toString(),
+          url: new URL(String(imageUrl), SITE.metadataBase).toString(),
           alt: project.title,
         },
       ],

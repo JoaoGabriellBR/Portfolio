@@ -47,8 +47,6 @@ export function generateMetadata({ params }: LayoutParams): Metadata {
       other: [{ rel: "mask-icon", url: "/mask-icon.svg" }],
     },
     manifest: "/site.webmanifest",
-    themeColor: "#000000",
-    viewport: { width: "device-width", initialScale: 1, maximumScale: 5 },
     openGraph: {
       title: meta.title,
       description: meta.description,
@@ -71,7 +69,10 @@ type RootLayoutProps = {
   params: Promise<{ locale: Locale }>;
 };
 
-export default async function RootLayout({ children, params }: RootLayoutProps) {
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
   const { locale } = await params;
   if (!routing.locales.includes(locale)) {
     notFound();
