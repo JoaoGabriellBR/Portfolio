@@ -10,7 +10,7 @@ export type RouteKey =
 interface LocalizedMeta {
   title: string;
   description: string;
-  keywords: readonly string[];
+  keywords: string[];
 }
 
 const META: Record<RouteKey, Record<Locale, LocalizedMeta>> = {
