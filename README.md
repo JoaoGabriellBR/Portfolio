@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio
 
-## Getting Started
+[![Next.js][nextjs-shield]][nextjs-url]
+[![TypeScript][typescript-shield]][typescript-url]
+[![Tailwind CSS][tailwind-shield]][tailwind-url]
+[![Framer Motion][framer-shield]][framer-url]
 
-First, run the development server:
+> ♦️ Portfólio pessoal construído com Next.js, TypeScript, Framer Motion, GSAP e Tailwind CSS. Apresenta meus projetos, certificações e formas de contato em múltiplos idiomas.
+
+![Preview](./public/images/second-suit.png)
+
+## ✨ Features
+- Interface responsiva em React.js
+- Animações com Framer Motion e GSAP
+- Modo claro e escuro
+- Internacionalização (pt, en, es, fr, de)
+- Formulário de contato integrado ao EmailJS
+- Dados tipados com TypeScript
+
+## ���️ Stack
+- **Next.js**
+- **React.js**
+- **TypeScript**
+- **Tailwind CSS**
+- **Radix UI**
+- **Framer Motion & GSAP**
+- **next-intl**
+- **Zod**
+- **Lenis**
+- **react-icons**
+
+## ��� Como usar
+
+### Requisitos
+- Node.js 18+
+- npm, yarn, pnpm ou bun
+
+### Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/<seu-usuario>/Portfolio-2.0.git
+cd Portfolio-2.0
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variáveis de Ambiente
+Crie um arquivo `.env.local` na raiz do projeto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_SERVICE_ID=seu_service_id
+NEXT_PUBLIC_TEMPLATE_ID=seu_template_id
+NEXT_PUBLIC_KEY_PUBLIC=sua_public_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Desenvolvimento
+```bash
+npm run dev
+```
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+### Build de Produção
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔗 Links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Linkedin][Linkedin]][Linkedin-url]
+[![Email][Email]][Email-url]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[Linkedin]: https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white
+[Linkedin-url]: https://www.linkedin.com/in/joaogabriel-silva
 
-## Deploy on Vercel
+[Email]: https://img.shields.io/badge/-gmail-white.svg?style=for-the-badge&logo=gmail
+[Email-url]: joaoname9@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[nextjs-shield]: https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[nextjs-url]: https://nextjs.org
+[typescript-shield]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[typescript-url]: https://www.typescriptlang.org/
+[tailwind-shield]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwind-url]: https://tailwindcss.com
+[framer-shield]: https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white
+[framer-url]: https://www.framer.com/motion/
