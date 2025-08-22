@@ -41,8 +41,8 @@ export function generateMetadata({ params }: LayoutParams): Metadata {
     alternates,
     robots: { index: true, follow: true },
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
+      icon: "../favicon.ico",
+      shortcut: "../favicon.ico",
       // apple: "/apple-touch-icon.png",
       // other: [{ rel: "mask-icon", url: "/mask-icon.svg" }],
     },
