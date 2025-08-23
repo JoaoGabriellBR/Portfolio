@@ -184,7 +184,24 @@ export function getLocalizedMeta(
 }
 
 export function buildOgImagePath(route: RouteKey, locale: Locale): string {
-  return new URL(`/og/${locale}/${route}.png`, SITE.metadataBase).toString();
+  const { title } = getLocalizedMeta(locale, route);
+
+  const base = new URL(
+    `/${encodeURIComponent(title)}.png`,
+    "https://og-image.vercel.app"
+  );
+
+  base.searchParams.set("theme", "light");
+  base.searchParams.set("md", "0");
+  base.searchParams.set("fontSize", "125px");
+  base.searchParams.set(
+    "images",
+    new URL(SITE.defaultOgImage, SITE.metadataBase).toString()
+  );
+  base.searchParams.set("widths", "400");
+  base.searchParams.set("heights", "400");
+
+  return base.toString();
 }
 
 export function buildCanonical(locale: Locale, pathname: string): string {
