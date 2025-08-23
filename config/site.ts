@@ -1,5 +1,5 @@
 export const SITE = {
-  siteName: "João Gabriel Silva",
+  siteName: "João Gabriel Silva | Desenvolvedor de Software",
   metadataBase: new URL("https://joaogabrielsilva.com.br"),
   defaultLocale: "pt",
   locales: ["pt", "en", "es", "fr", "de"] as const,
@@ -9,7 +9,7 @@ export const SITE = {
   },
   defaultDescription:
     "Desenvolvedor Full Stack com experiência profissional em React, Next.js, Node.js, CI/CD, DevOps e metodologias ágeis. Explore meu portfólio para ver meus projetos e conquistas.",
-  defaultOgImage: "/favicon.ico",
+  defaultOgImage: "https://og-image.vercel.app/João%20Gabriel%20Silva%20|%20Desenvolvedor%20de%20Software?theme=bold&md=1&fontSize=75px&images=https://joaogabrielsilva.com.br/images/photo.webp",
 } as const;
 
 export type Locale = (typeof SITE)["locales"][number];
