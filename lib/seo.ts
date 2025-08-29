@@ -212,7 +212,10 @@ export function buildCanonical(locale: Locale, pathname: string): string {
 export function buildAlternates(locale: Locale, pathname: string) {
   const canonical = buildCanonical(locale, pathname);
   const languages = Object.fromEntries(
-    SITE.locales.map((l) => [ogLocale[l].replace("_", "-"), buildCanonical(l, pathname)])
+    SITE.locales.map((l) => [
+      ogLocale[l].replace("_", "-"),
+      buildCanonical(l, pathname),
+    ])
   ) as Record<string, string>;
   const xDefault = buildCanonical(SITE.defaultLocale, pathname);
   return { canonical, languages: { ...languages, "x-default": xDefault } };
@@ -229,4 +232,3 @@ export const ogLocale: Record<Locale, string> = {
   fr: "fr_FR",
   de: "de_DE",
 } as const;
-

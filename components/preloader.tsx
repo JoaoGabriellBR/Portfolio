@@ -8,6 +8,7 @@ import { opacity, preloader } from "@/utils/animations";
 type PreloaderProps = {
   text: string;
   showGreetings?: boolean;
+  onFinish?: () => void;
 };
 
 const greetings = [
@@ -39,11 +40,11 @@ const AnimatedText = memo(function AnimatedText({ text }: { text: string }) {
   );
 });
 
-function Preloader({ text, showGreetings }: PreloaderProps) {
+function Preloader({ text, showGreetings, onFinish }: PreloaderProps) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
-  // Otimiza a medição das dimensões da janela
+  // Medição responsiva da viewport para a animação
   useEffect(() => {
     const updateDimension = () => {
       requestAnimationFrame(() => {
@@ -56,36 +57,39 @@ function Preloader({ text, showGreetings }: PreloaderProps) {
 
     updateDimension();
 
-    // Adiciona listener para redimensionamento apenas se necessário
     if (showGreetings) {
       window.addEventListener("resize", updateDimension);
       return () => window.removeEventListener("resize", updateDimension);
     }
   }, [showGreetings]);
 
-  // Otimiza a animação de saudações
+  // Avança a sequência de saudações
   useEffect(() => {
     if (!showGreetings || index === greetings.length - 1) return;
-
     const timer = setTimeout(
       () => {
-        requestAnimationFrame(() => {
-          setIndex((i) => i + 1);
-        });
+        requestAnimationFrame(() => setIndex((i) => i + 1));
       },
-      index === 0 ? 1000 : 180
+      index === 0 ? 600 : 180
     );
-
     return () => clearTimeout(timer);
   }, [index, showGreetings]);
 
-  // Calcula os paths para a animação SVG
+  // Encerra após a última saudação (com pequena pausa)
+  useEffect(() => {
+    if (!showGreetings) return;
+    if (index === greetings.length - 1) {
+      const t = setTimeout(() => onFinish?.(), 600);
+      return () => clearTimeout(t);
+    }
+  }, [index, showGreetings, onFinish]);
+
+  // Paths do SVG da curva
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
   } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
     dimension.height
   }  L0 0`;
-
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
   } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
