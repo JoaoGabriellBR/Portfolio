@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, ReactNode, Suspense } from "react";
+import { useEffect, useRef, useState, ReactNode, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "@/i18n/navigation";
 import Preloader from "./preloader";
@@ -9,79 +9,96 @@ type PageWithLoaderProps = {
   children: ReactNode;
 };
 
+type NavigatorWithConnection = Navigator & {
+  connection?: {
+    saveData?: boolean;
+  };
+};
+
+function prefersReducedMotion(): boolean {
+  if (
+    typeof window === "undefined" ||
+    typeof window.matchMedia !== "function"
+  ) {
+    return false;
+  }
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function saveDataEnabled(): boolean {
+  if (typeof navigator === "undefined") return false;
+  const nav = navigator as NavigatorWithConnection;
+  return Boolean(nav.connection?.saveData);
+}
+
 export default function PageWithLoader({
   text,
   children,
 }: PageWithLoaderProps) {
   const pathname = usePathname();
-  const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
-  const [shouldShowGreetings, setShouldShowGreetings] = useState(false);
-  const [isContentReady, setIsContentReady] = useState(false);
+  // Inicialmente oculto para não bloquear o carregamento
+  const [isPreloaderVisible, setIsPreloaderVisible] = useState<boolean>(false);
+  const [shouldShowGreetings, setShouldShowGreetings] =
+    useState<boolean>(false);
+  const isInitialMount = useRef<boolean>(true);
 
-  // Gerencia a lógica de saudações na página inicial
+  // Exibe saudações ocasionais apenas na home em navegação "dura" e respeita preferências
   useEffect(() => {
     const isHome = pathname === "/";
-    const navEntries = performance.getEntriesByType(
-      "navigation"
-    ) as PerformanceNavigationTiming[];
+    const navEntries = performance.getEntriesByType("navigation");
     const isHardNavigation =
-      navEntries.length && navEntries[0].type === "navigate";
+      navEntries.length > 0 &&
+      (navEntries[0] as PerformanceNavigationTiming).type === "navigate";
 
     const GREETING_TIMEOUT_MINUTES = 30;
     const lastShown = sessionStorage.getItem("last-home-greeting");
     const now = Date.now();
-
     const hasExpired =
       !lastShown ||
       now - parseInt(lastShown, 10) > GREETING_TIMEOUT_MINUTES * 60 * 1000;
 
+    const prefersReduced = prefersReducedMotion();
+    const saveData = saveDataEnabled();
+
+    if (prefersReduced || saveData) {
+      setShouldShowGreetings(false);
+      setIsPreloaderVisible(false);
+      return;
+    }
+
     if (isHome && isHardNavigation && hasExpired) {
       setShouldShowGreetings(true);
+      setIsPreloaderVisible(true);
       sessionStorage.setItem("last-home-greeting", now.toString());
     }
   }, [pathname]);
 
-  // Gerencia a transição do preloader e conteúdo
+  // Preloader curto em trocas internas de rota (não no primeiro render)
   useEffect(() => {
-    // Inicia o carregamento do conteúdo imediatamente
-    const contentLoadTimeout = setTimeout(() => {
-      setIsContentReady(true);
-    }, 100); // Pequeno delay para garantir que o React tenha tempo de montar o componente
-
-    // Configura o timer para remover o preloader
-    const preloaderTimeout = setTimeout(
-      () => {
-        requestAnimationFrame(() => {
-          document.body.style.cursor = "default";
-          window.scrollTo(0, 0);
-          setIsPreloaderVisible(false);
-        });
-      },
-      shouldShowGreetings ? 2000 : 700
-    );
-
-    return () => {
-      clearTimeout(contentLoadTimeout);
-      clearTimeout(preloaderTimeout);
-    };
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (shouldShowGreetings) return;
+    setIsPreloaderVisible(true);
+    const t = setTimeout(() => setIsPreloaderVisible(false), 350);
+    return () => clearTimeout(t);
   }, [pathname, shouldShowGreetings]);
 
   return (
     <>
       <AnimatePresence mode="wait">
         {isPreloaderVisible && (
-          <Preloader text={text} showGreetings={shouldShowGreetings} />
+          <Preloader
+            text={text}
+            showGreetings={shouldShowGreetings}
+            onFinish={() => setIsPreloaderVisible(false)}
+          />
         )}
       </AnimatePresence>
 
-      <div
-        style={{
-          opacity: isPreloaderVisible ? 0 : 1,
-          transition: "opacity 0.3s ease-in-out",
-          visibility: isPreloaderVisible ? "hidden" : "visible",
-        }}
-      >
-        <Suspense fallback={null}>{isContentReady && children}</Suspense>
+      <div>
+        <Suspense fallback={null}>{children}</Suspense>
       </div>
     </>
   );

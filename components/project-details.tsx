@@ -234,6 +234,7 @@ function FullImageSection({ imageSrc }: { imageSrc: string }) {
           src={imageSrc}
           alt="Full screen mockup"
           fill
+          sizes="100vw"
           className="rounded-[3rem] h-[90%]"
           loading="lazy"
           onError={(e) => {
@@ -283,11 +284,21 @@ function DesktopMockupsSection({ images }: { images: string[] }) {
       {images.map((src, index) => (
         <div
           key={index}
-          role="img"
+          className="relative w-full min-h-screen"
           aria-label={`Desktop application mockup ${index + 1}`}
-          className="w-full min-h-screen bg-no-repeat bg-contain lg:bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: `url(${src})` }}
-        />
+        >
+          <MemoizedImage
+            src={src}
+            alt={`Desktop application mockup ${index + 1}`}
+            fill
+            sizes="100vw"
+            className="object-contain lg:object-cover"
+            loading="lazy"
+            onError={(e) => {
+              e.currentTarget.src = "/images/fallback.webp";
+            }}
+          />
+        </div>
       ))}
     </section>
   );

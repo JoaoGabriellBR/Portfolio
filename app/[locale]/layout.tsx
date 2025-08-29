@@ -11,12 +11,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import { SITE, type Locale } from "@/config/site";
-import {
-  buildAlternates,
-  buildOgImagePath,
-  getLocalizedMeta,
-  ogLocale,
-} from "@/lib/seo";
+import { ogLocale } from "@/lib/seo";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,16 +24,16 @@ type LayoutParams = { params: { locale: Locale } };
 
 export function generateMetadata({ params }: LayoutParams): Metadata {
   const { locale } = params;
-  const meta = getLocalizedMeta(locale, "home");
-  const alternates = buildAlternates(locale, "/");
-  const url = alternates.canonical;
-
   return {
     metadataBase: SITE.metadataBase,
-    title: meta.title,
-    description: meta.description,
-    keywords: meta.keywords,
-    alternates,
+    title: {
+      default: SITE.siteName,
+      template: `%s | ${SITE.siteName}`,
+    },
+    description: SITE.defaultDescription,
+    twitter: {
+      card: "summary_large_image",
+    },
     robots: { index: true, follow: true },
     icons: {
       icon: "/favicon.ico",
@@ -48,18 +43,9 @@ export function generateMetadata({ params }: LayoutParams): Metadata {
     },
     // manifest: "/site.webmanifest",
     openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url,
       siteName: SITE.siteName,
       type: "website",
       locale: ogLocale[locale],
-      images: [
-        {
-          url: buildOgImagePath("home", locale),
-          alt: meta.title,
-        },
-      ],
     },
   };
 }
