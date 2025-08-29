@@ -19,6 +19,7 @@ import ScrollBaseAnimation from "@/components/text-marquee";
 import { Meteors } from "@/components/ui/meteors";
 import useDeviceType from "@/hooks/use-device-type";
 import ErrorBoundary from "@/components/error-boundary";
+import ScrollToTop from "@/components/scroll-to-top";
 
 interface TranslationProps {
   translations: ReturnType<typeof useTranslations>;
@@ -54,6 +55,7 @@ export default function Home() {
       <Header />
       <Meteors number={40} />
       <ReactLenis root options={{ lerp: 0.05 }}>
+        <ScrollToTop />
         <main className="flex flex-col">
           <Jumbotron translations={tHome} />
           <AboutSection

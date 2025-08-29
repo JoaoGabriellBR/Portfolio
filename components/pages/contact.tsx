@@ -9,6 +9,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ProfileForm } from "@/components/form";
 import { DrawCircleText } from "@/components/draw-circle-text";
+import ScrollToTop from "@/components/scroll-to-top";
 
 export default function Contact() {
   const t = useTranslations("Contact");
@@ -18,6 +19,7 @@ export default function Contact() {
     <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
+        <ScrollToTop />
         <MainContent
           title={t("title")}
           subtitle={t("subtitle")}

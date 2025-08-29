@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import Typography from "@/components/ui/typography";
 import ProjectsComponent from "@/components/projects";
 import { ScrollPage } from "@/components/scroll-page";
+import ScrollToTop from "@/components/scroll-to-top";
 
 export default function Projects() {
   const t = useTranslations("Project");
@@ -16,6 +17,7 @@ export default function Projects() {
     <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
+        <ScrollToTop />
         <MainContent sectionTitle={t("section")} />
       </ReactLenis>
       <Footer page={t("projectDetails.footer.contact")} route="/contact" />
