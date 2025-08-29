@@ -15,7 +15,6 @@ import ScrollBaseAnimation from "@/components/text-marquee";
 import { DrawCircleText } from "@/components/draw-circle-text";
 import { ScrollPage } from "@/components/scroll-page";
 import { ButtonHover } from "@/components/ui/button-hover";
-import PageWithLoader from "@/components/page-with-loader";
 
 import { BsArrowDownLeft } from "react-icons/bs";
 import { RiPokerDiamondsFill } from "react-icons/ri";
@@ -26,7 +25,7 @@ export default function About() {
   const t = useTranslations("About");
 
   return (
-    <PageWithLoader text={t("AboutMe.section")}>
+    <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <main className="flex flex-col">
@@ -43,7 +42,7 @@ export default function About() {
         </main>
       </ReactLenis>
       <Footer page={t("footer.projects")} route="/projects" />
-    </PageWithLoader>
+    </>
   );
 }
 

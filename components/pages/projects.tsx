@@ -7,20 +7,19 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Typography from "@/components/ui/typography";
 import ProjectsComponent from "@/components/projects";
-import PageWithLoader from "@/components/page-with-loader";
 import { ScrollPage } from "@/components/scroll-page";
 
 export default function Projects() {
   const t = useTranslations("Project");
 
   return (
-    <PageWithLoader text={t("section")}>
+    <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <MainContent sectionTitle={t("section")} />
       </ReactLenis>
       <Footer page={t("projectDetails.footer.contact")} route="/contact" />
-    </PageWithLoader>
+    </>
   );
 }
 

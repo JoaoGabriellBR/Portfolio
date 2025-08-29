@@ -7,8 +7,6 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { iconMap } from "@/utils/icons";
 import { textSizes } from "@/utils/text-sizes";
-import PageWithLoader from "./page-with-loader";
-
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Typography from "@/components/ui/typography";
@@ -57,7 +55,7 @@ export default function ProjectDetails({
   const Icon = iconMap[project.icon as keyof typeof iconMap];
 
   return (
-    <PageWithLoader text={project.title}>
+    <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
         <MainContent
@@ -73,7 +71,7 @@ export default function ProjectDetails({
         palette={project.palette}
         arrowFooterColor={project.arrowFooterColor}
       />
-    </PageWithLoader>
+    </>
   );
 }
 

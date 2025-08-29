@@ -17,7 +17,6 @@ import { MagneticButton } from "@/components/ui/button-magnetic";
 import Projects from "@/components/projects";
 import ScrollBaseAnimation from "@/components/text-marquee";
 import { Meteors } from "@/components/ui/meteors";
-import PageWithLoader from "@/components/page-with-loader";
 import useDeviceType from "@/hooks/use-device-type";
 import ErrorBoundary from "@/components/error-boundary";
 
@@ -52,23 +51,21 @@ export default function Home() {
 
   return (
     <ErrorBoundary>
-      <PageWithLoader text={sanitizeTranslation(tHeader("home"))}>
-        <Header />
-        <Meteors number={40} />
-        <ReactLenis root options={{ lerp: 0.05 }}>
-          <main className="flex flex-col">
-            <Jumbotron translations={tHome} />
-            <AboutSection
-              translations={tHome}
-              responsiveClasses={getResponsiveClasses()}
-            />
-            <SmoothScrollHero />
-            <ProjectsIntro translations={tHome} />
-            <Projects />
-          </main>
-        </ReactLenis>
-        <Footer page={sanitizeTranslation(tHeader("about"))} route="/about" />
-      </PageWithLoader>
+      <Header />
+      <Meteors number={40} />
+      <ReactLenis root options={{ lerp: 0.05 }}>
+        <main className="flex flex-col">
+          <Jumbotron translations={tHome} />
+          <AboutSection
+            translations={tHome}
+            responsiveClasses={getResponsiveClasses()}
+          />
+          <SmoothScrollHero />
+          <ProjectsIntro translations={tHome} />
+          <Projects />
+        </main>
+      </ReactLenis>
+      <Footer page={sanitizeTranslation(tHeader("about"))} route="/about" />
     </ErrorBoundary>
   );
 }
