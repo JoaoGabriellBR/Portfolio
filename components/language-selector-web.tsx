@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
-import { MagneticButton } from "./ui/button-magnetic";
 import { languages } from "@/utils/languages";
+import { RiPokerSpadesFill } from "react-icons/ri";
 
 export default function LanguageSelectorWeb() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,17 +46,19 @@ export default function LanguageSelectorWeb() {
 
   return (
     <div className="relative z-40" ref={dropdownRef}>
-      <MagneticButton
+      <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        distance={0.5}
-        className="h-[60px] flex gap-2 hover:bg-background m-0 border-none"
+        className="h-[40px] flex items-center justify-center bg-transparent border-none p-0 m-0"
+        initial={{ y: 48, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
       >
         <p className={`${textColor} ${textSize}`}>
           {languages.map(
             (language) => currentLocale === language.locale && language.locale
           )}
         </p>
-      </MagneticButton>
+      </motion.button>
 
       {isOpen && (
         <motion.ul
@@ -78,7 +80,7 @@ export default function LanguageSelectorWeb() {
                 <p className={`${textColor} ${textSize}`}>{language.label}</p>
               </Link>
               {currentLocale === language.locale && (
-                <p className="bg-foreground rounded-full h-1 w-1"></p>
+                <RiPokerSpadesFill className="text-[0.4rem] md:text-[0.5rem] lg:text-[0.6rem] text-foreground dark:text-white" />
               )}
             </div>
           ))}

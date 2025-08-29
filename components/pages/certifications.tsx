@@ -7,20 +7,19 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Typography from "@/components/ui/typography";
 import MyCertifications from "@/components/my-certifications";
-import PageWithLoader from "@/components/page-with-loader";
 import { ScrollPage } from "@/components/scroll-page";
 
 export default function Certifications() {
   const t = useTranslations("Certifications");
 
   return (
-    <PageWithLoader text={t("section")}>
+    <>
       <Header />
       <SmoothScrollingContent>
         <MainContent title={t("section")} />
       </SmoothScrollingContent>
       <Footer page={t("footer.projects")} route="/projects" />
-    </PageWithLoader>
+    </>
   );
 }
 

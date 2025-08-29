@@ -6,6 +6,7 @@ import { useLocale } from "next-intl";
 import { MagneticButton } from "./ui/button-magnetic";
 import { languages } from "@/utils/languages";
 import { textSizes } from "@/utils/text-sizes";
+import { RiPokerSpadesFill } from "react-icons/ri";
 
 export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +84,7 @@ export default function LanguageSelector() {
                 </p>
               </Link>
               {currentLocale === language.locale && (
-                <p className="bg-foreground rounded-full h-1 w-1" />
+                <RiPokerSpadesFill className="text-[0.4rem] md:text-[0.5rem] lg:text-[0.6rem] text-foreground dark:text-white" />
               )}
             </div>
           ))}

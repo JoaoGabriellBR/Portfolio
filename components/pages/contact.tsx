@@ -9,16 +9,17 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ProfileForm } from "@/components/form";
 import { DrawCircleText } from "@/components/draw-circle-text";
-import PageWithLoader from "@/components/page-with-loader";
+import ScrollToTop from "@/components/scroll-to-top";
 
 export default function Contact() {
   const t = useTranslations("Contact");
   const { theme } = useTheme();
 
   return (
-    <PageWithLoader text={t("section")}>
+    <>
       <Header />
       <ReactLenis root options={{ lerp: 0.05 }}>
+        <ScrollToTop />
         <MainContent
           title={t("title")}
           subtitle={t("subtitle")}
@@ -26,7 +27,7 @@ export default function Contact() {
         />
       </ReactLenis>
       <Footer page="gmail.com" route="mailto:joaoname19@gmail.com" />
-    </PageWithLoader>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Certifications from "@/components/pages/certifications";
 import { SITE, type Locale } from "@/config/site";
+import ScrollToTop from "@/components/scroll-to-top";
 import {
   buildAlternates,
   buildOgImagePath,
@@ -42,6 +43,7 @@ export default function CertificationsPage({ params }: PageProps) {
   const url = buildAlternates(locale, "/certifications").canonical;
   return (
     <>
+      <ScrollToTop />
       <Certifications />
       <Script
         id="jsonld-certifications"
@@ -51,7 +53,12 @@ export default function CertificationsPage({ params }: PageProps) {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: SITE.siteName, item: home },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: SITE.siteName,
+                item: home,
+              },
               { "@type": "ListItem", position: 2, name: meta.title, item: url },
             ],
           }),
