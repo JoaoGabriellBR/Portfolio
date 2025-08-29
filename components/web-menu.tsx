@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import LanguageSelectorWeb from "./language-selector-web";
 import { useIsMounted } from "@/hooks/useIsMounted";
 import { GiSuits } from "react-icons/gi";
+import { RiPokerSpadesFill } from "react-icons/ri";
 
 type NavItems = {
   NAV_ITEMS: {
@@ -50,7 +51,7 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
           {NAV_ITEMS.map((item, index) => (
             <React.Fragment key={index}>
               {index !== 0 && (
-                <p className="bg-foreground dark:bg-white rounded-full h-1 w-1" />
+                <RiPokerSpadesFill className="text-[0.4rem] md:text-[0.5rem] lg:text-[0.6rem] text-foreground dark:text-white" />
               )}
               <FlipLink type="web" href={item.href} aria-label={item.title}>
                 {item.title}
@@ -63,7 +64,7 @@ export const WebMenu = ({ NAV_ITEMS }: NavItems) => {
       {/* Idioma + Tema */}
       <div className="absolute right-4 lg:right-0 hidden md:flex items-center gap-x-4">
         <LanguageSelectorWeb />
-        
+
         <ModeToggle type="web" />
       </div>
     </div>
