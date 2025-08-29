@@ -31,6 +31,9 @@ export function generateMetadata({ params }: LayoutParams): Metadata {
       template: `%s | ${SITE.siteName}`,
     },
     description: SITE.defaultDescription,
+    twitter: {
+      card: "summary_large_image",
+    },
     robots: { index: true, follow: true },
     icons: {
       icon: "/favicon.ico",

@@ -83,7 +83,8 @@ export default function ProjectsComponent({
               alt={project.title}
               width={600}
               height={600}
-              priority
+              loading="lazy"
+              sizes="(max-width: 768px) 60vw, (max-width: 1200px) 33vw, 20vw"
             />
           </div>
         ))}
