@@ -92,6 +92,9 @@
       "adidas": {
         "description": "Plataforma de comercio electrónico completa, con una amplia variedad de productos y un proceso de pago rápido e intuitivo."
       },
+      "catalog": {
+        "description": "Catálogo en línea de productos electrónicos, con sistema de filtrado avanzado, diseño responsivo y confirmación vía WhatsApp."
+      },
       "darkBulls": {
         "description": "Galería de automóviles Lamborghini que muestra modelos icónicos y destaca las principales características e innovaciones de cada coche."
       },

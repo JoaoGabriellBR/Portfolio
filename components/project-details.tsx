@@ -21,6 +21,7 @@ import { RiPokerSpadesFill } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa6";
 import ScrollToTop from "@/components/scroll-to-top";
+import { motion } from "framer-motion";
 
 export type ProjectData = {
   title: string;
@@ -138,10 +139,16 @@ const HeroSection = memo(function HeroSection({
       aria-label="Project hero section"
     >
       <div className="flex flex-row items-center justify-between gap-4 -mt-28">
-        <Icon
-          className={`${textSizes.xl5} text-foreground dark:text-white`}
-          aria-hidden="true"
-        />
+        <motion.span
+          initial={{ y: 48, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.75 }}
+        >
+          <Icon
+            className={`${textSizes.xl5} text-foreground dark:text-white`}
+            aria-hidden="true"
+          />
+        </motion.span>
         <MemoizedTypography
           text={title}
           color="white"
