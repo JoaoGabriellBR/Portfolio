@@ -8,6 +8,13 @@ type ProjectsProps = {
 
 export const projects: ProjectsProps[] = [
   {
+    title: "Catalog",
+    name: "catalog",
+    src: "/images/catalog/mockups/catalog.png",
+    href: "/projects/catalog",
+    type: "Full Stack",
+  },
+  {
     title: "Adidas",
     name: "adidas",
     src: "/images/adidas/adidas.webp",

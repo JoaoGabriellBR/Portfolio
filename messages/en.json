@@ -92,6 +92,9 @@
       "adidas": {
         "description": "Complete e-commerce platform featuring a wide range of products and a fast, intuitive checkout process."
       },
+      "catalog": {
+        "description": "Online electronics catalog with advanced filtering, responsive design, and confirmation via WhatsApp."
+      },
       "darkBulls": {
         "description": "Lamborghini car gallery showcasing iconic models and highlighting each car's key features and innovations."
       },
